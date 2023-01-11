@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div class="container">
+    <p>Risque</p>
+    <h1 class="text-h1">{{ .Title }}</h1>
+
+    <h3 class="mt-4 text-h3">Catégories</h3>
+    <ul class="list-disc">
+        {{ range .Params.Categories }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.goodPractices }}
+    {{ if (gt (len $goodPracticesLinked) 0) }}
+    <h3 class="mt-4 text-h3">Bonnes pratiques liées</h3>
+    <ul class="list-disc">
+        {{ range $goodPracticesLinked}}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+
+{{ end }}

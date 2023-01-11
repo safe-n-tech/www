@@ -1,6 +1,9 @@
-<header>
-    <a href="/">Accueil</a>
+{{ define "main" }}
+
+<div class="container">
     {{ range .Pages }}
     <a href="{{ .Permalink }}">{{ .Title }}</a>
     {{ end }}
-</header>
+</div>
+
+{{ end }}

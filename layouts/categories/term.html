@@ -1,18 +1,12 @@
 {{ define "main" }}
-
 <div class="container">
-<h1>{{ .Title}}</h1>
-
-    {{ .Pages }}
-
-    <h2>Catégories</h2>
+    <h1>Tous les ports de {{ .Type | singularize }} "{{ .Title }}"</h1>
     <ul>
-        {{ range .Pages }}
+        {{ range .Data.Pages }}
         <li>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
         {{ end }}
     </ul>
 </div>
-
-{{ end }}
+{{ end}}

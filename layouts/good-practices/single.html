@@ -1,0 +1,25 @@
+{{ define "main" }}
+
+<div class="container">
+    <p>Bonne pratique</p>
+    <h1 class="text-h1">{{ .Title }}</h1>
+
+    <h3 class="mt-4 text-h3">Catégories</h3>
+    <ul class="list-disc">
+        {{ range .Params.Categories }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+
+    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Params.goodPractices" "intersect" (slice .Title) }}
+    {{ if (gt (len $goodPracticesLinked) 0) }}
+    <h3 class="mt-4 text-h3">Risques liés</h3>
+    <ul class="list-disc">
+        {{ range $goodPracticesLinked}}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+
+{{ end }}

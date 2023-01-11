@@ -1,3 +1,0 @@
----
-title: Mot de passe
----

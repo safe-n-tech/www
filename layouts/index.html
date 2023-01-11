@@ -1,7 +1,10 @@
 {{ define "main" }}
 
-<div class="container grid-body gap-y-32">
-
+<div class="container">
+    <a href="/categories">Catégories</a>
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ end }}
 </div>
 
 {{ end }}

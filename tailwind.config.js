@@ -9,8 +9,8 @@ module.exports = {
     extends: {
     },
     colors: {
-      primary: '#d38b5e',
-      secondary: 'black',
+      primary: 'black',
+      secondary: 'white',
     },
     fontFamily: {
       sans: ['Hind'],

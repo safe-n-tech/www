@@ -5,6 +5,10 @@
 @tailwind utilities;
 @tailwind variants;
 
+a {
+    text-decoration: underline;
+}
+
 @layer components {
     .grid-body {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;

@@ -20,4 +20,9 @@ params:
       instagram: https://www.instagram.com/username
       linkedin: https://www.linkedin.com/in/username
 
-taxonomies:
+
+related:
+  indices:
+    - name: bonne-pratiques # The name of the indice, same as Front Matter's .Param key.
+      weight: 1 # We don't really need this, but omitting it would disable the indice.
+      includeNewer: true
