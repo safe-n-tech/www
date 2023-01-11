@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="container">
+    <p>Catégorie</p>
+    <h1 class="text-h1">{{ .Title}}</h1>
+
+    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "intersect" (slice .Title ) }}
+    {{ if (gt (len $goodPracticesLinked) 0) }}
+    <h3 class="mt-4 text-h3">Bonnes pratiques</h3>
+    <ul class="list-disc">
+        {{ range $goodPracticesLinked}}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+
+    {{ $risks := (where .Site.Pages "Section" "risks") }}
+    {{ $risksLinked := where $risks ".Params.categories" "intersect" (slice .Title ) }}
+    {{ if (gt (len $risksLinked) 0) }}
+    <h3 class="mt-4 text-h3">Risques</h3>
+    <ul class="list-disc">
+        {{ range $risksLinked}}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+    {{ end }}
+</div>
+{{ end}}

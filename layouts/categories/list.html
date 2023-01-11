@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="container">
-    <h1>Tous les ports de {{ .Type | singularize }} "{{ .Title }}"</h1>
+    <h1 class="text-h1">Toutes les catégories</h1>
     <ul>
-        {{ range .Data.Pages }}
+        {{ range .Pages }}
         <li>
             <a href="{{ .Permalink }}">{{ .Title }}</a>
         </li>
         {{ end }}
     </ul>
 </div>
-{{ end}}
+{{ end }}
