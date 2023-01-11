@@ -1,0 +1,41 @@
+{{ $img := .img }}
+{{ $opt := .opt }}
+{{ with resources.Get $img }}
+    {{ if $opt.size }}
+        {{ $resized := .Resize $opt.size }}
+
+        <img
+                src="{{ $resized.Permalink }}"
+                height="{{ $resized.Height }}"
+                width="{{ $resized.Width }}"
+
+                {{ if $opt.loading }}
+                loading="{{ $opt.loading }}"
+                {{ else }}
+                loading="lazy"
+                {{ end }}
+
+                {{ if $opt.alt }}
+                alt="{{ $opt.alt }}"
+                {{ else }}
+                alt=" "
+                {{ end }}
+
+                {{ with $opt.id }}
+                id="{{ . }}"
+                {{ end }}
+
+                {{ with $opt.class }}
+                class="{{ . }}"
+                {{ end }}
+
+                {{ with $opt.itemprop }}
+                itemprop="{{ . }}"
+                {{ end }}
+
+                {{ with $opt.inlineCss }}
+                style="{{ . }}"
+                {{ end }}
+        />
+    {{ end }}
+{{ end }}

@@ -1,0 +1,66 @@
+
+
+<meta name="author" content="{{ .Site.Params.seo.author }}">
+<meta name="owner" content="{{ .Site.Params.seo.author }}">
+<meta name="language" content="fr">
+<meta http-equiv="content-language" content="fr" />
+
+
+<script type="application/ld+json">
+    {{- $sameAs := slice -}}
+    {{- range $key, $value := .Site.Params.seo.links -}}
+        {{- $sameAs = $sameAs | append $value -}}
+    {{- end -}}
+
+    {{ (dict
+    "@context" "http://schema.org"
+    "@type" "Organization"
+    "name" .Site.Params.seo.author
+    "url" .Site.Params.seo.url
+    "logo" (printf "%s%s" .Site.Params.seo.url .Site.Params.seo.logo)
+    "address" "Bordeaux"
+    "sameAs" $sameAs
+    )}}
+</script>
+
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="#000">
+
+<!-- Apple meta -->
+<link rel="apple-touch-icon" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon.png" />
+<link rel="apple-touch-icon" sizes="57x57" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.Params.seo.url }}/sprites/apple-touch-icon-180x180.png" />
+
+<link rel="shortcut icon" href="{{ .Site.Params.seo.url }}/sprites/favicon.ico">
+
+<!-- page url -->
+<link rel="canonical" href="{{ .Permalink }}" />
+<meta property="twitter:site" content="{{ .Site.Params.seo.url }}">
+<meta property="twitter:url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{ .Permalink }}" />
+
+<!-- site url -->
+<meta name="url" content="{{ .Site.Params.seo.url }}">
+<meta name="identifier-URL" content="{{ .Site.Params.seo.url }}">
+
+
+<meta name="subject" content="{{ .Site.Params.seo.subject }}">
+<meta name="theme-color" content="#000">
+<meta property="og:type" content="website" />
+
+<meta property="og:site_name" content="{{ .Site.Params.seo.author }}" />
+<meta property="og:locale" content="fr" />
+<meta name="twitter:card" content="summary_large_image" />
+
+
+
+
+
+

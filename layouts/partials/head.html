@@ -1,0 +1,17 @@
+{{ $t := mul 1000 (time "2016-05-28T10:30:00.00+10:00").Unix }}
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Hind:wght@300;500;700&family=Montserrat:wght@200;600;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;600&family=Montserrat:wght@200;600;800&display=swap"></noscript>
+
+{{- $script := resources.Get "js/main.js" -}}
+<script src="{{ $script.RelPermalink }}"></script>
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+
+{{- $styles := resources.Get "css/output/styles.css" -}}
+<link rel="preload" href="{{ $styles.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $styles.RelPermalink }}"></noscript>

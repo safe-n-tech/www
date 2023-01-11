@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head prefix="og: http://ogp.me/ns#">
+    {{- partial "head.html" . -}}
+
+    {{ block "pageHead" . }}
+    {{ end }}
+
+    {{ block "seoRobots" . }}
+        <meta name="robots" content="all">
+    {{ end }}
+
+    {{ partial "seo" . }}
+
+    {{ block "seoHero" . }}
+        {{$heroUrl := printf "%s%s" .Site.Params.seo.url .Site.Params.seo.hero }}
+        <meta name="twitter:image" content="{{ $heroUrl }}" />
+        <meta property="og:image" content="{{ $heroUrl }}" />
+    {{ end }}
+
+    {{ block "seoTitle" . }}
+        {{ $title := .Site.Params.seo.title }}
+        {{ if .Title }}
+        {{ $title = .Title}}
+        {{ end }}
+        <title>{{ $title }}</title>
+        <meta name="twitter:title" content="{{ $title }}" />
+        <meta property="og:title" content="{{ $title }}" />
+        <meta name="apple-mobile-web-app-title" content="{{ $title }}" />
+    {{ end }}
+
+    {{ block "seoDescription" . }}
+        {{ $description := .Site.Params.seo.desc }}
+        {{ if .Description }}
+        {{ $description = .Description}}
+        {{ end }}
+        <meta name="description" content="{{ $description }}" />
+        <meta property="og:description" content="{{ $description }}" />
+        <meta name="twitter:description" content="{{ $description }}" />
+    {{ end }}
+</head>
+<body class="bg-secondary text-primary text-xl">
+    <div class="min-h-screen">
+        {{- partial "header" . -}}
+
+        <main>
+            {{- block "main" . }}{{- end }}
+        </main>
+    </div>
+
+    {{- partial "footer" . -}}
+</body>
+</html>

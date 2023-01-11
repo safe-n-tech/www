@@ -1,0 +1,21 @@
+[build]
+publish = "public"
+command = "npm run build"
+
+[[redirects]]
+  from = "https://your-site.com/*"
+  to = "https://your-site.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://your-site.com/*"
+  to = "http://your-site.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://your-site.com/*"
+  to = "https://your-site.com/:splat"
+  status = 301
+  force = true

@@ -1,0 +1,23 @@
+languageCode: 'fr'
+baseURL: localhost
+removePathAccents: true
+
+params:
+  contact:
+    email:
+      content: proust@arthaud.dev
+      prefix: "mailto:"
+  seo:
+    author: Jhon Doe
+    title: Page - Site name
+    desc: "Meaningful page description - Site name"
+    subject: "subject of website"
+    url: localhost
+    hero: /sprites/hero-min.jpg
+    logo: /sprites/logo-min.png
+    links:
+      facebook: https://www.facebook.com/username
+      instagram: https://www.instagram.com/username
+      linkedin: https://www.linkedin.com/in/username
+
+taxonomies:
