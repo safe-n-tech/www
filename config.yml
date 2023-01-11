@@ -1,5 +1,5 @@
 languageCode: 'fr'
-baseURL: localhost
+baseURL: /
 removePathAccents: true
 
 params:
@@ -12,7 +12,7 @@ params:
     title: Page - Site name
     desc: "Meaningful page description - Site name"
     subject: "subject of website"
-    url: localhost
+    url: /
     hero: /sprites/hero-min.jpg
     logo: /sprites/logo-min.png
     links:
