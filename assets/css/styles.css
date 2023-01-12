@@ -35,7 +35,7 @@ a {
     }
 
     .btn {
-        @apply text-cta bg-primary text-secondary border border-primary px-5 py-3;
+        @apply text-primary bg-primary text-secondary border border-primary px-5 py-3;
     }
     .btn:hover {
         @apply text-primary bg-secondary;
