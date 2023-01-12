@@ -26,13 +26,13 @@
   let questionId = 0;
   let step = 0;
 
+
+
   function showResult() {
     document.querySelector("#quizz").classList.toggle("hidden");
     document.querySelector("#result").classList.toggle("hidden");
     const eltScore = document.querySelector("#score");
     eltScore.innerHTML = score;
-
-    console.log(wrongsAnswer)
   }
 
   function initQuizz(){
@@ -74,7 +74,6 @@
       else{
         score += +answer.value;
       }
-      console.log(score);
       changeQuestion();
     }
   }
