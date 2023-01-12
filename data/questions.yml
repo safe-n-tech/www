@@ -1,18 +1,22 @@
 - text: Possédez vous un mot de passe contenant le nom d'un proche ou d'un animal de companie ?
+  description: Un mot de passe contenant le nom d'un proche ou d'un animal de companie est trouvable en 8 secondes par un pirate ce qui mène à l'usurpation de votre identité sur internet. Nous vous invitons à consulter cette bonne pratique
+  rightAnswers: 1
   goodPractices:
     - Avoir un mot de passe fort
   choices:
     - text: Oui
-      isCorrect: false
+      score: 0
     - test: Non
-      isCorrect: true
+      score: 100
 - text: Avez vous des données personnelles(photos, compte google) sur votre ordinateur/téléphone de travail ?
+  description: Votre patron peut accéder à ces données si elles ne sont pas placées dans un dossier nommé explicitement
+  rightAnswers: 1
   goodPractices:
     - Avoir un mot de passe fort
   choices:
     - text: Oui
-      isCorrect: false
+      score: 0
     - text: oui, je les ai placées dans un dossier nommé explicitent avec mon nom
-      isCorrect: true
+      score: true
     - text: uniquement un compte google, ce n'est pas bien grave
-      isCorrect: false
+      score: 0
