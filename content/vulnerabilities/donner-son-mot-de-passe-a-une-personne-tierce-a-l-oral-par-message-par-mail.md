@@ -2,8 +2,7 @@
 visibleInCms: true
 title: Donner son mot de passe à une personne tierce (à l’oral, par message, par
   mail).
-categories:
-  - Mots de passe
+categories: Mots de passe
 risks:
   - S’exposer à un risque d’interception et d’utilisation frauduleuse du mot de
     passe. La personne à qui l’on confie son mot de passe n’a pas forcément le

@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: "Refuser de changer son mot de passe en cas de soupçon de piratage. "
-categories:
-  - Mots de passe
+categories: Mots de passe
 risks:
   - Permettre au pirate de continuer à chercher des informations et de collecter
     des données à caractère sensible.

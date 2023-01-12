@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: Envoyer/conserver des photos ou vidéos à caractère sexuel.
-categories:
-  - Données confidentielles
+categories: Données confidentielles
 risks:
   - "Risque que la photo soit interceptée, tout ce qui est sur le web,
     reste.   Risque d’exposition à du chantage contre de l’argent par
