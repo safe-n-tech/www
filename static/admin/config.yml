@@ -40,13 +40,31 @@ collections:
           multiple: true
       }
       - {
+        label: Risques,
+        name: risks,
+        widget: list,
+        field: {label: Risque, name: risk},
+        required: false
+      }
+      - {
         label: Bonnes pratiques,
         name: goodPractices,
         widget: relation,
         collection: good-practices,
         search_fields: [ "title" ],
         value_field: "title",
-        multiple: true
+        multiple: true,
+        required: false
+      }
+      - {
+        label: Définitions,
+        name: definitions,
+        widget: relation,
+        collection: definitions,
+        search_fields: [ "title" ],
+        value_field: "title",
+        multiple: true,
+        required: false
       }
 
   - name: good-practices
@@ -68,3 +86,26 @@ collections:
         value_field: "title",
         multiple: true
       }
+      - {
+        label: Définitions,
+        name: definitions,
+        widget: relation,
+        collection: definitions,
+        search_fields: [ "title" ],
+        value_field: "title",
+        multiple: true,
+        required: false
+      }
+      - { label: 'Contenu', name: 'body', widget: 'markdown', required: false }
+
+  - name: definitions
+    label: Définitions
+    label_singular: Définition
+    folder: content/definitions
+    create: true
+    editor: { preview: false }
+    filter: { field: "visibleInCms", value: true }
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: Titre, name: title }
+      - { label: 'Contenu', name: 'body', widget: 'markdown', required: false }
