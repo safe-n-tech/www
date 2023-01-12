@@ -28,12 +28,12 @@
       </nav>
     {{ end }}
 
-    {{ $risks := (where .Site.Pages "Section" "risks") }}
-    {{ $risksLinked := where $risks ".Params.categories" "intersect" (slice .Title ) }}
-    {{ if (gt (len $risksLinked) 0) }}
-    <h3 class="mt-4 text-h3">Risques</h3>
+    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "intersect" (slice .Title ) }}
+    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+    <h3 class="mt-4 text-h3">Vulnérabilités</h3>
     <ul class="list-disc">
-        {{ range $risksLinked}}
+        {{ range $vulnerabilitiesLinked}}
         <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
         {{ end }}
     </ul>
