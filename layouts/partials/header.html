@@ -1,14 +1,12 @@
 <header class="fixed w-full h-auto">
     <div id="burger_btn" class="p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
 
-        <a href="/" class="text-primary z-50">Cyber<span class="text-secondary">Cure</span></a>
+        <a href="/" class="text-primary z-50"><span><img src="/svgs/logo_icon.svg" alt="logo icon"></span></a>
     
         <div class="flex cursor-pointer items-center" onclick="toggleLinks()" name="menu">
             <a class="text-dark_gray">Menu</a>
             <div class="ml-2">
-                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
-                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
-                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+                <img src="/svgs/icon_burger.svg" alt="Arrow icon" class="">
             </div>
         </div>
     </div>
@@ -19,7 +17,7 @@
             <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl">
                 <a href="{{ .URL }}" class="flex justify-between">
                     <span class="text-dark_gray">{{ .Name }}</span>
-                    <span></span><img src="/svgs/go_to_page.svg" alt="Arrow icon" class=""></span>
+                    <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
                 </a>
             </li>
         </ul>
