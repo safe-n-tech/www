@@ -1,4 +1,4 @@
-<section id="quizz-ingame" class="h-screen pb-20 flex flex-col gap-y-8">
+<section id="quizz-ingame" class="min-h-screen pb-20 flex flex-col gap-y-8">
   <section class="relative pt-8 pb-36 -mb-20">
     <img class="w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt=" ">
     <div class="container text-white flex flex-col gap-5 items-center justify-center">
@@ -93,6 +93,7 @@
   }
 
   function loadActualQuestion() {
+    window.scrollTo(0,0);
     document.getElementById("quizz-progression-text").innerText = `Question ${questionIndex+1}/${questions.length}`;
     document.getElementById("quizz-progression-bar-inner").style.width = `${(questionIndex+1) * 100 / (questions.length+1)}%`;
     document.getElementById("quizz-question-text").innerText = questions[questionIndex].text;
