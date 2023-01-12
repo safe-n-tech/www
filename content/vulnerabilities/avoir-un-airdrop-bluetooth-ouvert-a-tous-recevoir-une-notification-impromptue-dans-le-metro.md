@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Avoir un AirDrop/Bluetooth ouvert à tous, recevoir une notification
   impromptue dans le métro.
-categories: Wifi et Bluetooth
+categories: Wifi et bluetooth
 risks:
   - Partage non consentie d’image à caractère obscène/sexuel non désiré.
 goodPractices:

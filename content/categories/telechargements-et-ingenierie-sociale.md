@@ -1,5 +1,5 @@
 ---
 visibleInCms: true
-title: "Téléchargements et Ingénierie sociale"
+title: "Téléchargements et ingénierie sociale"
 icon: "telechargements-et-ingenierie-sociale.png"
 ---

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Ne pas cliquer immédiatement sur le lien
-categories: Téléchargements et Ingénierie sociale
+categories: Téléchargements et ingénierie sociale
 ---
 \- Ne pas cliquer immédiatement sur le lien
 

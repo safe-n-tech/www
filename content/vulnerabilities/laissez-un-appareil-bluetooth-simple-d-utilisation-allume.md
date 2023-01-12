@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: "Laissez un appareil Bluetooth simple d’utilisation allumé. "
-categories: Wifi et Bluetooth
+categories: Wifi et bluetooth
 risks:
   - Recevoir des dossiers indésirables sur un objet connecté (appareil
     Bluetooth).

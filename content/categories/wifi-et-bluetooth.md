@@ -1,4 +1,4 @@
 ---
 visibleInCms: true
-title: Wifi et Bluetooth
+title: Wifi et bluetooth
 ---

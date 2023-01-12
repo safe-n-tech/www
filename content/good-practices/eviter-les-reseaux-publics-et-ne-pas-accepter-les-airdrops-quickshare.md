@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Éviter les réseaux publics et ne pas accepter les AirDrops/Quickshare
-categories: Wifi et Bluetooth
+categories: Wifi et bluetooth
 ---
 <!--StartFragment-->
 
