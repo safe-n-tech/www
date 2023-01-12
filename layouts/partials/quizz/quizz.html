@@ -1,0 +1,87 @@
+<div class="container" id="quizz">
+    {{ range .Pages }}
+    <a href="{{ $.Permalink }}">{{ .Title }}</a>
+    {{ end }}
+    {{ range $question := index .Site.Data.questions  }}
+      <div id="questionContainer-{{ $question.id }}" style="display:none;">
+        <span  id="question-{{ $question.id }}">{{ $question.text }}</span>
+        <div>
+          {{ range $index, $choice := $question.choices }}
+            <input class="radio" type="radio" name="reponse" value="{{ $choice.score }}" id="{{ $question.text | urlize }}-{{ $index }}">
+            <label for="">{{ $choice.text }}</label>
+          {{ end }}
+        </div>
+        <div>
+          <button onclick="checkAnswer()">Valider</button>
+        </div>
+      </div>
+    {{end}}
+</div>
+
+<script>
+  let wrongsAnswer = [];
+  const questions = JSON.parse("{{ $.Site.Data.questions | jsonify }}");
+  const goodPractices = JSON.parse("{{ $.Site.Data. | jsonify }}");
+
+  let score = 0;
+  let questionId = 0;
+  let step = 0;
+
+  function showResult() {
+    document.querySelector("#quizz").classList.toggle("hidden");
+    document.querySelector("#result").classList.toggle("hidden");
+    const eltScore = document.querySelector("#score");
+    eltScore.innerHTML = score;
+
+    console.log(wrongsAnswer)
+  }
+
+  function initQuizz(){
+    questions.map(question => {
+      if(questionId == question.id){
+          document.getElementById(`questionContainer-${questionId}`).style.display = "block";
+        }
+    })
+  }
+
+  function changeQuestion(){
+    questionId+= 1;
+    step++;
+    for (let i = 0; i < questions.length; i++) {
+      if (questionId == questions[i].id) {
+        document.getElementById(`questionContainer-${questionId}`).style.display = "block";
+      }
+      else{
+          document.getElementById(`questionContainer-${i}`).style.display = "none";
+      }
+    }
+    if(step == questions.length){
+      showResult();
+    }
+  }
+  initQuizz();
+
+  function checkAnswer(){
+    const answer = document.querySelector("input:checked");
+    if (answer == null) {
+      alert("veuillez selectionner une réponse !!")
+      return;
+    }
+    else{
+      answer.checked = false;
+      if(answer.value == 0 && ! wrongsAnswer.includes(questionId)){
+        wrongsAnswer.push(questionId);
+      }
+      else{
+        score += +answer.value;
+      }
+      console.log(score);
+      changeQuestion();
+    }
+  }
+
+
+
+
+
+</script>
