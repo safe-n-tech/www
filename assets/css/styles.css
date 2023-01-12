@@ -58,6 +58,6 @@ a {
       @apply absolute inset-0 -z-10;
     }
     .bottom-nav-section {
-      @apply w-full h-25 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
+      @apply w-full h-20 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
     }
 }
