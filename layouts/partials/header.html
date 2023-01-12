@@ -1,13 +1,14 @@
-<header class="w-full h-24 text-white bg- ">
+<header class="w-full h-24 text-white bg-primary">
     <a href="/">Accueil</a>
-    {{ range .Pages }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    {{ range .Site.Menus.header }}
+        <a href="{{ .URL }}">{{ .Title }}</a>
     {{ end }}
-    <div>
-        <div>
-            <span class="block "></span>
-            <span class="block "></span>
-            <span class="block "></span>
+    <div class="flex cursor-pointer">
+        <h3>Menu</h3>
+        <div class="ml-2">
+            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
+            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
+            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
         </div>
     </div>
 </header>
