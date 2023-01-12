@@ -1,8 +1,17 @@
 {{ define "main" }}
 
 <div class="container">
-    <p>Risque</p>
+    <p>Vulnérabilité</p>
     <h1 class="text-h1">{{ .Title }}</h1>
+
+    {{ if .Params.risks }}
+    <h2 class="text-h2 mt-8">Risques liés</h2>
+    <ul>
+        {{ range .Params.risks }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+    {{ end }}
 
     {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.categories }}
     {{ if (gt (len $categoriesLinked) 0) }}
