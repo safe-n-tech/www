@@ -6,7 +6,7 @@ categories:
   - Mots de passe
   - Déplacements
 risks:
-  - Se faire voler ses données
+  - Se faire voler ses données.
 goodPractices:
   - Avoir un mot de passe fort
 ---
