@@ -5,6 +5,8 @@
 
 
 <script>
-  fetch('/good-practices/index.json');
+  fetch('/questions/index.json')
+          .then(r=>r.json())
+          .then(r=>console.log(r))
 
 </script>
