@@ -6,7 +6,7 @@
 @tailwind variants;
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @layer components {
