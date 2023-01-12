@@ -1,19 +1,31 @@
 {{ define "main" }}
-<div class="container">
-    <h1 class="text-h1 text-primary">{{ .Title}}</h1>
+<section class="relative w-full pt-5">
+  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container">
+
+    <h1 class="text-h1 text-white py-10">{{ .Title}}</h1>
+    <div class="text-center w-4/5 mx-auto text-white pb-20"><h4 class="">"Lorem Ipsum dolor sit amet consectur."</h4></div>
+  </div>
+</section>
+<div class="bottom-nav-section"></div>
+<div class="container text-dark_grey">
 
     {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
     {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "intersect" (slice .Title ) }}
     {{ if (gt (len $goodPracticesLinked) 0) }}
-    <h3 class="mt-4 text-h4">Les bonnes pratiques associées</h3>
-    <nav class="list-disc grid-good-practice">
-        {{ range $goodPracticesLinked}}
-        <a href="{{ .Permalink }}">
 
-          <div class="bg-black text-center p-5 h-full"><p>{{ .Title }}</p></div>
-        </a>
-        {{ end }}
-    </nav>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id non quidem soluta similique vitae quas cumque deserunt obcaecati quibusdam autem odio, libero sit vero earum repudiandae! Repudiandae aliquid deserunt aliquam.</p>
+    <div class="text-center">
+      <h3 class="mt-4 text-h4 text-black">Les bonnes pratiques associées</h3>
+    </div>
+      <nav class="list-disc grid-good-practice mt-10">
+          {{ range $goodPracticesLinked}}
+          <a href="{{ .Permalink }}" class="no-underline">
+
+            <div class="border-perso-blue rounded-md text-center px-3 py-5 h-full grid place-items-center"><p class="text-secondary">{{ .Title }}</p></div>
+          </a>
+          {{ end }}
+      </nav>
     {{ end }}
 
     {{ $risks := (where .Site.Pages "Section" "risks") }}

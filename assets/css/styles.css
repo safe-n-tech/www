@@ -51,4 +51,13 @@ a {
     .btn:hover {
         @apply text-primary bg-secondary;
     }
+    .border-perso-blue {
+      @apply border-solid border-secondary border-2
+    }
+    .hero-bg-img {
+      @apply absolute inset-0 -z-10;
+    }
+    .bottom-nav-section {
+      @apply w-full h-25 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
+    }
 }
