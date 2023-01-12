@@ -25,9 +25,15 @@ taxonomies:
 
 menu:
   header:
-    - title: Bonnes pratiques
+    - identifier: good-practices
+      name: Bonnes pratiques
+      title: bonnes pratiques
       url: /good-practices
-    - title: Quiz
+    - identifier: quizz
+      name: Quiz
+      title: quiz
       url: /quizz
-    - title: Thématiques
+    - identifier: categories
+      name: Thématiques
+      title: thématiques
       url: /categories
