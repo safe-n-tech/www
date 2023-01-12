@@ -6,11 +6,11 @@ goodPractices:
 - Avoir un mot de passe fort
 choices:
 - text: J’effectue une sauvegarde de mes données.
-  score: 0
+  points: 100
 - text: Je redémarre mon ordinateur
-  score: 100
+  points: 100
 - text: J’éteins mon écran
-  score: 0
+  points: 0
 - text: Aucune des réponses ci-dessus.
-  score: 100
+  score: 0
 ---

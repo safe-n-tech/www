@@ -5,17 +5,17 @@ goodPractices:
 - Avoir un mot de passe fort
 choices:
 - text: Mozilla Firefox
-  score: 0
+  points: 100
 - text: Internet Explorer
-  score: 0
+  points: 0
 - text: Opera
-  score: 0
+  points: 100
 - text: Google Chrome
-  score: 0
+  points: 100
 - text: Safari
-  score: 0
+  points: 100
 - text: Microsoft Edge
-  score: 0
+  points: 100
 - text: Autres
-  score: 0
+  points: 100
 ---

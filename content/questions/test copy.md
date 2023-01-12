@@ -5,9 +5,9 @@ goodPractices:
 - Avoir un mot de passe fort
 choices:
 - text: D’activer les mises à jour automatiques, cela permet de réduire au maximum le temps de disponibilité d’une faille identifiée sur la précédente version.
-  score: 0
+  points: 100
 - text: De ne pas activer la mise à jour automatique, il est risqué de laisser mes appareils choisir pour moi.
-  score: 100
+  points: 0
 - text: Cela dépend des logiciels. 
-  score: 0
+  points: 0
 ---
