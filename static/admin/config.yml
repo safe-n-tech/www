@@ -27,6 +27,40 @@ collections:
     create: true
     editor: { preview: false }
     filter: { field: "visibleInCms", value: true }
+    view_groups:
+      - label: Catégorie
+        field: categories
+    view_filters:
+      - label: Boîte mail
+        field: categories
+        pattern: Boîte mail
+      - label: Déplacements
+        field: categories
+        pattern: Déplacements
+      - label: Données confidentielles
+        field: categories
+        pattern: Données confidentielles
+      - label: Droit résiduel à la vie privée
+        field: categories
+        pattern: Droit résiduel à la vie privée
+      - label: Mise à jour
+        field: categories
+        pattern: Mise à jour
+      - label: Mots de passe
+        field: categories
+        pattern: Mots de passe
+      - label: Paiement en ligne
+        field: categories
+        pattern: Paiement en ligne
+      - label: Réseaux sociaux
+        field: categories
+        pattern: Réseaux sociaux
+      - label: Téléchargements et ingénierie sociale
+        field: categories
+        pattern: Téléchargements et ingénierie sociale
+      - label: Wifi et bluetooth
+        field: categories
+        pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
@@ -73,7 +107,7 @@ collections:
     editor: { preview: false }
     filter: { field: "visibleInCms", value: true }
     view_groups:
-      - label: Catégories
+      - label: Catégorie
         field: categories
     view_filters:
       - label: Boîte mail
