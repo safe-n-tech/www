@@ -1,20 +1,17 @@
-<section id="quizz-ingame">
+<section id="quizz-ingame" class="flex flex-col gap-y-8">
   <section class="relative">
-    <div class="container">
+    <div class="container flex flex-col items-center justify-center">
       <h2 id="quizz-progression-text" class="my-8 text-h1">N°1 qsdqsd</h2>
       <div id="quizz-progression-bar"></div>
       <p id="quizz-question-text"></p>
     </div>
   </section>
-    <section id="quizz-choices" class="grid grid-cols-4 gap-8">
-
-    </section>
-    <section class="grid grid-cols-4 gap-8">
-      <button id="quizz-go-next-question-btn">Suivant</button>
-    </section>
-
+  <section id="quizz-choices" class="container grid grid-cols-4 gap-8"></section>
+  <section class="container grid grid-cols-4 gap-8">
+    <button disabled class="col-start-2 col-end-4 bg-secondary text-white disabled:bg-gray rounded-2xl p-4" id="quizz-go-next-question-btn">Suivant</button>
+  </section>
   <template id="template-choices-item">
-    <button class="border-secondary border-2 rounded-2xl p-4">
+    <button aria-selected="false" class="col-span-full border-secondary border-2 rounded-2xl p-4 aria-selected:bg-secondary aria-selected:text-white">
       <span class="choice-text"></span>
     </button>
   </template>
@@ -24,6 +21,8 @@
   let questionIndex = 0;
   let questions = [];
   const choicesContainer = document.getElementById("quizz-choices");
+  const choiceTemplate = document.getElementById("template-choices-item");
+
   startQuizz();
 
   async function startQuizz() {
@@ -41,33 +40,39 @@
 
   function nextQuestion() {
     if (questions.userAnswer === null) {
-      //Dire à l'user qu'il faut choisir
       return;
     }
 
-    if (questionIndex == questions.length-1 ){
+    questionIndex++;
+
+    if (questionIndex === questions.length){
       showResult();
       return;
     }
-    questionIndex++;
+
     loadQuestion(questions[questionIndex]);
   }
 
   function handleAnswerSelected(questionSelected){
+    resetQuestionAnswers();
+    questionSelected.setAttribute('aria-selected', true);
+
     questions[questionIndex].userAnswer = questionSelected.dataset.text;
-    console.log(questions);
+
+    document.getElementById("quizz-go-next-question-btn").removeAttribute('disabled');
   }
 
   function createElChoice(choice) {
-    const template = document.getElementById("template-choices-item");
-    const clone = template.content.firstElementChild.cloneNode(true);
-    clone.dataset.text = choice.text;
-    clone.dataset.score = choice.score;
-    clone.querySelector(".choice-text").innerText = choice.text;
-    clone.addEventListener("click", ()=>{
-      handleAnswerSelected(clone);
+    const newChoice = choiceTemplate.content.firstElementChild.cloneNode(true);
+
+    newChoice.dataset.text = choice.text;
+    newChoice.dataset.score = choice.score;
+    newChoice.querySelector(".choice-text").innerText = choice.text;
+    newChoice.addEventListener("click", ()=>{
+      handleAnswerSelected(newChoice);
     });
-    choicesContainer.appendChild(clone);
+
+    choicesContainer.appendChild(newChoice);
   }
 
   function clearQuestionAnswers() {
@@ -75,10 +80,15 @@
       choicesContainer.removeChild(choicesContainer.firstChild);
     }
   }
+  function resetQuestionAnswers() {
+    Array.from(choicesContainer.children).forEach(child=>{
+      child.setAttribute('aria-selected', false);
+    })
+  }
 
   function loadQuestion(question) {
     document.getElementById("quizz-question-text").innerText = question.text;
-    console.log(question.choices);
+
     clearQuestionAnswers();
     question.choices.forEach(choice => {
       createElChoice(choice);
