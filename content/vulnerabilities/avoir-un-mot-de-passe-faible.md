@@ -1,12 +1,12 @@
 ---
 visibleInCms: true
-title: Avoir une mot de passe faible
+title: Avoir une mot de passe faible.
 description: blablablablablabalbalbalbal
 categories:
-- Mots de passe
-- Déplacements
-goodPractices: 
-- Avoir un mot de passe fort
+  - Mots de passe
+  - Déplacements
 risks:
-- Se faire voler ses données
+  - Se faire voler ses données
+goodPractices:
+  - Avoir un mot de passe fort
 ---
