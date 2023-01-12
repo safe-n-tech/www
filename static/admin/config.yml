@@ -20,10 +20,10 @@ collections:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title }
 
-  - name: risks
+  - name: vulnerabilities
     label: Risques
     label_singular: Risque
-    folder: content/risks
+    folder: content/vulnerabilities
     create: true
     editor: { preview: false }
     filter: { field: "visibleInCms", value: true }
