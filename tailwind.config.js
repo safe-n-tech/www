@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme")
+
 module.exports = {
   content: [
     "./themes/**/layouts/**/*.html",
@@ -10,21 +12,16 @@ module.exports = {
       colors: {
         primary: '#2FA2EE',
         secondary: '#0155CE',
+        orange: '#FEAA31',
         dark_gray: '#4A4A52',
         gray:'#AAAAAA',
         light_gray:'#F9F9F9',
         white:'#FFFFFF',
+
       },
     },
-    colors: {
-      primary: '#2FA2EE',
-      secondary: '#0155CE',
-      dark_gray: '#4A4A52',
-      gray:'#AAAAAA',
-      white:'#FFFFFF',
-    },
     fontFamily: {
-      sans: ['Hind'],
+      sans: ['Marianne', ...defaultTheme.fontFamily.sans],
       display: ['Montserrat']
     },
     container: {
