@@ -32,11 +32,12 @@ collections:
       - { label: Titre, name: title }
       - {
           label: Catégories,
-          name: title,
+          name: categories,
           widget: relation,
           collection: categories,
           search_fields: ["title"],
-          value_field: "title"
+          value_field: "title",
+          multiple: true
       }
       - {
         label: Bonnes pratiques,
@@ -44,7 +45,8 @@ collections:
         widget: relation,
         collection: good-practices,
         search_fields: [ "title" ],
-        value_field: "title"
+        value_field: "title",
+        multiple: true
       }
 
   - name: good-practices
@@ -59,9 +61,10 @@ collections:
       - { label: Titre, name: title }
       - {
         label: Catégories,
-        name: title,
+        name: categories,
         widget: relation,
         collection: categories,
         search_fields: [ "title" ],
-        value_field: "title"
+        value_field: "title",
+        multiple: true
       }
