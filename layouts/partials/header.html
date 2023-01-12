@@ -11,11 +11,11 @@
         </div>
     </div>
 
-    <div id="links" class="flex flex-col absolute z-[-1] w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
+    <div id="links" class="flex flex-col absolute z-50 w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
         {{ range .Site.Menus.header }}
         <ul class="w-full">
             <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl">
-                <a href="{{ .URL }}" class="flex justify-between">
+                <a href="{{ .URL }}" class="flex justify-between items-baseline">
                     <span class="text-dark_gray">{{ .Name }}</span>
                     <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
                 </a>
@@ -30,9 +30,11 @@
             let burgerBtn = document.getElementById('burger_btn');
             const className = 'top-[-300px]';
             const dropShadow= 'drop-shadow-md';
+            const rounded= 'rounded-b-md';
 
             links.classList.toggle(className);
             burgerBtn.classList.toggle(dropShadow);
+            burgerBtn.classList.toggle(rounded);
         }
     </script>
 
