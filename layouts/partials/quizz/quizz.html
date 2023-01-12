@@ -13,13 +13,30 @@
           {{ end }}
         </div>
         <div>
-          <button onclick="checkAnswer()">Valider</button>
+          <button class="quizz-validation-btn">Valider</button>
         </div>
       </div>
     {{end}}
 </div>
 
 <script>
+  window.addEventListener('DOMContentLoaded', startQuizz);
+
+  async function startQuizz() {
+    const response = await fetch('/questions/index.json');
+    const questions =  (await response.json()).data;
+
+    console.log(questions);
+    initQuizz(questions);
+
+    document.querySelectorAll('.quizz-validation-btn').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        checkAnswer(questions);
+      })
+    });
+  }
+
+
   let wrongsAnswer = [];
 
   let score = 0;
@@ -35,7 +52,7 @@
     eltScore.innerHTML = score;
   }
 
-  function initQuizz(){
+  function initQuizz(questions){
     questions.map(question => {
       if(questionId == question.id){
           document.getElementById(`questionContainer-${questionId}`).style.display = "block";
@@ -43,7 +60,26 @@
     })
   }
 
-  function changeQuestion(){
+
+  function checkAnswer(questions){
+    const answer = document.querySelector("input:checked");
+    if (answer == null) {
+      alert("veuillez selectionner une réponse !!")
+      return;
+    }
+    else{
+      answer.checked = false;
+      if(answer.value == 0 && ! wrongsAnswer.includes(questionId)){
+        wrongsAnswer.push(questionId);
+      }
+      else{
+        score += +answer.value;
+      }
+      changeQuestion(questions);
+    }
+  }
+
+  function changeQuestion(questions){
     questionId+= 1;
     step++;
     for (let i = 0; i < questions.length; i++) {
@@ -58,26 +94,6 @@
       showResult();
     }
   }
-  initQuizz();
-
-  function checkAnswer(){
-    const answer = document.querySelector("input:checked");
-    if (answer == null) {
-      alert("veuillez selectionner une réponse !!")
-      return;
-    }
-    else{
-      answer.checked = false;
-      if(answer.value == 0 && ! wrongsAnswer.includes(questionId)){
-        wrongsAnswer.push(questionId);
-      }
-      else{
-        score += +answer.value;
-      }
-      changeQuestion();
-    }
-  }
-
 
 
 
