@@ -1,7 +1,7 @@
 <header class="w-full h-24 text-white bg-primary">
     <a href="/">Accueil</a>
     {{ range .Site.Menus.header }}
-        <a href="{{ .URL }}">{{ .Title }}</a>
+        <a href="{{ .URL }}">{{ .Name }}</a>
     {{ end }}
     <div class="flex cursor-pointer">
         <h3>Menu</h3>
