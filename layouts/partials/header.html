@@ -1,14 +1,41 @@
-<header class="w-full h-24 text-white bg-primary">
-    <a href="/">Accueil</a>
-    {{ range .Site.Menus.header }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
-    {{ end }}
-    <div class="flex cursor-pointer">
-        <h3>Menu</h3>
-        <div class="ml-2">
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
+<header class="fixed w-full h-auto">
+    <div id="burger_btn" class="p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
+
+        <a href="/" class="text-primary z-50">Cyber<span class="text-secondary">Cure</span></a>
+    
+        <div class="flex cursor-pointer items-center" onclick="toggleLinks()" name="menu">
+            <a class="text-dark_gray">Menu</a>
+            <div class="ml-2">
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+            </div>
         </div>
     </div>
+
+    <div id="links" class="flex flex-col absolute z-[-1] w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
+        {{ range .Site.Menus.header }}
+        <ul class="w-full">
+            <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl">
+                <a href="{{ .URL }}" class="flex justify-between">
+                    <span class="text-dark_gray">{{ .Name }}</span>
+                    <span></span><img src="/svgs/go_to_page.svg" alt="Arrow icon" class=""></span>
+                </a>
+            </li>
+        </ul>
+        {{ end }}
+    </div>
+
+    <script>
+        function toggleLinks(e){
+            let links = document.getElementById('links');
+            let burgerBtn = document.getElementById('burger_btn');
+            const className = 'top-[-300px]';
+            const dropShadow= 'drop-shadow-md';
+
+            links.classList.toggle(className);
+            burgerBtn.classList.toggle(dropShadow);
+        }
+    </script>
+
 </header>
