@@ -1,0 +1,70 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+media_folder: 'assets/media'
+public_folder: '/media'
+locale: fr
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: categories
+    label: Catégories
+    label_singular: Catégorie
+    folder: content/categories
+    create: true
+    editor: { preview: false }
+    filter: {field: "visibleInCms", value: true}
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
+      - { label: Titre, name: title }
+
+  - name: risks
+    label: Risques
+    label_singular: Risque
+    folder: content/risks
+    create: true
+    editor: { preview: false }
+    filter: { field: "visibleInCms", value: true }
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: Titre, name: title }
+      - {
+          label: Catégories,
+          name: categories,
+          widget: relation,
+          collection: categories,
+          search_fields: ["title"],
+          value_field: "title",
+          multiple: true
+      }
+      - {
+        label: Bonnes pratiques,
+        name: goodPractices,
+        widget: relation,
+        collection: good-practices,
+        search_fields: [ "title" ],
+        value_field: "title",
+        multiple: true
+      }
+
+  - name: good-practices
+    label: Bonnes pratiques
+    label_singular: Bonne pratique
+    folder: content/good-practices
+    create: true
+    editor: { preview: false }
+    filter: { field: "visibleInCms", value: true }
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: Titre, name: title }
+      - {
+        label: Catégories,
+        name: categories,
+        widget: relation,
+        collection: categories,
+        search_fields: [ "title" ],
+        value_field: "title",
+        multiple: true
+      }

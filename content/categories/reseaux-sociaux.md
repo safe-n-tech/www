@@ -1,4 +1,4 @@
 ---
 visibleInCms: true
-title: Paiement en ligne
+title: "Réseaux sociaux"
 ---

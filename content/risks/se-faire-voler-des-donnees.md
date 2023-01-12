@@ -1,4 +1,5 @@
 ---
+visibleInCms: true
 title: Se faire voler des données
 categories:
 - Mots de passe
