@@ -6,5 +6,5 @@ categories: Wifi et bluetooth
 risks:
   - Partage non consentie d’image à caractère obscène/sexuel non désiré.
 goodPractices:
-  - "Activer l’AirDrop/Bluetooth uniquement lorsque l’on veut l’utiliser. "
+  - "Activer l’AirDrop/Bluetooth uniquement lorsque l’on veut l’utiliser."
 ---
