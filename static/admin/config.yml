@@ -68,3 +68,4 @@ collections:
         value_field: "title",
         multiple: true
       }
+      - { label: 'Contenu', name: 'body', widget: 'markdown' }
