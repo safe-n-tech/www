@@ -37,3 +37,8 @@ menu:
       name: Thématiques
       title: thématiques
       url: /categories
+
+outputs:
+  section:
+    - html
+    - json
