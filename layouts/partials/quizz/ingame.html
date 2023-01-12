@@ -26,6 +26,8 @@
 <script>
   let questionIndex = 0;
   let questions = [];
+  let results = null;
+
   const choicesContainer = document.getElementById("quizz-choices");
   const choiceTemplate = document.getElementById("template-choices-item");
 
@@ -39,9 +41,37 @@
     loadActualQuestion();
   }
 
-  function showResult(){
+  function showResults(){
+    calculateResults();
+
     document.querySelector("#quizz-ingame").classList.add("hidden");
-    document.querySelector("#result").classList.remove("hidden");
+    document.querySelector("#results").classList.remove("hidden");
+  }
+
+  function calculateResults() {
+    questions.forEach(question=>{
+      question.isCorrect = false;
+
+      question.choices.forEach(choice=>{
+        if(choice.points<=0) {
+          return
+        }
+
+        if(choice.text === question.userAnswer) {
+          question.isCorrect = true
+        }
+      })
+    })
+
+    const numberCorrect = questions.filter(question=>question.isCorrect).length,
+            percentageCorrect = numberCorrect * 100 / (questions.length);
+
+    results = {
+      numberCorrect,
+      percentageCorrect
+    }
+
+    console.log(results)
   }
 
   function nextQuestion() {
@@ -52,7 +82,7 @@
     questionIndex++;
 
     if (questionIndex === questions.length){
-      showResult();
+      showResults();
       return;
     }
 
@@ -72,7 +102,6 @@
     const newChoice = choiceTemplate.content.firstElementChild.cloneNode(true);
 
     newChoice.dataset.text = choice.text;
-    newChoice.dataset.score = choice.score;
     newChoice.querySelector(".choice-text").innerText = choice.text;
     newChoice.addEventListener("click", ()=>{
       handleAnswerSelected(newChoice);
