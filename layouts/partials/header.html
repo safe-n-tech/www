@@ -1,14 +1,14 @@
-<header class="w-full h-24 text-white bg-primary">
-    <a href="/">Accueil</a>
+<header class="w-full h-24 text-white bg-white flex ">
+    <a href="/" class="text-primary">Cyber<span class="text-secondary">Cure</span></a>
     {{ range .Site.Menus.header }}
-        <a href="{{ .URL }}">{{ .Name }}</a>
+        <a href="{{ .URL }}" class="text-dark_gray">{{ .Name }}</a>
     {{ end }}
     <div class="flex cursor-pointer">
-        <h3>Menu</h3>
+        <span class="text-dark_gray">Menu</span>
         <div class="ml-2">
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_grey rounded m-1"></span>
+            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
+            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
+            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
         </div>
     </div>
 </header>
