@@ -1,6 +1,7 @@
 ---
 visibleInCms: true
 title: Avoir une mot de passe faible
+description: blablablablablabalbalbalbal
 categories:
 - Mots de passe
 - Déplacements
