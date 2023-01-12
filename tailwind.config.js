@@ -12,7 +12,7 @@ module.exports = {
       primary: '#2FA2EE',
       secondary: '#0155CE',
       dark_grey: '#4A4A52',
-      grey:'#AAAAAA',
+      gray:'#AAAAAA',
       white:'#FFFFFF',
     },
     fontFamily: {
