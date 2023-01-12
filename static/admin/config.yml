@@ -31,19 +31,17 @@ collections:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
       - {
-          label: Catégories,
+          label: Catégorie,
           name: categories,
           widget: relation,
           collection: categories,
           search_fields: ["title"],
           value_field: "title",
-          multiple: true
       }
       - {
         label: Risques,
         name: risks,
         widget: list,
-        field: {label: Risque, name: risk},
         required: false
       }
       - {
@@ -78,13 +76,12 @@ collections:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
       - {
-        label: Catégories,
+        label: Catégorie,
         name: categories,
         widget: relation,
         collection: categories,
         search_fields: [ "title" ],
         value_field: "title",
-        multiple: true
       }
       - {
         label: Définitions,
