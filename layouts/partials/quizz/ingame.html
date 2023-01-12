@@ -46,6 +46,9 @@
 
     document.querySelector("#quizz-ingame").classList.add("hidden");
     document.querySelector("#results").classList.remove("hidden");
+
+    document.getElementById("result-score").innerText = `${results.score}%`;
+    document.getElementById("result-sentence").innerText = results.sentence
   }
 
   function calculateResults() {
@@ -64,11 +67,13 @@
     })
 
     const numberCorrect = questions.filter(question=>question.isCorrect).length,
-            percentageCorrect = numberCorrect * 100 / (questions.length);
+            score = numberCorrect * 100 / (questions.length);
 
     results = {
       numberCorrect,
-      percentageCorrect
+      score,
+      sentence: score > 80 ? 'Vous êtes parfait (ou presque)' : 'Vous êtes vulnérable',
+      image: ''
     }
 
     console.log(results)

@@ -1,7 +1,30 @@
-<div class="container hidden mt-20" id="results">
-  <h3>Ceci est le résultat</h3>
-  <span id="score"></span>
-</div>
+<section id="results" class="hidden min-h-screen pb-20 flex flex-col gap-y-8">
+  <section class="container pt-20">
+    <h1 class="text-h1 text-black text-center">Fini !</h1>
+  </section>
+
+  <div class="container">
+    <section class="relative p-4 gap-2 rounded-2xl justify-center items-stretch shadow-2xl text-black flex flex-row">
+      <article class="w-full flex flex-col items-center gap-2">
+        <span>Score</span>
+        <span id="result-score" class="text-h2"></span>
+      </article>
+
+      <div class="my-2 w-1 bg-dark_gray"></div>
+
+      <article class="w-full flex flex-col items-center gap-2">
+        <img id="result-image">
+        <span id="result-sentence" class="text-h2"></span>
+      </article>
+    </section>
+  </div>
+
+  <section class="container">
+    <h2></h2>
+  </section>
+
+
+</section>
 
 
 <script>
