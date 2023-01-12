@@ -1,9 +1,9 @@
-<header class="p-4 w-full rounded-b-md h-auto text-white bg-white flex justify-between">
+<header class="p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
 
     <div>
         <a href="/" class="text-primary">Cyber<span class="text-secondary">Cure</span></a>
         {{ range .Site.Menus.header }}
-            <a href="{{ .URL }}" class="text-dark_gray">{{ .Title }}</a>
+            <a href="{{ .URL }}" class="text-dark_gray">{{ .Name }}</a>
         {{ end }}
     </div>
 
