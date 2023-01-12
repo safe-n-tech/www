@@ -1,5 +1,5 @@
 ---
 visibleInCms: true
-title: Droit Résiduel à La Vie Privée
+title: Droit résiduel à la vie privée
 icon: droit-residuel-a-la-vie-privee.png
 ---
