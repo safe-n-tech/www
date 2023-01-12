@@ -6,11 +6,22 @@ module.exports = {
     "./content/**/*.html"
   ],
   theme: {
-    extends: {
+    extend: {
+      colors: {
+        primary: '#2FA2EE',
+        secondary: '#0155CE',
+        dark_gray: '#4A4A52',
+        gray:'#AAAAAA',
+        light_gray:'#F9F9F9',
+        white:'#FFFFFF',
+      },
     },
     colors: {
-      primary: 'black',
-      secondary: 'white',
+      primary: '#2FA2EE',
+      secondary: '#0155CE',
+      dark_gray: '#4A4A52',
+      gray:'#AAAAAA',
+      white:'#FFFFFF',
     },
     fontFamily: {
       sans: ['Hind'],

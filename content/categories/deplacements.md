@@ -1,3 +1,4 @@
 ---
+visibleInCms: true
 title: Déplacements
 ---

@@ -6,16 +6,19 @@
 @tailwind variants;
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 @layer components {
     .grid-body {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
+    .grid-good-practice {
+        @apply grid grid-cols-2 gap-5
+    }
 
     .text-h1 {
-        @apply text-5xl md:text-7xl font-display font-extrabold uppercase;
+        @apply text-3xl md:text-7xl font-display font-extrabold;
     }
 
     .text-h2 {

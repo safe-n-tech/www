@@ -22,3 +22,18 @@ params:
 
 taxonomies:
   # disable all taxonomies
+
+menu:
+  header:
+    - identifier: good-practices
+      name: Bonnes pratiques
+      title: bonnes pratiques
+      url: /good-practices
+    - identifier: quizz
+      name: Quiz
+      title: quiz
+      url: /quizz
+    - identifier: categories
+      name: Thématiques
+      title: thématiques
+      url: /categories
