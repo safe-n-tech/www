@@ -1,17 +1,23 @@
-<section id="quizz-ingame" class="flex flex-col gap-y-8">
-  <section class="relative">
-    <div class="container flex flex-col items-center justify-center">
-      <h2 id="quizz-progression-text" class="my-8 text-h1">N°1 qsdqsd</h2>
-      <div id="quizz-progression-bar"></div>
+<section id="quizz-ingame" class="h-screen pb-20 flex flex-col gap-y-8">
+  <section class="relative pt-8 pb-36 -mb-20">
+    <img class="w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt=" ">
+    <div class="container text-white flex flex-col gap-5 items-center justify-center">
+      <h2 class="text-h1">Évaluez-vous</h2>
+      <div id="quizz-progression-bar-outer" class="overflow-hidden rounded-full bg-white w-full h-2">
+        <div id="quizz-progression-bar-inner" class="bg-primary rounded-full h-full left-0"></div>
+      </div>
       <p id="quizz-question-text"></p>
     </div>
   </section>
-  <section id="quizz-choices" class="container grid grid-cols-4 gap-8"></section>
-  <section class="container grid grid-cols-4 gap-8">
-    <button disabled class="col-start-2 col-end-4 bg-secondary text-white disabled:bg-gray rounded-2xl p-4" id="quizz-go-next-question-btn">Suivant</button>
+
+  <section id="quizz-choices" class="my-auto container grid grid-cols-4 gap-x-8 gap-y-3"></section>
+
+  <section class="mt-auto container grid grid-cols-4 gap-8">
+    <button disabled class="col-start-2 col-end-4 bg-secondary text-white disabled:bg-gray rounded-2xl pt-2 pb-3 px-4" id="quizz-go-next-question-btn">Suivant</button>
   </section>
+
   <template id="template-choices-item">
-    <button aria-selected="false" class="col-span-full border-secondary border-2 rounded-2xl p-4 aria-selected:bg-secondary aria-selected:text-white">
+    <button aria-selected="false" class="col-span-full text-left border-secondary border-2 rounded-2xl py-2 px-4 aria-selected:bg-secondary aria-selected:text-white">
       <span class="choice-text"></span>
     </button>
   </template>
@@ -87,6 +93,7 @@
   }
 
   function loadQuestion(question) {
+    document.getElementById("quizz-progression-bar-inner").style.width = `${(questionIndex+1) * 100 / (questions.length+1)}%`;
     document.getElementById("quizz-question-text").innerText = question.text;
 
     clearQuestionAnswers();
