@@ -14,7 +14,7 @@ a {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
     .grid-good-practice {
-        @apply grid grid-cols-2 gap-5
+        @apply grid grid-cols-2 gap-5 lg:grid-cols-4
     }
 
     .text-h1 {
@@ -73,7 +73,7 @@ a {
       @apply block
     }
     .switch {
-      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 mx-auto my-5;
+      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 lg:w-1/2 mx-auto my-5;
     }
     .switch-btn.active {
       @apply border-secondary border-solid bg-secondary border-0 text-white w-5/6;
