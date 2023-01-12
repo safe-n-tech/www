@@ -1,13 +1,4 @@
 {{ define "main" }}
-
-<div class="container">
-    {{ range .Pages }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
-</div>
-
-<script>
-    const questions = JSON.parse("{{ $.Site.Data.questions | jsonify }}");
-</script>
-
+  {{ partial "quizz/quizz" . }}
+  {{ partial "quizz/result" . }}
 {{ end }}

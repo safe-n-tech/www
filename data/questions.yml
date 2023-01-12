@@ -6,7 +6,7 @@
   choices:
     - text: Oui
       score: 0
-    - test: Non
+    - text: Non
       score: 100
   id: 0
 - text: Avez vous des données personnelles(photos, compte google) sur votre ordinateur/téléphone de travail ?
