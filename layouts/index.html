@@ -1,9 +1,37 @@
 {{ define "main" }}
 
+<img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
 <div class="container">
-    {{ range .Pages }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
-    {{ end }}
+    <div class="flex w-full justify-center my-8">
+        <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
+    </div>
+    <h1 class="text-white my-8">Et si nous profitions du numérique en toute <span class="text-primary">sécurité</span> ?</h1>
+    <div class="flex justify-center content-center w-full space-x-8 my-12">
+        <div class="flex justify-center content-center w-52 py-2 bg-primary text-white rounded-md whitespace-nowrap">
+            <a href="" class="whitespace-nowrap">Lancer le quiz <img src="/svgs/arrow.svg" alt="Flèche"></a>
+        </div>
+        <div class="flex justify-center content-center w-52 py-2 bg-secondary text-white rounded-md whitespace-nowrap">
+            <a href="" class="whitespace-nowrap">Je me renseigne</a>
+        </div>
+    </div>
+    <div class="flex w-full justify-center">
+        <img src="/svgs/icon_home.svg" alt="Icône page Accueil">
+    </div>
 </div>
+<div class="mx-6">
+    <h2 class="text-dark_gray mt-32">Pour cela, prenons conscience des dangers</h2>
+    <div class="h-1.5 w-3/6 bg-gradient-to-r from-blue-300 to-white"></div>
+    <p class="text-dark_gray mt-12">Perte de données personnelles, falsification d’identité, piratage de comptes bancaires sont autant d’exemples d’incidents qui peut peuvent naître de notre naïveté et méconnaissance. <br><br>
 
+        C’est dans cette optique que nous avons créée « Safe N Tech » afin de vous sensibiliser à toutes les bonnes pratiques faciles à adopter, et pouvant sensiblement vous éloigner des risques.<br><br>
+        
+        Testez vos pratiques grâce au quiz que nous avons développé. Le résultat mettra en lumière les points sur lesquels vous pouvez vous améliorer, et toute la documentation ludique et facilement compréhensible vous aidera à le faire.<br><br>
+        
+        La cybersécurité est devenue l’affaire de tous, le plus difficile est de le conscientiser. Cet outil sera votre meilleur compagnon de route.</p>
+</div>
+<div class="flex justify-center content-center mt-16">
+    <div class="flex justify-center content-center w-56 py-2 bg-secondary text-white rounded-lg whitespace-nowrap">
+        <a href="" class="whitespace-nowrap">La liste des bonnes pratiques</a>
+    </div>
+</div>
 {{ end }}
