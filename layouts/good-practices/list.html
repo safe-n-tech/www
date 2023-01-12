@@ -1,8 +1,18 @@
 {{ define "main" }}
-
+<section class="relative w-full pt-5 -mt-5">
+    <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+    <div class="container">
+        <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10">
+            <h1 class="text-h1 text-white pb-16 pt-14 text-center">Les bonnes pratiques</h1>
+        </div>
+    </div>
+</section>
 <div class="container">
     {{ range .Pages }}
-    <a href="{{ .Permalink }}">{{ .Title }}</a>
+    <a href="{{ .Permalink }}">
+        <p>{{ .Title }}</p>
+        <img src="/svgs/arrow.svg" fill/>
+    </a>
     {{ end }}
 </div>
 
