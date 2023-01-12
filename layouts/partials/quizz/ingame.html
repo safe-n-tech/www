@@ -7,10 +7,10 @@
     </div>
   </section>
     <section id="quizz-choices" class="grid grid-cols-4 gap-8">
-      <button ></button>
+
     </section>
     <section class="grid grid-cols-4 gap-8">
-        
+      <button id="quizz-go-next-question-btn">Suivant</button>
     </section>
 
   <template id="template-choices-item">
@@ -22,32 +22,66 @@
 
 <script>
   let questionIndex = 0;
-  const questionsEls = document.getElementById('quizz-questions');
+  let questions = [];
+  const choicesContainer = document.getElementById("quizz-choices");
   startQuizz();
 
   async function startQuizz() {
     const response = await fetch('/questions/index.json');
-    const questions =  (await response.json()).data;
+    questions =  (await response.json()).data;
 
+    document.getElementById("quizz-go-next-question-btn").addEventListener("click", nextQuestion);
     loadQuestion(questions[questionIndex]);
+  }
 
-    document.querySelectorAll('.quizz-validation-btn').forEach(el=>{
-      el.addEventListener('click', ()=>{
-      })
+  function showResult(){
+    document.querySelector("#quizz-ingame").classList.add("hidden");
+    document.querySelector("#result").classList.remove("hidden");
+  }
+
+  function nextQuestion() {
+    if (questions.userAnswer === null) {
+      //Dire à l'user qu'il faut choisir
+      return;
+    }
+
+    if (questionIndex == questions.length-1 ){
+      showResult();
+      return;
+    }
+    questionIndex++;
+    loadQuestion(questions[questionIndex]);
+  }
+
+  function handleAnswerSelected(questionSelected){
+    questions[questionIndex].userAnswer = questionSelected.dataset.text;
+    console.log(questions);
+  }
+
+  function createElChoice(choice) {
+    const template = document.getElementById("template-choices-item");
+    const clone = template.content.firstElementChild.cloneNode(true);
+    clone.dataset.text = choice.text;
+    clone.dataset.score = choice.score;
+    clone.querySelector(".choice-text").innerText = choice.text;
+    clone.addEventListener("click", ()=>{
+      handleAnswerSelected(clone);
     });
+    choicesContainer.appendChild(clone);
+  }
+
+  function clearQuestionAnswers() {
+    while (choicesContainer.firstChild) {
+      choicesContainer.removeChild(choicesContainer.firstChild);
+    }
   }
 
   function loadQuestion(question) {
-    document.getElementById("quizz-question-text").innerText = question.text
-    
-  }
-
-  function displayQuestionFromIndex(index) {
-    hideAllQuestions();
-    Array.from(questionsEls.children)[index].classList.remove('hidden');
-  }
-
-  function hideAllQuestions() {
-    Array.from(questionsEls.children).forEach(el=>el.classList.add('hidden'));
+    document.getElementById("quizz-question-text").innerText = question.text;
+    console.log(question.choices);
+    clearQuestionAnswers();
+    question.choices.forEach(choice => {
+      createElChoice(choice);
+    });
   }
 </script>
