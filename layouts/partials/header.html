@@ -1,19 +1,38 @@
-<header class="p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
+<header>
+    <div id="burger_btn" class="p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
 
-    <div>
-        <a href="/" class="text-primary">Cyber<span class="text-secondary">Cure</span></a>
+        <a href="/" class="text-primary z-50">Cyber<span class="text-secondary">Cure</span></a>
+    
+        <div class="flex cursor-pointer" onclick="toggleLinks()" name="menu">
+            <a class="text-dark_gray">Menu</a>
+            <div class="ml-2">
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+                <span class="block w-4 h-0.5 bg-primary rounded m-1"></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="links" class="flex flex-col absolute z-[-1] w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px] transition-all ease-in duration-500">
         {{ range .Site.Menus.header }}
-            <a href="{{ .URL }}" class="text-dark_gray">{{ .Name }}</a>
+        <ul class="w-full">
+            <li class="bg-light_gray w-auto min-w-100 p-2 rounded-xl"><a href="{{ .URL }}" class="text-dark_gray">{{ .Name }}</a></li>
+        </ul>
         {{ end }}
     </div>
 
-    <div class="flex cursor-pointer">
-        <a class="text-dark_gray">Menu</a>
-        <div class="ml-2">
-            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
-            <span class="block w-4 h-0.5 bg-dark_gray rounded m-1"></span>
-        </div>
-    </div>
+    <script>
+        function toggleLinks(e){
+            let links = document.getElementById('links');
+            let burgerBtn = document.getElementById('burger_btn');
+            const className = 'top-[-300px]';
+            const dropShadow= 'drop-shadow-md';
+
+            links.classList.toggle(className);
+            burgerBtn.classList.toggle(dropShadow);
+
+
+        }
+    </script>
 
 </header>
