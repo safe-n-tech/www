@@ -1,5 +1,6 @@
 {
   "text": "{{ .Params.text }}",
+  "userAnswer": null,
   "correction": "{{ .Params.correction }}",
   "image": "{{ .Params.image }}",
   "choices": {{ .Params.choices | jsonify }},

@@ -1,0 +1,53 @@
+<section id="quizz-ingame">
+  <section class="relative">
+    <div class="container">
+      <h2 id="quizz-progression-text" class="my-8 text-h1">N°1 qsdqsd</h2>
+      <div id="quizz-progression-bar"></div>
+      <p id="quizz-question-text"></p>
+    </div>
+  </section>
+    <section id="quizz-choices" class="grid grid-cols-4 gap-8">
+      <button ></button>
+    </section>
+    <section class="grid grid-cols-4 gap-8">
+        
+    </section>
+
+  <template id="template-choices-item">
+    <button class="border-secondary border-2 rounded-2xl p-4">
+      <span class="choice-text"></span>
+    </button>
+  </template>
+</section>
+
+<script>
+  let questionIndex = 0;
+  const questionsEls = document.getElementById('quizz-questions');
+  startQuizz();
+
+  async function startQuizz() {
+    const response = await fetch('/questions/index.json');
+    const questions =  (await response.json()).data;
+
+    loadQuestion(questions[questionIndex]);
+
+    document.querySelectorAll('.quizz-validation-btn').forEach(el=>{
+      el.addEventListener('click', ()=>{
+      })
+    });
+  }
+
+  function loadQuestion(question) {
+    document.getElementById("quizz-question-text").innerText = question.text
+    
+  }
+
+  function displayQuestionFromIndex(index) {
+    hideAllQuestions();
+    Array.from(questionsEls.children)[index].classList.remove('hidden');
+  }
+
+  function hideAllQuestions() {
+    Array.from(questionsEls.children).forEach(el=>el.classList.add('hidden'));
+  }
+</script>
