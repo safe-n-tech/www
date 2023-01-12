@@ -1,12 +1,27 @@
 {{ define "main" }}
-<div class="container">
-    <h1 class="text-h1">Toutes les catégories</h1>
-    <ul>
+<section class="relative w-full pt-5">
+  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container text-center">
+
+    <h1 class="text-h1 text-white pb-16 pt-14 ">{{ .Title}}</h1>
+    <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10"><h4 class="">"Lorem Ipsum dolor sit amet consectur."</h4></div>
+  </div>
+</section>
+
+
+
+<div class="container text-dark_gray mt-10">
+    <h1 class="text-h1">Toutes les thématiques</h1>
+    <nav class=" grid-good-practice mt-10">
         {{ range .Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-        </li>
+        <a href="{{ .Permalink }}" class="no-underline">
+
+          <div class="border-perso-light-gray rounded-md text-center px-6 py-5 h-full grid place-items-center bg-white">
+            <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
+            <p class="text-secondary">{{ .Title }}</p>
+          </div>
+        </a>
         {{ end }}
-    </ul>
+    </nav>
 </div>
 {{ end }}
