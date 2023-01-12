@@ -14,7 +14,7 @@ a {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
     .grid-good-practice {
-        @apply grid grid-cols-2 gap-5
+        @apply grid grid-cols-2 gap-5 lg:grid-cols-4
     }
 
     .text-h1 {
@@ -51,4 +51,34 @@ a {
     .btn:hover {
         @apply text-primary bg-secondary;
     }
-}
+    .border-perso-light-gray {
+      @apply border-solid border-gray border
+    }
+    .hero-bg-img {
+      @apply absolute inset-0 -z-10;
+    }
+    .bottom-nav-section {
+      @apply w-full h-20 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
+    }
+    .button-fill {
+      @apply bg-secondary
+    }
+    .our-button {
+      @apply rounded-md p-3 text-white text-center w-fit
+    }
+    .select-item {
+      @apply hidden
+    }
+    .active {
+      @apply block
+    }
+    .switch {
+      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 lg:w-1/2 mx-auto my-5;
+    }
+    .switch-btn.active {
+      @apply border-secondary border-solid bg-secondary border-0 text-white w-5/6;
+    }
+    .switch-btn {
+      @apply p-2 rounded-md w-1/2 text-center;
+    }
+  }
