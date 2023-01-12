@@ -21,8 +21,8 @@ collections:
       - { label: Titre, name: title }
 
   - name: vulnerabilities
-    label: Risques
-    label_singular: Risque
+    label: Vulnérabilités
+    label_singular: Vulnérabilités
     folder: content/vulnerabilities
     create: true
     editor: { preview: false }
