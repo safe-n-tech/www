@@ -51,8 +51,8 @@ a {
     .btn:hover {
         @apply text-primary bg-secondary;
     }
-    .border-perso-blue {
-      @apply border-solid border-secondary border-2
+    .border-perso-light-gray {
+      @apply border-solid border-gray border
     }
     .hero-bg-img {
       @apply absolute inset-0 -z-10;
@@ -73,10 +73,10 @@ a {
       @apply block
     }
     .switch {
-      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 mx-auto;
+      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 mx-auto my-5;
     }
     .switch-btn.active {
-      @apply border-secondary border-solid bg-secondary border-0 text-white;
+      @apply border-secondary border-solid bg-secondary border-0 text-white w-5/6;
     }
     .switch-btn {
       @apply p-2 rounded-md w-1/2 text-center;
