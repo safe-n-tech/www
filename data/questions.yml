@@ -1,5 +1,18 @@
-- text: Test
+- text: Possédez vous un mot de passe contenant le nom d'un proche ou d'un animal de companie ?
+  goodPractices:
+    - Avoir un mot de passe fort
   choices:
-    - Oui
-    - Non
-    - Ne sais pas
+    - text: Oui
+      isCorrect: false
+    - test: Non
+      isCorrect: true
+- text: Avez vous des données personnelles(photos, compte google) sur votre ordinateur/téléphone de travail ?
+  goodPractices:
+    - Avoir un mot de passe fort
+  choices:
+    - text: Oui
+      isCorrect: false
+    - text: oui, je les ai placées dans un dossier nommé explicitent avec mon nom
+      isCorrect: true
+    - text: uniquement un compte google, ce n'est pas bien grave
+      isCorrect: false
