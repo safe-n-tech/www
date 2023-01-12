@@ -1,0 +1,13 @@
+{
+  "text": "{{ .Params.text }}",
+  "correction": "{{ .Params.correction }}",
+  "image": "{{ .Params.image }}",
+  "choices": "{{ .Params.choices | jsonify }}",
+  {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+  {{ $goodPracticesLinked := where $goodPractices ".Title" "in" .Params.goodPractices }}
+  "goodPractices": [
+    {{- range $goodPracticesLinked -}}
+      {{ .Render "single" }}
+    {{- end -}}
+  ]
+}

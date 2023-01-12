@@ -2,7 +2,8 @@
     {{ range .Pages }}
     <a href="{{ $.Permalink }}">{{ .Title }}</a>
     {{ end }}
-    {{ range $question := index .Site.Data.questions  }}
+
+    {{ range $question := (where .Site.Pages "Section" "question") }}
       <div id="questionContainer-{{ $question.id }}" style="display:none;">
         <span  id="question-{{ $question.id }}">{{ $question.text }}</span>
         <div>
@@ -20,7 +21,6 @@
 
 <script>
   let wrongsAnswer = [];
-  const questions = JSON.parse("{{ $.Site.Data.questions | jsonify }}");
 
   let score = 0;
   let questionId = 0;
