@@ -73,10 +73,17 @@ collections:
     editor: { preview: false }
     filter: { field: "visibleInCms", value: true }
     view_groups:
-      - label: Year
+      - label: Boîte mail
         field: categories
         pattern: Boîte mail
-      - label: Year
+      - label: Déplacements
+        field: categories
+        pattern: Déplacements
+    view_filters:
+      - label: Boîte mail
+        field: categories
+        pattern: Boîte mail
+      - label: Déplacements
         field: categories
         pattern: Déplacements
     fields:
