@@ -6,14 +6,14 @@ module.exports = {
     "./content/**/*.html"
   ],
   theme: {
-    extends: {
-    },
-    colors: {
-      primary: '#2FA2EE',
-      secondary: '#0155CE',
-      dark_grey: '#4A4A52',
-      gray:'#AAAAAA',
-      white:'#FFFFFF',
+    extend: {
+      colors: {
+        primary: '#2FA2EE',
+        secondary: '#0155CE',
+        dark_grey: '#4A4A52',
+        gray:'#AAAAAA',
+        white:'#FFFFFF',
+      },
     },
     fontFamily: {
       sans: ['Hind'],
