@@ -9,8 +9,11 @@ module.exports = {
     extends: {
     },
     colors: {
-      primary: 'black',
-      secondary: 'white',
+      primary: '#2FA2EE',
+      secondary: '#0155CE',
+      dark_grey: '#4A4A52',
+      grey:'#AAAAAA',
+      white:'#FFFFFF',
     },
     fontFamily: {
       sans: ['Hind'],
