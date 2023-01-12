@@ -18,7 +18,7 @@
     - text: Oui
       score: 0
     - text: oui, je les ai placées dans un dossier nommé explicitent avec mon nom
-      score: true
+      score: 100
     - text: uniquement un compte google, ce n'est pas bien grave
       score: 0
   id: 1
