@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: Réalisation de sauvegardes
-categories:
-  - Données confidentielles
+categories: Données confidentielles
 ---
 <!--StartFragment-->
 

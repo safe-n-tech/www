@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: Vérification des documents envoyés
-categories:
-  - Données confidentielles
+categories: Données confidentielles
 ---
 <!--StartFragment-->
 

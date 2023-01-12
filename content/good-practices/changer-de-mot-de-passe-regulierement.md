@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: Changer de mot de passe régulièrement
-categories:
-  - Mots de passe
+categories: Mots de passe
 ---
 Changer de mot de passe régulièrement (3-6 mois, au regard de vos exigences de sécurité) à titre préventif.  
 

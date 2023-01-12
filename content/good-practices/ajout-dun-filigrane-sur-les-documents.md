@@ -1,8 +1,7 @@
 ---
 visibleInCms: true
 title: Ajout d'un filigrane sur les documents
-categories:
-  - Données confidentielles
+categories: Données confidentielles
 ---
 <!--StartFragment-->
 

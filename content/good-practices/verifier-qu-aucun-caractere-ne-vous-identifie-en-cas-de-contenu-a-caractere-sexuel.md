@@ -2,8 +2,7 @@
 visibleInCms: true
 title: Vérifier qu’aucun caractère ne vous identifie en cas de contenu à
   caractère sexuel
-categories:
-  - Données confidentielles
+categories: Données confidentielles
 ---
 <!--StartFragment-->
 
