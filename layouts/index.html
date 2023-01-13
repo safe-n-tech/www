@@ -1,22 +1,24 @@
 {{ define "main" }}
 
-<img class="w-full h-full hero-bg-img object-cover" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-    <div class="container w-full">
-        <div class="flex w-full justify-center my-8">
-            <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
-        </div>
-        <h2 class="text-white my-8 text-h1 text-center mx-8">Et si nous profitions du numérique en toute <span class="text-tertiary">sécurité</span> ?</h2>
-        <div class="flex justify-center content-center w-full space-x-5 my-12">
-            <a href="/quizz" class="flex justify-center content-center w-40 py-2 bg-primary text-white rounded-lg whitespace-nowrap">
-                <p class="whitespace-nowrap text-label pr-3">Lancer le quiz</p>
-                <img src="/svgs/arrow.svg" alt="Flèche" class="w-4">
-            </a>
-            <a href="/categories" class="flex justify-center content-center w-40 py-2 border-2 border-primary text-white rounded-lg whitespace-nowrap">
-                <p class="whitespace-nowrap text-label">Je me renseigne</p>
-            </a>
+<img class="md:hidden w-full h-full hero-bg-img object-cover md:absolute" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+    <div class="w-full md:flex md:perso-background md:px-32">
+        <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+            <div class="flex w-full justify-center my-8 md:justify-start">
+                <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
+            </div>
+            <h1 class="md:text-left text-white text-2xl md:text-5xl my-8 text-h1 text-center mx-8 md:mx-0">Et si nous profitions du numérique en toute <span class="text-tertiary">sécurité</span> ?</h1>
+            <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+                <a href="/quizz" class="flex justify-center content-center w-40 py-2 bg-primary text-white rounded-lg whitespace-nowrap">
+                    <p class="whitespace-nowrap text-label pr-3">Lancer le quiz</p>
+                    <img src="/svgs/arrow.svg" alt="Flèche" class="w-4">
+                </a>
+                <a href="/categories" class="flex justify-center content-center w-40 py-2 border-2 border-primary text-white rounded-lg whitespace-nowrap">
+                    <p class="whitespace-nowrap text-label">Je me renseigne</p>
+                </a>
+            </div>
         </div>
         <div class="flex w-full justify-center realtive">
-            <img src="/svgs/icon_home.svg" alt="Icône page Accueil">
+            <img class="md:w-5/6 md:h-auto" src="/svgs/icon_home.svg" alt="Icône page Accueil">
         </div>
     </div>
     <div class="px-6 w-full md:bg-white py-16 md:flex md:flex-col md:items-center">
