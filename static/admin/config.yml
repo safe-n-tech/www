@@ -166,7 +166,7 @@ collections:
         multiple: true,
         required: false
       }
-      - { label: Contenu, name: content,  required: false, widget: markdown }
+      - { label: Contenu, name: body,  required: false, widget: markdown }
 
 
   - name: definitions
