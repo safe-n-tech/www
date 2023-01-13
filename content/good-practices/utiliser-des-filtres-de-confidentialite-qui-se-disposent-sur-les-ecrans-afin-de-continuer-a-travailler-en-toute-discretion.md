@@ -5,6 +5,6 @@ title: Utiliser des filtres de confidentialité qui se disposent sur les écrans
 categories: Déplacements
 risk: S’exposer aux regards curieux voire à la récupération de données dites
   sensibles et/ou confidentielles.
-vulnerability: Travailler sur des documents numériques sensibles et/ou
+vulnerability: ravailler sur des documents numériques sensibles et/ou
   confidentiels, dans un lieu public.
 ---
