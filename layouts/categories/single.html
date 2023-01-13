@@ -1,9 +1,9 @@
 {{ define "main" }}
 <section class="relative w-full pt-5 -mt-5">
   <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-  <div class="container">
-
-    <h1 class="text-h1 text-white pb-16 pt-14 ">{{ .Title}}</h1>
+  <div class="container pt-4 pb-16 text-white">
+    {{ partial "breadcrumb" (dict "page" . "links" (slice "/categories")) }}
+    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
   </div>
 </section>
 <!-- <div class="bottom-nav-section"><a href=""><div class="our-button button-fill mx-auto">Thématiques suivantes</div></a></div> -->
