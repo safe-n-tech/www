@@ -2,6 +2,15 @@
 visibleInCms: true
 title: Réaliser des sauvegardes régulièrement
 categories: Données confidentielles
+definitions:
+  - "Filigrane "
+  - "Cloud "
+risk: "S’exposer à une suppression ou une perte définitive de documents
+  administratifs qu’il est obligatoire de conserver pendant plusieurs années
+  (Ex. : assurance, banque, famille, impôts, logement, travail, véhicule, santé,
+  etc.)."
+vulnerability: "Regrouper et conserver tous les documents administratifs sur un
+  même appareil (Ex. : bulletins de salaire, etc.)."
 ---
 <!--StartFragment-->
 
