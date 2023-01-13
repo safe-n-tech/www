@@ -1,0 +1,11 @@
+<ul id="breadcrumbs" class="flex flex-row text-label gap-2">
+    <li><a href="/" class="underline">Accueil</a></li>
+    {{ range .links }}
+        {{ with $.page.GetPage . }}
+            <span>/</span>
+            <li><a href="{{ .Permalink }}" class="underline">{{ .Title }}</a></li>
+        {{ end }}
+    {{ end }}
+    <span>/</span>
+    <li>{{ .page.Title}}</li>
+</ul>
