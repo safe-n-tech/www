@@ -12,11 +12,6 @@ a {
 
 @layer components {
 
-    .perso-background-home{
-      background: linear-gradient(154.09deg, #2FA2EE 0%, #1B0A40 79.26%);
-      clip-path: polygon(0 0, 100% 0, 100% 30%, 35% 100%, 0 64%);
-      border-radius: 10%;
-    }
     .perso-background{
       background: linear-gradient(154.09deg, #2FA2EE 0%, #1B0A40 79.26%);
     }
