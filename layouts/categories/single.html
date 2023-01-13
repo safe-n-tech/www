@@ -9,7 +9,9 @@
 </section>
 
 <section class="mx-auto w-full max-w-xl mb-5">
+
   <iframe class="mt-10 aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 </section>
 
 <section class="container text-dark_gray mt-10">
@@ -25,21 +27,21 @@
     {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "eq" .Title }}
 
     {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-    <h3 class="text-h4 text-black">Les vulnérabilités</h3>
+    <h3 class="text-h2 text-black">Les vulnérabilités</h3>
 
     <nav class="grid-good-practice mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {{ range $vulnerabilitiesLinked }}
-        <a href="{{ .Permalink }}" class="no-underline">
+      {{ range $vulnerabilitiesLinked }}
+      <a href="{{ .Permalink }}" class="no-underline">
 
-          <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
-            <p class="text-orange">{{ .Title }}</p>
-            <div class="flex align-middle justify-between w-full mt-5">
-              <p class="text-secondary">Risques</p>
-              <img src="/svgs/icon_forward.svg" alt="go to {{ .Title }}" class="w-5">
-            </div>
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
+          <p class="text-orange">{{ .Title }}</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label">En savoir plus sur le risque</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
           </div>
-        </a>
-        {{ end }}
+        </div>
+      </a>
+      {{ end }}
 
     </nav>
     {{ end }}
@@ -50,22 +52,25 @@
     {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "eq" .Title }}
 
     {{ if (gt (len $goodPracticesLinked) 0) }}
-    <h3 class="text-h4 text-black">Les bonnes pratiques</h3>
+    <h3 class="text-h2 text-black">Les bonnes pratiques</h3>
 
     <nav class="grid-good-practice mt-5 grid-cols-1">
-        {{ range $goodPracticesLinked}}
-        <a href="{{ .Permalink }}" class="no-underline">
+      {{ range $goodPracticesLinked}}
+      <a href="{{ .Permalink }}" class="no-underline">
 
-          <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-            <p class="text-secondary">"{{ .Title }}"</p>
-
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full grid place-items-center bg-white">
+          <p class="text-secondary">"{{ .Title }}"</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label">En savoir plus sur la bonne pratique</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
           </div>
-        </a>
-        {{ end }}
+        </div>
+      </a>
+      {{ end }}
 
     </nav>
     {{ end }}
-</section>
+  </section>
 
 </section>
 
