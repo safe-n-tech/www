@@ -20,6 +20,11 @@ module.exports = {
         white: '#FFFFFF',
         light_white : '#F5F7FA',
       },
+      data: {
+        'wrongSelected': 'wrongSelected="true"', // data-wrongSelected:bg-white => element[data-wrongSelected]
+        selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
+        selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
+      },
     },
     fontFamily: {
       sans: ['Marianne', ...defaultTheme.fontFamily.sans],
