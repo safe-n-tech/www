@@ -9,14 +9,11 @@
   </div>
 </section>
 
-<section class="mx-auto w-full max-w-xl mb-5">
+<section class="mt-10 mx-auto w-full max-w-xl mb-5">
   {{ if (.Params.VideoUrl) }}
-
     <iframe class="mt-10 aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
   {{ else }}
-    <p>La vidéo arrive prochainement</p>
+    <p class="container italic">Une vidéo présentant des témoignages arrive prochainement.</p>
   {{ end }}
 </section>
 
