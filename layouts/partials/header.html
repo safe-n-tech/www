@@ -1,5 +1,6 @@
 <header class="z-50 top-0 sticky w-full h-auto">
-    <div id="burger_btn" class="items-center p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
+    <div id="burger_btn"
+        class="items-center p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
 
 
         <a href="/" class="text-primary"><span><img src="/svgs/logo_icon.svg" alt="logo icon"></span></a>
@@ -13,7 +14,7 @@
             <ul class="hidden md:flex">
                 <a href="{{ .URL }}">
                     <li class="text-sm w-auto p-3 flex justify-between md:flex">
-                            <span class="text-dark_gray text-base">{{ .Name }}</span>
+                        <span class="text-dark_gray">{{ .Name }}</span>
                     </li>
                 </a>
             </ul>
@@ -21,13 +22,14 @@
         </div>
     </div>
 
-    <div id="links" class="md:invisible flex flex-col absolute z-50 w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
+    <div id="links"
+        class="md:invisible flex flex-col absolute z-50 w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
         {{ range .Site.Menus.header }}
         <ul class="w-full">
             <a href="{{ .URL }}" class="w-auto h-auto">
                 <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl flex justify-between items-baseline">
-                        <span class="text-dark_gray">{{ .Name }}</span>
-                        <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
+                    <span class="text-dark_gray">{{ .Name }}</span>
+                    <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
                 </li>
             </a>
         </ul>
@@ -35,12 +37,12 @@
     </div>
 
     <script>
-        function toggleLinks(e){
+        function toggleLinks(e) {
             let links = document.getElementById('links');
             let burgerBtn = document.getElementById('burger_btn');
             const className = 'top-[-300px]';
-            const dropShadow= 'drop-shadow-md';
-            const rounded= 'rounded-b-md';
+            const dropShadow = 'drop-shadow-md';
+            const rounded = 'rounded-b-md';
 
             links.classList.toggle(className);
             burgerBtn.classList.toggle(dropShadow);
