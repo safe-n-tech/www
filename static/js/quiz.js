@@ -5,9 +5,8 @@ let results = null;
 const choicesContainer = document.getElementById("quizz-choices");
 const choiceTemplate = document.getElementById("template-choices-item");
 
-
-const correctionBtnTemplate = document.getElementById("template-correction-item");
 const correctionBtnContainer = document.getElementById("result-correction");
+const correctionBtnTemplate = document.getElementById("template-correction-item");
 const correctionBtnTemplateWrong = document.getElementById("template-correction-item-wrong");
 
 const correctionEnonce = document.getElementById("correction-enonce");
@@ -22,58 +21,9 @@ async function startQuizz() {
   document.getElementById("quizz-go-next-question-btn").addEventListener("click", nextQuestion);
   loadActualQuestion();
 }
-function loadCreateElChoiceCorrection(index){
-  questions[(index - 1)].choices.forEach(choice => {
-    createElChoiceCorrection(choice);
-  });
-}
-function createElChoiceCorrection(choice) {
-  const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
-  if (choice.score == 0) {
-    newChoiceCorrection.dataset.wrong = true;
-    newChoiceCorrection.dataset.selected = false;
-    newChoiceCorrection.dataset.wrongSelected = false;
-  }
-  // newChoiceCorrection.dataset.text = choice.text;
-  newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
-  correctionQuestionContainer.appendChild(newChoiceCorrection);
-}
-function clearQuestionCorrection() {
-  while (correctionQuestionContainer.firstChild) {
-    correctionQuestionContainer.removeChild(correctionQuestionContainer.firstChild);
-  }
-}
 
-function showCorrection(correctIndex){
-  correctionEnonce.innerText = questions[(correctIndex - 1)].text;
-  clearQuestionCorrection();
-  loadCreateElChoiceCorrection(correctIndex);
-}
-
-function createCorrection(){
-  let correctionIndex = 1;
-  questions.forEach(question => {
-    if (question.isCorrect === true) {
-      const newCorrectionBtn = correctionBtnTemplate.content.firstElementChild.cloneNode(true);
-      createElCorrection(newCorrectionBtn, correctionIndex);
-    }
-    else{
-      const newCorrectionBtn = correctionBtnTemplateWrong.content.firstElementChild.cloneNode(true);
-      createElCorrection(newCorrectionBtn, correctionIndex);
-    }
-    correctionIndex++;
-  });
-}
-
-function createElCorrection(newCorrectionBtn, index){
-  newCorrectionBtn.dataset.index = index.toString();
-  newCorrectionBtn.querySelector(".correct-btn-text").innerText = index.toString();
-  newCorrectionBtn.addEventListener("click", ()=>{
-    showCorrection(index);
-  });
-  correctionBtnContainer.appendChild(newCorrectionBtn);
-}
+// CORRECTION
 
 function showResults(){
   calculateResults();
@@ -89,21 +39,21 @@ function showResults(){
 
 function calculateResults() {
   questions.forEach(question=>{
-    question.isCorrect = false;
+    question.isUserAnswerCorrect = false;
 
     question.choices.forEach(choice=>{
-      if(choice.points<=0) {
+      if(!choice.isCorrect) {
         return
       }
 
       if(choice.text === question.userAnswer) {
-        question.isCorrect = true
+        question.isUserAnswerCorrect = true
       }
     })
   })
 
-  const numberCorrect = questions.filter(question=>question.isCorrect).length,
-          score = Math.trunc(numberCorrect * 100 / (questions.length));
+  const numberCorrect = questions.filter(question=>question.isUserAnswerCorrect).length,
+      score = Math.trunc(numberCorrect * 100 / (questions.length));
 
   results = {
     numberCorrect,
@@ -112,6 +62,67 @@ function calculateResults() {
     image: ''
   }
 }
+
+function createCorrection(){
+  questions.forEach((question, index) => {
+    createElCorrection(question, index);
+  });
+}
+
+function createElCorrection(question, questionIndex){
+  const newCorrectionBtn = question.isUserAnswerCorrect?
+      correctionBtnTemplate.content.firstElementChild.cloneNode(true)
+          : correctionBtnTemplateWrong.content.firstElementChild.cloneNode(true);
+
+  newCorrectionBtn.dataset.questionIndex = questionIndex;
+  newCorrectionBtn.querySelector(".correct-btn-text").innerText = questionIndex+1;
+  newCorrectionBtn.addEventListener("click", ()=>{
+    showCorrectionOfQuestion(question);
+  });
+  correctionBtnContainer.appendChild(newCorrectionBtn);
+}
+
+function loadCreateElChoiceCorrection(question){
+  question.choices.forEach(choice => {
+    createElChoiceCorrection(choice, question);
+  });
+}
+function createElChoiceCorrection(choice, question) {
+  const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
+  newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
+
+  if(choice.text === question.userAnswer) {
+    newChoiceCorrection.dataset.selected = false;
+  }
+  // if (choice.isCorrect) {
+  //   newChoiceCorrection.dataset.wrong = true;
+  //   newChoiceCorrection.dataset.selected = false;
+  //   newChoiceCorrection.dataset.wrongSelected = false;
+  // }
+
+  correctionQuestionContainer.appendChild(newChoiceCorrection);
+}
+function clearQuestionCorrection() {
+  while (correctionQuestionContainer.firstChild) {
+    correctionQuestionContainer.removeChild(correctionQuestionContainer.firstChild);
+  }
+}
+
+function showCorrectionOfQuestion(question) {
+  correctionEnonce.innerText = question.text;
+  clearQuestionCorrection();
+  loadCreateElChoiceCorrection(question);
+}
+
+
+
+
+
+
+
+
+
+// QUESTIONS
 
 function nextQuestion() {
   if (questions.userAnswer === null) {
@@ -137,18 +148,6 @@ function handleAnswerSelected(questionSelected){
   document.getElementById("quizz-go-next-question-btn").removeAttribute('disabled');
 }
 
-function createElChoice(choice) {
-  const newChoice = choiceTemplate.content.firstElementChild.cloneNode(true);
-
-  newChoice.dataset.text = choice.text;
-  newChoice.querySelector(".choice-text").innerText = choice.text;
-  newChoice.addEventListener("click", ()=>{
-    handleAnswerSelected(newChoice);
-  });
-
-  choicesContainer.appendChild(newChoice);
-}
-
 function clearQuestionAnswers() {
   while (choicesContainer.firstChild) {
     choicesContainer.removeChild(choicesContainer.firstChild);
@@ -170,4 +169,16 @@ function loadActualQuestion() {
   questions[questionIndex].choices.forEach(choice => {
     createElChoice(choice);
   });
+}
+
+function createElChoice(choice) {
+  const newChoice = choiceTemplate.content.firstElementChild.cloneNode(true);
+
+  newChoice.dataset.text = choice.text;
+  newChoice.querySelector(".choice-text").innerText = choice.text;
+  newChoice.addEventListener("click", ()=>{
+    handleAnswerSelected(newChoice);
+  });
+
+  choicesContainer.appendChild(newChoice);
 }
