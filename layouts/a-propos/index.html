@@ -1,0 +1,69 @@
+{{ define "main" }}
+<section class="relative w-full pt-5">
+  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container flex flex-col items-center">
+    <h1 class="text-h1 text-white pt-14 mb-6">{{ .Title}}</h1>
+    <a href="" class="bg-primary text-white py-2 px-6 mb-16 rounded-md whitespace-nowrap">Derrière le projet</a>
+  </div>
+</section>
+<section>
+  <div class="px-6 mt-12">
+    <div class="h-full border-solid border-y-2 py-4 pr-12">
+      <div class="drop-down__item flex justify-between"  data-id="1">
+        <a>À l'origine du projet</a>
+        <img src="/svgs/add.svg" alt="add icon">
+      </div>
+      <div class="drop-down__hidden hidden mt-4" data-id="1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur ipsam soluta nihil odit similique hic nobis laborum necessitatibus eaque iusto, reprehenderit omnis ab ducimus ipsum pariatur, quo, architecto vitae!</p>
+      </div>
+    </div>
+    <div class="h-full border-solid border-b-2 py-4 pr-12">
+      <div class="drop-down__item flex justify-between"  data-id="2">
+        <a>Fonctionnement du site</a>
+        <img src="/svgs/add.svg" alt="add icon">
+      </div>
+      <div class="drop-down__hidden hidden mt-4" data-id="2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur ipsam soluta nihil odit similique hic nobis laborum necessitatibus eaque iusto, reprehenderit omnis ab ducimus ipsum pariatur, quo, architecto vitae!</p>
+      </div>
+    </div>
+    <div class="h-full border-solid border-b-2 py-4 pr-12">
+      <div class="drop-down__item flex justify-between"  data-id="3">
+        <a>Les bonnes pratiques</a>
+        <img src="/svgs/add.svg" alt="add icon">
+      </div>
+      <div class="drop-down__hidden hidden mt-4" data-id="3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur ipsam soluta nihil odit similique hic nobis laborum necessitatibus eaque iusto, reprehenderit omnis ab ducimus ipsum pariatur, quo, architecto vitae!</p>
+      </div>
+    </div>
+    <div class="h-full border-solid border-b-2 py-4 pr-12">
+      <div class="drop-down__item flex justify-between"  data-id="4">
+        <a>Les thématiques</a>
+        <img src="/svgs/add.svg" alt="add icon">
+      </div>
+      <div class="drop-down__hidden hidden mt-4" data-id="4">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur ipsam soluta nihil odit similique hic nobis laborum necessitatibus eaque iusto, reprehenderit omnis ab ducimus ipsum pariatur, quo, architecto vitae!</p>
+      </div>
+    </div>
+    <div class="h-full border-solid border-b-2 py-4 pr-12">
+      <div class="drop-down__item flex justify-between"  data-id="5">
+        <a>Le quiz</a>
+        <img src="/svgs/add.svg" alt="add icon">
+      </div>
+      <div class="drop-down__hidden hidden mt-4" data-id="5">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex consequatur ipsam soluta nihil odit similique hic nobis laborum necessitatibus eaque iusto, reprehenderit omnis ab ducimus ipsum pariatur, quo, architecto vitae!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+  const dropDownItems = document.querySelectorAll(".drop-down__item");
+  dropDownItems.forEach(item => {
+    item.addEventListener("click", function(){
+      let id = item.dataset.id;
+      document.querySelectorAll("[data-id='"+id+"']")[1].classList.toggle("hidden");
+    })
+  });
+</script>
+{{ end }}
