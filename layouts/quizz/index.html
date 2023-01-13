@@ -1,9 +1,23 @@
 {{ define "main" }}
-<template id="template-choices-item">
-  <button data-selected="false" data-wrong="false" data-wrongSelected="false" class="col-span-full text-left border-secondary border-2 rounded-2xl py-2 px-4 data-selected:bg-secondary data-selected:text-white data-wrongSelected:bg-orange data-wrongSelected:text-white data-wrong:border-orange data-wrong:text-orange">
-    <span class="choice-text"></span>
-  </button>
-</template>
+  <template id="template-choices-item">
+    <button
+            data-selected="false"
+            data-correct="false"
+            data-correct-selected="false"
+            data-wrong="false"
+            data-wrong-selected="false"
+            class="
+              col-span-full text-left border-secondary border-2 rounded-2xl py-2 px-4
+              data-selected:bg-secondary data-selected:text-white
+              data-correct:border-green data-correct:text-green
+              data-correctSelected:border-green data-correctSelected:bg-green data-correctSelected:text-white
+              data-wrong:border-orange data-wrong:text-orange
+              data-wrongSelected:border-orange data-wrongSelected:bg-orange data-wrongSelected:text-white
+            "
+    >
+      <span class="choice-text"></span>
+    </button>
+  </template>
 
   {{ partial "quizz/ingame" . }}
   {{ partial "quizz/results" . }}

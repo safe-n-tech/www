@@ -26,7 +26,6 @@ async function startQuizz() {
 // CORRECTION
 
 function showResults(){
-  let sentenceLevel = "";
   calculateResults();
 
   document.querySelector("#quizz-ingame").classList.add("hidden");
@@ -35,13 +34,14 @@ function showResults(){
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
 
+  let sentenceLevel;
   if(results.score <= 25){
     sentenceLevel = "Vos appareils et vos données sont un trésor pour les pirates. Attention, ils sont parés à l’abordage !";
   }
-  else if (results.score > 25 && results.score <= 50){
+  else if (25 < results.score  && results.score <= 50){
     sentenceLevel = "Vous y êtes presque ! Mais pour les pirates, c’est comme si vous aviez fermé votre maison à clef, et laissé une fenêtre ouverte.";
   }
-  else if (results.score > 50 && results.score <= 75){
+  else if (50 < results.score && results.score <= 75){
     sentenceLevel = "Vous êtes sur la bonne voie, mais votre ennemi est mieux équipé.";
   }
   else{
@@ -96,6 +96,8 @@ function createCorrection(){
   questions.forEach((question, index) => {
     createElCorrection(question, index);
   });
+
+  showCorrectionOfQuestion(questions[0])
 }
 
 function createElCorrection(question, questionIndex){
@@ -111,6 +113,12 @@ function createElCorrection(question, questionIndex){
   correctionBtnContainer.appendChild(newCorrectionBtn);
 }
 
+function showCorrectionOfQuestion(question) {
+  correctionEnonce.innerText = question.text;
+  clearQuestionCorrection();
+  loadCreateElChoiceCorrection(question);
+}
+
 function loadCreateElChoiceCorrection(question){
   question.choices.forEach(choice => {
     createElChoiceCorrection(choice, question);
@@ -120,8 +128,18 @@ function createElChoiceCorrection(choice, question) {
   const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
   newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
-  if(choice.text === question.userAnswer) {
-    newChoiceCorrection.dataset.selected = false;
+  if(choice.isCorrect) {
+    if(choice.text === question.userAnswer) {
+      newChoiceCorrection.dataset.correctSelected = true;
+    } else {
+      newChoiceCorrection.dataset.correct = true;
+    }
+  } else {
+    if (choice.text === question.userAnswer) {
+      newChoiceCorrection.dataset.wrongSelected = true;
+    } else {
+      newChoiceCorrection.dataset.wrong = true;
+    }
   }
   // if (choice.isCorrect) {
   //   newChoiceCorrection.dataset.wrong = true;
@@ -136,14 +154,6 @@ function clearQuestionCorrection() {
     correctionQuestionContainer.removeChild(correctionQuestionContainer.firstChild);
   }
 }
-
-function showCorrectionOfQuestion(question) {
-  correctionEnonce.innerText = question.text;
-  clearQuestionCorrection();
-  loadCreateElChoiceCorrection(question);
-}
-
-
 
 
 
