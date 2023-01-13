@@ -9,6 +9,8 @@ correction: "Il est important de toujours vérifier la fiabilité d’un site av
 goodPractices:
   - Vérifier la réputation du site auparavant. Lire également les notes et avis
     des consommateurs.
+  - Faire attention lors d’un paiement en ligne ou en physique (voir
+    recommandations).
 choices:
   - isCorrect: false
     text: je compare les prix sur différents sites pour trouver le plus avantageux,
