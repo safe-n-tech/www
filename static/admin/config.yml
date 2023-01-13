@@ -19,23 +19,9 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title }
+      - { label: Sous titre, name: subtitle}
       - { label: Description, name: description}
-      - {
-        label: Risques,
-        name: risks,
-        widget: list,
-        required: false
-      }
-      - {
-        label: Bonnes pratiques,
-        name: goodPractices,
-        widget: relation,
-        collection: good-practices,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
-        required: false
-      }
+
 
 
   - name: vulnerabilities
@@ -191,4 +177,4 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
-      - { label: 'Contenu', name: 'body', widget: 'markdown', required: false }
+      - { label: 'Contenu', name: 'body', widget: 'markdown', required: true }
