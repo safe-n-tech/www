@@ -186,6 +186,7 @@ collections:
     create: true
     editor: { preview: false }
     filter: { field: "visibleInCms", value: true }
+    identifier_field: text
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Texte, name: text }
