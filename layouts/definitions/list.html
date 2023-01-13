@@ -1,16 +1,13 @@
 {{ define "main" }}
-<section class="relative w-full pt-5">
-	<img class="w-full h-full hero-bg-img object-cover" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-	<div class="container text-center">
-
-		<h1 class="text-h1 text-white pb-16 pt-14 ">Glossaire</h1>
-
+<section class="relative w-full pt-5 -mt-5 max-sm:pb-36 max-sm:-mb-20 sm:pb-2 sm:perso-background">
+	<img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+	<div class="container text-center text-white py-6">
+		{{ partial "breadcrumb" (dict "page" . ) }}
+		<h1 class="text-h1 md:text-5xl mt-10">Glossaire</h1>
 	</div>
 </section>
 
-
-
-<div class="container text-dark_gray mt-10">
+<div class="container text-dark_gray mt-20">
 	<h1 class="text-h1">Glossaire</h1>
 	{{ range .Pages }}
 	<div class="bg-white my-10 rounded-2xl drop-shadow-sm">
