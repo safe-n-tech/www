@@ -205,4 +205,4 @@ collections:
         widget: "list"
         fields:
           - { label: Text, name: text }
-          - { label: Bonne réponse, name: isCorrect, widget: boolean, default: false }
+          - { label: Bonne réponse, name: isCorrect, widget: boolean, default: false, required: false }
