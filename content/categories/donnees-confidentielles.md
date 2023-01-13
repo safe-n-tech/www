@@ -2,6 +2,6 @@
 visibleInCms: true
 title: Données confidentielles
 icon: donnees-confidentielles.png
-subtitle: fgqdwsqfvdvsq
-description: gfdsqgbfdvcsq
+subtitle: Données confidentielles
+description: Données confidentielles
 ---

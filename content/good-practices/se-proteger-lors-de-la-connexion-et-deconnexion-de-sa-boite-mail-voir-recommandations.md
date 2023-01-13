@@ -5,6 +5,7 @@ title: Se protéger lors de la connexion et déconnexion de sa boîte mail (voir
 categories: Boîte Mail
 definitions:
   - Boîte mail
+  - Double authentification
 ---
 <!--StartFragment-->
 
