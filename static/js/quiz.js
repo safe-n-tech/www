@@ -35,6 +35,7 @@ function showResults(){
 
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
+  document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 75 ? 'sad' : 'love'}.png`;
 
   let sentenceLevel;
   if(results.score <= 25){
@@ -78,10 +79,10 @@ function calculateResults() {
     sentence = "Vous êtes en danger";
   }
   else if (score > 25 && score <= 50){
-    sentence = "Vous êtes vulnérable.";
+    sentence = "Vous êtes vulnérable";
   }
   else if (score > 50 && score <= 75){
-    sentence = "Vous êtes bon.";
+    sentence = "Vous êtes bon";
   }
   else{
     sentence = "Vous êtes parfait (ou presque) !";
