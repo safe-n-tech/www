@@ -37,3 +37,8 @@ menu:
       name: Thématiques
       title: thématiques
       url: /categories
+    - identifier: definitions
+      name: Glossaire
+      title: glossaire
+      url: /definitions
+    
