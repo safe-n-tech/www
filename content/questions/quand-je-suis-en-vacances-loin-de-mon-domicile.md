@@ -6,6 +6,11 @@ correction: "Éviter de donner votre localisation en ligne et surtout en public.
   l’instant T et où vous habitez. Dans le cas où vous êtes en vacances et que
   vous le partager en ligne de manière public, des voleurs peuvent en profiter
   pour cambrioler votre domicile par exemple. "
+goodPractices:
+  - Protéger son identité sur les réseaux sociaux.
+  - "Être vigilant concernant ses publications. "
+  - Rester vigilant de manière générale sur Internet.
+categories: Réseaux sociaux
 choices:
   - isCorrect: false
     text: je partage en direct sur les réseaux sociaux mon voyage sur mon compte
