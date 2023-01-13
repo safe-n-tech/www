@@ -1,11 +1,9 @@
 {{ define "main" }}
-<section class="relative w-full pt-5 -mt-5">
-    <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-    <div class="container">
-        <div class="text-center mx-auto text-white pb-20 pt-10">
-            <h2 class="text-h2">Bonne pratique </h2>
-            <h1 class="text-h1 text-white pb-16 pt-14 text-center">{{ .Title}}</h1>
-        </div>
+<section class="relative w-full pt-5 -mt-5 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
+    <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+    <div class="container py-6 text-white">
+        {{ partial "breadcrumb" (dict "page" . "links" (slice "/good-practices")) }}
+        <h1 class="text-h1 mt-10">{{ .Title}}</h1>
     </div>
 </section>
 

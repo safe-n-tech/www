@@ -1,5 +1,5 @@
 {{ define "main" }}
-<section class="relative w-full pt-5 mt-5 pb-36 mb-20">
+<section class="relative w-full pt-5 -mt-5 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
   <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
   <div class="container text-center text-white py-6">
     {{ partial "breadcrumb" (dict "page" . ) }}
@@ -15,13 +15,12 @@
     {{ range .Pages }}
     <a href="{{ .Permalink }}" class="no-underline">
 
-      <div
-        class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
-        <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
-        <p class="text-secondary word-break">{{ .Title }}</p>
-      </div>
-    </a>
-    {{ end }}
-  </nav>
+          <div class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
+            <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
+            <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
+          </div>
+        </a>
+        {{ end }}
+    </nav>
 </div>
 {{ end }}
