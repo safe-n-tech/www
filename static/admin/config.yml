@@ -19,8 +19,9 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title }
-      - { label: Sous titre, name: subtitle}
-      - { label: Description, name: description}
+      - { label: Lien vidéo youtube, name: videoUrl }
+      - { label: Sous titre, name: subtitle }
+      - { label: Description, name: description }
 
 
 
@@ -165,9 +166,7 @@ collections:
         multiple: true,
         required: false
       }
-      - { label: Contenu, name: content,  required: false }
-      - { label: Risque, name: risk,  required: true }
-      - { label: Vulnérabilité, name: vulnerability,  required: true }
+      - { label: Contenu, name: content,  required: false, widget: markdown }
 
 
   - name: definitions
