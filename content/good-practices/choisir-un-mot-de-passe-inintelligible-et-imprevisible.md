@@ -2,6 +2,9 @@
 visibleInCms: true
 title: "Choisir un mot de passe inintelligible et imprévisible. "
 categories: Mots de passe
+risk: Fragiliser la construction du mot de passe et le rendre trop facile à deviner.
+vulnerability: Utiliser des informations confidentielles ou personnelles dans
+  son mot de passe.
 ---
 <!--StartFragment-->
 
