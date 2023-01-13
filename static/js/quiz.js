@@ -4,12 +4,14 @@ let results = null;
 
 const choicesContainer = document.getElementById("quizz-choices");
 const choiceTemplate = document.getElementById("template-choices-item");
+const choiceCorrectionTemplate = document.getElementById("template-choices-correction");
 
 const correctionBtnContainer = document.getElementById("result-correction");
 const correctionBtnTemplate = document.getElementById("template-correction-item");
 const correctionBtnTemplateWrong = document.getElementById("template-correction-item-wrong");
 
 const correctionEnonce = document.getElementById("correction-enonce");
+const correctionText = document.getElementById("correction-text");
 const correctionQuestionContainer = document.getElementById("correction-question-container");
 
 startQuizz();
@@ -117,7 +119,10 @@ function showCorrectionOfQuestionIndex(questionIndex) {
   const question = questions[questionIndex];
   const correctionBtnClicked = document.querySelector(`[data-question-index="${questionIndex}"]`)
   correctionBtnClicked.setAttribute('aria-selected', 'true');
+
   correctionEnonce.innerText = question.text;
+  correctionText.innerText = question.correction
+
   clearQuestionCorrection();
   loadCreateElChoiceCorrection(question);
 }
@@ -128,7 +133,7 @@ function loadCreateElChoiceCorrection(question){
   });
 }
 function createElChoiceCorrection(choice, question) {
-  const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
+  const newChoiceCorrection = choiceCorrectionTemplate.content.firstElementChild.cloneNode(true);
   newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
   if(choice.isCorrect) {
@@ -140,15 +145,8 @@ function createElChoiceCorrection(choice, question) {
   } else {
     if (choice.text === question.userAnswer) {
       newChoiceCorrection.dataset.wrongSelected = true;
-    } else {
-      newChoiceCorrection.dataset.wrong = true;
     }
   }
-  // if (choice.isCorrect) {
-  //   newChoiceCorrection.dataset.wrong = true;
-  //   newChoiceCorrection.dataset.selected = false;
-  //   newChoiceCorrection.dataset.wrongSelected = false;
-  // }
 
   correctionQuestionContainer.appendChild(newChoiceCorrection);
 }

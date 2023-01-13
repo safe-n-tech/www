@@ -2,6 +2,17 @@
   <template id="template-choices-item">
     <button
             data-selected="false"
+            class="
+                col-span-full text-left border-secondary border-2 rounded-2xl py-2 px-4
+                data-selected:bg-secondary data-selected:text-white
+              "
+    >
+      <span class="choice-text"></span>
+    </button>
+  </template>
+  <template id="template-choices-correction">
+    <span
+            data-selected="false"
             data-correct="false"
             data-correct-selected="false"
             data-wrong="false"
@@ -16,7 +27,7 @@
             "
     >
       <span class="choice-text"></span>
-    </button>
+    </span>
   </template>
 
   {{ partial "quizz/ingame" . }}
