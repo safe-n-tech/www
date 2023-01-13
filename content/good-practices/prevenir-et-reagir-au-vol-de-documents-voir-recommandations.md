@@ -2,6 +2,8 @@
 visibleInCms: true
 title: Prévenir et réagir au vol de documents (voir recommandations).
 categories: Données confidentielles
+definitions:
+  - "Filigrane "
 ---
 <!--StartFragment-->
 
