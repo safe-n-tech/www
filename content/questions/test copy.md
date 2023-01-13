@@ -1,4 +1,5 @@
 ---
+visibleInCms: true
 text: Possédez vous un nez?
 correction: Un mot de passe contenant le nom d'un proche ou d'un animal de companie est trouvable en 8 secondes par un pirate ce qui mène à l'usurpation de votre identité sur internet. Nous vous invitons à consulter cette bonne pratique
 goodPractices:
