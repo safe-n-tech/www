@@ -1,11 +1,12 @@
 {{ define "main" }}
 <section class="relative w-full pt-5 -mt-5 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-    <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-    <div class="container py-6 text-white">
-        {{ partial "breadcrumb" (dict "page" . "links" (slice "/categories")) }}
-        <h1 class="text-h1 mt-10">{{ .Title}}</h1>
-        <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
-    </div>
+  <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
+    src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container py-6 text-white">
+    {{ partial "breadcrumb" (dict "page" . "links" (slice "/categories")) }}
+    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+    <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
+  </div>
 </section>
 
 <section class="mx-auto w-full max-w-xl mb-5">
@@ -37,7 +38,7 @@
           <p class="text-orange">{{ .Title }}</p>
           <div class="flex align-middle justify-between w-full mt-5">
             <p class="text-secondary text-label">En savoir plus sur le risque</p>
-            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
+            <img src="/svgs/arrowBlu  e.png" alt="fleche" class="w-5">
           </div>
         </div>
       </a>
