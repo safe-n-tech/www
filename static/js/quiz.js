@@ -4,12 +4,14 @@ let results = null;
 
 const choicesContainer = document.getElementById("quizz-choices");
 const choiceTemplate = document.getElementById("template-choices-item");
+const choiceCorrectionTemplate = document.getElementById("template-choices-correction");
 
 const correctionBtnContainer = document.getElementById("result-correction");
 const correctionBtnTemplate = document.getElementById("template-correction-item");
 const correctionBtnTemplateWrong = document.getElementById("template-correction-item-wrong");
 
 const correctionEnonce = document.getElementById("correction-enonce");
+const correctionText = document.getElementById("correction-text");
 const correctionQuestionContainer = document.getElementById("correction-question-container");
 
 startQuizz();
@@ -34,6 +36,22 @@ function showResults(){
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
 
+  let sentenceLevel;
+  if(results.score <= 25){
+    sentenceLevel = "Vos appareils et vos données sont un trésor pour les pirates. Attention, ils sont parés à l’abordage !";
+  }
+  else if (25 < results.score  && results.score <= 50){
+    sentenceLevel = "Vous y êtes presque ! Mais pour les pirates, c’est comme si vous aviez fermé votre maison à clef, et laissé une fenêtre ouverte.";
+  }
+  else if (50 < results.score && results.score <= 75){
+    sentenceLevel = "Vous êtes sur la bonne voie, mais votre ennemi est mieux équipé.";
+  }
+  else{
+    sentenceLevel = "Vous êtes la terreur des pirates ! Ne changez rien, restez vigilant.";
+  }
+
+  document.getElementById("sentence-level").innerText = sentenceLevel;
+
   createCorrection();
 }
 
@@ -53,12 +71,25 @@ function calculateResults() {
   })
 
   const numberCorrect = questions.filter(question=>question.isUserAnswerCorrect).length,
-      score = Math.trunc(numberCorrect * 100 / (questions.length));
+          score = Math.trunc(numberCorrect * 100 / (questions.length));
 
+  let sentence;
+  if(score <= 25){
+    sentence = "Vous êtes en danger";
+  }
+  else if (score > 25 && score <= 50){
+    sentence = "Vous êtes vulnérable.";
+  }
+  else if (score > 50 && score <= 75){
+    sentence = "Vous êtes bon.";
+  }
+  else{
+    sentence = "Vous êtes parfait (ou presque) !";
+  }
   results = {
     numberCorrect,
     score,
-    sentence: score > 80 ? 'Vous êtes parfait (ou presque)' : 'Vous êtes vulnérable',
+    sentence: sentence,
     image: ''
   }
 }
@@ -67,6 +98,8 @@ function createCorrection(){
   questions.forEach((question, index) => {
     createElCorrection(question, index);
   });
+
+  showCorrectionOfQuestionIndex(0)
 }
 
 function createElCorrection(question, questionIndex){
@@ -77,9 +110,21 @@ function createElCorrection(question, questionIndex){
   newCorrectionBtn.dataset.questionIndex = questionIndex;
   newCorrectionBtn.querySelector(".correct-btn-text").innerText = questionIndex+1;
   newCorrectionBtn.addEventListener("click", ()=>{
-    showCorrectionOfQuestion(question);
+    showCorrectionOfQuestionIndex(questionIndex);
   });
   correctionBtnContainer.appendChild(newCorrectionBtn);
+}
+
+function showCorrectionOfQuestionIndex(questionIndex) {
+  const question = questions[questionIndex];
+  const correctionBtnClicked = document.querySelector(`[data-question-index="${questionIndex}"]`)
+  correctionBtnClicked.setAttribute('aria-selected', 'true');
+
+  correctionEnonce.innerText = question.text;
+  correctionText.innerText = question.correction
+
+  clearQuestionCorrection();
+  loadCreateElChoiceCorrection(question);
 }
 
 function loadCreateElChoiceCorrection(question){
@@ -88,17 +133,20 @@ function loadCreateElChoiceCorrection(question){
   });
 }
 function createElChoiceCorrection(choice, question) {
-  const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
+  const newChoiceCorrection = choiceCorrectionTemplate.content.firstElementChild.cloneNode(true);
   newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
-  if(choice.text === question.userAnswer) {
-    newChoiceCorrection.dataset.selected = false;
+  if(choice.isCorrect) {
+    if(choice.text === question.userAnswer) {
+      newChoiceCorrection.dataset.correctSelected = true;
+    } else {
+      newChoiceCorrection.dataset.correct = true;
+    }
+  } else {
+    if (choice.text === question.userAnswer) {
+      newChoiceCorrection.dataset.wrongSelected = true;
+    }
   }
-  // if (choice.isCorrect) {
-  //   newChoiceCorrection.dataset.wrong = true;
-  //   newChoiceCorrection.dataset.selected = false;
-  //   newChoiceCorrection.dataset.wrongSelected = false;
-  // }
 
   correctionQuestionContainer.appendChild(newChoiceCorrection);
 }
@@ -107,14 +155,6 @@ function clearQuestionCorrection() {
     correctionQuestionContainer.removeChild(correctionQuestionContainer.firstChild);
   }
 }
-
-function showCorrectionOfQuestion(question) {
-  correctionEnonce.innerText = question.text;
-  clearQuestionCorrection();
-  loadCreateElChoiceCorrection(question);
-}
-
-
 
 
 
