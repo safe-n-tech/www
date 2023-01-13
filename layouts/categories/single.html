@@ -36,7 +36,7 @@
         {{ range $vulnerabilitiesLinked}}
         <a href="{{ .Permalink }}" class="no-underline w-full">
 
-          <div class="border-perso-light-gray rounded-md text-left px-3 py-5 h-full w-full grid place-items-center bg-white justify-start">
+          <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-start">
             <p class="text-orange">{{ .Title }}</p>
             <div class="flex align-middle justify-between w-full mt-5">
               <p class="text-secondary">Risques</p>
@@ -64,7 +64,7 @@
           {{ range $goodPracticesLinked}}
           <a href="{{ .Permalink }}" class="no-underline">
 
-            <div class="border-perso-light-gray rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
+            <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
               <p class="text-secondary">"{{ .Title }}"</p>
 
             </div>

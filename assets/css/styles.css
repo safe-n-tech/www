@@ -43,6 +43,9 @@ a {
     .border-perso-light-gray {
       @apply border-solid border-gray border
     }
+    .border-perso {
+      @apply border-solid border-[#E3E6ED] border
+    }
     .hero-bg-img {
       @apply absolute inset-0 -z-10;
     }
