@@ -15,7 +15,10 @@ a {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
     .grid-good-practice {
-        @apply grid grid-cols-2 gap-5 lg:grid-cols-4
+        @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
+    }
+    .word-break {
+      word-break: break-word;
     }
 
     .text-h1 {
