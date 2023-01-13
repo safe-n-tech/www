@@ -8,19 +8,38 @@
     </div>
 </section>
 <div class="container md:w-2/3 md:mt-10">
-    {{ range .Pages }}
-    <a href="{{ .Permalink }}">
-        <div  class="bg-white mb-10  p-5 rounded-2xl">
-            <div class="flex flex-row justify-between">
-                <p class="text-label text-black w-2/3">{{ .Title }}</p>
-                <div class="self-center">
-                    <img src="/svgs/arrowBlue.png" class="w-5"/>
+
+    {{ $categories := (where .Site.Pages "Section" "categories") }}
+    {{range $categories}}
+
+        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+
+        {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "eq" .Title }}
+
+        {{ if (gt (len $goodPracticesLinked) 0) }}
+
+        <h3 class="mt-4 text-h4 text-black">{{ .Title }}</h3>
+
+        <nav class="grid-good-practice mt-10 grid-cols-1">
+            {{ range $goodPracticesLinked}}
+            <a href="{{ .Permalink }}" class="no-underline">
+
+                <div  class="bg-white mb-10  p-5 rounded-2xl">
+                    <div class="flex flex-row justify-between">
+                        <p class="text-label text-black w-2/3">{{ .Title }}</p>
+                        <div class="self-center">
+                            <img src="/svgs/arrowBlue.png" class="w-5"/>
+                        </div>
+                    </div>
+                    <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-white mt-4"></div>
                 </div>
-            </div>
-            <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-white mt-4"></div>
-        </div>
-    </a>
+            </a>
+            {{ end }}
+
+        </nav>
+        {{ end }}
     {{ end }}
+
 </div>
 
 {{ end }}
