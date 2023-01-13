@@ -8,5 +8,5 @@ risks:
     fait passer pour un organisme ou une personne de confiance dans un but
     malveillant de recueillir des informations personnelles).
 goodPractices:
-  - Repérer les arnaques.
+  - Vérifier la source et l’authenticité des comptes et des concours en ligne.
 ---
