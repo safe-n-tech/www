@@ -4,5 +4,5 @@ title: Paiement en ligne
 icon: paiement-en-ligne.png
 subtitle: Paiement en ligne
 description: Paiement en ligne
-videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI
+videoUrl:
 ---

@@ -10,5 +10,5 @@ description: Il est donc essentiel d’être davantage vigilant dans la
   préserver la confidentialité. Il est donc primordial de ne pas stocker ses
   identifiants et mots de passe dans ses navigateurs (et encore moins sur un
   post-it collé sur le clavier).
-videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI
+videoUrl:
 ---
