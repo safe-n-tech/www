@@ -72,12 +72,12 @@ a {
       @apply block
     }
     .switch {
-      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 lg:w-1/2 mx-auto my-5;
+      @apply border-secondary border-solid border-2 rounded-lg grid grid-cols-2 ring-inset mx-auto;
     }
     .switch-btn.active {
-      @apply border-secondary border-solid bg-secondary border-0 text-white w-5/6;
+      @apply border-secondary border-solid border-2 bg-secondary text-white;
     }
     .switch-btn {
-      @apply p-2 rounded-md w-1/2 text-center;
+      @apply w-full px-4 py-2 rounded-md text-center;
     }
   }
