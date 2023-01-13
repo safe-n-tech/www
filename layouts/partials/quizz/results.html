@@ -1,10 +1,11 @@
-<section id="results" class="hidden min-h-screen pb-20 flex flex-col gap-y-8">
-  <section class="container pt-16 mb-24">
-    <img src="/icons/quizz/feedback-icon.png" alt="feedback icon">
-    <h1 class="text-h1 text-black text-center">Fini !</h1>
+<section id="results" class="hidden min-h-screen pb-6 flex flex-col gap-y-8">
+  <section class="flex flex-col justify-center items-center container pt-16 mb-24">
+    <img src="/icons/quizz/feedback-icon.png" alt="feedback icon" class="m-0">
+    <h1 id="level" class="text-h1 text-black text-center mt-2">Fini !</h1>
+    <p id="sentence-level" class="text-center text-dark_gray text-md"></p>
   </section>
 
-  <div class="absolute top-72 left-0 container z-50 bg-white">
+  <div class="absolute top-96 left-0 container z-50 bg-white">
     <section class="relative p-4 gap-2 rounded-2xl justify-center items-stretch shadow-2xl text-black flex flex-row">
       <article class="w-full flex flex-col items-center gap-2">
         <span>Score</span>
@@ -70,14 +71,14 @@
 </script>
 
 <style>
-  .correction-wrong::after{
-    content: "";
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 0.9rem;
-    height: 0.9rem;
-    background-color: #BB2626;
-    border-radius: 50rem;
-  }
+.correction-wrong::after{
+  content: "";
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 0.9rem;
+  height: 0.9rem;
+  background-color: #BB2626;
+  border-radius: 50rem;
+}
 </style>
