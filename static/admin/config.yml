@@ -19,6 +19,7 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title }
+      - { label: Description, name: description}
       - {
         label: Risques,
         name: risks,
