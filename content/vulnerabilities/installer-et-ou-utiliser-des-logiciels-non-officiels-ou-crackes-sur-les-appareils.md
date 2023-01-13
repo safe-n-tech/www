@@ -19,4 +19,5 @@ goodPractices:
 definitions:
   - "Logiciel cracké "
   - "PC zombie "
+  - Botnet
 ---
