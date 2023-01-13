@@ -21,7 +21,7 @@ module.exports = {
 
       },
       data: {
-        'wrong-selected': 'wrong-selected="true"', // data-wrong-selected:bg-white => element[data-wrong-selected]
+        'wrongSelected': 'wrongSelected="true"', // data-wrongSelected:bg-white => element[data-wrongSelected]
         selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
         selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
       },

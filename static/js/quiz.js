@@ -23,13 +23,17 @@ async function startQuizz() {
   loadActualQuestion();
 }
 function loadCreateElChoiceCorrection(index){
-  questions[index].choices.forEach(choice => {
+  questions[(index - 1)].choices.forEach(choice => {
     createElChoiceCorrection(choice);
   });
 }
 function createElChoiceCorrection(choice) {
   const newChoiceCorrection = choiceTemplate.content.firstElementChild.cloneNode(true);
-
+  if (choice.score == 0) {
+    newChoiceCorrection.dataset.wrong = true;
+    newChoiceCorrection.dataset.selected = false;
+    newChoiceCorrection.dataset.wrongSelected = false;
+  }
   // newChoiceCorrection.dataset.text = choice.text;
   newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
@@ -66,7 +70,6 @@ function createElCorrection(newCorrectionBtn, index){
   newCorrectionBtn.dataset.index = index.toString();
   newCorrectionBtn.querySelector(".correct-btn-text").innerText = index.toString();
   newCorrectionBtn.addEventListener("click", ()=>{
-    console.log(index);
     showCorrection(index);
   });
   correctionBtnContainer.appendChild(newCorrectionBtn);
