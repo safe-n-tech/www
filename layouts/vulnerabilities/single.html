@@ -1,36 +1,42 @@
 {{ define "main" }}
+<section class="relative w-full pt-5 -mt-5">
+  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container">
+      <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10">
+          <h1 class="text-h1 text-white pb-16 pt-14 text-center">{{ .Title}}</h1>
+      </div>
+  </div>
+</section>
 
-<div class="container">
-    <p>Vulnérabilité</p>
-    <h1 class="text-h1">{{ .Title }}</h1>
+
+<div class="container text-black">
+    <h3 class="mt-4 text-h3 ">Risques</h3>
+    <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white mb-6"></div>
 
     {{ if .Params.risks }}
-    <h2 class="text-h2 mt-8">Risques liés</h2>
-    <ul>
+    <ul class="list-disc w-11/12 mx-auto">
         {{ range .Params.risks }}
-        <li>{{ . }}</li>
+        <li class="my-2">{{ . }}</li>
         {{ end }}
     </ul>
     {{ end }}
 
-    {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.categories }}
-    {{ if (gt (len $categoriesLinked) 0) }}
-    <h3 class="mt-4 text-h3">Catégories</h3>
-    <ul class="list-disc">
-        {{ range $categoriesLinked}}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-    {{ end }}
+    <h3 class="text-h2 mt-4 mb-8">Les bonnes pratiques</h3>
 
     {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.goodPractices }}
     {{ if (gt (len $goodPracticesLinked) 0) }}
-    <h3 class="mt-4 text-h3">Bonnes pratiques liées</h3>
-    <ul class="list-disc">
+
+    <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
         {{ range $goodPracticesLinked}}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        <a href="{{ .Permalink }}" class="no-underline">
+
+          <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
+            <p class="text-secondary">"{{ .Title }}"</p>
+
+          </div>
+        </a>
         {{ end }}
-    </ul>
+    </nav>
     {{ end }}
 </div>
 
