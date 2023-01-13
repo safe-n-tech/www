@@ -85,4 +85,12 @@ a {
     .switch-btn {
       @apply w-full px-4 py-2 rounded-md text-center;
     }
+
+    .breadcrumb {
+        @apply w-full flex flex-row flex-wrap text-label gap-2 whitespace-nowrap text-ellipsis overflow-hidden;
+    }
+
+    .breadcrumb-item {
+        @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 max-w-full text-ellipsis;
+    }
   }
