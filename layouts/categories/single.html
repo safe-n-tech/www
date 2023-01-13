@@ -1,9 +1,10 @@
 {{ define "main" }}
-<section class="relative w-full pt-5 -mt-5 pb-36 -mb-20">
-  <img class="w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-  <div class="container py-6 text-white">
-    {{ partial "breadcrumb" (dict "page" . "links" (slice "/categories")) }}
-    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+<section class="relative w-full pt-5 -mt-5">
+  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container">
+
+    <h1 class="text-h1 text-white pb-10 pt-14 ">{{ .Title}}</h1>
+    <p class="text-h2 text-white text-center pb-16">{{ .Params.Subtitle }}</p>
   </div>
 </section>
 
@@ -11,8 +12,12 @@
   <iframe class="mt-10 aspect-video" width="100%" src="https://www.youtube.com/embed/CwLlBtHZxEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </section>
 
-<section class="container text-dark_gray mt-10">
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id non quidem soluta similique vitae quas cumque deserunt obcaecati quibusdam autem odio, libero sit vero earum repudiandae! Repudiandae aliquid deserunt aliquam.</p>
+    <iframe class="aspect-video" width="100%" src="https://www.youtube.com/embed/CwLlBtHZxEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+    </iframe>
+  </div>
+
+  <p>{{ .Description }}</p>
 
   <div class="switch mt-10">
     <div class="switch-btn active" id="btn-vulnerabilites">Vulnérabilités</div>
