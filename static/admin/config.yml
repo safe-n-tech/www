@@ -204,6 +204,15 @@ collections:
         multiple: true,
         required: false
       }
+      - {
+        label: Catégorie,
+        name: categories,
+        widget: relation,
+        collection: categories,
+        search_fields: [ "title" ],
+        value_field: "title",
+        required: false
+      }
       - label: Choix
         name: choices
         widget: "list"
