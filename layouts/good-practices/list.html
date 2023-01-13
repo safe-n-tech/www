@@ -18,7 +18,7 @@
 
         {{ if (gt (len $goodPracticesLinked) 0) }}
 
-        <h3 class="mt-4 text-h2 md:text-5xl text-black mt-16">{{ .Title }}</h3>
+        <h3 class="text-h2 md:text-5xl text-black mt-16">{{ .Title }}</h3>
 
         <nav class="grid-good-practice mt-10 grid-cols-1">
             {{ range $goodPracticesLinked}}
@@ -26,7 +26,7 @@
 
                 <div  class="bg-white mb-2 p-5 rounded-2xl">
                     <div class="flex flex-row justify-between">
-                        <p class="text-label text-black w-2/3">{{ .Title }}</p>
+                        <p class="text-sm md:text-xl text-black w-2/3">{{ .Title }}</p>
                         <div class="self-center">
                             <img src="/svgs/arrowBlue.png" class="w-5"/>
                         </div>
