@@ -10,7 +10,7 @@
 
 <div class="container">
 
-    <p class="">{{ .Description }}</p>
+    <p>{{ .Description }}</p>
 
 
     {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.categories }}
