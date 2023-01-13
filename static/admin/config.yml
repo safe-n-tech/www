@@ -165,8 +165,10 @@ collections:
         multiple: true,
         required: false
       }
+      - { label: Contenu, name: content,  required: false }
       - { label: Risque, name: risk,  required: true }
       - { label: Vulnérabilité, name: vulnerability,  required: true }
+
 
   - name: definitions
     label: Définitions
