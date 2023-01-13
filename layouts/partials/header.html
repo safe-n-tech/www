@@ -14,12 +14,12 @@
     <div id="links" class="flex flex-col absolute z-50 w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4 top-[-300px]">
         {{ range .Site.Menus.header }}
         <ul class="w-full">
-            <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl">
-                <a href="{{ .URL }}" class="flex justify-between items-baseline">
-                    <span class="text-dark_gray">{{ .Name }}</span>
-                    <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
-                </a>
-            </li>
+            <a href="{{ .URL }}" class="w-auto h-auto">
+                <li class="text-sm bg-light_gray w-auto min-w-100 p-4 rounded-xl flex justify-between items-baseline">
+                        <span class="text-dark_gray">{{ .Name }}</span>
+                        <span><img src="/svgs/icon_forward.svg" alt="Arrow icon" class=""></span>
+                </li>
+            </a>
         </ul>
         {{ end }}
     </div>
