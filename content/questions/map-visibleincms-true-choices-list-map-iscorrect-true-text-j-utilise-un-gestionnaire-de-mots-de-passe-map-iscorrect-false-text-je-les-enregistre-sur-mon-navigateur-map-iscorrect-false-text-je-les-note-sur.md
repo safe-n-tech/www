@@ -8,6 +8,7 @@ correction: Noter ses mots de passe les rend plus facile d’accès. N’importe
   connecté.
 goodPractices:
   - Utiliser un gestionnaire de mot de passe (voir recommandations).
+categories: Mots de passe
 choices:
   - isCorrect: true
     text: j’utilise un gestionnaire de mots de passe.
