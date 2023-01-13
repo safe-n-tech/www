@@ -3,24 +3,24 @@
   <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
   <div class="container text-center text-white py-6">
     {{ partial "breadcrumb" (dict "page" . ) }}
-    <h1 class="text-h1 my-10 md:text-5xl">{{ .Title}}</h1>
+    <h1 class="text-h1 md:text-5xl mt-10">{{ .Title}}</h1>
   </div>
 </section>
 
 
 
-<div class="container text-dark_gray">
+<div class="container text-dark_gray my-20">
   <h1 class="text-h1">Toutes les thématiques</h1>
   <nav class=" grid-good-practice mt-10">
     {{ range .Pages }}
     <a href="{{ .Permalink }}" class="no-underline">
-
-          <div class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
-            <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
-            <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
-          </div>
-        </a>
-        {{ end }}
-    </nav>
+      <div
+        class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
+        <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
+        <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
+      </div>
+    </a>
+    {{ end }}
+  </nav>
 </div>
 {{ end }}
