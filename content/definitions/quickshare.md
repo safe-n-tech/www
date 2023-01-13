@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Quickshare
-contenu: Outil similaire à AirDrop mais pour appareils ANDROID
+contenu: Outil similaire à AirDrop mais pour appareils Samsung.
 ---
 <!--StartFragment-->
 
