@@ -38,7 +38,7 @@
 
     <section class="container">
       <h2 class="text-h2 mt-12 mb-7">Corrigé</h2>
-      <div class="grid-cols-4 gap-4 pb-16" id="result-correction">
+      <div class="grid grid-cols-4 gap-4 pb-16" id="result-correction">
       </div>
     </section>
   </section>
@@ -51,13 +51,13 @@
 </section>
 
 <template id="template-correction-item">
-  <button class="correct-btn px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-secondary text-h1 aria-selected:bg-green aria-selected:text-white">
+  <button class="correction-btn aspect-square correct-btn bg-white rounded-xl text-green text-h1 aria-selected:text-white aria-selected:bg-green">
     <span class="correct-btn-text"></span>
   </button>
 </template>
 
 <template id="template-correction-item-wrong">
-  <button class="relative px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-orange text-h1 aria-selected:bg-orange aria-selected:text-white">
+  <button class="correction-btn aspect-square relative bg-white rounded-xl text-orange text-h1 aria-selected:text-white aria-selected:bg-orange">
     <span class="correct-btn-text"></span>
     <div class="absolute h-2 w-2 bg-current top-2 right-2 rounded-full"></div>
   </button>

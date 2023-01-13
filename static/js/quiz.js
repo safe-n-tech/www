@@ -118,10 +118,12 @@ function createElCorrection(question, questionIndex){
 function showCorrectionOfQuestionIndex(questionIndex) {
   const question = questions[questionIndex];
   const correctionBtnClicked = document.querySelector(`[data-question-index="${questionIndex}"]`)
+
+  document.querySelectorAll('.correction-btn').forEach(btn=>btn.setAttribute('aria-selected', 'false'))
   correctionBtnClicked.setAttribute('aria-selected', 'true');
 
   correctionEnonce.innerText = question.text;
-  correctionText.innerText = question.correction
+  correctionText.innerText = question.correction;
 
   clearQuestionCorrection();
   loadCreateElChoiceCorrection(question);
