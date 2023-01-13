@@ -18,4 +18,6 @@ choices:
   - isCorrect: false
     text: D’activer la connexion automatique au réseau Wifi public afin d’être sûr
       d’avoir internet pendant mon trajet.
+  - isCorrect: false
+    text: De ne rien faire de spécial
 ---
