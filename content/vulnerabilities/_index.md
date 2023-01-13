@@ -1,4 +1,4 @@
 ---
 visibleInCms: false
-title: Risques
+title: Vulnérabilités
 ---
