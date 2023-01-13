@@ -1,4 +1,4 @@
-<header class=" z-50 top-0 fixed w-full h-auto">
+<header class="z-50 top-0 fixed w-full h-auto">
     <div id="burger_btn"
         class="items-center p-4 w-full drop-shadow-md rounded-b-lg h-auto text-white bg-white flex justify-between">
 
@@ -38,15 +38,12 @@
 
     <script>
         function toggleLinks(e) {
-            let links = document.getElementById('links');
-            let burgerBtn = document.getElementById('burger_btn');
-            const className = 'top-[-300px]';
-            const dropShadow = 'drop-shadow-md';
-            const rounded = 'rounded-b-md';
+            const links = document.getElementById('links');
+            const burgerBtn = document.getElementById('burger_btn');
 
-            links.classList.toggle(className);
-            burgerBtn.classList.toggle(dropShadow);
-            burgerBtn.classList.toggle(rounded);
+            links.classList.toggle('top-[-300px]');
+            burgerBtn.classList.toggle('drop-shadow-md');
+            burgerBtn.classList.toggle('rounded-b-lg');
         }
     </script>
 
