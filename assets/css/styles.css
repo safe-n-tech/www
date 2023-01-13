@@ -19,7 +19,10 @@ a {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
     .grid-good-practice {
-        @apply grid grid-cols-2 gap-5 lg:grid-cols-4
+        @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
+    }
+    .word-break {
+      word-break: break-word;
     }
 
     .text-h1 {
@@ -46,6 +49,9 @@ a {
     }
     .border-perso-light-gray {
       @apply border-solid border-gray border
+    }
+    .border-perso {
+      @apply border-solid border-[#E3E6ED] border
     }
     .hero-bg-img {
       @apply absolute inset-0 -z-10;

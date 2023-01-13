@@ -1,6 +1,9 @@
 ---
 visibleInCms: true
 title: Double authentification
+contenu: Méthode d'authentification forte par laquelle un utilisateur peut
+  accéder à son mail après avoir présenté deux preuves d'identité distinctes à
+  un mécanisme d'authentification.
 ---
 <!--StartFragment-->
 

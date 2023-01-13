@@ -1,6 +1,9 @@
 ---
 visibleInCms: true
 title: Gestionnaire de mot de passe
+contenu: Logiciel permettant de stocker ses mots de passe de manière protégée.
+  Cela permet d’utiliser des mots de passe longs et complexes sans avoir peur de
+  ne pas les retenir, et sans avoir à les noter sur un fichier vulnérable.
 ---
 <!--StartFragment-->
 
