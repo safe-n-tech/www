@@ -4,12 +4,17 @@
   <div class="container">
 
     <h1 class="text-h1 text-white pb-16 pt-14 ">{{ .Title}}</h1>
-    <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10"><h4 class="">"Lorem Ipsum dolor sit amet consectur."</h4></div>
   </div>
 </section>
-<div class="bottom-nav-section"><a href=""><div class="our-button button-fill mx-auto">Thématiques suivantes</div></a></div>
-<div class="container text-dark_gray mt-10">
+<!-- <div class="bottom-nav-section"><a href=""><div class="our-button button-fill mx-auto">Thématiques suivantes</div></a></div> -->
+<div class="container text-dark_gray mt-10 ">
 
+  <div class="mx-auto w-5/6 max-w-xl mb-5">
+
+    <iframe class="aspect-video" width="100%" src="https://www.youtube.com/embed/CwLlBtHZxEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+    </iframe>
+  </div>
 
   <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id non quidem soluta similique vitae quas cumque deserunt obcaecati quibusdam autem odio, libero sit vero earum repudiandae! Repudiandae aliquid deserunt aliquam.</p>
 
@@ -19,21 +24,26 @@
   </div>
   <section class="active select-item mb-20" id="sec-left">
     {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "intersect" (slice .Title ) }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" (slice .Title) }}
     {{ if (gt (len $vulnerabilitiesLinked) 0) }}
 
     <h3 class="mt-4 text-h4 text-black">Les vulnérabilités</h3>
 
 
     <nav class=" grid-good-practice mt-10">
-        {{ range $vulnerabilitiesLinked}}
+        {{ range $vulnerabilitiesLinked }}
         <a href="{{ .Permalink }}" class="no-underline">
 
-          <div class="border-perso-light-gray rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-            <p class="text-orange">"{{ .Title }}"</p>
+          <div class="border-perso-light-gray rounded-md text-left px-3 py-5 h-full w-full grid place-items-center bg-white justify-start">
+            <p class="text-orange">{{ .Title }}</p>
+            <div class="flex align-middle justify-between w-full mt-5">
+              <p class="text-secondary">Risques</p>
+              <img src="/svgs/icon_forward.svg" alt="go to {{ .Title }}" class="w-5">
+            </div>
           </div>
         </a>
         {{ end }}
+
     </nav>
     {{ end }}
   </section>
@@ -41,13 +51,14 @@
   <section class="select-item mb-20" id="sec-right">
 
     {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-    {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "intersect" (slice .Title ) }}
+
+    {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "eq" .Title }}
 
     {{ if (gt (len $goodPracticesLinked) 0) }}
 
     <h3 class="mt-4 text-h4 text-black">Les bonnes pratiques</h3>
 
-      <nav class="grid-good-practice mt-10">
+      <nav class="grid-good-practice mt-10 grid-cols-1">
           {{ range $goodPracticesLinked}}
           <a href="{{ .Permalink }}" class="no-underline">
 
@@ -57,8 +68,9 @@
             </div>
           </a>
           {{ end }}
+
       </nav>
-    {{ end }}
+      {{ end }}
   </section>
 
 </div>
