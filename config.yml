@@ -1,5 +1,5 @@
 languageCode: 'fr'
-baseURL: /
+baseURL: https://cybersecu-app.netlify.app/
 removePathAccents: true
 
 params:
@@ -12,9 +12,9 @@ params:
     title: Page - Site name
     desc: "Meaningful page description - Site name"
     subject: "subject of website"
-    url: /
-    hero: /sprites/hero-min.jpg
-    logo: /sprites/logo-min.png
+    url: https://cybersecu-app.netlify.app/
+    hero: https://cybersecu-app.netlify.app/sprites/hero-min.jpg
+    logo: https://cybersecu-app.netlify.app/sprites/logo-min.png
     links:
       facebook: https://www.facebook.com/username
       instagram: https://www.instagram.com/username
