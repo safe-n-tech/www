@@ -68,9 +68,10 @@ function calculateResults() {
     })
   })
 
-  const numberCorrect = questions.filter(question=>question.isCorrect).length,
+  const numberCorrect = questions.filter(question=>question.isUserAnswerCorrect).length,
           score = Math.trunc(numberCorrect * 100 / (questions.length));
-  let sentence = "";
+
+  let sentence;
   if(score <= 25){
     sentence = "Vous êtes en danger";
   }
@@ -86,7 +87,7 @@ function calculateResults() {
   results = {
     numberCorrect,
     score,
-    sentence: score > 80 ? 'Vous êtes parfait (ou presque)' : 'Vous êtes vulnérable',
+    sentence: sentence,
     image: ''
   }
 }
