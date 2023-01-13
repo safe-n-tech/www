@@ -1,4 +1,4 @@
 ---
 visibleInCms: false
-title: Catégories
+title: Thématiques
 ---

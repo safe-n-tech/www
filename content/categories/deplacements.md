@@ -2,12 +2,10 @@
 visibleInCms: true
 title: Déplacements
 icon: deplacements.png
-subtitle: “Un vol est vite arrivé, et la disparition de toutes vos données
-  personnelles et confidentielles envolées.”
-description: "Aujourd’hui, il est nécessaire de porter un regard et une sécurité
-  constante sur ses affaires. Un vol peut surgir et vos données être
-  compromises. Savoir quel matériel est affecté à quelle personne, minimiser le
-  transport de vos matériels informatiques, vérifier la localisation ou encore
-  utiliser un VPN évite tout accident. "
-videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI
+subtitle: “En déplacement, la vigilance est de mise.”
+description: Lorsque vous voyagez, une personne malveillante peut voler votre
+  ordinateur, et compromettre vos données. Il est important de toujours garder
+  vos affaires près de vous et de n’emporter que le strict minimum. Pour vous
+  protéger, de nombreux dispositifs sont à votre disposition.
+videoUrl: null
 ---

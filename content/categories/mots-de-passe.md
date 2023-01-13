@@ -2,13 +2,10 @@
 visibleInCms: true
 title: Mots de passe
 icon: mots-de-passe.png
-subtitle: “Un manque de rigueur dans les gestions de vos mots de passe, et le
-  piratage est à porté de main.”
-description: Il est donc essentiel d’être davantage vigilant dans la
-  sécurisation de vos données. Vos mots de passe vous protègent de votre vie
-  privée et de votre identité, il doit normalement être conservé, caché, pour
-  préserver la confidentialité. Il est donc primordial de ne pas stocker ses
-  identifiants et mots de passe dans ses navigateurs (et encore moins sur un
-  post-it collé sur le clavier).
+subtitle: “Le mot de passe est la clé angulaire de tous vos comptes.”
+description: Vos mots de passe protègent votre vie privée et votre identité. Ils
+  se doivent d’être sécurisés et secrets pour préserver la confidentialité de
+  vos données personnelles. S’ils sont trop simples à deviner, cela revient à
+  donner la clé de votre porte d’entrée à des personnes mal intentionnées.
 videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI
 ---

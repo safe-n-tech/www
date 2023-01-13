@@ -2,7 +2,13 @@
 visibleInCms: true
 title: Paiement en ligne
 icon: paiement-en-ligne.png
-subtitle: Paiement en ligne
-description: Paiement en ligne
-videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI
+subtitle: “Attention aux sites frauduleux !”
+description: "Si dans une grande majorité des cas, les achats sur Internet se
+  déroulent sans incident, ce n’est pas toujours le cas. En effet, certains
+  fraudeurs profitent des achats en ligne pour pirater les comptes bancaires des
+  consommateurs et réaliser à leur insu des opérations frauduleuses. Dans une
+  démarche de sécurité, il faut protéger ses données bancaires que ce soit par
+  la vérification de la fiabilité du site, ou même grâce à divers outils
+  protégeant vos coordonnées bancaires. "
+videoUrl: null
 ---

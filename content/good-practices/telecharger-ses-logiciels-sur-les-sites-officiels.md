@@ -7,4 +7,7 @@ definitions:
   - Suspect
   - Virus informatique
   - Sandbox
+risk: Télécharger une contrefaçon d’un logiciel contenant un virus informatique.
+vulnerability: Se rendre par inadvertance sur des sites non officiels pour y
+  télécharger des contenus.
 ---

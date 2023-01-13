@@ -4,6 +4,13 @@ title: Prévenir et réagir au vol de documents (voir recommandations).
 categories: Données confidentielles
 definitions:
   - "Filigrane "
+  - "Cloud "
+risk: Voir ses données confidentielles détournées pour usurper une identité,
+  procéder à une extorsion de fonds, effectuer une ouverture de micro-crédit à
+  son nom, etc.).
+vulnerability: Envoyer des documents sensibles à une personne tierce, pour
+  effectuer par exemple des formalités administratives (justificatif de
+  domicile, avis d’imposition, etc.).
 ---
 <!--StartFragment-->
 
