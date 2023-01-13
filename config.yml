@@ -3,15 +3,11 @@ baseURL: https://cybersecu-app.netlify.app/
 removePathAccents: true
 
 params:
-  contact:
-    email:
-      content: proust@arthaud.dev
-      prefix: "mailto:"
   seo:
-    author: Jhon Doe
-    title: Page - Site name
-    desc: "Meaningful page description - Site name"
-    subject: "subject of website"
+    author: MMI Bordeaux
+    title: Profitez du numérique en toute sécurité
+    desc: "Découvrez les bonnes pratiques en cybersécurité grâce à un quizz fait pour le grand public - Safe N Tech"
+    subject: "security"
     url: https://cybersecu-app.netlify.app/
     hero: https://cybersecu-app.netlify.app/sprites/hero-min.jpg
     logo: https://cybersecu-app.netlify.app/sprites/logo-min.png
