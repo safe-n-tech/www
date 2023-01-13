@@ -1,0 +1,86 @@
+<section id="results" class="hidden min-h-screen pb-20 flex flex-col gap-y-8">
+  <section class="container pt-16 mb-24">
+    <img src="/icons/quizz/feedback-icon.png" alt="feedback icon">
+    <h1 class="text-h1 text-black text-center">Fini !</h1>
+  </section>
+
+  <div class="absolute top-72 left-0 container z-50 bg-white">
+    <section class="relative p-4 gap-2 rounded-2xl justify-center items-stretch shadow-2xl text-black flex flex-row">
+      <article class="w-full flex flex-col items-center gap-2">
+        <span>Score</span>
+        <span id="result-score" class="text-h2"></span>
+      </article>
+
+      <div class="my-2 w-1 bg-dark_gray"></div>
+
+      <article class="w-full flex flex-col items-center gap-2">
+        <img id="result-image">
+        <span id="result-sentence" class="text-h2"></span>
+      </article>
+    </section>
+  </div>
+
+  <section class="container bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] drop-shadow-xl pt-40 text-white" style="min-height:100vh; clip-path: polygon(0 100%, 0 17%, 41% 0, 100% 22%, 100% 100%);">
+  <section class="container">
+    <!-- <h3 class="text-center" id="result-question"></h3>
+    <div class="flex flex-col gap-3" id="result-question-choices"></div> -->
+
+    <h2 class="text-h2">Les bonnes pratiques</h2>
+    <div class="flex flex-col gap-3 " id="result-question-good-practices">
+      <p class="mt-4 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <a href="/" class="w-fit bg-white text-primary p-4 rounded-xl">Je me renseigne</a>
+    </div>
+
+    <h2 class="text-h2 mt-12">Les thématiques</h2>
+    <div class="flex flex-col gap-3" id="result-question-thematique">
+      <p class="mt-4 mb-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      <a href="/" class="w-fit bg-white text-primary p-4 rounded-xl">Je me renseigne</a>
+    </div>
+
+    <!-- <h2 class="text-h2">Vulnérabilités</h2>
+    <div class="flex flex-col gap-3" id="result-question-vulnerabilities"></div> -->
+  </section>
+
+  <section class="container">
+    <h2 class="text-h2 mt-12 mb-7">Corrigé</h2>
+    <div class="grid-cols-4 gap-4 pb-16" id="result-correction">
+    </div>
+  </section>
+
+  <template id="template-correction-item">
+    <button class="correct-btn px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-secondary text-h1">
+      <span class="correct-btn-text"></span>
+    </button>
+  </template>
+
+  <template id="template-correction-item-wrong">
+    <button class="relative correction-wrong px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-orange text-h1">
+      <span class="correct-btn-text"></span>
+    </button>
+  </template>
+
+</section>
+<section class="bg-light_gray rounded-2xl h-fit pt-12">
+  <h3 id="correction-enonce" class="text-dark_gray mb-2">Has to be change</h3>
+  <div id="correction-question-container" class="my-auto container grid grid-cols-4 gap-x-8 gap-y-3">
+
+  </div>
+</section>
+</section>
+
+<script>
+
+</script>
+
+<style>
+  .correction-wrong::after{
+    content: "";
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 0.9rem;
+    height: 0.9rem;
+    background-color: #BB2626;
+    border-radius: 50rem;
+  }
+</style>

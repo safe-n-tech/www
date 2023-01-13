@@ -42,3 +42,8 @@ menu:
       title: glossaire
       url: /definitions
     
+
+outputs:
+  section:
+    - html
+    - json
