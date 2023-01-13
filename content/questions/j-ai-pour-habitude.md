@@ -16,4 +16,7 @@ choices:
     text: Cela dépend des logiciels.
   - isCorrect: false
     text: Je ne fais pas de mises à jour.
+  - isCorrect: true
+    text: Je fais les mises à jour manuellement dès qu'une nouvelle mise à jour est
+      disponible
 ---
