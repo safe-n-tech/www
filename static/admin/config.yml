@@ -19,6 +19,10 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title }
+      - { label: Sous titre, name: subtitle}
+      - { label: Description, name: description}
+
+
 
   - name: vulnerabilities
     label: Vulnérabilités
@@ -173,4 +177,4 @@ collections:
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
-      - { label: 'Contenu', name: 'body', widget: 'markdown', required: false }
+      - { label: Contenu, name: contenu, required: true }

@@ -10,7 +10,6 @@
 <div class="container md:w-2/3 md:mt-10">
     {{ range .Pages }}
     <a href="{{ .Permalink }}">
-        <div></div>
         <div  class="bg-white mb-10  p-5 rounded-2xl">
             <div class="flex flex-row justify-between">
                 <p class="text-label text-black w-2/3">{{ .Title }}</p>
@@ -18,7 +17,7 @@
                     <img src="/svgs/arrowBlue.png" class="w-5"/>
                 </div>
             </div>
-            <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-white"></div>
+            <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-white mt-4"></div>
         </div>
     </a>
     {{ end }}

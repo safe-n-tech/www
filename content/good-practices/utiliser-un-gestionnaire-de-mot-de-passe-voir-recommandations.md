@@ -2,6 +2,8 @@
 visibleInCms: true
 title: Utiliser un gestionnaire de mot de passe (voir recommandations).
 categories: Mots de passe
+definitions:
+  - Gestionnaire de mot de passe
 ---
 <!--StartFragment-->
 

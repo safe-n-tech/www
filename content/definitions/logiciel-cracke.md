@@ -1,0 +1,5 @@
+---
+visibleInCms: true
+title: "Logiciel cracké "
+---
+Un programme informatique conçu pour modifier le comportement d'un autre logiciel, la plupart du temps pour lever une impossibilité ou restriction d'utilisation. Les logiciels crackés sont susceptibles de contenir et propager des programmes malveillants comme des virus et autres malwares.
