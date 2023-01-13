@@ -6,6 +6,7 @@ correction: Vérifier régulièrement ce qu’il se passe sur votre compte banca
   l’origine, et donc de réagir au plus vite.
 goodPractices:
   - Vérifier ses comptes bancaires (voir recommandations).
+categories: Paiement en ligne
 choices:
   - isCorrect: true
     text: régulièrement, en vérifiant les libellés des différentes transactions.
