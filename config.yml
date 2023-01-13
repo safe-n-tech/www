@@ -37,8 +37,7 @@ menu:
       name: Thématiques
       title: thématiques
       url: /categories
-
-outputs:
-  section:
-    - html
-    - json
+    - identifier: definitions
+      name: Glossaire
+      title: glossaire
+      url: /definitions

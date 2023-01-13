@@ -7,5 +7,5 @@ risks:
     des données à caractère sensible.
 goodPractices:
   - Agir dès les premiers soupçons d’attaque et se déconnecter de tous les
-    comptes affiliés à l’adresse mail concernée.
+    comptes affiliés à l’adresse e-mail concernée.
 ---

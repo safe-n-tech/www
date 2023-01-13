@@ -7,5 +7,6 @@ risks:
   - Faciliter l’accès au contenu de votre appareil et de fait aux informations
     sensibles stockées dessus.
 goodPractices:
-  - Utiliser un système de déverrouillage pour se connecter à ses appareils
+  - Utiliser impérativement un système de déverrouillage pour sécuriser ses
+    appareils (schéma, biométrie, code ou mot de passe).
 ---

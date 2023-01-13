@@ -11,11 +11,18 @@ a {
 }
 
 @layer components {
+
+    .perso-background{
+      background: linear-gradient(154.09deg, #2FA2EE 0%, #1B0A40 79.26%);
+    }
     .grid-body {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
     }
     .grid-good-practice {
-        @apply grid grid-cols-2 gap-5 lg:grid-cols-4
+        @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
+    }
+    .word-break {
+      word-break: break-word;
     }
 
     .text-h1 {
@@ -31,7 +38,7 @@ a {
     }
 
     .text-label {
-        @apply text-sm font-normal;
+        @apply text-base font-normal;
     }
 
     .btn {
@@ -42,6 +49,9 @@ a {
     }
     .border-perso-light-gray {
       @apply border-solid border-gray border
+    }
+    .border-perso {
+      @apply border-solid border-[#E3E6ED] border
     }
     .hero-bg-img {
       @apply absolute inset-0 -z-10;
@@ -62,12 +72,20 @@ a {
       @apply block
     }
     .switch {
-      @apply border-secondary border-solid border-2 rounded-lg flex justify-between ring-inset w-4/5 lg:w-1/2 mx-auto my-5;
+      @apply border-secondary border-solid border-2 rounded-lg grid grid-cols-2 ring-inset mx-auto;
     }
     .switch-btn.active {
-      @apply border-secondary border-solid bg-secondary border-0 text-white w-5/6;
+      @apply border-secondary border-solid border-2 bg-secondary text-white;
     }
     .switch-btn {
-      @apply p-2 rounded-md w-1/2 text-center;
+      @apply w-full px-4 py-2 rounded-md text-center;
+    }
+
+    .breadcrumb {
+        @apply w-full flex flex-row flex-wrap text-label gap-2 whitespace-nowrap text-ellipsis overflow-hidden;
+    }
+
+    .breadcrumb-item {
+        @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 text-left text-ellipsis;
     }
   }

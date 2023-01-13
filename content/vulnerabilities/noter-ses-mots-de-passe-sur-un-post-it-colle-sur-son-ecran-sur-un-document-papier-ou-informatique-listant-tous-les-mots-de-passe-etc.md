@@ -7,5 +7,5 @@ risks:
   - S’exposer à un risque de divulgation du mot de passe par une personne tierce
     ou utilisation frauduleuse en son nom.
 goodPractices:
-  - "Utiliser un gestionnaire de mot de passe  "
+  - Utiliser un gestionnaire de mot de passe (voir recommandations).
 ---

@@ -1,67 +1,82 @@
 {{ define "main" }}
-<section class="relative w-full pt-5 -mt-5">
-  <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-  <div class="container">
-
-    <h1 class="text-h1 text-white pb-16 pt-14 ">{{ .Title}}</h1>
-    <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10"><h4 class="">"Lorem Ipsum dolor sit amet consectur."</h4></div>
+<section class="relative w-full pt-5 -mt-5 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
+  <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
+    src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container py-6 text-white">
+    {{ partial "breadcrumb" (dict "page" . "links" (slice "/categories")) }}
+    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+    <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
   </div>
 </section>
-<div class="bottom-nav-section"><a href=""><div class="our-button button-fill mx-auto">Thématiques suivantes</div></a></div>
-<div class="container text-dark_gray mt-10">
+
+<section class="mx-auto w-full max-w-xl mb-5">
+  {{ if (.Params.VideoUrl) }}
+
+    <iframe class="mt-10 aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-  <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id non quidem soluta similique vitae quas cumque deserunt obcaecati quibusdam autem odio, libero sit vero earum repudiandae! Repudiandae aliquid deserunt aliquam.</p>
+  {{ end }}
+</section>
 
-  <div class="switch">
-    <div class="switch-btn active" id="btn-vulnerabilites">Vulnérabilités</div>
-    <div class="switch-btn" id="btn-preco">Préco</div>
+<section class="container text-dark_gray mt-10">
+  <p>{{ .Description }}</p>
+
+  <div class="switch mt-10">
+    <button class="switch-btn active" id="btn-vulnerabilites">Vulnérabilités</button>
+    <button class="switch-btn" id="btn-preco">Préco</button>
   </div>
-  <section class="active select-item mb-20" id="sec-left">
+
+  <section class="active select-item mt-10 mb-20" id="sec-left">
     {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "intersect" (slice .Title ) }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "eq" .Title }}
+
     {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+    <h3 class="text-h2 text-black">Les vulnérabilités</h3>
 
-    <h3 class="mt-4 text-h4 text-black">Les vulnérabilités</h3>
+    <nav class="grid-good-practice mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {{ range $vulnerabilitiesLinked }}
+      <a href="{{ .Permalink }}" class="no-underline">
 
-
-    <nav class=" grid-good-practice mt-10">
-        {{ range $vulnerabilitiesLinked}}
-        <a href="{{ .Permalink }}" class="no-underline">
-
-          <div class="border-perso-light-gray rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-            <p class="text-orange">"{{ .Title }}"</p>
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
+          <p class="text-orange">{{ .Title }}</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label">En savoir plus sur le risque</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
           </div>
-        </a>
-        {{ end }}
+        </div>
+      </a>
+      {{ end }}
+
     </nav>
     {{ end }}
   </section>
 
-  <section class="select-item mb-20" id="sec-right">
-
+  <section class="select-item mt-10 mb-20" id="sec-right">
     {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-    {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "intersect" (slice .Title ) }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.categories" "eq" .Title }}
 
     {{ if (gt (len $goodPracticesLinked) 0) }}
+    <h3 class="text-h2 text-black">Les bonnes pratiques</h3>
 
-    <h3 class="mt-4 text-h4 text-black">Les bonnes pratiques</h3>
+    <nav class="grid-good-practice mt-5 grid-cols-1">
+      {{ range $goodPracticesLinked}}
+      <a href="{{ .Permalink }}" class="no-underline">
 
-      <nav class="grid-good-practice mt-10">
-          {{ range $goodPracticesLinked}}
-          <a href="{{ .Permalink }}" class="no-underline">
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full grid place-items-center bg-white">
+          <p class="text-secondary">"{{ .Title }}"</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label">En savoir plus sur la bonne pratique</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
+          </div>
+        </div>
+      </a>
+      {{ end }}
 
-            <div class="border-perso-light-gray rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-              <p class="text-secondary">"{{ .Title }}"</p>
-
-            </div>
-          </a>
-          {{ end }}
-      </nav>
+    </nav>
     {{ end }}
   </section>
 
-</div>
+</section>
 
 <script>
   const switchBtns = document.querySelector('.switch');
