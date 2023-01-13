@@ -1,11 +1,11 @@
-<ul id="breadcrumbs" class="flex flex-row text-label gap-2">
-    <li><a href="/" class="underline">Accueil</a></li>
+<ul id="breadcrumbs" class="breadcrumb">
+    <li><a href="/" class="breadcrumb-item underline">Accueil</a></li>
     {{ range .links }}
         {{ with $.page.GetPage . }}
             <span>/</span>
-            <li><a href="{{ .Permalink }}" class="underline">{{ .Title }}</a></li>
+            <li><a href="{{ .Permalink }}" class="breadcrumb-item underline">{{ .Title }}</a></li>
         {{ end }}
     {{ end }}
     <span>/</span>
-    <li>{{ .page.Title}}</li>
+    <li class="breadcrumb-item">{{ .page.Title}}</li>
 </ul>
