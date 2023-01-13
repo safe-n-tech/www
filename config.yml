@@ -1,5 +1,5 @@
 languageCode: 'fr'
-baseURL: https://cybersecu-app.netlify.app/
+baseURL: https://cybersecu-app.netlify.app
 removePathAccents: true
 
 params:
@@ -8,7 +8,7 @@ params:
     title: Profitez du numérique en toute sécurité
     desc: "Découvrez les bonnes pratiques en cybersécurité grâce à un quizz fait pour le grand public - Safe N Tech"
     subject: "security"
-    url: https://cybersecu-app.netlify.app/
+    url: https://cybersecu-app.netlify.app
     hero: /sprites/hero-min.jpg
     logo: /sprites/logo-min.png
     links:
