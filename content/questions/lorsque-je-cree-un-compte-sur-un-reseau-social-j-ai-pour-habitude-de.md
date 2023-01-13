@@ -3,6 +3,8 @@ visibleInCms: true
 text: "Lorsque je crée un compte sur un réseau social j’ai pour habitude de :"
 correction: "Utiliser un pseudonyme sur les réseaux sociaux est un moyen de
   préserver sa vie privé et son identité. "
+goodPractices:
+  - Protéger son identité sur les réseaux sociaux.
 categories: Réseaux sociaux
 choices:
   - isCorrect: false
