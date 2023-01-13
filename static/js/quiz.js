@@ -78,6 +78,7 @@ function createElCorrection(newCorrectionBtn, index){
 }
 
 function showResults(){
+  let sentenceLevel = "";
   calculateResults();
 
   document.querySelector("#quizz-ingame").classList.add("hidden");
@@ -85,6 +86,21 @@ function showResults(){
 
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
+
+  if(results.score <= 25){
+    sentenceLevel = "Vos appareils et vos données sont un trésor pour les pirates. Attention, ils sont parés à l’abordage !";
+  }
+  else if (results.score > 25 && results.score <= 50){
+    sentenceLevel = "Vous y êtes presque ! Mais pour les pirates, c’est comme si vous aviez fermé votre maison à clef, et laissé une fenêtre ouverte.";
+  }
+  else if (results.score > 50 && results.score <= 75){
+    sentenceLevel = "Vous êtes sur la bonne voie, mais votre ennemi est mieux équipé.";
+  }
+  else{
+    sentenceLevel = "Vous êtes la terreur des pirates ! Ne changez rien, restez vigilant.";
+  }
+
+  document.getElementById("sentence-level").innerText = sentenceLevel;
 
   createCorrection();
 }
@@ -106,7 +122,19 @@ function calculateResults() {
 
   const numberCorrect = questions.filter(question=>question.isCorrect).length,
           score = Math.trunc(numberCorrect * 100 / (questions.length));
-
+  let sentence = "";
+  if(score <= 25){
+    sentence = "Vous êtes en danger";
+  }
+  else if (score > 25 && score <= 50){
+    sentence = "Vous êtes vulnérable.";
+  }
+  else if (score > 50 && score <= 75){
+    sentence = "Vous êtes bon.";
+  }
+  else{
+    sentence = "Vous êtes parfait (ou presque) !";
+  }
   results = {
     numberCorrect,
     score,
