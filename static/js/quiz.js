@@ -97,7 +97,7 @@ function createCorrection(){
     createElCorrection(question, index);
   });
 
-  showCorrectionOfQuestion(questions[0])
+  showCorrectionOfQuestionIndex(0)
 }
 
 function createElCorrection(question, questionIndex){
@@ -108,12 +108,15 @@ function createElCorrection(question, questionIndex){
   newCorrectionBtn.dataset.questionIndex = questionIndex;
   newCorrectionBtn.querySelector(".correct-btn-text").innerText = questionIndex+1;
   newCorrectionBtn.addEventListener("click", ()=>{
-    showCorrectionOfQuestion(question);
+    showCorrectionOfQuestionIndex(questionIndex);
   });
   correctionBtnContainer.appendChild(newCorrectionBtn);
 }
 
-function showCorrectionOfQuestion(question) {
+function showCorrectionOfQuestionIndex(questionIndex) {
+  const question = questions[questionIndex];
+  const correctionBtnClicked = document.querySelector(`[data-question-index="${questionIndex}"]`)
+  correctionBtnClicked.setAttribute('aria-selected', 'true');
   correctionEnonce.innerText = question.text;
   clearQuestionCorrection();
   loadCreateElChoiceCorrection(question);

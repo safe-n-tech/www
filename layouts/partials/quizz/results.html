@@ -55,30 +55,14 @@
 </section>
 
 <template id="template-correction-item">
-  <button class="correct-btn px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-secondary text-h1">
+  <button class="correct-btn px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-secondary text-h1 aria-selected:bg-green aria-selected:text-white">
     <span class="correct-btn-text"></span>
   </button>
 </template>
 
 <template id="template-correction-item-wrong">
-  <button class="relative correction-wrong px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-orange text-h1">
+  <button class="relative px-6 py-4 mx-2 first:ml-0 last:mr-0 bg-white rounded-xl text-orange text-h1 aria-selected:bg-orange aria-selected:text-white">
     <span class="correct-btn-text"></span>
+    <div class="absolute h-2 w-2 bg-current top-2 right-2 rounded-full"></div>
   </button>
 </template>
-
-<script>
-
-</script>
-
-<style>
-.correction-wrong::after{
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  width: 0.9rem;
-  height: 0.9rem;
-  background-color: #BB2626;
-  border-radius: 50rem;
-}
-</style>
