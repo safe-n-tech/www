@@ -1,0 +1,20 @@
+{
+  "text": "{{ .Params.text }}",
+  "userAnswer": null,
+  "isCorrect": null,
+  "correction": "{{ .Params.correction }}",
+  "image": "{{ .Params.image }}",
+  "choices": {{ .Params.choices | jsonify }},
+  {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+  "goodPractices": [
+    {{- range $index, $goodPracticesLinked := (where $goodPractices ".Title" "in" .Params.goodPractices) -}}
+    {{- if $index -}},{{- end -}} {{ .Render "single" }}
+    {{- end -}}
+  ],
+  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+  "vulnerabilities": [
+    {{- range $index, $vulnerabilitiesLinked := (where $vulnerabilities ".Params.goodPractices" "intersect" .Params.goodPractices)  -}}
+      {{- if $index -}},{{- end -}} {{ .Render "single" }}
+    {{- end -}}
+  ]
+}
