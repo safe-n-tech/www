@@ -5,4 +5,9 @@ categories: Déplacements
 risks:
   - Voir ses données interceptées et permettre à un logiciel malveillant de se
     propager par le réseau.
+goodPractices:
+  - Utiliser un VPN, disposer d’un logiciel de sécurité (antivirus), privilégier
+    un partage de connexion.
+definitions:
+  - VPN
 ---
