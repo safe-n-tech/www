@@ -192,6 +192,8 @@ function handleAnswerSelected(questionSelected){
 }
 
 function clearQuestionAnswers() {
+  document.getElementById("quizz-go-next-question-btn").setAttribute('disabled', '');
+
   while (choicesContainer.firstChild) {
     choicesContainer.removeChild(choicesContainer.firstChild);
   }
