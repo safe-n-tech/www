@@ -24,7 +24,7 @@
   </div>
   <section class="active select-item mb-20" id="sec-left">
     {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" (slice .Title) }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.categories" "eq" .Title }}
     {{ if (gt (len $vulnerabilitiesLinked) 0) }}
 
     <h3 class="mt-4 text-h4 text-black">Les vulnérabilités</h3>
@@ -34,7 +34,7 @@
         {{ range $vulnerabilitiesLinked }}
         <a href="{{ .Permalink }}" class="no-underline">
 
-          <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-start">
+          <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
             <p class="text-orange">{{ .Title }}</p>
             <div class="flex align-middle justify-between w-full mt-5">
               <p class="text-secondary">Risques</p>
