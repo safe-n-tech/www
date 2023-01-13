@@ -10,27 +10,33 @@
 
 <div class="container">
 
-    <p>{{ .Description }}</p>
+    <h2 class="">{{ .Description }}</h2>
+
 
     {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.categories }}
     {{ if (gt (len $categoriesLinked) 0) }}
-    <h3 class="mt-4 text-h3">Catégories</h3>
-    <ul class="list-disc">
+    <h3 class="mt-4 text-h3 text-black">Catégories</h3>
+    <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white"></div>
+
+    <div class="list-disc bg-white p-5 mt-10 border-light_gray text-center border-2 rounded-2xl">
         {{ range $categoriesLinked}}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        <a href="{{ .Permalink }}">
+            <p>{{ .Title }}</p>
+
+        </a>
         {{ end }}
-    </ul>
+    </div>
     {{ end }}
 
-    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Params.goodPractices" "intersect" (slice .Title) }}
-    {{ if (gt (len $goodPracticesLinked) 0) }}
-    <h3 class="mt-4 text-h2 text-black  ">Vulnérabilités</h3>
-    <ul class="list-disc">
-        {{ range $goodPracticesLinked}}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-        {{ end }}
-    </ul>
-    {{ end }}
+<!--    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Params.goodPractices" "intersect" (slice .Title) }}-->
+<!--    {{ if (gt (len $goodPracticesLinked) 0) }}-->
+<!--    <h3 class="mt-4 text-h2 text-black  ">Vulnérabilités</h3>-->
+<!--    <ul class="list-disc">-->
+<!--        {{ range $goodPracticesLinked}}-->
+<!--        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>-->
+<!--        {{ end }}-->
+<!--    </ul>-->
+<!--    {{ end }}-->
 </div>
 
 {{ end }}
