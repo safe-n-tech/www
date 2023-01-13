@@ -1,22 +1,23 @@
 <header class="z-50 top-0 sticky w-full h-auto">
     <div id="burger_btn" class="items-center p-4 w-full drop-shadow-md rounded-b-md h-auto text-white bg-white flex justify-between">
 
-        <a href="/" class="text-primary"><img src="/svgs/logo_icon.svg" class="w-12" alt="Accueil"></a>
-    
+
+        <a href="/" class="text-primary"><span><img src="/svgs/logo_icon.svg" alt="logo icon"></span></a>
+
         <div class="flex cursor-pointer items-center" onclick="toggleLinks()" name="menu">
             <a class="md:invisible visible text-label text-dark_gray text-xl">Menu</a>
-            <div class="md:invisible md:absolute visible ml-2">
-                <img src="/svgs/icon_burger.svg" alt="Menu" class="w-6">
+            <div class="md:invisible md:absolute visible ml-2 w-4">
+                <img src="/svgs/icon_burger.svg" alt="Arrow icon" class="w-full">
             </div>
             {{ range .Site.Menus.header }}
-            <ul class="hidden md:flex"> 
+            <ul class="hidden md:flex">
                 <a href="{{ .URL }}">
                     <li class="text-sm w-auto p-3 flex justify-between md:flex">
                             <span class="text-dark_gray text-base">{{ .Name }}</span>
                     </li>
                 </a>
             </ul>
-            {{ end }}           
+            {{ end }}
         </div>
     </div>
 
