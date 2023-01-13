@@ -1,4 +1,5 @@
 ---
+visibleInCms: true
 text: Quel navigateur utilisez-vous?
 correction: Nous vous conseillons d'utiliser un navigateur récent comme Google Chrome
 goodPractices:

@@ -1,4 +1,5 @@
 ---
+visibleInCms: false
 outputs:
 - json
 ---

@@ -15,9 +15,10 @@ module.exports = {
         orange: '#BB2626',
         tertiary: '#89D0FF',
         dark_gray: '#4A4A52',
-        gray:'#AAAAAA',
-        light_gray:'#F9F9F9',
-        white:'#FFFFFF',
+        gray: '#AAAAAA',
+        light_gray: '#F9F9F9',
+        white: '#FFFFFF',
+        light_white : '#F5F7FA',
       },
       data: {
         'wrongSelected': 'wrongSelected="true"', // data-wrongSelected:bg-white => element[data-wrongSelected]

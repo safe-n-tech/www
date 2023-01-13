@@ -41,9 +41,3 @@ menu:
       name: Glossaire
       title: glossaire
       url: /definitions
-    
-
-outputs:
-  section:
-    - html
-    - json

@@ -178,3 +178,31 @@ collections:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
       - { label: Titre, name: title }
       - { label: Contenu, name: contenu, required: true }
+
+  - name: questions
+    label: Questions
+    label_singular: Question
+    folder: content/questions
+    create: true
+    editor: { preview: false }
+    filter: { field: "visibleInCms", value: true }
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: Texte, name: text }
+      - { label: Correction, name: correction }
+      - {
+        label: Bonnes pratiques,
+        name: goodPractices,
+        widget: relation,
+        collection: good-practices,
+        search_fields: [ "title" ],
+        value_field: "title",
+        multiple: true,
+        required: false
+      }
+      - label: Choix
+        name: choices
+        widget: "list"
+        fields:
+          - { label: Text, name: text }
+          - { label: Bonne réponse, name: isCorrect, widget: boolean, default: false, required: false }
