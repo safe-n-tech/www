@@ -2,7 +2,8 @@
 <section class="relative w-full pt-5 -mt-5">
     <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
     <div class="container">
-        <div class="text-center w-4/5 mx-auto text-white pb-20 pt-10">
+        <div class="text-center mx-auto text-white pb-20 pt-10">
+            <h2 class="text-h2">Bonne pratique </h2>
             <h1 class="text-h1 text-white pb-16 pt-14 text-center">{{ .Title}}</h1>
         </div>
     </div>
@@ -15,14 +16,13 @@
 
     {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.categories }}
     {{ if (gt (len $categoriesLinked) 0) }}
-    <h3 class="mt-4 text-h3 text-black">Catégories</h3>
+    <h3 class="mt-4 text-h3 text-black">Catégories associées</h3>
     <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white"></div>
 
     <div class="list-disc bg-white p-5 mt-10 border-light_gray text-center border-2 rounded-2xl">
         {{ range $categoriesLinked}}
         <a href="{{ .Permalink }}">
             <p>{{ .Title }}</p>
-
         </a>
         {{ end }}
     </div>
