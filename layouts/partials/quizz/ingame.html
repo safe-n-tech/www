@@ -1,12 +1,13 @@
-<section id="quizz-ingame" class="min-h-screen pb-20 flex flex-col gap-y-8">
-  <section class="pointer-events-none relative pt-8 pb-36 -mb-20">
-    <img class="w-full h-full hero-bg-img object-cover object-bottom" src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt=" ">
-    <div class="pointer-events-auto container text-white flex flex-col gap-5 items-center justify-center">
-      <h2 id="quizz-progression-text" class="text-h1">Question ?/?</h2>
-      <div id="quizz-progression-bar-outer" class="overflow-hidden rounded-full bg-white w-full h-2">
+<section id="quizz-ingame" class="min-h-screen pb-24 flex flex-col gap-y-8">
+  <section class="pointer-events-none relative w-full pt-5 -mt-5 max-sm:pb-36 max-sm:-mb-20 sm:pb-2 sm:perso-background">
+    <img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+    <div class="container text-center text-white py-6 flex flex-col gap-5 md:gap-10">
+      {{ partial "breadcrumb" (dict "page" . ) }}
+      <h1 id="quizz-progression-text" class="pt-5 text-h1 md:text-5xl">Question ?/?</h1>
+      <div id="quizz-progression-bar-outer" class="overflow-hidden rounded-full bg-white w-full md:w-1/2 mx-auto h-2">
         <div id="quizz-progression-bar-inner" class="bg-primary rounded-full h-full left-0"></div>
       </div>
-      <p id="quizz-question-text"></p>
+      <p id="quizz-question-text" class="md:text-2xl"></p>
     </div>
   </section>
 
