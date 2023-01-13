@@ -13,8 +13,6 @@ correction: Le cadenas présent devant l’URL du site permet de préciser que l
 goodPractices:
   - Vérifier la réputation du site auparavant. Lire également les notes et avis
     des consommateurs.
-  - Faire attention lors d’un paiement en ligne ou en physique (voir
-    recommandations).
 choices:
   - isCorrect: true
     text: je vérifie si le petit cadenas est présent au niveau de l’URL du site.
