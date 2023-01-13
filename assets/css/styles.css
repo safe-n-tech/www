@@ -38,7 +38,7 @@ a {
     }
 
     .text-label {
-        @apply text-sm font-normal;
+        @apply text-base font-normal;
     }
 
     .btn {
