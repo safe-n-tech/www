@@ -6,11 +6,6 @@ categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Boîte mail
   - Double authentification
-content: Se déconnecter de sa boîte mail à chaque fois que l’on utilise un
-  appareil dont on n’est pas le propriétaire. Ne pas cocher “se souvenir de moi”
-  ou enregistrer le mot de passe, utiliser la navigation privée. Utiliser le
-  système de double authentification quand il est disponible sur le service de
-  boîte mail pour sécuriser la connexion.
 risk: "Perdre des informations personnelles qui sont disponibles par e-mail
   (pièce d’identité, carte bancaire, etc.). Se faire voler des documents, voir
   se faire usurper son identité (Ex. : faire un crédit à son nom). Perdre
@@ -18,8 +13,4 @@ risk: "Perdre des informations personnelles qui sont disponibles par e-mail
 vulnerability: Laisser sa boîte mail connectée sur un appareil dont on n’est pas
   le propriétaire.
 ---
-<!--StartFragment-->
-
 Se déconnecter de sa boîte mail à chaque fois que l’on utilise un appareil dont on n’est pas le propriétaire. Ne pas cocher “se souvenir de moi” ou enregistrer le mot de passe, utiliser la navigation privée. Utiliser le système de double authentification quand il est disponible sur le service de boîte mail pour sécuriser la connexion.
-
-<!--EndFragment-->

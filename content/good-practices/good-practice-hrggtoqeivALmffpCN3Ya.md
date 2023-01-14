@@ -8,18 +8,9 @@ definitions:
   - Suspect
   - Virus informatique
   - Sandbox
-content: Pour un sms, le renvoyer au 33700, la plateforme de lutte contre les
-  spams sms.  Pour un e-mail, le renvoyer à la plateforme étatique anti-spam.fr.
-  Si la réception du message s’est faite sur sa boîte mail professionnelle,
-  informer le service informatique de l’entreprise et ses collègues d’une
-  potentielle infection du réseau.
 risk: Télécharger une pièce jointe ou un code susceptible d’être infecté.
   Cliquer sur un lien contenant un virus informatique. Envoyer des données
   personnelles (coordonnées bancaires, coordonnées personnelles, etc.).
 vulnerability: Recevoir un message (par e-mail, sms) d’une personne inconnue.
 ---
-<!--StartFragment-->
-
 Pour un sms, le renvoyer au 33700, la plateforme de lutte contre les spams sms. Pour un e-mail, le renvoyer à la plateforme étatique [anti-spam.fr](http://anti-spam.fr/). Si la réception du message s’est faite sur sa boîte mail professionnelle, informer le service informatique de l’entreprise et ses collègues d’une potentielle infection du réseau.
-
-<!--EndFragment-->
