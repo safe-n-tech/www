@@ -35,7 +35,7 @@ function showResults(){
 
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
-  document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 75 ? 'sad' : 'love'}.png`;
+  document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 50 ? 'sad' : 'love'}.png`;
 
   let sentenceLevel;
   if(results.score <= 25){
