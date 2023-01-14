@@ -8,10 +8,10 @@
     </div>
 </section>
 
-<section class="container text-black flex flex-col gap-16 md:pt-16 pb-16">
+<section class="container text-black flex flex-col gap-16 pt-8 md:pt-16 pb-16">
     <div>
-        <h2 class="text-h2 mt-4">Risques</h2>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white mb-6"></div>
+        <h2 class="text-h2">Risques</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
         {{ if .Params.risks }}
         <ul class="list-disc pl-6 md:w-2/3">
@@ -22,12 +22,12 @@
         {{ end }}
     </div>
 
-
-    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Params.uuid" "in" .Params.goodPractices }}
+    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
     {{ if (gt (len $goodPracticesLinked) 0) }}
     <div>
         <h2 class="text-h2 mt-4">Les bonnes pratiques</h2>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white mb-6"></div>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
         <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
             {{ range $goodPracticesLinked}}

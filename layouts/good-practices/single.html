@@ -8,26 +8,36 @@
     </div>
 </section>
 
-<div class="container">
-    <p class="text-label text-black my-10">{{ .Params.content }}</p>
+<section class="container text-black flex flex-col gap-16 pt-8 md:pt-16 pb-16">
+    {{ if .Content }}
+    <div class="text-label">{{ .Content }}</div>
+    {{ end }}
 
-    <div class="my-10">
-        <p class="text-black text-h2">Les risques</p>
-        <p class="text-black text-label">{{ .Params.risk }}</p>
+    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.goodPractices" "intersect" (slice .Params.uuid) }}
+    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+    <div>
+        <h2 class="text-h2 mt-4">Vulnérabilités associées</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
+
+        <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
+            {{ range $vulnerabilitiesLinked}}
+            <a href="{{ .Permalink }}" class="no-underline">
+
+                <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
+                    <p class="text-secondary">"{{ .Title }}"</p>
+                </div>
+            </a>
+            {{ end }}
+        </nav>
     </div>
-    <div class="my-10">
-        <p class="text-black text-h2">La vulnérabilité associé</p>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white"></div>
-        <p class="text-black text-label">{{ .Params.vulnerability }}</p>
-    </div>
+    {{ end }}
 
-
-
-    {{ $categoriesLinked := where .Site.Pages.ByTitle ".Title" "eq" .Params.categories }}
+    {{ $categoriesLinked := where .Site.Pages.ByTitle ".Params.uuid" "eq" .Params.category }}
     {{ if (gt (len $categoriesLinked) 0) }}
-    <h3 class="mt-4 text-h2 text-black">Catégorie associée</h3>
-    <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white"></div>
-    <div class="flex flex-col mt-4 mb-20">
+    <div class="flex flex-col items-start">
+        <h2 class="text-h2 mt-4">Catégorie liée</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
         {{ range $categoriesLinked }}
         <a href="{{ .Permalink }}" class="bg-white p-5 border-light_gray text-center border-2 rounded-2xl">
             {{ .Title }}
@@ -35,7 +45,6 @@
         {{ end}}
     </div>
     {{ end }}
-
-</div>
+</section>
 
 {{ end }}
