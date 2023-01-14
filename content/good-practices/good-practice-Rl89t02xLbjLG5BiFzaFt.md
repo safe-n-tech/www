@@ -1,5 +1,5 @@
 ---
-categories: category-pXhlU6Uzh80hZ6cMMDbks
+category: category-pXhlU6Uzh80hZ6cMMDbks
 risk: 'Infecter un ordinateur par l’installation d’un logiciel malveillant, obsolète,
   contenant des failles de sécurité volontairement mises en place pour compromettre
   furtivement le matériel.  Il peut même se révéler être un des nombreux PC ZOMBIE,

@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 choices:
 - isCorrect: true
   text: je me déconnecte de cet appareil après avoir regardé ma boîte mail.

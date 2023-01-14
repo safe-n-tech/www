@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 risk: Être victime de diffamation ou complice de diffamation et voir la dégradation
   de sa e-réputation.
 title: 'Être vigilant concernant ses publications. '

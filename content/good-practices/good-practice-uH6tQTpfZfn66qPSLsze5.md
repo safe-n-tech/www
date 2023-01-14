@@ -1,5 +1,5 @@
 ---
-categories: category--kiTZR7ZZs8EMe4z11DSq
+category: category--kiTZR7ZZs8EMe4z11DSq
 risk: Voir ses données récupérées à des fins malveillantes par un virus qui aurait
   infecté l’appareil professionnel.
 title: Prendre garde aux informations personnelles sur ses appareils professionnels.

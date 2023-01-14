@@ -1,5 +1,5 @@
 ---
-categories: category-qP7AaYEirvtU1XIjwcSea
+category: category-qP7AaYEirvtU1XIjwcSea
 risk: S’exposer aux regards curieux voire à la récupération de données dites sensibles
   et/ou confidentielles.
 title: Utiliser des filtres de confidentialité qui se disposent sur les écrans, afin

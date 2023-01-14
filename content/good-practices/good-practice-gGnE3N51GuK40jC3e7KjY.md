@@ -1,5 +1,5 @@
 ---
-categories: category-vPOHpPFF_kFw2S80Eawqn
+category: category-vPOHpPFF_kFw2S80Eawqn
 definitions:
 - definition-pA5q0VnAp4ogtptryv7Fl
 risk: Voir ses données interceptées et permettre à un logiciel malveillant de se propager

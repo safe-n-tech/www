@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: true
   text: je vérifie si le petit cadenas est présent au niveau de l’URL du site.

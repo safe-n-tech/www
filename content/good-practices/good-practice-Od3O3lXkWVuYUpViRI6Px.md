@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 risk: Fragiliser la construction du mot de passe et le rendre trop facile à deviner.
 title: 'Choisir un mot de passe inintelligible et imprévisible. '
 uuid: good-practice-Od3O3lXkWVuYUpViRI6Px

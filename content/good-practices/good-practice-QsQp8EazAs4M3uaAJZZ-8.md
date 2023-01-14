@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
 - definition-CBCc3kX3sRvkXu9EnTpJL
 risk: Se sentir à l’abri d’un quelconque piratage par excès de confiance et simplifier

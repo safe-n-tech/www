@@ -1,5 +1,5 @@
 ---
-categories: category-qslMSCVTTV92h34Rc_GNK
+category: category-qslMSCVTTV92h34Rc_GNK
 choices:
 - isCorrect: false
   text: je vérifie la présence du logo officiel.

@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: false
   text: je compare les prix sur différents sites pour trouver le plus avantageux,

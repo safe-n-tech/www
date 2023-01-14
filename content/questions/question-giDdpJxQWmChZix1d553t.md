@@ -1,5 +1,5 @@
 ---
-categories: category--kiTZR7ZZs8EMe4z11DSq
+category: category--kiTZR7ZZs8EMe4z11DSq
 choices:
 - isCorrect: true
   text: via le webmail.

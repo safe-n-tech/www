@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 risk: 'Prendre le risque que ses données aient fuité sur le web et soient accessibles
   et utilisées par tous. '
 title: 'Changer de mot de passe régulièrement (3-6 mois, au regard de vos exigences

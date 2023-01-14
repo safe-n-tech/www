@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
 - definition-E9kkWzwyQhfj1cbo3tkjC
 risk: Penser à tort connaître l’expéditeur et lui accorder sa confiance en toute sérénité

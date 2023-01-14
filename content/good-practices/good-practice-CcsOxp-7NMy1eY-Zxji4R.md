@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
 - definition-ATdO7iwQXxbXJKrjprMQJ
 risk: Télécharger un fichier susceptible d’être malveillant sur un de ses appareils,

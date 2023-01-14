@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 definitions:
 - definition-aZMJpI4a7Ewl0RQ7UZg5H
 risk: Se retrouver sur un site non officiel et lui transmettre ses coordonnées bancaires,

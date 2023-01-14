@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 definitions: []
 risk: 'Devenir une victime privilégiée d’escroquerie ou de phishing (quelqu’un se
   fait passer pour un organisme ou une personne de confiance dans un but malveillant

@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
 - definition-jQioiU8dZPEem-O9qfucq
 risk: Voir son adresse e-mail partagée à des individus malveillants et susceptibles

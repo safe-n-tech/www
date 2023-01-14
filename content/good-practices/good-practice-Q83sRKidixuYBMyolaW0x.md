@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 definitions:
 - definition-kvEMReGFO7dk1w_riyvw_
 risk: S’exposer à un risque de divulgation du mot de passe par une personne tierce

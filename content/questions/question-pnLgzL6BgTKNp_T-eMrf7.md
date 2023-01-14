@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
 - isCorrect: false
   text: elle est autorisée à le faire, je la connais peut-être.

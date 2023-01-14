@@ -1,5 +1,5 @@
 ---
-categories: category-qslMSCVTTV92h34Rc_GNK
+category: category-qslMSCVTTV92h34Rc_GNK
 choices:
 - isCorrect: true
   text: je vérifie l’adresse mail de l’expéditeur.

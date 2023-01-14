@@ -10,7 +10,7 @@ correction: "Utiliser toujours le même mot de passe est un risque : en cas de
   celui-ci. Il est préférable d’utiliser différents mots de passe."
 goodPractices:
   - good-practice-N4kQLSnGCs0MXfLDaPku4
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: false
     text: de me connecter via Google ou mon compte Facebook.

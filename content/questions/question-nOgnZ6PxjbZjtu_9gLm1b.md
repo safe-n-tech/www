@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
 - isCorrect: true
   text: 'je partage mes vacances en direct sur les réseaux sociaux sur mon compte

@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 choices:
 - isCorrect: true
   text: je photocopie ma carte d’identité, y inscrit l’usage réservé et la date, et

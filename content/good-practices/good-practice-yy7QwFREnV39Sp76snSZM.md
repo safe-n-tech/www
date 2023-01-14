@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 risk: 'Se faire abuser par une personne malveillante qui utilise un faux pseudonyme
   (Ex. : qui se fait passer pour un proche, une institution, etc) pour solliciter
   de l’argent ou toute autre contribution malhonnête. '

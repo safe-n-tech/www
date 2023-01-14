@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: false
   text: 'aucun risque, j’ai vérifié l''authenticité du site ! '

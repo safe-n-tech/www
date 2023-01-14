@@ -1,5 +1,5 @@
 ---
-categories: category-qslMSCVTTV92h34Rc_GNK
+category: category-qslMSCVTTV92h34Rc_GNK
 choices:
 - isCorrect: false
   text: je lui envoie un mail pour vérifier que c’est bien lui.

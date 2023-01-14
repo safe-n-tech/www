@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 risk: Expédier un objet et ne jamais recevoir d’argent en contre partie, acheter un
   objet et ne jamais le réceptionner, être attiré dans une embuscade dont le motif
   premier demeure le vol (argent, objet, etc.).

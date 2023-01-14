@@ -1,5 +1,5 @@
 ---
-categories: category-qP7AaYEirvtU1XIjwcSea
+category: category-qP7AaYEirvtU1XIjwcSea
 risk: 'Permettre à des applications d’enregistrer et de partager ma localisation à
   mon insu. '
 title: Régler ses paramétrages pour n’autoriser la localisation de l’appareil que

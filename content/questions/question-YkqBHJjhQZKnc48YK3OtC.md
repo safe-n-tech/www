@@ -1,5 +1,5 @@
 ---
-categories: category-vPOHpPFF_kFw2S80Eawqn
+category: category-vPOHpPFF_kFw2S80Eawqn
 choices:
 - isCorrect: true
   text: j’utilise un VPN qui chiffre mes données.

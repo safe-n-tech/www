@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 choices:
 - isCorrect: true
   text: j’utilise un gestionnaire de mots de passe.

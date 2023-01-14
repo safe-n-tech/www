@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 risk: Perdre le contrôle des informations envoyées.
 title: Éviter de communiquer des informations sensibles par e-mail.
 uuid: good-practice-kUHVzR445WqJle7Eb-IM5

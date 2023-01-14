@@ -1,5 +1,5 @@
 ---
-categories: category-F3gC3Ox-MJpGbDCgSltLP
+category: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
 - isCorrect: true
   text: je vérifie l’origine de ce concours et la fiabilité du compte.

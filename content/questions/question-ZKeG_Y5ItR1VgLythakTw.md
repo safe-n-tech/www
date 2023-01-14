@@ -1,5 +1,5 @@
 ---
-categories: category-qslMSCVTTV92h34Rc_GNK
+category: category-qslMSCVTTV92h34Rc_GNK
 choices:
 - isCorrect: true
   text: 'vérifier la fiabilité du contenu avec un autre logiciel (Ex. : Antivirus,

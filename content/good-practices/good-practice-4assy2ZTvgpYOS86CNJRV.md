@@ -1,5 +1,5 @@
 ---
-categories: category-qslMSCVTTV92h34Rc_GNK
+category: category-qslMSCVTTV92h34Rc_GNK
 definitions:
 - definition-g1Eg63B8IHESTScdjVOs0
 - definition-B-wRGiO_15xtlfl4ZTa2Q

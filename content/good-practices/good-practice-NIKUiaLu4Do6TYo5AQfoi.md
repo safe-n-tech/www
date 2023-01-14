@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 risk: Se retrouver à payer des produits ou services supplémentaires non désirés.
 title: Relire le détail du panier d’achat pour retirer les produits ou services ajoutés
   par le site (assurance, extension de garantie, etc.).

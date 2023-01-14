@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 definitions:
 - definition-kvEMReGFO7dk1w_riyvw_
 risk: Faciliter l’accès aux données grâce à une connexion devenue systématiquement

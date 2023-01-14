@@ -1,5 +1,5 @@
 ---
-categories: category-b2NrlcXR_BqRhZ9FigQAW
+category: category-b2NrlcXR_BqRhZ9FigQAW
 risk: Ne pas prendre connaissance à temps de prélèvements ou de souscriptions inconnus
   sur le compte.
 title: Vérifier ses comptes bancaires (voir recommandations).

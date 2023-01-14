@@ -1,5 +1,5 @@
 ---
-categories: category-vPOHpPFF_kFw2S80Eawqn
+category: category-vPOHpPFF_kFw2S80Eawqn
 choices:
 - isCorrect: false
   text: mettre ma date de naissance en mot de passe, c’est facile je la connais par

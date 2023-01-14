@@ -1,5 +1,5 @@
 ---
-categories: category-nGkbk6oSlC5_p3eqoXX2o
+category: category-nGkbk6oSlC5_p3eqoXX2o
 risk: 'Être compromis sans pour autant en avoir connaissance. '
 title: 'Vérifier régulièrement à ce que ses données (numéro de téléphone, adresse
   e-mail, mot de passe) ne soient pas déjà compromises en mettant en place une veille

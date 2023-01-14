@@ -1,5 +1,5 @@
 ---
-categories: category-CvbEsDX_JLbVAl6oz7djq
+category: category-CvbEsDX_JLbVAl6oz7djq
 choices:
 - isCorrect: false
   text: 'd’en envoyer via les réseaux sociaux ou par mail. '

@@ -1,5 +1,5 @@
 ---
-categories: category-vPOHpPFF_kFw2S80Eawqn
+category: category-vPOHpPFF_kFw2S80Eawqn
 definitions:
 - definition-ttEaNBXKuFlaJeRaiF-kR
 - definition-CwYES-aVPfEpd8HGnJQ94

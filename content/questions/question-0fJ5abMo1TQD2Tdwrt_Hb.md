@@ -9,7 +9,7 @@ correction: Un VPN (Réseau Privé Virtuel) permet, tel un tunnel, de transporte
   publics par exemple).
 goodPractices:
   - good-practice-iF5cadQVqXEkuM4ssFOFi
-categories: category-qP7AaYEirvtU1XIjwcSea
+category: category-qP7AaYEirvtU1XIjwcSea
 choices:
   - isCorrect: true
     text: Oui.

@@ -1,5 +1,5 @@
 ---
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
 - definition-CY8uQBE0xgumaqxMmUSSI
 risk: 'Donner et maintenir un accès privilégié à un service tiers qui peut être vulnérable
