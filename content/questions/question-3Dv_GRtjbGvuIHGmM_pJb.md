@@ -7,7 +7,7 @@ correction: Activer les mises à jour automatiques vous permet de ne pas oublier
   sécurisé de votre logiciel.
 goodPractices:
   - good-practice-O5y8Xs84dVnxlzA6hHwrD
-categories: category-pXhlU6Uzh80hZ6cMMDbks
+category: category-pXhlU6Uzh80hZ6cMMDbks
 choices:
   - isCorrect: false
     text: De ne pas activer la mise à jour automatique.

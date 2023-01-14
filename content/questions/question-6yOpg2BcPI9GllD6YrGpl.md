@@ -13,7 +13,7 @@ correction: Si vous recevez un mail suspect sur votre messagerie
 goodPractices:
   - good-practice-hrggtoqeivALmffpCN3Ya
   - good-practice-R6wMRp3cV8ejta1ay0UNh
-categories: category-kW-FytF1BDPDcjYzpVQvr
+category: category-kW-FytF1BDPDcjYzpVQvr
 choices:
   - isCorrect: true
     text: je vérifie l’adresse mail de l’expéditeur.
