@@ -1,14 +1,15 @@
 ---
+categories: category-nGkbk6oSlC5_p3eqoXX2o
+risk: 'Être compromis sans pour autant en avoir connaissance. '
+title: 'Vérifier régulièrement à ce que ses données (numéro de téléphone, adresse
+  e-mail, mot de passe) ne soient pas déjà compromises en mettant en place une veille
+  automatique efficace. '
 uuid: good-practice-Ge9dMdUHXWCuUyweiLBB9
 visibleInCms: true
-title: "Vérifier régulièrement à ce que ses données (numéro de téléphone,
-  adresse e-mail, mot de passe) ne soient pas déjà compromises en mettant en
-  place une veille automatique efficace. "
-categories: category-nGkbk6oSlC5_p3eqoXX2o
-risk: "Être compromis sans pour autant en avoir connaissance. "
-vulnerability: Ne pas mettre en place une veille informationnelle qui nous
-  alerte en cas de compromission de ses données.
+vulnerability: Ne pas mettre en place une veille informationnelle qui nous alerte
+  en cas de compromission de ses données.
 ---
+
 Plusieurs outils sont disponibles. Si l’un d’eux déclare une fuite, il faut agir. 
 
 * <https://haveibeenpwned.com/> vérifie si un compte lié à un numéro de téléphone ou une adresse e-mail a déjà été piraté. Cet outil permet également de mettre en place une alerte pour prévenir d’une éventuelle fuite. 

@@ -1,18 +1,18 @@
 ---
-uuid: good-practice-E6KAsdnYUH6hk7IaZJWMV
-visibleInCms: true
-title: Prévenir et réagir au vol de documents (voir recommandations).
 categories: category-CvbEsDX_JLbVAl6oz7djq
 definitions:
-  - "Filigrane "
-  - "Cloud "
-risk: Voir ses données confidentielles détournées pour usurper une identité,
-  procéder à une extorsion de fonds, effectuer une ouverture de micro-crédit à
-  son nom, etc.).
-vulnerability: Envoyer des documents sensibles à une personne tierce, pour
-  effectuer par exemple des formalités administratives (justificatif de
-  domicile, avis d’imposition, etc.).
+- definition-dXlYzGStFEEkv9C6TmwZS
+- definition-wJbRVJRyx8UZRfzJdVf5g
+risk: Voir ses données confidentielles détournées pour usurper une identité, procéder
+  à une extorsion de fonds, effectuer une ouverture de micro-crédit à son nom, etc.).
+title: Prévenir et réagir au vol de documents (voir recommandations).
+uuid: good-practice-E6KAsdnYUH6hk7IaZJWMV
+visibleInCms: true
+vulnerability: Envoyer des documents sensibles à une personne tierce, pour effectuer
+  par exemple des formalités administratives (justificatif de domicile, avis d’imposition,
+  etc.).
 ---
+
 <!--StartFragment-->
 
 Ajouter un filigrane sur les documents afin d’empêcher la réutilisation de documents.

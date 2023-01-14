@@ -1,12 +1,13 @@
 ---
+categories: category-nGkbk6oSlC5_p3eqoXX2o
+risk: 'Refuser de réagir ne fera qu’empirer la situation laissant la possibilité au
+  pirate de démultiplier les exactions. '
+title: Se prémunir d’une situation empirée en suivant cette liste d’étapes
 uuid: good-practice-k-14b3YN4u7CTCwOye3qa
 visibleInCms: true
-title: Se prémunir d’une situation empirée en suivant cette liste d’étapes
-categories: category-nGkbk6oSlC5_p3eqoXX2o
-risk: "Refuser de réagir ne fera qu’empirer la situation laissant la possibilité
-  au pirate de démultiplier les exactions. "
 vulnerability: Rester inactif lorsque l’on se rend compte que l’on est piraté.
 ---
+
 * Si on ne peut plus se connecter : contacter le service concerné et demander la réinitialisation du mot de passe. 
 * Si on peut encore se connecter : s’assurer que les coordonnées indiquées sont les bonnes. Si ce n’est pas le cas, faire des captures d’écran/photos puis supprimer ces coordonnées inconnues. Pour un compte de messagerie : vérifier dans les paramètres s’il n’existe pas une adresse mail qui redirige vers l’ensemble des mails.
 * Se déconnecter de tous les autres périphériques sur lesquels il existe une synchronisation automatique (mon application Gmail sur mon téléphone, ma tablette, mon ordinateur, etc.).

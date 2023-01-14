@@ -1,13 +1,13 @@
 ---
-uuid: good-practice-IvcaN5lJIfh0uKhNdTBOh
-visibleInCms: true
-title: Vérifier les métadonnées des documents envoyés ou utiliser des outils
-  permettant de les nettoyer.
 categories: category-CvbEsDX_JLbVAl6oz7djq
 definitions:
-  - "Filigrane "
-  - "Cloud "
+- definition-dXlYzGStFEEkv9C6TmwZS
+- definition-wJbRVJRyx8UZRfzJdVf5g
 risk: Récupérer des éléments de géolocalisation ou des données confidentielles.
-vulnerability: (Niveau avancé) Envoyer des documents (photos, vidéos) contenant
-  des métadonnées sans vérifier le contenu de celles-ci.
+title: Vérifier les métadonnées des documents envoyés ou utiliser des outils permettant
+  de les nettoyer.
+uuid: good-practice-IvcaN5lJIfh0uKhNdTBOh
+visibleInCms: true
+vulnerability: (Niveau avancé) Envoyer des documents (photos, vidéos) contenant des
+  métadonnées sans vérifier le contenu de celles-ci.
 ---
