@@ -18,7 +18,7 @@ collections:
     filter: {field: "visibleInCms", value: true}
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
-      - { label: Titre, name: title }
+      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - { label: Lien vidéo youtube, name: videoUrl }
       - { label: Sous titre, name: subtitle }
       - { label: Description, name: description }
@@ -68,7 +68,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
+      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - {
           label: Catégorie,
           name: categories,
@@ -147,7 +147,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
+      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - {
         label: Catégorie,
         name: categories,
@@ -178,7 +178,7 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
+      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - { label: Contenu, name: contenu, required: true }
 
   - name: questions
@@ -225,7 +225,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Texte, name: text }
+      - { label: Texte, name: text, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - { label: Correction, name: correction }
       - {
         label: Bonnes pratiques,
