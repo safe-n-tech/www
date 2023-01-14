@@ -3,7 +3,7 @@
     <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
          src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
     <div class="container py-6 text-white">
-        {{ partial "breadcrumb" (dict "page" . ) }}
+        {{ partial "breadcrumb" (dict "page" . "links" (slice "/vulnerabilities")) }}
         <h1 class="text-h1 text-white pb-16 pt-14 text-center">{{ .Title}}</h1>
     </div>
 </section>
