@@ -27,23 +27,28 @@ permalinks:
 
 menu:
   header:
+    - identifier: thematiques
+      weight: 1
+      name: Thématiques
+      title: thématiques
+      url: /thematiques
+    - identifier: quizz
+      weight: 2
+      name: Quiz
+      title: quiz
+      url: /quizz
     - identifier: good-practices
+      weight: 3
       name: Bonnes pratiques
       title: bonnes pratiques
       url: /good-practices
     - identifier: vulnerabilities
+      weight: 4
       name: Vulnérabilités
       title: vulnérabilités
       url: /vulnerabilities
-    - identifier: quizz
-      name: Quiz
-      title: quiz
-      url: /quizz
-    - identifier: thematiques
-      name: Thématiques
-      title: thématiques
-      url: /thematiques
     - identifier: definitions
+      weight: 5
       name: Glossaire
       title: glossaire
       url: /definitions

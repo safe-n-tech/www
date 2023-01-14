@@ -3,10 +3,9 @@
         <section class="flex flex-col md:flex-row md:justify-between gap-10">
             <a href="/" class="text-primary self-center"><img src="/svgs/logo.svg" alt="Safe N Tech"></a>
             <ul class="text-dark_gray flex flex-col md:flex-row md:justify-center gap-5">
-                <li><a href="/good-practices" class="text-label">Bonnes pratiques</a></li>
-                <li><a href="/quizz" class="text-label">Quiz</a></li>
-                <li><a href="/thematiques" class="text-label">Thématiques</a></li>
-                <li><a href="/definitions" class="text-label">Glossaire</a></li>
+                {{ range .Site.Menus.header }}
+                <li><a href="{{ .URL }}" class="text-label">{{ .Name }}</a></li>
+                {{ end }}
                 <li><a href="/a-propos" class="text-label">À propos</a></li>
             </ul>
         </section>
