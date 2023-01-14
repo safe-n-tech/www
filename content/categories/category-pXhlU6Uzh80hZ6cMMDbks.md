@@ -1,6 +1,6 @@
 ---
-uuid: category-pXhlU6Uzh80hZ6cMMDbks
 visibleInCms: true
+uuid: category-pXhlU6Uzh80hZ6cMMDbks
 title: Mise à jour
 icon: mise-a-jour.png
 videoUrl: null

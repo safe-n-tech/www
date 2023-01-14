@@ -1,6 +1,6 @@
 ---
-uuid: kW-FytF1BDPDcjYzpVQvr
 visibleInCms: true
+uuid: category-kW-FytF1BDPDcjYzpVQvr
 title: Boîte Mail
 icon: boite-mail.png
 videoUrl: null

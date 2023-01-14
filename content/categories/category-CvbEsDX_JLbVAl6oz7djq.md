@@ -1,6 +1,6 @@
 ---
-uuid: category-CvbEsDX_JLbVAl6oz7djq
 visibleInCms: true
+uuid: category-CvbEsDX_JLbVAl6oz7djq
 title: Données confidentielles
 icon: donnees-confidentielles.png
 videoUrl: null

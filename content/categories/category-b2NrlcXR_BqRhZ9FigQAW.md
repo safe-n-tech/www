@@ -1,6 +1,6 @@
 ---
-uuid: category-b2NrlcXR_BqRhZ9FigQAW
 visibleInCms: true
+uuid: category-b2NrlcXR_BqRhZ9FigQAW
 title: Paiement en ligne
 icon: paiement-en-ligne.png
 videoUrl: null

@@ -71,7 +71,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: vulnerability }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
           label: Catégorie,
@@ -153,7 +153,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: "good-practice" }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
         label: Catégorie,
@@ -186,7 +186,7 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: definition }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Contenu, name: contenu, required: true }
 
@@ -235,7 +235,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: question }
       - { label: Texte, name: text, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Correction, name: correction }
       - {

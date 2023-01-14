@@ -1,6 +1,6 @@
 ---
-uuid: qP7AaYEirvtU1XIjwcSea
 visibleInCms: true
+uuid: category-qP7AaYEirvtU1XIjwcSea
 title: Déplacements
 icon: deplacements.png
 videoUrl: null
