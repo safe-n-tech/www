@@ -8,6 +8,13 @@ slug:
   encoding: ascii
   clean_accents: true
 
+
+
+
+
+
+
+
 collections:
   - name: categories
     slug: "{{fields.uuid}}"
@@ -24,6 +31,7 @@ collections:
       - { label: Lien vidéo youtube, name: videoUrl, required: false }
       - { label: Sous titre, name: subtitle }
       - { label: Description, name: description }
+
 
 
 
@@ -71,23 +79,24 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+
       - { label: 'UUID', name: 'uuid', widget: uuid, prefix: vulnerability }
+
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
-      - {
-          label: Catégorie,
-          name: categories,
-          widget: relation,
-          collection: categories,
-          search_fields: ["title"],
-          value_field: uuid,
-          display_fields: ["title"]
-      }
-      - {
-        label: Risques,
-        name: risks,
-        widget: list,
+
+      - label: Catégorie
+        name: categories
+        widget: relation
+        collection: categories
+        search_fields: ["title"]
+        value_field: uuid
+        display_fields: ["title"]
+
+      - label: Risques
+        name: risks
+        widget: list
         required: false
-      }
+
       - label: Bonnes pratiques
         name: goodPractices
         widget: relation
@@ -97,16 +106,18 @@ collections:
         display_fields: [ "title" ]
         multiple: true
         required: false
-      - {
-        label: Définitions,
-        name: definitions,
-        widget: relation,
-        collection: definitions,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Définitions
+        name: definitions
+        widget: relation
+        collection: definitions
+        search_fields: [ "title" ]
+        value_field: "title"
+        multiple: true
         required: false
-      }
+
+
+
 
   - name: good-practices
     slug: "{{fields.uuid}}"
@@ -152,27 +163,31 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+
       - { label: 'UUID', name: 'uuid', widget: uuid, prefix: "good-practice" }
+
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
-      - {
-        label: Catégorie,
-        name: categories,
-        widget: relation,
-        collection: categories,
-        search_fields: [ "title" ],
-        value_field: "title",
-      }
-      - {
-        label: Définitions,
-        name: definitions,
-        widget: relation,
-        collection: definitions,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Catégorie
+        name: categories
+        widget: relation
+        collection: categories
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+
+      - label: Définitions
+        name: definitions
+        widget: relation
+        collection: definitions
+        search_fields: [ "title" ]
+        value_field: "title"
+        multiple: true
         required: false
-      }
+
       - { label: Contenu, name: body,  required: false, widget: markdown }
+
+
 
 
   - name: definitions
@@ -185,9 +200,15 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+
       - { label: 'UUID', name: 'uuid', widget: uuid, prefix: definition }
+
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
       - { label: Contenu, name: contenu, required: true }
+
+
+
 
   - name: questions
     slug: "{{fields.uuid}}"
@@ -234,28 +255,32 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+
       - { label: 'UUID', name: 'uuid', widget: uuid, prefix: question }
+
       - { label: Texte, name: text, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
       - { label: Correction, name: correction }
-      - {
-        label: Bonnes pratiques,
-        name: goodPractices,
-        widget: relation,
-        collection: good-practices,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Bonnes pratiques
+        name: goodPractices
+        widget: relation
+        collection: good-practices
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
-      - {
-        label: Catégorie,
-        name: categories,
-        widget: relation,
-        collection: categories,
-        search_fields: [ "title" ],
-        value_field: "title",
+
+      - label: Catégorie
+        name: categories
+        widget: relation
+        collection: categories
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
         required: false
-      }
+
       - label: Choix
         name: choices
         widget: "list"
