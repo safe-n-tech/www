@@ -20,8 +20,8 @@ collections:
     fields:
       - { label: 'UUID', name: 'uuid', widget: uuid }
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
-      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
-      - { label: Lien vidéo youtube, name: videoUrl }
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+      - { label: Lien vidéo youtube, name: videoUrl, required: false }
       - { label: Sous titre, name: subtitle }
       - { label: Description, name: description }
 
@@ -70,7 +70,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
           label: Catégorie,
           name: categories,
@@ -149,7 +149,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
         label: Catégorie,
         name: categories,
@@ -180,7 +180,7 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Contenu, name: contenu, required: true }
 
   - name: questions
@@ -227,7 +227,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Texte, name: text, pattern: ['.{,100}', "Maximum 100 caractères"] }
+      - { label: Texte, name: text, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Correction, name: correction }
       - {
         label: Bonnes pratiques,
