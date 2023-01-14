@@ -24,6 +24,7 @@
         },
 
         render() {
+            const prefix = this.props.field.get('prefix', false);
             const { value, classNameWrapper, forID } = this.props
             return h(
                 'span',
@@ -32,7 +33,7 @@
                     style: { fontFamily: 'monospace', marginLeft: '1rem' },
                     //className: classNameWrapper
                 },
-                value
+                prefix ? prefix+'-'+value : value
             )
         },
     })

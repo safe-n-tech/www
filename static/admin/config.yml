@@ -18,7 +18,7 @@ collections:
     editor: { preview: false }
     filter: {field: "visibleInCms", value: true}
     fields:
-      - { label: 'UUID', name: 'uuid', widget: uuid }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Lien vidéo youtube, name: videoUrl, required: false }
