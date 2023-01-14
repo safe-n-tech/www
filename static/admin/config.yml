@@ -18,8 +18,8 @@ collections:
     editor: { preview: false }
     filter: {field: "visibleInCms", value: true}
     fields:
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Lien vidéo youtube, name: videoUrl, required: false }
       - { label: Sous titre, name: subtitle }
@@ -28,6 +28,7 @@ collections:
 
 
   - name: vulnerabilities
+    slug: "{{fields.uuid}}"
     label: Vulnérabilités
     label_singular: Vulnérabilités
     folder: content/vulnerabilities
@@ -70,6 +71,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
           label: Catégorie,
@@ -107,6 +109,7 @@ collections:
       }
 
   - name: good-practices
+    slug: "{{fields.uuid}}"
     label: Bonnes pratiques
     label_singular: Bonne pratique
     folder: content/good-practices
@@ -149,6 +152,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - {
         label: Catégorie,
@@ -172,6 +176,7 @@ collections:
 
 
   - name: definitions
+    slug: "{{fields.uuid}}"
     label: Définitions
     label_singular: Définition
     folder: content/definitions
@@ -180,10 +185,12 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Contenu, name: contenu, required: true }
 
   - name: questions
+    slug: "{{fields.uuid}}"
     label: Questions
     label_singular: Question
     folder: content/questions
@@ -227,6 +234,7 @@ collections:
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
       - { label: Texte, name: text, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Correction, name: correction }
       - {
