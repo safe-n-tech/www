@@ -1,5 +1,5 @@
 ---
-category: category-qP7AaYEirvtU1XIjwcSea
+thematique: thematique-qP7AaYEirvtU1XIjwcSea
 risk: Laisser du matériel de valeur dans des bagages qui peuvent être fouillés, perdus
   ou volés à l’aéroport.
 title: Conserver ses périphériques informatiques (ordinateur, tablettes, téléphones,

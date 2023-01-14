@@ -1,5 +1,5 @@
 ---
-category: category-vPOHpPFF_kFw2S80Eawqn
+thematique: thematique-vPOHpPFF_kFw2S80Eawqn
 choices:
 - isCorrect: true
   text: ce n’est pas possible, je le désactive toujours lorsque je ne l’utilise pas.

@@ -1,5 +1,5 @@
 ---
-category: category-b2NrlcXR_BqRhZ9FigQAW
+thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: true
   text: régulièrement, en vérifiant les libellés des différentes transactions.

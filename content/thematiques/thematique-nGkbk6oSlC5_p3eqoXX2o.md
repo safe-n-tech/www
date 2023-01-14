@@ -1,6 +1,6 @@
 ---
 visibleInCms: true
-uuid: category-nGkbk6oSlC5_p3eqoXX2o
+uuid: thematique-nGkbk6oSlC5_p3eqoXX2o
 title: Mots de passe
 icon: mots-de-passe.png
 videoUrl: https://www.youtube.com/embed/CwLlBtHZxEI

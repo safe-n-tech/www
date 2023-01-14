@@ -1,5 +1,5 @@
 ---
-category: category-kW-FytF1BDPDcjYzpVQvr
+thematique: thematique-kW-FytF1BDPDcjYzpVQvr
 choices:
 - isCorrect: true
   text: je vérifie la cohérence entre le nom du mail et le nom de l’expéditeur.

@@ -1,5 +1,5 @@
 ---
-category: category-F3gC3Ox-MJpGbDCgSltLP
+thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 risk: Se faire voler son identité en ligne. Devenir l’objet de fausses publications
   (le pirate peut publier du contenu sur un compte en se faisant passer pour son titulaire).
 title: Protéger son identité sur les réseaux sociaux.

@@ -16,17 +16,17 @@ slug:
 
 
 collections:
-  - name: categories
+  - name: thematiques
     slug: "{{fields.uuid}}"
     label: Catégories
     label_singular: Catégorie
-    folder: content/categories
+    folder: content/thematiques
     create: true
     editor: { preview: false }
     filter: {field: "visibleInCms", value: true}
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: category }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: thematique }
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
       - { label: Lien vidéo youtube, name: videoUrl, required: false }
       - { label: Sous titre, name: subtitle }
@@ -45,37 +45,37 @@ collections:
     filter: { field: "visibleInCms", value: true }
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
@@ -84,10 +84,10 @@ collections:
 
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
 
-      - label: Catégorie
-        name: category
+      - label: Thématique
+        name: thematique
         widget: relation
-        collection: categories
+        collection: thematiques
         search_fields: ["title"]
         value_field: uuid
         display_fields: ["title"]
@@ -130,37 +130,37 @@ collections:
     filter: { field: "visibleInCms", value: true }
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
@@ -169,10 +169,10 @@ collections:
 
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
 
-      - label: Catégorie
-        name: category
+      - label: Thématique
+        name: thematique
         widget: relation
-        collection: categories
+        collection: thematiques
         search_fields: [ "title" ]
         value_field: uuid
         display_fields: [ "title" ]
@@ -223,37 +223,37 @@ collections:
     identifier_field: text
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
@@ -274,10 +274,10 @@ collections:
         multiple: true
         required: false
 
-      - label: Catégorie
-        name: category
+      - label: Thématique
+        name: thematique
         widget: relation
-        collection: categories
+        collection: thematiques
         search_fields: [ "title" ]
         value_field: uuid
         display_fields: [ "title" ]

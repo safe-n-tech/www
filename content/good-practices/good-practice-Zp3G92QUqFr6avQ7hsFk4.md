@@ -1,5 +1,5 @@
 ---
-category: category-pXhlU6Uzh80hZ6cMMDbks
+thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 risk: Télécharger un logiciel, en apparence inoffensif, mais comprenant une charge
   malveillante qui peut compromettre grandement la sécurité de son appareil, et qui
   est susceptible de faire perdre l’ensemble des données personnelles.

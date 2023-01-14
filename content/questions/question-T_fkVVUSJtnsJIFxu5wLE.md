@@ -1,5 +1,5 @@
 ---
-category: category-F3gC3Ox-MJpGbDCgSltLP
+thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 choices:
 - isCorrect: true
   text: 'je m’informe via les comptes certifiés et fiables. '

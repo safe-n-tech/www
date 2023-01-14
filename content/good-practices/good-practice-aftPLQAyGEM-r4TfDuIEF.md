@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 definitions:
 - definition-HPMF0Mel5av8XGlTWPWlJ
 risk: 'Permettre à une personne extérieure d’utiliser la session ouverte pour accéder

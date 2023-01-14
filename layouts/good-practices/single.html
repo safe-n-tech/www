@@ -33,12 +33,12 @@
     </div>
     {{ end }}
 
-    {{ $categoriesLinked := where .Site.Pages.ByTitle ".Params.uuid" "eq" .Params.category }}
-    {{ if (gt (len $categoriesLinked) 0) }}
+    {{ $thematiquesLinked := where .Site.Pages.ByTitle ".Params.uuid" "eq" .Params.thematique }}
+    {{ if (gt (len $thematiquesLinked) 0) }}
     <div class="flex flex-col items-start">
         <h2 class="text-h2 mt-4">Catégorie liée</h2>
         <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
-        {{ range $categoriesLinked }}
+        {{ range $thematiquesLinked }}
         <a href="{{ .Permalink }}" class="bg-white p-5 border-light_gray text-center border-2 rounded-2xl">
             {{ .Title }}
         </a>

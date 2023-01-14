@@ -1,5 +1,5 @@
 ---
-category: category-vPOHpPFF_kFw2S80Eawqn
+thematique: thematique-vPOHpPFF_kFw2S80Eawqn
 choices:
 - isCorrect: false
   text: laisser mon Wifi activé tout le temps, mon appareil se connecte automatiquement

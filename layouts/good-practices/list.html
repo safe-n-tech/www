@@ -14,10 +14,10 @@
 
 <section class="container md:w-2/3 md:mt-10">
 
-    {{ $categories := (where .Site.Pages "Section" "categories") }}
-    {{range $categories}}
+    {{ $thematiques := (where .Site.Pages "Section" "thematiques") }}
+    {{range $thematiques}}
         {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-        {{ $goodPracticesLinked := where $goodPractices ".Params.category" "eq" .Params.uuid }}
+        {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
 
         {{ if (gt (len $goodPracticesLinked) 0) }}
 

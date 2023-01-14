@@ -1,5 +1,5 @@
 ---
-category: category-pXhlU6Uzh80hZ6cMMDbks
+thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 definitions: []
 risk: 'Délaisser le système d’exploitation dans une version devenue obsolète au regard
   des nouvelles vulnérabilités découvertes. Ces dernières constituent autant de portes

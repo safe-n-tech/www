@@ -1,5 +1,5 @@
 ---
-category: category-b2NrlcXR_BqRhZ9FigQAW
+thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: false
   text: je les enregistre dans le gestionnaire de mon navigateur.

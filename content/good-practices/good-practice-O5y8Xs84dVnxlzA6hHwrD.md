@@ -1,5 +1,5 @@
 ---
-category: category-pXhlU6Uzh80hZ6cMMDbks
+thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 risk: 'Reporter les mises à jour implique de laisser opérantes les vulnérabilités.
   Ces dernières sont facilement repérables depuis Internet et favorise la tentation
   de compromettre en ligne le système d’exploitation et les données. Il existe un

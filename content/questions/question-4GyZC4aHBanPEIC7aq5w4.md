@@ -1,5 +1,5 @@
 ---
-category: category-CvbEsDX_JLbVAl6oz7djq
+thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 choices:
 - isCorrect: false
   text: dans un classeur, rien de mieux que le format papier !

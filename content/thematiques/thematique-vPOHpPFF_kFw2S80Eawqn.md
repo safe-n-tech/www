@@ -1,6 +1,6 @@
 ---
 visibleInCms: true
-uuid: category-vPOHpPFF_kFw2S80Eawqn
+uuid: thematique-vPOHpPFF_kFw2S80Eawqn
 title: Wifi et bluetooth
 icon: wifi-et-bluetooth.png
 videoUrl: null

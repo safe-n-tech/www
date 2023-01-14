@@ -1,5 +1,5 @@
 ---
-category: category-b2NrlcXR_BqRhZ9FigQAW
+thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 choices:
 - isCorrect: true
   text: j’active la double authentification.

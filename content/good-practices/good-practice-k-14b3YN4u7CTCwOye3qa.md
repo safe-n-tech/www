@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 risk: 'Refuser de réagir ne fera qu’empirer la situation laissant la possibilité au
   pirate de démultiplier les exactions. '
 title: Se prémunir d’une situation empirée en suivant cette liste d’étapes

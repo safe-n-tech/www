@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 risk: Faciliter l’accès au contenu de votre appareil et de fait aux informations sensibles
   stockées dessus.
 title: Utiliser impérativement un système de déverrouillage pour sécuriser ses appareils

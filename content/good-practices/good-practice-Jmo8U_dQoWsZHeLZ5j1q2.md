@@ -1,5 +1,5 @@
 ---
-category: category-pXhlU6Uzh80hZ6cMMDbks
+thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 risk: Dans de rares cas, il arrive que les mises à jour ne se réalisent pas dans de
   bonnes conditions et fassent perdre l’accessibilité aux données du matériel ou du
   logiciel.  Dans le cas d’accumulation de mises à jour, l’appareil va essayer de

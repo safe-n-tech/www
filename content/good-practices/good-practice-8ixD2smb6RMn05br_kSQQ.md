@@ -1,5 +1,5 @@
 ---
-category: category-vPOHpPFF_kFw2S80Eawqn
+thematique: thematique-vPOHpPFF_kFw2S80Eawqn
 risk: 'Se faire intercepter ses données bancaires et l’ensemble de ses données à caractère
   personnel. '
 title: Se méfier des réseaux Wifi publics.

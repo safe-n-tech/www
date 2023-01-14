@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 choices:
 - isCorrect: false
   text: de me connecter via Google ou mon compte Facebook.

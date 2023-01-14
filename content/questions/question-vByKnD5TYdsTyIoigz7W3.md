@@ -1,5 +1,5 @@
 ---
-category: category-CvbEsDX_JLbVAl6oz7djq
+thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 choices:
 - isCorrect: false
   text: je lui envoie sans hésitation.

@@ -1,5 +1,5 @@
 ---
-category: category-F3gC3Ox-MJpGbDCgSltLP
+thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 choices:
 - isCorrect: false
   text: rentrer mon nom et prénom complets, mes amis me retrouveront plus facilement.

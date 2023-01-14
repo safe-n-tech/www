@@ -1,5 +1,5 @@
 ---
-category: category-b2NrlcXR_BqRhZ9FigQAW
+thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 risk: Se retrouver sur un site qui ne correspond pas à la requête initiale et nous
   induit en erreur.
 title: Taper directement l’URL plutôt que de cliquer sur un lien ou passer par un

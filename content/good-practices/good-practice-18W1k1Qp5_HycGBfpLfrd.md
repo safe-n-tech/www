@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 risk: 'Permettre à une personne tierce de voir son mot de passe et de l’utiliser à
   son insu. '
 title: Faire attention aux personnes qui peuvent voir son mot de passe lorsque l’on

@@ -1,5 +1,5 @@
 ---
-category: category-F3gC3Ox-MJpGbDCgSltLP
+thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 risk: Relayer de fausses informations liées à la désinformation.
 title: S’exercer à développer son esprit critique.
 uuid: good-practice-0FhF7xTjOWCxYu_NjlOYk

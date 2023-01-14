@@ -20,7 +20,7 @@ taxonomies:
   # disable all taxonomies
 
 permalinks:
-  categories: /thematiques/:title/
+  thematiques: /:section/:title/
   vulnerabilities: /:section/:title/
   good-practices: /:section/:title/
 
@@ -35,7 +35,7 @@ menu:
       name: Quiz
       title: quiz
       url: /quizz
-    - identifier: categories
+    - identifier: thematiques
       name: Thématiques
       title: thématiques
       url: /thematiques

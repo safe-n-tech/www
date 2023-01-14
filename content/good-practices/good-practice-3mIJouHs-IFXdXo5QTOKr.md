@@ -1,5 +1,5 @@
 ---
-category: category-qP7AaYEirvtU1XIjwcSea
+thematique: thematique-qP7AaYEirvtU1XIjwcSea
 risk: Se retrouver en infraction par rapport à la législation nationale du territoire
   étranger concerné (chiffrement des données dans certains pays interdit, etc.).
 title: 'Se renseigner sur la législation en vigueur lors d’un déplacement professionnel

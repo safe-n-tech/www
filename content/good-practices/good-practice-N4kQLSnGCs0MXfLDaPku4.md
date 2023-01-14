@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 risk: Se faire pirater tous ses comptes en même temps et rendre l’accès à TOUTES ses
   données personnelles facile pour les pirates (coordonnées bancaires, boîte mail,
   centres d’intérêts, données sensibles (croyances, opinions etc.), identité, etc.).

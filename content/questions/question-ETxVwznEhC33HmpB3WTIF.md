@@ -1,5 +1,5 @@
 ---
-category: category-kW-FytF1BDPDcjYzpVQvr
+thematique: thematique-kW-FytF1BDPDcjYzpVQvr
 choices:
 - isCorrect: false
   text: une seule et unique adresse mail.

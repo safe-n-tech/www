@@ -1,6 +1,6 @@
 ---
 visibleInCms: true
-uuid: category-F3gC3Ox-MJpGbDCgSltLP
+uuid: thematique-F3gC3Ox-MJpGbDCgSltLP
 title: Réseaux sociaux
 icon: reseaux-sociaux.png
 videoUrl: null

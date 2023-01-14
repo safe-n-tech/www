@@ -1,5 +1,5 @@
 ---
-category: category-nGkbk6oSlC5_p3eqoXX2o
+thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 risk: Permettre au pirate de continuer à chercher des informations et de collecter
   des données à caractère sensible.
 title: Agir dès les premiers soupçons d’attaque et se déconnecter de tous les comptes
