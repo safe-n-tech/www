@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: cms-ids # Branch to update (optional; defaults to master)
+  branch: cms-ids-auto # Branch to update (optional; defaults to master)
 media_folder: 'assets/media'
 public_folder: '/media'
 locale: fr
