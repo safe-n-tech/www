@@ -20,8 +20,16 @@ async function startQuizz() {
   const response = await fetch('/questions/index.json');
   questions =  (await response.json()).data;
 
+  shuffleChoicesOfEachQuestions();
+
   document.getElementById("quizz-go-next-question-btn").addEventListener("click", nextQuestion);
   loadActualQuestion();
+}
+
+function shuffleChoicesOfEachQuestions() {
+  questions.forEach(question => {
+    question.choices = shuffle(question.choices);
+  })
 }
 
 
@@ -35,7 +43,7 @@ function showResults(){
 
   document.getElementById("result-score").innerText = `${results.score}%`;
   document.getElementById("result-sentence").innerText = results.sentence;
-  document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 75 ? 'sad' : 'love'}.png`;
+  document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 50 ? 'sad' : 'love'}.png`;
 
   let sentenceLevel;
   if(results.score <= 25){
@@ -189,6 +197,7 @@ function handleAnswerSelected(questionSelected){
   questions[questionIndex].userAnswer = questionSelected.dataset.text;
 
   document.getElementById("quizz-go-next-question-btn").removeAttribute('disabled');
+  document.getElementById("quizz-go-next-question-btn-container").scrollIntoView(false);
 }
 
 function clearQuestionAnswers() {
@@ -226,4 +235,23 @@ function createElChoice(choice) {
   });
 
   choicesContainer.appendChild(newChoice);
+}
+
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex !== 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
 }
