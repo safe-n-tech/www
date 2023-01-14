@@ -20,9 +20,9 @@
 <section class="container text-dark_gray mt-10">
   <p>{{ .Description }}</p>
 
-  <div class="switch mt-10 sticky top-24">
-    <button class="switch-btn active" id="btn-vulnerabilites">Vulnérabilités</button>
-    <button class="switch-btn" id="btn-preco">Préco</button>
+  <div class="switch mt-10">
+    <button class="switch-btn active text-secondary" id="btn-vulnerabilites">Vulnérabilités</button>
+    <button class="switch-btn text-secondary" id="btn-preco">Préco</button>
   </div>
 
   <section class="active select-item mt-10 mb-20" id="sec-left">
@@ -37,10 +37,10 @@
       <a href="{{ .Permalink }}" class="no-underline">
 
         <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
-          <p class="text-orange">{{ .Title }}</p>
-          <div class="flex items-center justify-between w-full mt-5">
-            <p class="text-secondary text-label">En savoir plus sur le risque</p>
-            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-auto h-5">
+          <p class="text-orange text-h2">{{ .Title }}</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label md:text-[15px] tracking-tighter">En savoir plus sur le risque</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
           </div>
         </div>
       </a>
@@ -57,14 +57,14 @@
     {{ if (gt (len $goodPracticesLinked) 0) }}
     <h3 class="text-h2 text-black">Les bonnes pratiques</h3>
 
-    <nav class="grid-good-practice mt-5 grid-cols-1">
+    <nav class="grid-good-practice mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
       {{ range $goodPracticesLinked}}
       <a href="{{ .Permalink }}" class="no-underline">
 
-        <div class="border-perso rounded-md text-left px-3 py-5 h-full grid place-items-center bg-white">
-          <p class="text-secondary">"{{ .Title }}"</p>
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full bg-white flex flex-col justify-between">
+          <p class="text-secondary text-h2">"{{ .Title }}"</p>
           <div class="flex align-middle justify-between w-full mt-5">
-            <p class="text-secondary text-label">En savoir plus sur la bonne pratique</p>
+            <p class="text-secondary text-label md:text-[15px] tracking-tighter">Découvrir la bonne pratique</p>
             <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
           </div>
         </div>
