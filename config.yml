@@ -31,6 +31,10 @@ menu:
       name: Bonnes pratiques
       title: bonnes pratiques
       url: /good-practices
+    - identifier: vulnerabilities
+      name: Vulnérabilités
+      title: vulnérabilités
+      url: /vulnerabilities
     - identifier: quizz
       name: Quiz
       title: quiz
