@@ -88,16 +88,15 @@ collections:
         widget: list,
         required: false
       }
-      - {
-        label: Bonnes pratiques,
-        name: goodPractices,
-        widget: relation,
-        collection: good-practices,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+      - label: Bonnes pratiques
+        name: goodPractices
+        widget: relation
+        collection: good-practices
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
       - {
         label: Définitions,
         name: definitions,
