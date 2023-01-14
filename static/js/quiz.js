@@ -197,6 +197,7 @@ function handleAnswerSelected(questionSelected){
   questions[questionIndex].userAnswer = questionSelected.dataset.text;
 
   document.getElementById("quizz-go-next-question-btn").removeAttribute('disabled');
+  document.getElementById("quizz-go-next-question-btn-container").scrollIntoView(false);
 }
 
 function clearQuestionAnswers() {
