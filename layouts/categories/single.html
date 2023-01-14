@@ -32,7 +32,7 @@
 
   <section class="active select-item mt-10 mb-20" id="sec-left">
     {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.category" "eq" .Title }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.category" "eq" .Params.uuid }}
 
     {{ if (gt (len $vulnerabilitiesLinked) 0) }}
     <h3 class="text-h2 text-black">Les vulnérabilités</h3>
@@ -57,7 +57,7 @@
 
   <section class="select-item mt-10 mb-20" id="sec-right">
     {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-    {{ $goodPracticesLinked := where $goodPractices ".Params.category" "eq" .Title }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.category" "eq" .Params.uuid }}
 
     {{ if (gt (len $goodPracticesLinked) 0) }}
     <h3 class="text-h2 text-black">Les bonnes pratiques</h3>
