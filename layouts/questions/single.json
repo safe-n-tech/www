@@ -7,7 +7,7 @@
   "choices": {{ .Params.choices | jsonify }},
   {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
   "goodPractices": [
-    {{- range $index, $goodPracticesLinked := (where $goodPractices ".Title" "in" .Params.goodPractices) -}}
+    {{- range $index, $goodPracticesLinked := (where $goodPractices ".Params.uuid" "in" .Params.goodPractices) -}}
     {{- if $index -}},{{- end -}} {{ .Render "single" }}
     {{- end -}}
   ],

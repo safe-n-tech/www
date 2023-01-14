@@ -1,6 +1,6 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  branch: cms-ids-auto # Branch to update (optional; defaults to master)
 media_folder: 'assets/media'
 public_folder: '/media'
 locale: fr
@@ -8,24 +8,35 @@ slug:
   encoding: ascii
   clean_accents: true
 
+
+
+
+
+
+
+
 collections:
-  - name: categories
+  - name: thematiques
+    slug: "{{fields.uuid}}"
     label: Catégories
     label_singular: Catégorie
-    folder: content/categories
+    folder: content/thematiques
     create: true
     editor: { preview: false }
     filter: {field: "visibleInCms", value: true}
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
-      - { label: Titre, name: title }
-      - { label: Lien vidéo youtube, name: videoUrl }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: thematique }
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+      - { label: Lien vidéo youtube, name: videoUrl, required: false }
       - { label: Sous titre, name: subtitle }
       - { label: Description, name: description }
 
 
 
+
   - name: vulnerabilities
+    slug: "{{fields.uuid}}"
     label: Vulnérabilités
     label_singular: Vulnérabilités
     folder: content/vulnerabilities
@@ -34,77 +45,83 @@ collections:
     filter: { field: "visibleInCms", value: true }
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
-      - {
-          label: Catégorie,
-          name: categories,
-          widget: relation,
-          collection: categories,
-          search_fields: ["title"],
-          value_field: "title",
-      }
-      - {
-        label: Risques,
-        name: risks,
-        widget: list,
+
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: vulnerability }
+
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
+      - label: Thématique
+        name: thematique
+        widget: relation
+        collection: thematiques
+        search_fields: ["title"]
+        value_field: uuid
+        display_fields: ["title"]
+
+      - label: Risques
+        name: risks
+        widget: list
         required: false
-      }
-      - {
-        label: Bonnes pratiques,
-        name: goodPractices,
-        widget: relation,
-        collection: good-practices,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Bonnes pratiques
+        name: goodPractices
+        widget: relation
+        collection: good-practices
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
-      - {
-        label: Définitions,
-        name: definitions,
-        widget: relation,
-        collection: definitions,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Définitions
+        name: definitions
+        widget: relation
+        collection: definitions
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
+
+
+
 
   - name: good-practices
+    slug: "{{fields.uuid}}"
     label: Bonnes pratiques
     label_singular: Bonne pratique
     folder: content/good-practices
@@ -113,63 +130,70 @@ collections:
     filter: { field: "visibleInCms", value: true }
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
-      - {
-        label: Catégorie,
-        name: categories,
-        widget: relation,
-        collection: categories,
-        search_fields: [ "title" ],
-        value_field: "title",
-      }
-      - {
-        label: Définitions,
-        name: definitions,
-        widget: relation,
-        collection: definitions,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: "good-practice" }
+
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
+      - label: Thématique
+        name: thematique
+        widget: relation
+        collection: thematiques
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+
+      - label: Définitions
+        name: definitions
+        widget: relation
+        collection: definitions
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
+
       - { label: Contenu, name: body,  required: false, widget: markdown }
 
 
+
+
   - name: definitions
+    slug: "{{fields.uuid}}"
     label: Définitions
     label_singular: Définition
     folder: content/definitions
@@ -178,10 +202,18 @@ collections:
     filter: { field: "visibleInCms", value: true }
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Titre, name: title }
+
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: definition }
+
+      - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
       - { label: Contenu, name: contenu, required: true }
 
+
+
+
   - name: questions
+    slug: "{{fields.uuid}}"
     label: Questions
     label_singular: Question
     folder: content/questions
@@ -191,61 +223,66 @@ collections:
     identifier_field: text
     view_groups:
       - label: Catégorie
-        field: categories
+        field: thematiques
     view_filters:
       - label: Boîte mail
-        field: categories
+        field: thematiques
         pattern: Boîte mail
       - label: Déplacements
-        field: categories
+        field: thematiques
         pattern: Déplacements
       - label: Données confidentielles
-        field: categories
+        field: thematiques
         pattern: Données confidentielles
       - label: Droit résiduel à la vie privée
-        field: categories
+        field: thematiques
         pattern: Droit résiduel à la vie privée
       - label: Mise à jour
-        field: categories
+        field: thematiques
         pattern: Mise à jour
       - label: Mots de passe
-        field: categories
+        field: thematiques
         pattern: Mots de passe
       - label: Paiement en ligne
-        field: categories
+        field: thematiques
         pattern: Paiement en ligne
       - label: Réseaux sociaux
-        field: categories
+        field: thematiques
         pattern: Réseaux sociaux
       - label: Téléchargements et ingénierie sociale
-        field: categories
+        field: thematiques
         pattern: Téléchargements et ingénierie sociale
       - label: Wifi et bluetooth
-        field: categories
+        field: thematiques
         pattern: Wifi et bluetooth
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: Texte, name: text }
+
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: question }
+
+      - { label: Texte, name: text, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
       - { label: Correction, name: correction }
-      - {
-        label: Bonnes pratiques,
-        name: goodPractices,
-        widget: relation,
-        collection: good-practices,
-        search_fields: [ "title" ],
-        value_field: "title",
-        multiple: true,
+
+      - label: Bonnes pratiques
+        name: goodPractices
+        widget: relation
+        collection: good-practices
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
+        multiple: true
         required: false
-      }
-      - {
-        label: Catégorie,
-        name: categories,
-        widget: relation,
-        collection: categories,
-        search_fields: [ "title" ],
-        value_field: "title",
+
+      - label: Thématique
+        name: thematique
+        widget: relation
+        collection: thematiques
+        search_fields: [ "title" ]
+        value_field: uuid
+        display_fields: [ "title" ]
         required: false
-      }
+
       - label: Choix
         name: choices
         widget: "list"

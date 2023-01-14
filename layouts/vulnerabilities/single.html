@@ -3,41 +3,45 @@
     <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
          src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
     <div class="container py-6 text-white">
-        {{ partial "breadcrumb" (dict "page" . "links" (slice "/vulnerabilities")) }}
+        {{ partial "breadcrumb" (dict "page" . ) }}
         <h1 class="text-h1 text-white pb-16 pt-14 text-center">{{ .Title}}</h1>
     </div>
 </section>
 
+<section class="container text-black flex flex-col gap-16 pt-8 md:pt-16 pb-16">
+    <div>
+        <h2 class="text-h2">Risques</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
-<div class="container text-black">
-    <h3 class="mt-4 text-h3 ">Risques</h3>
-    <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-white mb-6"></div>
-
-    {{ if .Params.risks }}
-    <ul class="list-disc w-11/12 mx-auto">
-        {{ range .Params.risks }}
-        <li class="my-2">{{ . }}</li>
+        {{ if .Params.risks }}
+        <ul class="list-disc pl-6 md:w-2/3">
+            {{ range .Params.risks }}
+            <li class="my-2">{{ . }}</li>
+            {{ end }}
+        </ul>
         {{ end }}
-    </ul>
-    {{ end }}
+    </div>
 
-    <h3 class="text-h2 mt-4 mb-8">Les bonnes pratiques</h3>
-
-    {{ $goodPracticesLinked := where .Site.Pages.ByTitle ".Title" "in" .Params.goodPractices }}
+    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
     {{ if (gt (len $goodPracticesLinked) 0) }}
+    <div>
+        <h2 class="text-h2 mt-4">Les bonnes pratiques</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
-    <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
-        {{ range $goodPracticesLinked}}
-        <a href="{{ .Permalink }}" class="no-underline">
+        <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
+            {{ range $goodPracticesLinked}}
+            <a href="{{ .Permalink }}" class="no-underline">
 
-          <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-            <p class="text-secondary">"{{ .Title }}"</p>
+                <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
+                    <p class="text-secondary">"{{ .Title }}"</p>
 
-          </div>
-        </a>
-        {{ end }}
-    </nav>
+                </div>
+            </a>
+            {{ end }}
+        </nav>
+    </div>
     {{ end }}
-</div>
+</section>
 
 {{ end }}

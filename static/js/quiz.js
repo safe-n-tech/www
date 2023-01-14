@@ -237,7 +237,6 @@ function createElChoice(choice) {
   choicesContainer.appendChild(newChoice);
 }
 
-
 function shuffle(array) {
   let currentIndex = array.length,  randomIndex;
 

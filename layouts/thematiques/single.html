@@ -1,0 +1,99 @@
+{{ define "main" }}
+<section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
+  <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
+    src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+  <div class="container py-6 text-white text-center">
+    {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
+    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+    <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
+  </div>
+</section>
+
+<section class="container flex flex-col my-20 w-full mb-5 lg:flex-row gap-36 ">
+  <div>
+    {{ if (.Params.VideoUrl) }}
+      <iframe class="mt-10 aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {{ else }}
+    <div class="p-10 border-secondary border-2 rounded-2xl bg-white">
+      <p class="w-full italic text-center">Une vidéo présentant des témoignages arrive prochainement.</p>
+    </div>
+    {{ end }}
+  </div>
+  <p class="lg:w-2/3 text-black ">{{ .Description }}</p>
+
+</section>
+
+<section class="container text-dark_gray mt-20">
+
+  <div class="switch mt-10 sticky top-24">
+    <button class="switch-btn active text-secondary" id="btn-vulnerabilites">Vulnérabilités</button>
+    <button class="switch-btn text-secondary" id="btn-preco">Préco</button>
+  </div>
+
+  <section class="active select-item mt-10 mb-20" id="sec-left">
+    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
+
+    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+    <h3 class="text-h2 text-black">Les vulnérabilités</h3>
+
+    <nav class="grid-good-practice mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {{ range $vulnerabilitiesLinked }}
+      <a href="{{ .Permalink }}" class="no-underline">
+
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full w-full flex flex-col  bg-white justify-between">
+          <p class="text-orange text-h2">{{ .Title }}</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label md:text-[15px] tracking-tighter">En savoir plus sur le risque</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
+          </div>
+        </div>
+      </a>
+      {{ end }}
+
+    </nav>
+    {{ end }}
+  </section>
+
+  <section class="select-item mt-10 mb-20" id="sec-right">
+    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
+
+    {{ if (gt (len $goodPracticesLinked) 0) }}
+    <h3 class="text-h2 text-black">Les bonnes pratiques</h3>
+
+    <nav class="grid-good-practice mt-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      {{ range $goodPracticesLinked}}
+      <a href="{{ .Permalink }}" class="no-underline">
+
+        <div class="border-perso rounded-md text-left px-3 py-5 h-full bg-white flex flex-col justify-between">
+          <p class="text-secondary text-h2">"{{ .Title }}"</p>
+          <div class="flex align-middle justify-between w-full mt-5">
+            <p class="text-secondary text-label md:text-[15px] tracking-tighter">Découvrir la bonne pratique</p>
+            <img src="/svgs/arrowBlue.png" alt="fleche" class="w-5">
+          </div>
+        </div>
+      </a>
+      {{ end }}
+
+    </nav>
+    {{ end }}
+  </section>
+
+</section>
+
+<script>
+  const switchBtns = document.querySelector('.switch');
+
+  const sectionLeft = document.querySelector('#sec-left');
+  const sectionRight = document.querySelector('#sec-right');
+
+  switchBtns.addEventListener('click', () => {
+    sectionLeft.classList.toggle('active')
+    sectionRight.classList.toggle('active')
+
+    switchBtns.firstElementChild.classList.toggle('active')
+    switchBtns.lastElementChild.classList.toggle('active')
+  })
+</script>
+{{ end}}
