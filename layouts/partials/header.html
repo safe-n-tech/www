@@ -1,12 +1,12 @@
+<div id="menu-backdrop" class="hidden fixed z-40 top-0 w-full h-screen"></div>
 <header class="z-50 top-0 fixed w-full h-auto">
-    <div id="navbar" class="z-50 items-center p-4 w-full drop-shadow-md rounded-b-lg h-auto text-white bg-white flex justify-between">
+    <div id="menu-navbar" class="z-50 items-center p-4 w-full drop-shadow-md rounded-b-lg h-auto text-white bg-white flex justify-between">
 
         <a href="/" class="text-primary"><span><img src="/svgs/logo_icon.svg" alt="Accueil" class="w-12"></span></a>
 
-        <button class="md:hidden flex items-center justify-center gap-3 cursor-pointer items-center" onclick="toggleLinks()" name="menu">
+        <button class="md:hidden flex items-center justify-center gap-3 cursor-pointer items-center" id="menu-toggle" name="menu">
             <a class="text-label text-dark_gray text-xl">Menu</a>
             <img src="/svgs/icon_burger.svg" alt="Arrow icon" class="h-5">
-
         </button>
 
         <ul class="hidden md:flex text-dark_gray text-sm">
@@ -19,7 +19,7 @@
         </ul>
     </div>
 
-    <div id="links"
+    <div id="menu-links"
         class="hidden md:hidden flex flex-col absolute -z-10 w-full drop-shadow-md rounded-b-md bg-white items-center gap-y-3 p-4">
         <ul class="w-full flex flex-col gap-2 text-sm text-dark_gray">
             {{ range .Site.Menus.header }}
@@ -33,15 +33,23 @@
         </ul>
     </div>
 
-    <script>
-        function toggleLinks(e) {
-            const links = document.getElementById('links');
-            const navbar = document.getElementById('navbar');
 
-            links.classList.toggle('hidden');
-            navbar.classList.toggle('drop-shadow-md');
-            navbar.classList.toggle('rounded-b-lg');
-        }
-    </script>
 
 </header>
+
+<script>
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuLinks = document.getElementById('menu-links');
+    const menuNavbar = document.getElementById('menu-navbar');
+
+    menuToggle.addEventListener('click', toggleLinks)
+    menuBackdrop.addEventListener('click', toggleLinks)
+
+    function toggleLinks() {
+        menuLinks.classList.toggle('hidden');
+        menuBackdrop.classList.toggle('hidden');
+        menuNavbar.classList.toggle('drop-shadow-md');
+        menuNavbar.classList.toggle('rounded-b-lg');
+    }
+</script>
