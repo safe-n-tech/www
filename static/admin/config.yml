@@ -112,7 +112,8 @@ collections:
         widget: relation
         collection: definitions
         search_fields: [ "title" ]
-        value_field: "title"
+        value_field: uuid
+        display_fields: [ "title" ]
         multiple: true
         required: false
 
@@ -181,7 +182,8 @@ collections:
         widget: relation
         collection: definitions
         search_fields: [ "title" ]
-        value_field: "title"
+        value_field: uuid
+        display_fields: [ "title" ]
         multiple: true
         required: false
 
