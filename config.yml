@@ -19,6 +19,12 @@ params:
 taxonomies:
   # disable all taxonomies
 
+permalinks:
+  categories: /thematiques/:title/
+  vulnerabilities: /:section/:title/
+  good-practices: /:section/:title/
+
+
 menu:
   header:
     - identifier: good-practices
@@ -32,7 +38,7 @@ menu:
     - identifier: categories
       name: Thématiques
       title: thématiques
-      url: /categories
+      url: /thematiques
     - identifier: definitions
       name: Glossaire
       title: glossaire
