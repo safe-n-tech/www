@@ -79,7 +79,8 @@ collections:
           widget: relation,
           collection: categories,
           search_fields: ["title"],
-          value_field: "title",
+          value_field: uuid,
+          display_fields: ["title"]
       }
       - {
         label: Risques,
