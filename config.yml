@@ -31,24 +31,24 @@ menu:
       weight: 1
       name: Thématiques
       title: thématiques
-      url: /thematiques
+      url: /thematiques/
     - identifier: quizz
       weight: 2
       name: Quiz
       title: quiz
-      url: /quizz
+      url: /quizz/
     - identifier: good-practices
       weight: 3
       name: Bonnes pratiques
       title: bonnes pratiques
-      url: /good-practices
+      url: /good-practices/
     - identifier: vulnerabilities
       weight: 4
       name: Vulnérabilités
       title: vulnérabilités
-      url: /vulnerabilities
+      url: /vulnerabilities/
     - identifier: definitions
       weight: 5
       name: Glossaire
       title: glossaire
-      url: /definitions
+      url: /definitions/
