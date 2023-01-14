@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Enregistrer vos coordonnées bancaires dans le navigateur web.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 risks:
   - Se faire subtiliser ses données bancaires en cas de compromission de ses
     appareils informatiques ou du navigateur.

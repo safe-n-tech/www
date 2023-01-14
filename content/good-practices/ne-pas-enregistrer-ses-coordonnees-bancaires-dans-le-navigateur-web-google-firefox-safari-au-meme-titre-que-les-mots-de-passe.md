@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "Ne pas enregistrer ses coordonnées bancaires dans le navigateur web au
   même titre que les mots de passe. "
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 definitions:
   - Gestionnaire de mot de passe
 content: Il est possible d’enregistrer ces données dans un gestionnaire de mots

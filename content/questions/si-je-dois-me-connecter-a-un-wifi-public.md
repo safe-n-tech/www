@@ -11,7 +11,7 @@ goodPractices:
   - Se méfier des réseaux Wifi publics.
   - Utiliser un VPN, disposer d’un logiciel de sécurité (antivirus), privilégier
     un partage de connexion.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 choices:
   - isCorrect: true
     text: j’utilise un VPN qui chiffre mes données.

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Opérer manuellement la gestion des mises à jour.
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 risks:
   - Reporter les mises à jour implique de laisser opérantes les vulnérabilités.
     Ces dernières sont facilement repérables depuis Internet et favorise la

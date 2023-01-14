@@ -3,7 +3,7 @@ visibleInCms: true
 title: "Vérifier régulièrement à ce que ses données (numéro de téléphone,
   adresse e-mail, mot de passe) ne soient pas déjà compromises en mettant en
   place une veille automatique efficace. "
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 content: Plusieurs outils sont disponibles. Si l’un d’eux déclare une fuite, il
   faut agir.   - https://haveibeenpwned.com/ vérifie si un compte lié à un
   numéro de téléphone ou une adresse e-mail a déjà été piraté. Cet outil permet

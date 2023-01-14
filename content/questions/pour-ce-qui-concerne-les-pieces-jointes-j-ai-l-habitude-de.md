@@ -9,7 +9,7 @@ correction: Si vous recevez une pièce jointe que vous n’attendiez pas, soyez
 goodPractices:
   - "Ne pas ouvrir immédiatement la pièce jointe. "
   - Rester attentif lors de la réception d’un e-mail inattendu.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 choices:
   - isCorrect: true
     text: "vérifier la fiabilité du contenu avec un autre logiciel (Ex. : Antivirus,

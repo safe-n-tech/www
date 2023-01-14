@@ -8,7 +8,7 @@ correction: "Rester connecté sur un appareil qui ne vous appartient pas, laisse
   données en les exposant au pirate. "
 goodPractices:
   - Se protéger lors de la connexion et déconnexion de sa boîte mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 choices:
   - isCorrect: true
     text: je me déconnecte de cet appareil après avoir regardé ma boîte mail.

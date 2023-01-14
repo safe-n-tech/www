@@ -8,7 +8,7 @@ correction: Il est dangereux de se connecter à votre boîte mail personnelle su
 goodPractices:
   - S’abstenir dans la mesure du possible d’aller sur sa boîte mail personnelle
     avec son outil de travail.
-categories: Droit résiduel à la vie privée
+categories: category--kiTZR7ZZs8EMe4z11DSq
 choices:
   - isCorrect: true
     text: via le webmail.

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Éviter de répondre à des numéros inconnus.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 definitions:
   - Suspect
   - Sandbox

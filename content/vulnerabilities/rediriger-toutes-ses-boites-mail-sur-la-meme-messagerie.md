@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Rediriger toutes ses boîtes mail sur la même messagerie.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 risks:
   - Se priver d’une messagerie de secours si le compte principal est piraté et
     compromettre l’entièreté des données personnelles et professionnelles qui y

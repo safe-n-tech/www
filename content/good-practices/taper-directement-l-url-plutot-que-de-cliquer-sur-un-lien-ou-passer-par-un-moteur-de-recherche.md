@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Taper directement l’URL plutôt que de cliquer sur un lien ou passer par
   un moteur de recherche.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 risk: Se retrouver sur un site qui ne correspond pas à la requête initiale et
   nous induit en erreur.
 vulnerability: Se connecter au premier lien référencé sur le moteur de recherche.

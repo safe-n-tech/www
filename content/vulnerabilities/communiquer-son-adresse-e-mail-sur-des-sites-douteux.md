@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Communiquer son adresse e-mail sur des sites douteux.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 risks:
   - Voir son adresse e-mail partagée à des individus malveillants et
     susceptibles de se servir des données à des fins frauduleuses. Recevoir des

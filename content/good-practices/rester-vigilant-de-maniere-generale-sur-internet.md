@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Rester vigilant de manière générale sur Internet.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 content: "Garder une certaine distance dans toutes interactions. Essayer de
   vérifier l'identité de l'expéditeur, par exemple en posant des questions dont
   lui seul connaît la réponse. Si les doutes persistent, contactez directement

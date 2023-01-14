@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Laisser sa boîte mail connectée sur un appareil dont on n’est pas le
   propriétaire.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 risks:
   - Perdre des informations personnelles qui sont disponibles par e-mail (pièce
     d’identité

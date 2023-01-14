@@ -8,7 +8,7 @@ correction: Noter ou enregistrer vos informations bancaires, où que ce soit, le
 goodPractices:
   - "Ne pas enregistrer ses coordonnées bancaires dans le navigateur web au même
     titre que les mots de passe. "
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: false
     text: je les enregistre dans le gestionnaire de mon navigateur.

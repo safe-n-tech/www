@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Donner un accès privilégié à son compte mail (autorisations, mot de
   passe) à des services tiers (ex. “tri de mail”, “tri de spam”).
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 risks:
   - Donner et maintenir un accès privilégié à un service tiers qui peut être
     vulnérable et compromis

@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Utiliser une adresse e-mail pseudonymisée, dédiée aux sites de faible
   confiance.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - "Pseudonyme "
 risk: Voir son adresse e-mail partagée à des individus malveillants et

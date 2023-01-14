@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Abandonner des anciens comptes ou profils publics
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 risks:
   - Laisser des informations qui ont pu devenir confidentielles ou intimes en
     accès public et permettre à des personnes malveillantes de s’en servir

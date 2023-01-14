@@ -11,7 +11,7 @@ goodPractices:
   - Télécharger ses logiciels sur les sites officiels.
   - Taper directement l’URL plutôt que de cliquer sur un lien ou passer par un
     moteur de recherche.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 choices:
   - isCorrect: false
     text: je vérifie la présence du logo officiel.

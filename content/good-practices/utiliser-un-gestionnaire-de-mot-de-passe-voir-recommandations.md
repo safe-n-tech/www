@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Utiliser un gestionnaire de mot de passe (voir recommandations).
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 definitions:
   - Gestionnaire de mot de passe
 content: "Exemple (Gratuit ou Payant) : KeePass, logiciel gratuit et validé par

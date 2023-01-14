@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Recevoir un lien suspect de la part d’un proche.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 risks:
   - Se rendre sur un site malveillant sans s’en rendre compte (induisant un vol
     de données

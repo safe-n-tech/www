@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Prendre garde aux informations personnelles sur ses appareils professionnels.
-categories: Droit résiduel à la vie privée
+categories: category--kiTZR7ZZs8EMe4z11DSq
 content: "Diffuser le minimum d’informations possibles sur sa vie privée. Éviter
   de télécharger ou de stocker des contenus personnels (photos, vidéos, etc.)
   sur son ordinateur de travail. Sinon, nommer le dossier dans lequel les

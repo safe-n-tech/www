@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Protéger ses données intimes.
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 definitions:
   - "Filigrane "
   - "Cloud "

@@ -9,7 +9,7 @@ goodPractices:
   - Vérifier si votre réseau Wifi dispose d’une sécurité suffisante.
   - "Utiliser un mot de passe long et complexe (en plus d’être inintelligible et
     imprévisible). "
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 choices:
   - isCorrect: false
     text: mettre ma date de naissance en mot de passe, c’est facile je la connais

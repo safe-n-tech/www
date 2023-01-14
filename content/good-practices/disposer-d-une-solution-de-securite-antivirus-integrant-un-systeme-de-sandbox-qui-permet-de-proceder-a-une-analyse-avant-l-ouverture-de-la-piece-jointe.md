@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Disposer d’une solution de sécurité.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Sandbox
 content: Disposer d’une solution de sécurité (antivirus) intégrant un système de

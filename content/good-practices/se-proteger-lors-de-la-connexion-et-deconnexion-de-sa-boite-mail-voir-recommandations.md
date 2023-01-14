@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se protéger lors de la connexion et déconnexion de sa boîte mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Boîte mail
   - Double authentification

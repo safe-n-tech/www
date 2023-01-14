@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Utiliser le même mot de passe pour tous ses comptes.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 risks:
   - Se faire pirater tous ses comptes en même temps et rendre l’accès à TOUTES
     ses données personnelles facile pour les pirates (coordonnées bancaires

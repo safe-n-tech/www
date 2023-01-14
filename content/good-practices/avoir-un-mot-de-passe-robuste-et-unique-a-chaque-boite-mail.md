@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Avoir un mot de passe robuste et unique à chaque boîte mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Double authentification
 content: Avoir un mot de passe robuste et unique à chaque boîte mail. Avoir

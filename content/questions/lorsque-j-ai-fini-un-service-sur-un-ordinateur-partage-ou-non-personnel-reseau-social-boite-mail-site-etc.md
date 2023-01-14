@@ -8,7 +8,7 @@ correction: Si vous ne vous déconnectez pas de vos comptes lorsque vous avez
 goodPractices:
   - Penser à toujours se déconnecter à la fin d’une utilisation d’un service ou
     utiliser la navigation privée.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 choices:
   - isCorrect: false
     text: je reste connecté.

@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Se rendre par inadvertance sur des sites non officiels pour y télécharger
   des contenus.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 risks:
   - Télécharger une contrefaçon d’un logiciel contenant un virus informatique.
 goodPractices:

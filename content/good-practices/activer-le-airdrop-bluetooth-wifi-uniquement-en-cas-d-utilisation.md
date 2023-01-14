@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Activer le Airdrop/Bluetooth/Wifi uniquement en cas d’utilisation.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 definitions:
   - AirDrop
   - Bluetooth

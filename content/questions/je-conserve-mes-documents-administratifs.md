@@ -10,7 +10,7 @@ correction: "Il est important de réaliser des sauvegardes régulières de mes
   sécurisé. "
 goodPractices:
   - Réaliser des sauvegardes régulièrement
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 choices:
   - isCorrect: false
     text: dans un classeur, rien de mieux que le format papier !

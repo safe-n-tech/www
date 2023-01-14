@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Vérifier si votre réseau Wifi dispose d’une sécurité suffisante.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 content: Sur Mac elle est indiquée par un message “Sécurité faible” qui
   s’affiche dans l’onglet connexion Wifi, sur Windows, une popup affiche que le
   réseau n’est pas sécurisé lors de la connexion. Le cas échéant, configurer la

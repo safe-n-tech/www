@@ -11,7 +11,7 @@ correction: Si vous devez envoyer une donnée personnelle, comme une carte
 goodPractices:
   - Éviter de communiquer des informations sensibles par e-mail.
   - Prévenir et réagir au vol de documents (voir recommandations).
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 choices:
   - isCorrect: true
     text: je photocopie ma carte d’identité, y inscrit l’usage réservé et la date,

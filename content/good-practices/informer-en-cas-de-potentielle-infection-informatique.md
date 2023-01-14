@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Informer en cas de potentielle infection informatique.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 definitions:
   - Sandbox
   - Suspect

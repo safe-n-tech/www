@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Ne pas cliquer immédiatement sur un lien.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 definitions:
   - Suspect
   - Virus informatique

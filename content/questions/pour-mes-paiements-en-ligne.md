@@ -8,7 +8,7 @@ correction: Toutes ces propositions sont correctes mais rentrer ses coordonnées
 goodPractices:
   - Faire attention lors d’un paiement en ligne ou en physique (voir
     recommandations).
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: true
     text: j’active la double authentification.

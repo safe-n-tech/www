@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Réaliser des sauvegardes régulièrement
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 definitions:
   - "Filigrane "
   - "Cloud "

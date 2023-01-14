@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "Changer de mot de passe régulièrement (3-6 mois, au regard de vos
   exigences de sécurité) à titre préventif. "
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 content: "Mettre en place une méthodologie de mot de passe (permet de mieux les
   retenir) : Choisir une phrase ou suite de mots et garder les premières lettres
   que vous retenez (Ex. : “Autant en emporte le vent” → “aeelv”). Complexifier

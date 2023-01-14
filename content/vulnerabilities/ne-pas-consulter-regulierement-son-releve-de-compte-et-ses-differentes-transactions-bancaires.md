@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Ne pas consulter régulièrement son relevé de compte et ses différentes
   transactions bancaires.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 risks:
   - Ne pas prendre connaissance à temps de prélèvements ou de souscriptions
     inconnus sur le compte.

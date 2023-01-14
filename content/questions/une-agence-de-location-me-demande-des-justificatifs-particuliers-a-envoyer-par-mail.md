@@ -8,7 +8,7 @@ correction: Mettre un filigrane (texte en superposition) sur vos documents,
   moins de chance qu’elle les détourne pour autre utilisation.
 goodPractices:
   - Prévenir et réagir au vol de documents (voir recommandations).
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 choices:
   - isCorrect: false
     text: je lui envoie sans hésitation.

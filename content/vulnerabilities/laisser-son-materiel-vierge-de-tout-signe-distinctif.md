@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Laisser son matériel vierge de tout signe distinctif.
-categories: Déplacements
+categories: category-qP7AaYEirvtU1XIjwcSea
 risks:
   - Laisser son matériel vierge de tout signe distinctif.
 goodPractices:

@@ -8,7 +8,7 @@ correction: Si vous avez un doute, surveillez vos comptes pour vérifier qu’il
   faire opposition sur votre carte.
 goodPractices:
   - Vérifier ses comptes bancaires (voir recommandations).
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: false
     text: "aucun risque, j’ai vérifié l'authenticité du site ! "

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Recevoir un message (par e-mail, sms) d’une personne inconnue.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 risks:
   - Télécharger une pièce jointe ou un code susceptible d’être infecté. Cliquer
     sur un lien contenant un virus informatique. Envoyer des données

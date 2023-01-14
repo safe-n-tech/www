@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "Utiliser un mot de passe long et complexe (en plus d’être inintelligible
   et imprévisible). "
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 content: "Utiliser un mot de passe secret, inintelligible (c’est-à-dire qu’il
   n’est pas composé de mots du dictionnaire), imprévisible, long et complexe
   (constitué d’au minimum 14 signes mélangeant majuscules, minuscules,

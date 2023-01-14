@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Avoir un AirDrop/QuickShare “ouvert à tous”, permettant de partager
   instantanément des éléments avec des utilisateurs à proximité.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 risks:
   - Recevoir des images ou des vidéos à caractère obscène/sexuel sans y avoir
     consenti.

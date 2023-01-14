@@ -7,7 +7,7 @@ correction: Il existe beaucoup de sites et services qui se permettent d’ajoute
 goodPractices:
   - Relire le détail du panier d’achat pour retirer les produits ou services
     ajoutés par le site (assurance, extension de garantie, etc.).
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: true
     text: je revérifie le contenu de mon panier.

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Éviter de communiquer des informations sensibles par e-mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 content: Éviter de communiquer des informations sensibles par e-mail,
   privilégier des canaux sécurisés, permettant de supprimer le message après
   envoi (Télégram, Signal).

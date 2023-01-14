@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "Regrouper et conserver tous les documents administratifs sur un même
   appareil (Ex. : bulletins de salaire, etc.)."
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 risks:
   - "S’exposer à une suppression ou une perte définitive de documents
     administratifs qu’il est obligatoire de conserver pendant plusieurs années

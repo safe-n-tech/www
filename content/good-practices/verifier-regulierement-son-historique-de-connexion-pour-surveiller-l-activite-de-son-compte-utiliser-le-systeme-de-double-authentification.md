@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Vérifier régulièrement son historique de connexion.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Double authentification
 content: Vérifier régulièrement son historique de connexion pour surveiller

@@ -8,7 +8,7 @@ correction: Un navigateur qui n’est pas mis à jour ni supporté comme Interne
   pirater.   Certains navigateurs tels que “Brave” permettent d’apporter un
   niveau de sécurité complémentaire en permettant de limiter les fonctionnalités
   de suivi et d’identification des sites internes.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 choices:
   - isCorrect: true
     text: Firefox.

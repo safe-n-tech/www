@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Vérifier la réputation du site auparavant. Lire également les notes et
   avis des consommateurs.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 definitions:
   - Réputation d’un site web
 risk: Se retrouver sur un site non officiel et lui transmettre ses coordonnées

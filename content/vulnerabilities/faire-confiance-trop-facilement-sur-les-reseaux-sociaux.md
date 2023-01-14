@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Faire confiance trop facilement sur les réseaux sociaux.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 risks:
   - "Se faire abuser par une personne malveillante qui utilise un faux
     pseudonyme (Ex. : qui se fait passer pour un proche"

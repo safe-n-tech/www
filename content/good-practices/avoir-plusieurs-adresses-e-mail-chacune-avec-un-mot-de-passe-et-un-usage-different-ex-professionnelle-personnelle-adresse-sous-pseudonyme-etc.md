@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Avoir plusieurs adresses e-mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 content: "Avoir plusieurs adresses e-mail, chacune avec un mot de passe et un
   usage différent (Ex. : professionnelle/personnelle/adresse sous pseudonyme,
   etc.). "

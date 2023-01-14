@@ -11,7 +11,7 @@ goodPractices:
     des consommateurs.
   - Faire attention lors d’un paiement en ligne ou en physique (voir
     recommandations).
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: false
     text: je compare les prix sur différents sites pour trouver le plus avantageux,

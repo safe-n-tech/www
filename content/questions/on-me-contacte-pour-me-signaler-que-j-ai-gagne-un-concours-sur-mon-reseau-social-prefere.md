@@ -10,7 +10,7 @@ correction: Avant de faire quoi que ce soit, commencez par vérifier la source e
 goodPractices:
   - Vérifier la source et l’authenticité des comptes et des concours en ligne.
   - Rester vigilant de manière générale sur Internet.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: true
     text: je vérifie l’origine de ce concours et la fiabilité du compte.

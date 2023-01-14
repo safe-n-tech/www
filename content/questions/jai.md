@@ -7,7 +7,7 @@ correction: N’utiliser qu’une seule adresse mail met en péril tant vos donn
   et vos données confidentielles sont mises en danger.
 goodPractices:
   - Avoir plusieurs adresses e-mail.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 choices:
   - isCorrect: false
     text: une seule et unique adresse mail.

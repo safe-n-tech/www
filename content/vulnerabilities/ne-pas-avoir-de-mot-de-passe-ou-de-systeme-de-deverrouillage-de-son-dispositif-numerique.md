@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Ne pas avoir de mot de passe ou de système de déverrouillage de son
   dispositif numérique.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 risks:
   - Faciliter l’accès au contenu de votre appareil et de fait aux informations
     sensibles stockées dessus.

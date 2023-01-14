@@ -2,7 +2,7 @@
 visibleInCms: true
 title: S’abstenir dans la mesure du possible d’aller sur sa boîte mail
   personnelle avec son outil de travail.
-categories: Droit résiduel à la vie privée
+categories: category--kiTZR7ZZs8EMe4z11DSq
 definitions:
   - Boîte mail
 risk: Infecter ce dernier avec la synchronisation automatique de sa boîte mail

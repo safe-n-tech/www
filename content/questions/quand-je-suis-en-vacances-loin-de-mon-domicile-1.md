@@ -10,7 +10,7 @@ goodPractices:
   - Protéger son identité sur les réseaux sociaux.
   - "Être vigilant concernant ses publications. "
   - Rester vigilant de manière générale sur Internet.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: true
     text: "je partage mes vacances en direct sur les réseaux sociaux sur mon compte

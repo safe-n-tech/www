@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Procéder à une sauvegarde avant toute opération de mise à jour, afin de
   préserver les données détenues.
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 content: Dans de rares cas, il arrive que les mises à jour ne se réalisent pas
   dans de bonnes conditions et fassent perdre l’accessibilité aux données du
   matériel ou du logiciel.  Dans le cas d’accumulation de mises à jour,

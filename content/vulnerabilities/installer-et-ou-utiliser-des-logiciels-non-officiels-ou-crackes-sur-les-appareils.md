@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "Installer et/ou utiliser des logiciels non officiels ou “crackés” sur
   les appareils. "
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 risks:
   - Infecter un ordinateur par l’installation d’un logiciel malveillant
   - obsolète

@@ -12,7 +12,7 @@ correction: "Il ne faut jamais cliquer sur un lien dont vous n’êtes pas
 goodPractices:
   - Rester attentif lors de la réception d’un e-mail inattendu.
   - Ne pas cliquer immédiatement sur un lien.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 choices:
   - isCorrect: true
     text: je vérifie la cohérence entre le nom du mail et le nom de l’expéditeur.

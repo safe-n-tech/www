@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Faire attention lors d’un paiement en ligne ou en physique (voir
   recommandations).
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 content: Demander une facture d’achat lorsque c’est possible, vérifier si le
   produit n’est pas volé via le numéro de série, utiliser paypal ou un chèque de
   banque pour les grosses sommes. Refuser un rendez-vous seul avec paiement de

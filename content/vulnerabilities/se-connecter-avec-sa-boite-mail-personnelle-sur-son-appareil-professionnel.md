@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se connecter avec sa boîte mail personnelle sur son appareil professionnel.
-categories: Droit résiduel à la vie privée
+categories: category--kiTZR7ZZs8EMe4z11DSq
 risks:
   - Infecter ce dernier avec la synchronisation automatique de sa boîte mail et
     mettre en danger son outil de travail.

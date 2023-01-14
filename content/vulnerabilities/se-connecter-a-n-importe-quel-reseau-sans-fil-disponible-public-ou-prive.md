@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se connecter à n’importe quel réseau sans-fil disponible (public ou privé).
-categories: Déplacements
+categories: category-qP7AaYEirvtU1XIjwcSea
 risks:
   - Voir ses données interceptées et permettre à un logiciel malveillant de se
     propager par le réseau.

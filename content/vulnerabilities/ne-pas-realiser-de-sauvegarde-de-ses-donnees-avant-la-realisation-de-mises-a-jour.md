@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Ne pas réaliser de sauvegarde de ses données avant la réalisation de
   mises à jour.
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 risks:
   - Dans de rares cas
   - il arrive que les mises à jour ne se réalisent pas dans de bonnes conditions

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Ne pas se connecter dans les services tiers.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Spam
 content: Ne pas se connecter dans les services tiers de type “tri de mail”, “tri

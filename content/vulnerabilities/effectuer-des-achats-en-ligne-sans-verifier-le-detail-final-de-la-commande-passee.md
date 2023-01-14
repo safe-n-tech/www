@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Effectuer des achats en ligne sans vérifier le détail final de la
   commande passée.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 risks:
   - Se retrouver à payer des produits ou services supplémentaires non désirés.
 goodPractices:

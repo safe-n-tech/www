@@ -12,7 +12,7 @@ goodPractices:
   - Ne pas interagir avec le message.
   - "Ne pas ouvrir immédiatement la pièce jointe. "
   - Rester attentif lors de la réception d’un e-mail inattendu.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 choices:
   - isCorrect: false
     text: je lui envoie un mail pour vérifier que c’est bien lui.

@@ -2,7 +2,7 @@
 visibleInCms: true
 title: (Niveau avancé) Envoyer des documents (photos, vidéos) contenant des
   métadonnées sans vérifier le contenu de celles-ci.
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 risks:
   - Récupérer des éléments de géolocalisation ou des données confidentielles.
 goodPractices:

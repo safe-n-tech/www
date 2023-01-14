@@ -2,7 +2,7 @@
 visibleInCms: true
 title: "(Niveau avancé) Taper son mot de passe sur le clavier d’un ordinateur
   partagé. "
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 risks:
   - Permettre à une personne malveillante d’avoir installé un keylogger sur
     l’appareil afin de récupérer tous les champs saisis et de les lui

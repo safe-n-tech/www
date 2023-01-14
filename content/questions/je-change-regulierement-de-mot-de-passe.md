@@ -6,7 +6,7 @@ correction: Vous pouvez vous faire pirater sans même le savoir. Changer de mot
 goodPractices:
   - "Changer de mot de passe régulièrement (3-6 mois, au regard de vos exigences
     de sécurité) à titre préventif. "
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 choices:
   - isCorrect: true
     text: oui

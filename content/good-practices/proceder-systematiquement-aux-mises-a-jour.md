@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: "Procéder systématiquement aux mises à jour. "
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 definitions: []
 content: "Les mises à jour contiennent un ensemble de modifications de sécurité
   qui corrigent les nouvelles vulnérabilités des appareils et de contrer les

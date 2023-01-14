@@ -6,7 +6,7 @@ correction: "Rester connecté à un réseau sans s’en servir, c’est laisser 
   réseaux pour voler vos données personnelles. "
 goodPractices:
   - Activer le Airdrop/Bluetooth/Wifi uniquement en cas d’utilisation.
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 choices:
   - isCorrect: false
     text: laisser mon Wifi activé tout le temps, mon appareil se connecte

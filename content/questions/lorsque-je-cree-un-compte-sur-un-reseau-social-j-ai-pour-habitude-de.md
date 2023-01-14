@@ -5,7 +5,7 @@ correction: "Utiliser un pseudonyme sur les réseaux sociaux est un moyen de
   préserver sa vie privé et son identité. "
 goodPractices:
   - Protéger son identité sur les réseaux sociaux.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: false
     text: rentrer mon nom et prénom complets, mes amis me retrouveront plus

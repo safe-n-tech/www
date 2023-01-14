@@ -3,7 +3,7 @@ visibleInCms: true
 title: "Administrer un réseau Wifi ou un partage de connexion qui n’est pas
   protégé par une clé de sécurité ou bien un mot de passe qui est très
   simpliste. "
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 risks:
   - S’exposer à des connexions non désirées par des utilisateurs non autorisés
     qui peuvent réaliser des actions malveillantes. Risquer d’être considéré

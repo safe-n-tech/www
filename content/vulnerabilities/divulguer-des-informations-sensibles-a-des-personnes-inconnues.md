@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Divulguer des informations sensibles à des personnes inconnues.
-categories: Déplacements
+categories: category-qP7AaYEirvtU1XIjwcSea
 risks:
   - Prendre le risque de fournir des indications susceptibles d’attirer la
     convoitise d’une personne malveillante.

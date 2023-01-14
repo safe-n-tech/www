@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Penser à toujours se déconnecter à la fin d’une utilisation d’un service
   ou utiliser la navigation privée.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 definitions:
   - Navigation privée
 risk: "Permettre à une personne extérieure d’utiliser la session ouverte pour

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Rester attentif lors de la réception d’un e-mail inattendu.
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 definitions:
   - Boîte mail
 content: "Vérifier la cohérence entre le nom de l’e-mail et le nom de

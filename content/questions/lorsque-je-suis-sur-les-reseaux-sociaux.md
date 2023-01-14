@@ -9,7 +9,7 @@ correction: "Il faut prendre beaucoup de recul face à la quantité d’informat
 goodPractices:
   - S’exercer à développer son esprit critique.
   - Vérifier la source et l’authenticité des comptes et des concours en ligne.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: true
     text: "je m’informe via les comptes certifiés et fiables. "

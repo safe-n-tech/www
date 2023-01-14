@@ -9,7 +9,7 @@ correction: En envoyant des photos à caractère privé, il y a un risque que
   diffusé ou sauvegardé de manière sécurisée et chiffré.
 goodPractices:
   - Protéger ses données intimes.
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 choices:
   - isCorrect: false
     text: "d’en envoyer via les réseaux sociaux ou par mail. "

@@ -3,7 +3,7 @@ visibleInCms: true
 title: Envoyer des documents sensibles à une personne tierce, pour effectuer par
   exemple des formalités administratives (justificatif de domicile, avis
   d’imposition, etc.).
-categories: Données confidentielles
+categories: category-CvbEsDX_JLbVAl6oz7djq
 risks:
   - Voir ses données confidentielles détournées pour usurper une identité
   - procéder à une extorsion de fonds

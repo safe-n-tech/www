@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Vérifier la source et l’authenticité des comptes et des concours en ligne.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 definitions: []
 content: " Taper le nom du site associé au mot “arnaque” dans un moteur de
   recherche. Ne pas répondre aux questionnaires des réseaux sociaux qui n’ont

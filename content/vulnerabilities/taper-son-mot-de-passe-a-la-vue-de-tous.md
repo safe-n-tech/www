@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Taper son mot de passe à la vue de tous.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 risks:
   - Permettre à une personne tierce de voir son mot de passe et de l’utiliser à
     son insu.

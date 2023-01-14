@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Ne pas mettre en place une veille informationnelle qui nous alerte en cas
   de compromission de ses données.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 risks:
   - Être compromis sans pour autant en avoir connaissance.
 goodPractices:

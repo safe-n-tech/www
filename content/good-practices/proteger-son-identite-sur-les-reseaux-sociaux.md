@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Protéger son identité sur les réseaux sociaux.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 content: Utiliser un pseudo pour ne pas révéler sa véritable  identité sur les
   réseaux sociaux. Ne pas communiquer son identifiant et son mot de passe à une
   personne sous couvert d’une aide apportée pour retrouver le contrôle de son

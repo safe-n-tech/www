@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: S’exercer à développer son esprit critique.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 content: "Ne relayer que des informations dont on peut vérifier la fiabilité et
   la provenance. Identifier les sources primaires, vérifier la provenance des
   images, diversifier les sources pour recouper les faits, contrôler les

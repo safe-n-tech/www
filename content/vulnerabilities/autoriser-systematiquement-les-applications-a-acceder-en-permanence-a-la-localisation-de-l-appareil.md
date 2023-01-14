@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Autoriser systématiquement les applications à accéder en permanence à la
   localisation de l’appareil.
-categories: Déplacements
+categories: category-qP7AaYEirvtU1XIjwcSea
 risks:
   - Permettre à des applications d’enregistrer et de partager ma localisation à
     mon insu.

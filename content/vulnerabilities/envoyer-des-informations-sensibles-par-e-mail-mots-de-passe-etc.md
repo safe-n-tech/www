@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Envoyer des informations sensibles par e-mail (mots de passe etc.).
-categories: Boîte Mail
+categories: category-kW-FytF1BDPDcjYzpVQvr
 risks:
   - Perdre le contrôle des informations envoyées.
 goodPractices:

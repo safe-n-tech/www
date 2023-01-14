@@ -9,7 +9,7 @@ correction: "Sur les réseaux sociaux, la personne avec qui vous communiquez
 goodPractices:
   - Rester vigilant de manière générale sur Internet.
   - Vérifier la source et l’authenticité des comptes et des concours en ligne.
-categories: Réseaux sociaux
+categories: category-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: false
     text: elle est autorisée à le faire, je la connais peut-être.

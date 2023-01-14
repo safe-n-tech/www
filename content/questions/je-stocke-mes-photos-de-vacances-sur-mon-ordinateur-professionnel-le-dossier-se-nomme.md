@@ -13,7 +13,7 @@ correction: "Selon l’Arrêt Nikon du 2 Octobre 2001, vous êtes en droit de
   contenu."
 goodPractices:
   - Prendre garde aux informations personnelles sur ses appareils professionnels.
-categories: Droit résiduel à la vie privée
+categories: category--kiTZR7ZZs8EMe4z11DSq
 choices:
   - isCorrect: false
     text: photos vacances.

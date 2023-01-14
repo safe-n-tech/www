@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se prémunir d’une situation empirée en suivant cette liste d’étapes
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 content: "• Si on ne peut plus se connecter : contacter le service concerné et
   demander la réinitialisation du mot de passe.  • Si on peut encore se
   connecter : s’assurer que les coordonnées indiquées sont les bonnes. Si ce

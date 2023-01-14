@@ -2,7 +2,7 @@
 visibleInCms: true
 title: Télécharger une mise à jour ou un logiciel qui semble officiel mais
   disposé pour autant sur un site non officiel.
-categories: Mise à jour
+categories: category-pXhlU6Uzh80hZ6cMMDbks
 risks:
   - Télécharger un logiciel
   - en apparence inoffensif

@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se connecter au premier lien référencé sur le moteur de recherche.
-categories: Paiement en ligne
+categories: category-b2NrlcXR_BqRhZ9FigQAW
 risks:
   - Se retrouver sur un site qui ne correspond pas à la requête initiale et nous
     induit en erreur.

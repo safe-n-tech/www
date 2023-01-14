@@ -6,7 +6,7 @@ correction: "Changer vos mots de passe depuis un appareil piraté est un piège 
 goodPractices:
   - Agir dès les premiers soupçons d’attaque et se déconnecter de tous les
     comptes affiliés à l’adresse e-mail concernée.
-categories: Mots de passe
+categories: category-nGkbk6oSlC5_p3eqoXX2o
 choices:
   - isCorrect: false
     text: je change immédiatement tous mes mots de passe.

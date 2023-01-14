@@ -11,7 +11,7 @@ correction: Si vous recevez un mail suspect sur votre messagerie
 goodPractices:
   - Ne pas interagir avec le message.
   - Rester attentif lors de la réception d’un e-mail inattendu.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 choices:
   - isCorrect: true
     text: je vérifie l’adresse mail de l’expéditeur.

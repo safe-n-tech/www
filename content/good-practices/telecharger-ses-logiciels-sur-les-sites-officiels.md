@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Télécharger ses logiciels sur les sites officiels.
-categories: Téléchargements et ingénierie sociale
+categories: category-qslMSCVTTV92h34Rc_GNK
 definitions:
   - Levée de doute/Contre-appel
   - Suspect

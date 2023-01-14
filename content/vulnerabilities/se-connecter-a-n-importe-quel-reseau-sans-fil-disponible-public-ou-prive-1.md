@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 title: Se connecter à n’importe quel réseau sans-fil disponible (public ou privé).
-categories: Wifi et bluetooth
+categories: category-vPOHpPFF_kFw2S80Eawqn
 risks:
   - Voir ses données interceptées et permettre à un logiciel malveillant de se
     propager par le réseau.
