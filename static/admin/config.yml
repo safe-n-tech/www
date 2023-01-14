@@ -10,6 +10,7 @@ slug:
 
 collections:
   - name: categories
+    slug: "{{fields.uuid}}"
     label: Catégories
     label_singular: Catégorie
     folder: content/categories
@@ -17,6 +18,7 @@ collections:
     editor: { preview: false }
     filter: {field: "visibleInCms", value: true}
     fields:
+      - { label: 'UUID', name: 'uuid', widget: uuid }
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true}
       - { label: Titre, name: title, pattern: ['.{,100}', "Maximum 100 caractères"] }
       - { label: Lien vidéo youtube, name: videoUrl }
