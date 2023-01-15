@@ -33,5 +33,6 @@
   {{ partial "quizz/ingame" . }}
   {{ partial "quizz/results" . }}
 
-  <script src="/js/quiz.js"></script>
+  {{- $script := resources.Get "js/quiz.js" -}}
+  <script src="{{ $script.RelPermalink }}"></script>
 {{ end }}

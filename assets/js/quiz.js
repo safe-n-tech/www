@@ -1,3 +1,6 @@
+const STORAGE_APP_PREFIX = 'safe-n-tech';
+const QUESTIONS_NUMBER_QUIZ = 20;
+
 let questionIndex = 0;
 let questions = [];
 let results = null;
@@ -18,11 +21,16 @@ startQuizz();
 
 async function startQuizz() {
   const response = await fetch('/questions/index.json');
-  questions =  (await response.json()).data;
+  const allQuestionsShuffled = shuffle((await response.json()).data);
 
-  shuffleChoicesOfEachQuestions();
+  questions = allQuestionsShuffled.slice(0, QUESTIONS_NUMBER_QUIZ);
 
   document.getElementById("quizz-go-next-question-btn").addEventListener("click", nextQuestion);
+  document.getElementById('quiz-redo').addEventListener('click', clearQuizInLocalStorage)
+  shuffleChoicesOfEachQuestions();
+
+  loadQuizFromLocalStorage();
+
   loadActualQuestion();
 }
 
@@ -62,6 +70,8 @@ function showResults(){
   document.getElementById("sentence-level").innerText = sentenceLevel;
 
   createCorrection();
+
+  saveQuizToLocalStorage();
 }
 
 function calculateResults() {
@@ -182,11 +192,6 @@ function nextQuestion() {
 
   questionIndex++;
 
-  if (questionIndex === questions.length){
-    showResults();
-    return;
-  }
-
   loadActualQuestion();
 }
 
@@ -198,6 +203,8 @@ function handleAnswerSelected(questionSelected){
 
   document.getElementById("quizz-go-next-question-btn").removeAttribute('disabled');
   document.getElementById("quizz-go-next-question-btn-container").scrollIntoView(false);
+
+  saveQuizToLocalStorage();
 }
 
 function clearQuestionAnswers() {
@@ -214,6 +221,13 @@ function resetQuestionAnswers() {
 }
 
 function loadActualQuestion() {
+  saveQuizToLocalStorage();
+
+  if (questionIndex === questions.length){
+    showResults();
+    return;
+  }
+
   window.scrollTo(0,0);
   document.getElementById("quizz-progression-text").innerText = `Question ${questionIndex+1}/${questions.length}`;
   document.getElementById("quizz-progression-bar-inner").style.width = `${(questionIndex+1) * 100 / (questions.length+1)}%`;
@@ -253,4 +267,32 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+
+function saveQuizToLocalStorage() {
+  const data = JSON.stringify({
+    questions,
+    questionIndex
+  });
+  localStorage.setItem(`${STORAGE_APP_PREFIX}-questions`, data);
+}
+
+function clearQuizInLocalStorage() {
+  localStorage.removeItem(`${STORAGE_APP_PREFIX}-questions`);
+  window.location.reload();
+}
+
+function loadQuizFromLocalStorage() {
+  const dataSavedJson = localStorage.getItem(`${STORAGE_APP_PREFIX}-questions`);
+
+  if(!dataSavedJson) {
+    return
+  }
+
+  const dataSaved = JSON.parse(dataSavedJson);
+
+  console.log('load questions from local storage')
+  questions = dataSaved.questions;
+  questionIndex = dataSaved.questionIndex;
 }
