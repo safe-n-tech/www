@@ -1,8 +1,9 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    {{ $removedServices := where .Site.Pages "Section" "!=" "services"}}
-    {{- range $removedServices -}}
+    {{ $removedQuestions := where .Site.Pages "Section" "!=" "questions"}}
+    {{ $removedDefinitions := where $removedQuestions "Section" "!=" "definitions"}}
+    {{- range $removedDefinitions -}}
     {{- partial "sitemap-url" . -}}
     {{- end -}}
 </urlset>
