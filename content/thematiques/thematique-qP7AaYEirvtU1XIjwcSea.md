@@ -3,7 +3,7 @@ visibleInCms: true
 uuid: thematique-qP7AaYEirvtU1XIjwcSea
 title: Déplacements
 icon: deplacements.png
-videoUrl: null
+videoUrl: https://www.youtube.com/watch?v=Dt9zWEE3BZE
 subtitle: “En déplacement, la vigilance est de mise.”
 description: Lorsque vous voyagez, une personne malveillante peut voler votre
   ordinateur, et compromettre vos données. Il est important de toujours garder
