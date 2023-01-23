@@ -3,7 +3,7 @@ visibleInCms: true
 uuid: thematique-F3gC3Ox-MJpGbDCgSltLP
 title: Réseaux sociaux
 icon: reseaux-sociaux.png
-videoUrl: https://www.youtube.com/watch?v=huiUq21uQO0
+videoUrl: https://www.youtube.com/embed/huiUq21uQO0
 subtitle: “Pour vivre heureux, vivons cachés.”
 description: De nombreuses personnes confient leur vie privée sur les réseaux
   sociaux (Facebook, Instagram, Snapchat, etc.). Cependant, il existe de
