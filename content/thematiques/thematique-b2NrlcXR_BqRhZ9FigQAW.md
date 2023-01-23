@@ -3,7 +3,7 @@ visibleInCms: true
 uuid: thematique-b2NrlcXR_BqRhZ9FigQAW
 title: Paiement en ligne
 icon: paiement-en-ligne.png
-videoUrl: null
+videoUrl: https://www.youtube.com/watch?v=EnLlUOZ3p7o
 subtitle: “Attention aux sites frauduleux !”
 description: "Si dans une grande majorité des cas, les achats sur Internet se
   déroulent sans incident, ce n’est pas toujours le cas. En effet, certains
