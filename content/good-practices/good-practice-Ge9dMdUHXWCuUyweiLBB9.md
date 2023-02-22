@@ -1,13 +1,14 @@
 ---
 thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
-risk: 'Être compromis sans pour autant en avoir connaissance. '
-title: 'Vérifier régulièrement à ce que ses données (numéro de téléphone, adresse
-  e-mail, mot de passe) ne soient pas déjà compromises en mettant en place une veille
-  automatique efficace. '
-uuid: good-practice-Ge9dMdUHXWCuUyweiLBB9
+risk: "Être compromis sans pour autant en avoir connaissance. "
 visibleInCms: true
-vulnerability: Ne pas mettre en place une veille informationnelle qui nous alerte
-  en cas de compromission de ses données.
+uuid: good-practice-Ge9dMdUHXWCuUyweiLBB9
+title: "Vérifier régulièrement à ce que ses données (numéro de téléphone,
+  adresse e-mail, mot de passe) ne soient pas déjà compromises en mettant en
+  place une veille automatique efficace. "
+vulnerability: Ne pas mettre en place une veille informationnelle qui nous
+  alerte en cas de compromission de ses données.
+advanced: true
 ---
 
 Plusieurs outils sont disponibles. Si l’un d’eux déclare une fuite, il faut agir. 
