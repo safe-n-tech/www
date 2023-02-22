@@ -1,13 +1,14 @@
 ---
+visibleInCms: true
+uuid: good-practice-R6wMRp3cV8ejta1ay0UNh
+title: Rester attentif lors de la réception d’un e-mail inattendu.
 thematique: thematique-kW-FytF1BDPDcjYzpVQvr
 definitions:
-- definition-E9kkWzwyQhfj1cbo3tkjC
-risk: Penser à tort connaître l’expéditeur et lui accorder sa confiance en toute sérénité
-  alors qu’il profite de la situation pour commettre une action malveillante.
-title: Rester attentif lors de la réception d’un e-mail inattendu.
-uuid: good-practice-R6wMRp3cV8ejta1ay0UNh
-visibleInCms: true
-advanced: true
+  - definition-E9kkWzwyQhfj1cbo3tkjC
+advanced: false
+risk: Penser à tort connaître l’expéditeur et lui accorder sa confiance en toute
+  sérénité alors qu’il profite de la situation pour commettre une action
+  malveillante.
 vulnerability: Ne pas porter attention à l’expéditeur de l’e-mail.
 ---
 
