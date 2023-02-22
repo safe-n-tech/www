@@ -9,10 +9,10 @@
   </div>
 </section>
 
-<section class="container flex flex-col my-20 w-full mb-5 lg:flex-row gap-36 ">
+<section class="container my-20">
   <div>
     {{ if (.Params.VideoUrl) }}
-    <iframe class="mt-10 aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
+    <iframe class="aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
       allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     {{ else }}
     <div class="p-10 border-secondary border-2 rounded-2xl bg-white">
@@ -20,74 +20,66 @@
     </div>
     {{ end }}
   </div>
-  <p class="lg:w-2/3 text-black ">{{ .Description }}</p>
+  <p class="text-black mt-10">{{ .Description }}</p>
 
 </section>
 
-<section class="container text-dark_gray mt-20">
+<section class="container text-dark_gray mt-20 mb-20">
+  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+  {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
-  <section class="mt-10 mb-20">
-    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
+  {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+  <h3 class="text-h2 text-black">Les vulnérabilités</h3>
 
-    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-    <h3 class="text-h1 text-black">Les vulnérabilités</h3>
-
-    <nav class="grid-good-practice mt-5 grid-cols-1">
-      {{ range $vulnerabilitiesLinked }}
-        <div class="border-perso rounded-md bg-white p-5 ">
-          <a href="{{ .Permalink }}" class="no-underline text-orange text-h1">
-            {{ .Title }}
-          </a>
-          {{ if .Params.risks }}
-            <h3 class="text-h2 mt-4 mt-10">Les risques</h3>
+  <nav class="grid-good-practice mt-5 grid-cols-1">
+    {{ range $vulnerabilitiesLinked }}
+      <div class="border-perso rounded-md bg-white p-5 ">
+        <a href="{{ .Permalink }}" class="no-underline text-orange text-h3">
+          {{ .Title }}
+        </a>
+        {{ if .Params.risks }}
+          <h3 class="text-h4 mt-4 mt-10">Les risques</h3>
+          <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
+          <ul class="list-disc pl-6 md:w-2/3">
+            {{ range .Params.risks }}
+              <li class="my-2">{{ . }}</li>
+            {{ end }}
+          </ul>
+        {{ end }}
+        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
+        {{ if (gt (len $goodPracticesLinked) 0) }}
+          <div class="mt-10">
+            <h2 class="text-h4 mt-4">Les bonnes pratiques</h2>
             <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
-            <ul class="list-disc pl-6 md:w-2/3">
-                {{ range .Params.risks }}
-                <li class="my-2">{{ . }}</li>
-                {{ end }}
-            </ul>
-          {{ end }}
-          {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-          {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-          {{ if (gt (len $goodPracticesLinked) 0) }}
-            <div class="mt-10">
-                <h2 class="text-h2 mt-4">Les bonnes pratiques</h2>
-                <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
-                <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
-                    {{ range $goodPracticesLinked}}
-                    <a href="{{ .Permalink }}" class="no-underline">
-
-                        <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-                            <p class="text-secondary">"{{ .Title }}"</p>
-
-                        </div>
-                    </a>
+            <nav>
+              {{ range $goodPracticesLinked}}
+                <div class="border-perso rounded-md px-3 py-5 mt-5">
+                  <a href="{{ .Permalink }}" class="no-underline">
+                    <p class="text-secondary">"{{ .Title }}"</p>
+                    {{ if .Params.advanced }}
+                      <small>(Niveau avancé)</small>
                     {{ end }}
-                </nav>
-            </div>
-          {{ end }}
-        </div>
-      {{ end }}
-      </nav>
+                  </a>
+                </div>
+                <div class="border-perso rounded-md px-3 py-5 mt-5">
+                  <a href="{{ .Permalink }}" class="no-underline">
+                    <p class="text-secondary">"{{ .Title }}"</p>
+                    {{ if .Params.advanced }}
+                      <small>(Niveau avancé)</small>
+                    {{ end }}
+                  </a>
+                </div>
+              {{ end }}
+            </nav>
+          </div>
+        {{ end }}
+      </div>
     {{ end }}
-  </section>
+  </nav>
+  {{ end }}
+
 
 </section>
-
-<script>
-  const switchBtns = document.querySelector('.switch');
-
-  const sectionLeft = document.querySelector('#sec-left');
-  const sectionRight = document.querySelector('#sec-right');
-
-  switchBtns.addEventListener('click', () => {
-    sectionLeft.classList.toggle('active')
-    sectionRight.classList.toggle('active')
-
-    switchBtns.firstElementChild.classList.toggle('active')
-    switchBtns.lastElementChild.classList.toggle('active')
-  })
-</script>
 {{ end}}

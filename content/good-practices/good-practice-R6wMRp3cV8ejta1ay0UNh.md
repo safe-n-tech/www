@@ -7,6 +7,7 @@ risk: Penser à tort connaître l’expéditeur et lui accorder sa confiance en 
 title: Rester attentif lors de la réception d’un e-mail inattendu.
 uuid: good-practice-R6wMRp3cV8ejta1ay0UNh
 visibleInCms: true
+advanced: true
 vulnerability: Ne pas porter attention à l’expéditeur de l’e-mail.
 ---
 
