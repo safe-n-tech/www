@@ -1,5 +1,5 @@
 languageCode: 'fr'
-baseURL: https://safe-n-tech.netlify.app
+baseURL: /
 removePathAccents: true
 
 params:

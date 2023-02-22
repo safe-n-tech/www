@@ -26,10 +26,18 @@ a {
     }
 
     .text-h1 {
-        @apply text-2xl font-bold;
+        @apply text-5xl font-bold;
     }
 
     .text-h2 {
+        @apply text-3xl font-medium;
+    }
+
+    .text-h3 {
+        @apply text-2xl font-medium;
+    }
+
+    .text-h4 {
         @apply text-xl font-medium;
     }
 

@@ -187,8 +187,9 @@ collections:
         multiple: true
         required: false
 
-      - { label: Contenu, name: body,  required: false, widget: markdown }
-
+      - { label: Contenu, name: body, required: false, widget: markdown }
+      - { label: Niveau avancé, name: advanced, required: false, widget: boolean }
+      - { label: Outil recommandé, name: tool, required: false, widget: text }
 
 
 
