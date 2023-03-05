@@ -3,7 +3,7 @@ thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 risk: Relayer de fausses informations liées à la désinformation.
 visibleInCms: true
 uuid: good-practice-0FhF7xTjOWCxYu_NjlOYk
-title: S’exercer à développer son esprit critique (voir recommandation ci-dessous).
+title: S’exercer à développer son esprit critique (voir recommandations ci-dessous).
 vulnerability: Relayer de fausses informations liées à la désinformation.
 ---
 \- Ne relayer que des informations dont on peut vérifier la fiabilité et la provenance. 
