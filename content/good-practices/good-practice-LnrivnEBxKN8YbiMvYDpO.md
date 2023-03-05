@@ -5,7 +5,8 @@ risk: Se faire voler son identité en ligne. Devenir l’objet de fausses
   passer pour son titulaire).
 visibleInCms: true
 uuid: good-practice-LnrivnEBxKN8YbiMvYDpO
-title: Protéger son identité sur les réseaux sociaux (voir recommandation ci-dessous).
+title: Protéger son identité sur les réseaux sociaux (voir recommandations
+  ci-dessous).
 vulnerability: "Laisser un compte piraté à son nom sur les réseaux sociaux. "
 ---
 \- Utiliser un pseudo pour ne pas révéler sa véritable identité sur les réseaux sociaux. 
