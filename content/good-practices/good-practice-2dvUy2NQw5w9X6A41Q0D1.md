@@ -7,7 +7,7 @@ risk: "Devenir une victime privilégiée d’escroquerie ou de phishing (quelqu�
 visibleInCms: true
 uuid: good-practice-2dvUy2NQw5w9X6A41Q0D1
 title: Vérifier la source et l’authenticité des comptes et des concours en ligne
-  (voir recommandation ci-dessous).
+  (voir recommandations ci-dessous).
 vulnerability: Participer à tous les concours et/ou répondre aux questionnaires
   des réseaux sociaux.
 ---
