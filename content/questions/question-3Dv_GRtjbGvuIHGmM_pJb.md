@@ -10,14 +10,14 @@ goodPractices:
 thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 choices:
   - isCorrect: false
-    text: De ne pas activer la mise à jour automatique.
+    text: de ne pas activer la mise à jour automatique.
   - isCorrect: true
-    text: D’activer les mises à jour automatiques.
+    text: d’activer les mises à jour automatiques.
   - isCorrect: false
-    text: Cela dépend des logiciels.
+    text: cela dépend des logiciels.
   - isCorrect: false
-    text: Je ne fais pas de mises à jour.
+    text: je ne fais pas de mise à jour.
   - isCorrect: true
-    text: De faire les mises à jour manuellement dès qu'une nouvelle mise à jour est
-      disponible
+    text: de faire les mises à jour manuellement dès qu'une nouvelle mise à jour est
+      disponible.
 ---
