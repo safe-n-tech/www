@@ -1,10 +1,10 @@
 ---
 thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
-risk: 'Refuser de réagir ne fera qu’empirer la situation laissant la possibilité au
-  pirate de démultiplier les exactions. '
-title: Se prémunir d’une situation empirée en suivant cette liste d’étapes
-uuid: good-practice-k-14b3YN4u7CTCwOye3qa
+risk: "Refuser de réagir ne fera qu’empirer la situation laissant la possibilité
+  au pirate de démultiplier les exactions. "
 visibleInCms: true
+uuid: good-practice-k-14b3YN4u7CTCwOye3qa
+title: "Se prémunir d’une situation empirée en suivant cette liste d’étapes : "
 vulnerability: Rester inactif lorsque l’on se rend compte que l’on est piraté.
 ---
 
