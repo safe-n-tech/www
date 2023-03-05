@@ -5,7 +5,7 @@ visibleInCms: true
 uuid: good-practice-Ge9dMdUHXWCuUyweiLBB9
 title: Vérifier régulièrement à ce que ses données (numéro de téléphone, adresse
   e-mail, mot de passe) ne soient pas déjà compromises en mettant en place une
-  veille automatique efficace (voir recommandations).
+  veille automatique efficace (voir recommandations ci-dessous).
 vulnerability: Ne pas mettre en place une veille informationnelle qui nous
   alerte en cas de compromission de ses données.
 advanced: true
