@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 uuid: thematique-kW-FytF1BDPDcjYzpVQvr
-title: Boîte Mail
+title: Boîte mail
 icon: boite-mail.png
 videoUrl: https://www.youtube.com/embed/4N0sGMk9zwc
 subtitle: “La voie royale du piratage.”
