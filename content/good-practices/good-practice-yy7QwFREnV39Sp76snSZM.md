@@ -5,7 +5,8 @@ risk: "Se faire abuser par une personne malveillante qui utilise un faux
   pour solliciter de l’argent ou toute autre contribution malhonnête. "
 visibleInCms: true
 uuid: good-practice-yy7QwFREnV39Sp76snSZM
-title: Rester vigilant de manière générale sur Internet.
+title: Rester vigilant de manière générale sur Internet (voir recommandations
+  ci-dessous).
 vulnerability: Faire confiance trop facilement sur les réseaux sociaux.
 ---
 \- Garder une certaine distance dans toutes interactions. 
