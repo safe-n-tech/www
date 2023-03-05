@@ -4,8 +4,8 @@ risk: "Prendre le risque que ses données aient fuité sur le web et soient
   accessibles et utilisées par tous. "
 visibleInCms: true
 uuid: good-practice-BfIEsJjvVW_DhbHGTgWsQ
-title: Changer de mot de passe régulièrement (3-6 mois, au regard de vos
-  exigences de sécurité) à titre préventif (voir recommandations).
+title: "Changer de mot de passe régulièrement à titre préventif : 3-6 mois, au
+  regard de vos exigences de sécurité (voir recommandations)."
 vulnerability: Ne jamais changer son mot de passe par peur de l’oublier.
 ---
 
