@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 uuid: thematique-pXhlU6Uzh80hZ6cMMDbks
-title: Mise à jour
+title: Mises à jour
 icon: mise-a-jour.png
 videoUrl: https://www.youtube.com/embed/_4sXBnK4HaU
 subtitle: “L’importance des mises à jour est souvent sous-estimée.”
