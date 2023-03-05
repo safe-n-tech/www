@@ -6,7 +6,7 @@ risk: S’exposer à un risque de divulgation du mot de passe par une personne
   tierce ou utilisation frauduleuse en son nom.
 visibleInCms: true
 uuid: good-practice-Q83sRKidixuYBMyolaW0x
-title: Utiliser un gestionnaire de mot de passe (voir recommandations).
+title: Utiliser un gestionnaire de mot de passe (voir recommandations ci-dessous).
 vulnerability: Noter ses mots de passe (sur un post-it collé sur son écran, sur
   un document papier ou informatique listant tous les mots de passe, etc.).
 ---
