@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 uuid: thematique-b2NrlcXR_BqRhZ9FigQAW
-title: Paiement en ligne
+title: Paiements en ligne
 icon: paiement-en-ligne.png
 videoUrl: https://www.youtube.com/embed/EnLlUOZ3p7o
 subtitle: “Attention aux sites frauduleux !”
