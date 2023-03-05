@@ -7,7 +7,7 @@ risk: "Avoir recours à des mots de passe qui figurent parmi les plus couramment
 visibleInCms: true
 uuid: good-practice-oo8d-eRVOqS8_S91fv-X-
 title: "Utiliser un mot de passe long et complexe, en plus d’être inintelligible
-  et imprévisible (voir recommandations). "
+  et imprévisible (voir recommandations ci-dessous). "
 vulnerability: Utiliser 1234, azerty ou 7777777 comme mot de passe, ou encore un
   mot de passe trop court.
 ---
