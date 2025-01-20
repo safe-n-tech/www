@@ -2,6 +2,10 @@
 publish = "public"
 command = "npm run build"
 
+[context.production.environment]
+  HUGO_VERSION = "0.133.1"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "false"
 
 [[headers]]
   for = "/*"
