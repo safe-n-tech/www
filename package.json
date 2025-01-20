@@ -2,6 +2,7 @@
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+        "dev": "concurrently --names \"HUGO,TAILWIND\" -c \"bgCyan.bold,bgMagenta.bold\" \"npm run tailwind\" \"npm run hugo\"",
         "hugo": "hugo serve --disableFastRender",
         "hugo:build": "hugo --gc --minify",
         "tailwind": "npx tailwindcss -i ./assets/css/styles.css -o ./assets/css/output/styles.css --watch",
@@ -11,6 +12,7 @@
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^4.x",
         "autoprefixer": "^10.x",
+        "concurrently": "^9.1.2",
         "postcss": "^8.x",
         "postcss-cli": "^10.x",
         "tailwindcss": "^3.2.1"

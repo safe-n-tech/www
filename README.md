@@ -1,9 +1,10 @@
 ## Install and start
-### Install Hugo
+
+### Install Hugo (at least v0.133.1+extended)
 https://gohugo.io/getting-started/installing/
+
 ### Install dependencies
-`npm i`
+`yarn i`
+
 ### Start server
-Run in two separate terminals :  
-`npm run tailwind`  
-`npm run hugo`
+`yarn dev`  
