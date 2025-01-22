@@ -62,6 +62,68 @@
 	</div>
 </div>
 
+<h2>Thème 1</h2>
+<div class="checklist" data-theme="theme1">
+  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 3</label><br>
+</div>
+
+<h2>Thème 2</h2>
+<div class="checklist" data-theme="theme2">
+  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
+</div>
+
+<h2>Thème 3</h2>
+<div class="checklist" data-theme="theme3">
+  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 3</label><br>
+  <label><input type="checkbox" class="check-item"> Tâche 4</label><br>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const checklists = document.querySelectorAll('.checklist');
+
+    // Fonction pour charger l'état des thèmes
+    function loadState() {
+      return JSON.parse(localStorage.getItem('themesState')) || {};
+    }
+
+    // Fonction pour sauvegarder l'état des thèmes
+    function saveState(state) {
+      localStorage.setItem('themesState', JSON.stringify(state));
+    }
+
+    // Charger l'état au démarrage
+    const state = loadState();
+
+    // Initialiser les checklists
+    checklists.forEach(checklist => {
+      const theme = checklist.getAttribute('data-theme');
+      const items = checklist.querySelectorAll('.check-item');
+
+      // Charger l'état des cases pour ce thème
+      if (state[theme]) {
+        state[theme].forEach((checked, index) => {
+          if (items[index]) items[index].checked = checked;
+        });
+      }
+
+      // Ajouter un événement de changement
+      items.forEach((item, index) => {
+        item.addEventListener('change', () => {
+          if (!state[theme]) state[theme] = [];
+          state[theme][index] = item.checked;
+          saveState(state);
+        });
+      });
+    });
+  });
+</script>
+
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
 		// Sélectionnez l'élément contenant toutes les pages

@@ -1,53 +1,200 @@
 {{ define "main" }}
 
-    <section class="relative w-full pt-24 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-        <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
-             src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-        <div class="container flex flex-col md:flex-row">
-            <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
-                <div class="flex w-full justify-center my-8 md:justify-start">
-                    <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
-                </div>
-                <h1 class="md:text-left text-white text-2xl md:text-5xl my-8 text-h1 text-center mx-8 md:mx-0">Et si nous profitions du numérique en toute <span class="text-tertiary">sécurité</span> ?</h1>
-                <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
-                    <a href="/quizz" class="flex justify-center content-center w-40 py-2 bg-primary text-white rounded-lg whitespace-nowrap">
-                        <span class="whitespace-nowrap text-label pr-3">Lancer le quiz</span>
-                        <img src="/svgs/arrow.svg" alt="Flèche" class="w-4">
-                    </a>
-                    <a href="/thematiques" class="flex justify-center content-center w-40 py-2 border-2 border-primary text-white rounded-lg whitespace-nowrap">
-                        <span class="whitespace-nowrap text-label">Je me renseigne</span>
-                    </a>
-                </div>
-            </div>
-            <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
-                <img class="w-7/12 md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png" alt="Icône page Accueil">
-            </div>
-        </div>
-    </section>
 
-    <div class="container md:w-2/3 pt-16 md:pt-32 pb-20 md:flex md:flex-col md:items-center">
-        <h2 class="text-dark_gray w-full text-3xl text-bold font-bold">Prenons conscience des dangers</h2>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-light_white md:w-5/6 mr-auto"></div>
-        <div class="flex flex-col text-dark_gray gap-6 py-6">
-            <p>
-                Perte de données personnelles, falsification d’identité, piratage de comptes bancaires sont autant d’exemples d’incidents qui peuvent naître de notre naïveté et méconnaissance.
-            </p>
-            <p>
-                C’est dans cette optique que nous avons créé « Safe N Tech » afin de vous sensibiliser à toutes les bonnes pratiques faciles à adopter, et pouvant sensiblement vous éloigner des risques.
-            </p>
-            <p>
-                Testez vos pratiques grâce au quiz que nous avons développé. Le résultat mettra en lumière les points sur lesquels vous pouvez vous améliorer, et toute la documentation ludique et facilement compréhensible vous aidera à le faire.
-            </p>
-            <p>
-                La cybersécurité est devenue l’affaire de tous, le plus difficile est de le conscientiser. Cet outil sera votre meilleur compagnon de route.
-            </p>
+<section class="relative w-full pt-24 max-md:pb-12 max-md:-mb-20 md:pb-2 perso-background">
+
+ <div class="container flex flex-col md:flex-row">
+   <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+     <div class="flex w-full justify-center hidden md:block my-8 md:justify-start">
+       <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
+     </div>
+     <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1  md:mx-0">Et si nous
+       profitions du numérique en toute sécurité ?</h1>
+     <p class="md:text-left text-white mb-4 font-bold">“Ça ne m’arrivera jamais, je connais les risques” </p>
+
+
+       <p class="md:text-left text-white">On connaît tous ce tonton agaçant qui se croit à l’abri... jusqu'au piratage.  Ne faites pas comme lui : renforcez votre protection, testez-vous, et adoptez de meilleures pratiques.</p>
+     <div class="flex gap-6 items-center	 flex-col justify-center content-center w-full space-x-5 my-12 md:justify-start md:flex-row">
+       <a style="color: #153E60" href="/quizz"
+         class="flex justify-center content-center w-full md:w-40 py-3 bg-white border-2 rounded-lg whitespace-nowrap">
+         <span class="whitespace-nowrap text-label pr-3">Me tester</span>
+       </a>
+       <a style="margin-right: 20px;" href="/thematiques"
+         class="flex justify-center content-center w-full md:w-fit px-3 py-3 border-2 text-white rounded-lg whitespace-nowrap">
+         <span class="whitespace-nowrap text-label">Compléter ma liste de bonnes pratiques</span>
+       </a>
+     </div>
+   </div>
+   <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
+     <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png"
+       alt="Icône page Accueil">
+   </div>
+ </div>
+</section>
+
+
+<section class="relative w-full pt-32 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
+  <div class="container flex flex-col md:flex-row">
+    <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+      <h2 class="text-dark_gray w-full text-3xl text-bold font-bold mb-8">Votre checklist</h2>
+      <p class="md:text-left text-dark_gray mb-4">Avez-vous les bonnes pratiques en matière de cybersécurité ? Complétez votre checklist et découvrez à quel point vous êtes un expert !</p>
+
+
+      <h2>Barres de progression par thème</h2>
+      <div id="theme-bars"></div>
+
+      <h2>Progression globale</h2>
+      <div id="global-progress-container">
+        <p>Progression globale : <span id="global-progress-percentage">0%</span></p>
+        <div style="background: #eee; width: 100%; height: 20px; border-radius: 5px; overflow: hidden;">
+          <div id="global-progress-bar" style="background: #76c7c0; width: 0; height: 100%;"></div>
         </div>
-        <div class="flex justify-center content-center pt-4">
-            <a href="/good-practices" class="flex justify-center content-center px-4 py-2 rounded-lg border-2 border-secondary bg-secondary text-white rounded-lg whitespace-nowrap">
-                <span class="whitespace-nowrap text-label">La liste des bonnes pratiques</span>
-            </a>
-        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          const themeBarsContainer = document.getElementById('theme-bars');
+          const globalProgressBar = document.getElementById('global-progress-bar');
+          const globalProgressPercentage = document.getElementById('global-progress-percentage');
+
+          // Fonction pour charger l'état des thèmes
+          function loadState() {
+            return JSON.parse(localStorage.getItem('themesState')) || {};
+          }
+
+          // Fonction pour créer une barre de progression
+          function createProgressBar(theme, percentage) {
+            const container = document.createElement('div');
+            container.style.marginBottom = '10px';
+
+            const label = document.createElement('p');
+            label.textContent = `Progression ${theme} : ${percentage}%`;
+
+            const progressBarContainer = document.createElement('div');
+            progressBarContainer.style.background = '#eee';
+            progressBarContainer.style.width = '100%';
+            progressBarContainer.style.height = '20px';
+            progressBarContainer.style.borderRadius = '5px';
+            progressBarContainer.style.overflow = 'hidden';
+
+            const progressBar = document.createElement('div');
+            progressBar.style.background = '#76c7c0';
+            progressBar.style.width = `${percentage}%`;
+            progressBar.style.height = '100%';
+
+            progressBarContainer.appendChild(progressBar);
+            container.appendChild(label);
+            container.appendChild(progressBarContainer);
+
+            themeBarsContainer.appendChild(container);
+          }
+
+          // Fonction pour calculer et afficher la progression
+          function updateProgress() {
+            const state = loadState();
+            let totalTasks = 0;
+            let totalChecked = 0;
+
+            // Effacer les barres existantes
+            themeBarsContainer.innerHTML = '';
+
+            // Calculer la progression par thème
+            for (const theme in state) {
+              const tasks = state[theme].length;
+              const checked = state[theme].filter(item => item).length;
+              const percentage = tasks > 0 ? Math.round((checked / tasks) * 100) : 0;
+
+              // Ajouter la barre de progression du thème
+              createProgressBar(theme, percentage);
+
+              // Ajouter aux totaux
+              totalTasks += tasks;
+              totalChecked += checked;
+            }
+
+            // Calculer la progression globale
+            const globalPercentage = totalTasks > 0 ? Math.round((totalChecked / totalTasks) * 100) : 0;
+            globalProgressBar.style.width = `${globalPercentage}%`;
+            globalProgressPercentage.textContent = `${globalPercentage}%`;
+          }
+
+          // Mettre à jour la progression au démarrage
+          updateProgress();
+        });
+      </script>
+
+      <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+        <a style="background-color:#153E60" href="/quizz"
+          class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-white rounded-lg whitespace-nowrap">
+          <span class="whitespace-nowrap text-label pr-3">Compléter ma checklist</span>
+        </a>
+      </div>
     </div>
+    <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
 
+    </div>
+  </div>
+ </section>
+
+
+<section class="relative w-full pt-24 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 perso-background">
+
+ <div class="container flex flex-col md:flex-row">
+   <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+     <h2 class="text-white w-full text-3xl text-bold font-bold mb-8">Prenons conscience des dangers</h2>
+     <p class="md:text-left text-white mb-4">Perte de données, usurpation d’identité, piratage bancaire : autant de
+       risques liés à notre manque de vigileance.</p>
+     <p class="md:text-left text-white mb-4">Nous avons créé « Safe N Tech » pour vous sensibiliser aux bonnes
+       pratiques simples à adopter. </p>
+     <p class="md:text-left text-white mb-4">La cybersécurité est l’affaire de tous, et cet outil est là pour vous
+       accompagner.</p>
+     <p class="md:text-left text-white">Testez vos connaissances avec notre quiz et découvrez où vous améliorer. Grâce
+       à notre documentation ludique, renforcez votre sécurité facilement. </p>
+     <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+       <a href="/quizz"
+         class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-black rounded-lg whitespace-nowrap">
+         <span class="whitespace-nowrap text-label pr-3">Me tester</span>
+       </a>
+     </div>
+   </div>
+   <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
+     <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/cyber_illustration.svg"
+       alt="Icône page Accueil">
+   </div>
+ </div>
+</section>
+
+
+<section class="relative w-full pt-24 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
+  <div class="container flex flex-col-reverse md:flex-row">
+    <div class="flex justify-center items-center w-full justify-center reactive">
+      <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/cheval.svg"
+        alt="Icône page Accueil">
+    </div>
+    <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+      <h2 class="text-dark_gray w-full text-3xl text-bold font-bold mb-4">Le projet</h2>
+      <p class="md:text-left text-dark_gray mb-4">Le projet part d’un constat simple : intégrer de bonnes pratiques informatiques est crucial pour éviter les risques en ligne.</p>
+      <p class="md:text-left text-dark_gray mb-4">Nous avons créé « Safe N Tech » pour vous sensibiliser aux bonnes pratiques simples à adopter.</p>
+      <p class="md:text-left text-dark_gray mb-4">La cybersécurité est l’affaire de tous, et cet outil est là pour vous accompagner.</p>
+      <p class="md:text-left text-dark_gray">Testez vos connaissances avec notre quiz et découvrez où vous améliorer. Grâce à notre documentation ludique, renforcez votre sécurité facilement.</p>
+      <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+        <a href="/quizz"
+          class="flex justify-center content-center w-full md:w-80 py-3 text-dark_gray border-2 rounded-lg whitespace-nowrap">
+          <span class="whitespace-nowrap text-label pr-3">En savoir plus</span>
+        </a>
+      </div>
+    </div>
+  </div>
+ </section>
+
+ {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="no-underline">
+      <div
+        class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
+        <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
+        <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
+      </div>
+    </a>
+    {{ end }}
 
 {{ end }}
