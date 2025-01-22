@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head prefix="og: http://ogp.me/ns#">
     {{- partial "head.html" . -}}
 
@@ -7,40 +8,41 @@
     {{ end }}
 
     {{ block "seoRobots" . }}
-        <meta name="robots" content="all">
+    <meta name="robots" content="all">
     {{ end }}
 
     {{ partial "seo" . }}
 
     {{ block "seoHero" . }}
-        {{$heroUrl := printf "%s%s" .Site.Params.seo.url .Site.Params.seo.hero }}
-        <meta name="twitter:image" content="{{ $heroUrl }}" />
-        <meta property="og:image" content="{{ $heroUrl }}" />
+    {{$heroUrl := printf "%s%s" .Site.Params.seo.url .Site.Params.seo.hero }}
+    <meta name="twitter:image" content="{{ $heroUrl }}" />
+    <meta property="og:image" content="{{ $heroUrl }}" />
     {{ end }}
 
     {{ block "seoTitle" . }}
-        {{ $title := .Site.Params.seo.title }}
-        {{ if .Title }}
-        {{ $title = .Title}}
-        {{ end }}
-        <title>{{ $title }} - Safe N Tech</title>
-        <meta name="twitter:title" content="{{ $title }}" />
-        <meta property="og:title" content="{{ $title }}" />
-        <meta name="apple-mobile-web-app-title" content="{{ $title }}" />
+    {{ $title := .Site.Params.seo.title }}
+    {{ if .Title }}
+    {{ $title = .Title}}
+    {{ end }}
+    <title>{{ $title }} - Safe N Tech</title>
+    <meta name="twitter:title" content="{{ $title }}" />
+    <meta property="og:title" content="{{ $title }}" />
+    <meta name="apple-mobile-web-app-title" content="{{ $title }}" />
     {{ end }}
 
     {{ block "seoDescription" . }}
-        {{ $description := .Site.Params.seo.desc }}
-        {{ if .Description }}
-        {{ $description = .Description}}
-        {{ end }}
-        <meta name="description" content="{{ $description }}" />
-        <meta property="og:description" content="{{ $description }}" />
-        <meta name="twitter:description" content="{{ $description }}" />
+    {{ $description := .Site.Params.seo.desc }}
+    {{ if .Description }}
+    {{ $description = .Description}}
+    {{ end }}
+    <meta name="description" content="{{ $description }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta name="twitter:description" content="{{ $description }}" />
     {{ end }}
 </head>
+
 <body class="bg-light_gray text-secondary text-xl">
-    <div class="min-h-screen">
+    <div class="">
         {{- partial "header" . -}}
 
         <main>
@@ -50,4 +52,5 @@
 
     {{- partial "footer" . -}}
 </body>
+
 </html>

@@ -16,31 +16,31 @@
 
     {{ $thematiques := (where .Site.Pages "Section" "thematiques") }}
     {{range $thematiques}}
-        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-        {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
+    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
 
-        {{ if (gt (len $goodPracticesLinked) 0) }}
+    {{ if (gt (len $goodPracticesLinked) 0) }}
 
-        <h3 class="text-h2 md:text-5xl text-black mt-16">{{ .Title }}</h3>
+    <h3 class="text-h2 md:text-5xl text-black mt-16">{{ .Title }}</h3>
 
-        <nav class="grid-good-practice mt-10 grid-cols-1">
-            {{ range $goodPracticesLinked}}
-            <a href="{{ .Permalink }}" class="no-underline">
+    <nav class="grid-good-practice mt-10 grid-cols-1">
+        {{ range $goodPracticesLinked}}
+        <a href="{{ .Permalink }}" class="no-underline">
 
-                <div class="bg-white mb-2 p-5 rounded-2xl">
-                    <div class="flex flex-row justify-between">
-                        <p class="text-sm md:text-xl text-black w-2/3">{{ .Title }}</p>
-                        <div class="self-center">
-                            <img src="/svgs/arrowBlue.png" class="w-5" />
-                        </div>
+            <div class="bg-white mb-2 p-5 rounded-2xl">
+                <div class="flex flex-row justify-between">
+                    <p class="text-sm md:text-xl text-black w-2/3">{{ .Title }}</p>
+                    <div class="self-center">
+                        <img src="/svgs/arrow_blue.svg" class="w-5" />
                     </div>
-                    <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-transparent mt-4"></div>
                 </div>
-            </a>
-            {{ end }}
-        </nav>
-
+                <div class="h-1 w-3/6 bg-gradient-to-r from-blue-300 to-transparent mt-4"></div>
+            </div>
+        </a>
         {{ end }}
+    </nav>
+
+    {{ end }}
     {{ end }}
 
 </section>

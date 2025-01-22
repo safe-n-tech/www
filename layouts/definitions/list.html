@@ -6,25 +6,76 @@
 		<h1 class="text-h1 md:text-5xl mt-10">Glossaire</h1>
 	</div>
 </section>
-
+{{$letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y"
+"Z"}}
+<div class="flex w-full gap-3 flex-wrap"></div>
+{{ range $letters }}
+<a href="#{{.}}">{{.}}</a>
+{{ end }}
+</div>
 <div class="container text-dark_gray mt-20">
-	<h1 class="text-h1">Glossaire</h1>
-	{{ range .Pages }}
-	<div class="bg-white my-10 rounded-2xl drop-shadow-sm">
-		<button class="w-full  px-6 py-5 h-full flex flex-row justify-between drop-down__item">
-			<p class="text-h2 text-black text-left w-2/3">{{ .Title }}</p>
-			<div class="self-center">
-				<img src="/svgs/arrowBlue.png" class="w-5" />
+	<div class="flex w-full">
+		{{/* <span class="w-1/4 my-10 text-7xl font-bold">A</span> */}}
+		<div class="w-full">
+			<div class="text">
+				{{ range .Pages }}
+				<div class="bg-white my-2 rounded-2xl drop-shadow-sm">
+					<button class="w-full  px-6 py-5 flex flex-row justify-between drop-down__item h-fit">
+						<p class="text-h3 text-black text-left w-2/3">{{ .Title }}</p>
+						<div class="self-center transition-all -rotate-90">
+							<img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+						</div>
+					</button>
+					<div class="bg-white hidden px-6 pb-6 pt-2 rounded-2xl">
+						<p class="text-label">{{ .Params.contenu }}</p>
+					</div>
+				</div>
+				{{ end }}
 			</div>
-		</button>
-		<div class="bg-white hidden px-6 pb-6 pt-2 rounded-2xl">
-			<p class="text-label">{{ .Params.contenu }}</p>
 		</div>
 	</div>
-	{{ end }}
 </div>
 
 <script>
+	document.addEventListener("DOMContentLoaded", () => {
+		// Sélectionnez l'élément contenant toutes les pages
+		const textContainer = document.querySelector(".text");
+
+		if (!textContainer) return;
+
+		// tous les items
+		const items = Array.from(textContainer.children);
+		const grouped = {};
+
+		items.forEach(item => {
+			const firstLetter = item.querySelector("p")?.innerText.trim().charAt(0).toUpperCase(); // Première lettre
+			if (!grouped[firstLetter]) {
+				grouped[firstLetter] = [];
+			}
+			grouped[firstLetter].push(item);
+		});
+
+		textContainer.innerHTML = "";
+
+		Object.keys(grouped).sort().forEach(letter => {
+			const groupDiv = document.createElement("div");
+			groupDiv.classList.add("flex", "mb-10", "group", "flex-col", "md:flex-row", "gap-3", "md:gap-0");
+			groupDiv.innerHTML = `<h2 class="text-7xl font-bold mr-28" id=${letter} style="min-width: 10%;">${letter}</h2>`;
+			groupDivFlex = document.createElement("div");
+			groupDivFlex.classList.add("flex");
+			groupDivFlex.classList.add("flex-col", "w-full");
+
+			groupDiv.appendChild(groupDivFlex);
+
+			grouped[letter].forEach(item => {
+				groupDivFlex.appendChild(item);
+			});
+
+			textContainer.appendChild(groupDiv);
+		});
+	});
+
+	// Gestion des dropdowns
 	const dropDownItems = document.querySelectorAll(".drop-down__item");
 
 	dropDownItems.forEach((item) => {
@@ -34,5 +85,6 @@
 		});
 	});
 </script>
+
 
 {{ end }}
