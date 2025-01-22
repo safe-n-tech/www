@@ -13,7 +13,7 @@ a {
 @layer components {
 
     .perso-background{
-      background: linear-gradient(154.09deg, #2FA2EE 0%, #1B0A40 79.26%);
+      background: #153E60;
     }
     .grid-body {
         @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
