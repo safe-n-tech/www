@@ -10,14 +10,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2FA2EE',
-        secondary: '#0155CE',
-        orange: '#BB2626',
-        green: '#13a039',
+        primary: '#153e60',
+        secondary: '#153e60',
+        green: '#43B166',
+        orange: '#DC8930',
+        red: '#CF4339',
         tertiary: '#89D0FF',
-        dark_gray: '#4A4A52',
-        gray: '#AAAAAA',
-        light_gray: '#F9F9F9',
+        dark_gray: '#081926',
+        gray: '#000000',
+        light_gray: '#F6F5F5',
         white: '#FFFFFF',
         light_white : '#F5F7FA',
       },

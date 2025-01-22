@@ -7,93 +7,109 @@
 @tailwind variants;
 
 a {
-    text-decoration: none;
+  text-decoration: none;
+  text-underline-offset: 4px;
 }
 
 @layer components {
 
-    .perso-background{
-      background: #153E60;
-    }
-    .grid-body {
-        @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
-    }
-    .grid-good-practice {
-        @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
-    }
-    .word-break {
-      word-break: break-word;
-    }
-
-    .text-h1 {
-        @apply text-5xl font-bold;
-    }
-
-    .text-h2 {
-        @apply text-3xl font-medium;
-    }
-
-    .text-h3 {
-        @apply text-2xl font-medium;
-    }
-
-    .text-h4 {
-        @apply text-xl font-medium;
-    }
-
-    .text-body {
-        @apply font-normal;
-    }
-
-    .text-label {
-        @apply text-base font-normal;
-    }
-
-    .btn {
-        @apply text-primary bg-primary text-secondary border border-primary px-5 py-3;
-    }
-    .btn:hover {
-        @apply text-primary bg-secondary;
-    }
-    .border-perso-light-gray {
-      @apply border-solid border-gray border
-    }
-    .border-perso {
-      @apply border-solid border-[#E3E6ED] border
-    }
-    .hero-bg-img {
-      @apply absolute inset-0 -z-10;
-    }
-    .bottom-nav-section {
-      @apply w-full h-20 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
-    }
-    .button-fill {
-      @apply bg-secondary
-    }
-    .our-button {
-      @apply rounded-md p-3 text-white text-center w-fit
-    }
-    .select-item {
-      @apply hidden
-    }
-    .active {
-      @apply block
-    }
-    .switch {
-      @apply bg-white border-secondary border-solid border-2 rounded-lg grid grid-cols-2 ring-inset mx-auto;
-    }
-    .switch-btn.active {
-      @apply border-secondary border-solid border-2 bg-secondary text-white;
-    }
-    .switch-btn {
-      @apply w-full px-4 py-2 rounded-md text-center;
-    }
-
-    .breadcrumb {
-        @apply w-full flex flex-row flex-wrap text-label gap-2 whitespace-nowrap text-ellipsis overflow-hidden;
-    }
-
-    .breadcrumb-item {
-        @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 text-left text-ellipsis;
-    }
+  .perso-background {
+    background: #153E60;
   }
+
+  .grid-body {
+    @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
+  }
+
+  .grid-good-practice {
+    @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
+  }
+
+  .word-break {
+    word-break: break-word;
+  }
+
+  .text-h1 {
+    @apply text-5xl font-bold;
+  }
+
+  .text-h2 {
+    @apply text-3xl font-medium;
+  }
+
+  .text-h3 {
+    @apply text-2xl font-medium;
+  }
+
+  .text-h4 {
+    @apply text-xl font-medium;
+  }
+
+  .text-body {
+    @apply font-normal;
+  }
+
+  .text-label {
+    @apply text-base font-normal;
+  }
+
+  .btn {
+    @apply text-primary bg-primary text-secondary border border-primary px-5 py-3;
+  }
+
+  .btn:hover {
+    @apply text-primary bg-secondary;
+  }
+
+  .border-perso-light-gray {
+    @apply border-solid border-gray border
+  }
+
+  .border-perso {
+    @apply border-solid border-[#E3E6ED] border
+  }
+
+  .hero-bg-img {
+    @apply absolute inset-0 -z-10;
+  }
+
+  .bottom-nav-section {
+    @apply w-full h-20 fixed bottom-0 left-0 right-0 bg-gradient-to-t via-white from-white;
+  }
+
+  .button-fill {
+    @apply bg-secondary
+  }
+
+  .our-button {
+    @apply rounded-md p-3 text-white text-center w-fit
+  }
+
+  .select-item {
+    @apply hidden
+  }
+
+  .active {
+    @apply block
+  }
+
+  .switch {
+    @apply bg-white border-secondary border-solid border-2 rounded-lg grid grid-cols-2 ring-inset mx-auto;
+  }
+
+  .switch-btn.active {
+    @apply border-secondary border-solid border-2 bg-secondary text-white;
+  }
+
+  .switch-btn {
+    @apply w-full px-4 py-2 rounded-md text-center;
+  }
+
+  .breadcrumb {
+    @apply w-full flex flex-row flex-wrap text-label gap-2 whitespace-nowrap text-ellipsis overflow-hidden;
+  }
+
+  .breadcrumb-item {
+    @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 text-left text-ellipsis;
+  }
+}
