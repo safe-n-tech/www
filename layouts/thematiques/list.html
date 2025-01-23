@@ -16,9 +16,20 @@
         class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
         <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
         <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
+        <span class="progression" id="{{.Title}}">Complétion :</span>
       </div>
     </a>
     {{ end }}
   </nav>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const progressions = document.querySelectorAll(".progression");
+    progressions.forEach(progression => {
+      console.log(progression.id.replaceAll(' ', '').toLowerCase())
+      progression.textContent = progression.id ? `Complétion : ${localStorage.getItem(progression.id.replaceAll(' ', '').toLowerCase())}%` : "Complétion : 0%";
+    })
+  })
+</script>
 {{ end }}

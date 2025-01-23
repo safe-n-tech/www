@@ -22,18 +22,17 @@
 
 <section class="container text-dark_gray mt-20 mb-20">
 
-
-
   {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
   {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
   {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-
+  <p id="percentage">test</p>
   <nav class="grid-good-practice mt-5 grid-cols-1">
     {{ range $vulnerabilitiesLinked }}
-    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-xl bg-white p-5 pl-8 parent">
+    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-xl bg-white p-5 pl-8 parent"
+      id="{{ lower (replace .Title " " "") }}">
       <div class="flex flex-row items-center justify-between">
-        <input type="checkbox" class="toggle-background">
+        <input type="checkbox" class="toggle-background checkbox">
         {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
         {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
         {{ if (gt (len $goodPracticesLinked) 0) }}
@@ -117,7 +116,33 @@
     });
   </script>
   <script>
-    const checkboxes = document.querySelectorAll('.toggle-background');
+    const checkboxes = document.querySelectorAll('.checkbox');
+    const percentage = document.getElementById('percentage');
+
+    function updatePercentage() {
+      const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+      const total = checkboxes.length;
+      const percentageValue = Math.round((checked / total) * 100);
+      const sectionTitle = document.querySelector('h1').textContent;
+
+      percentage.textContent = `Vous avez complété ${percentageValue}% des bonnes pratiques de la thématique : ${sectionTitle} (${checked} / ${checkboxes.length})`;
+      console.log(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
+      localStorage.setItem(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
+    }
+
+    checkboxes.forEach(checkbox => {
+      const parent = checkbox.closest('.parent');
+      const savedState = localStorage.getItem(parent.id);
+
+      if (savedState === 'true') {
+        checkbox.checked = true;
+        parent.style.backgroundColor = '#e2f2e5';
+      } else {
+        parent.style.backgroundColor = 'white';
+      }
+
+      updatePercentage();
+    });
 
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', (event) => {
@@ -125,9 +150,12 @@
 
         if (checkbox.checked) {
           parent.style.backgroundColor = '#e2f2e5';
+          localStorage.setItem(parent.id, 'true');
         } else {
           parent.style.backgroundColor = 'white';
+          localStorage.setItem(parent.id, 'false');
         }
+        updatePercentage();
       });
     });
   </script>
