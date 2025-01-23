@@ -11,7 +11,7 @@
 	</div>
 	<h1 class="h1 text-5xl font-semibold w-fit mx-auto max-w-screen-lg">{{ .Title }}</h1>
 	<p class="w-fit mx-auto my-7">Retrouvez tous les termes inconnus au bataillon dans ce glossaire.</p>
-	<form class="mx-auto max-w-md w-full text-primary">
+	<form class="mx-auto max-w-md w-full text-primary" onsubmit="event.preventDefault()">
 		<label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
 		<div class="relative w-full">
 			<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -22,9 +22,8 @@
 				</svg>
 
 			</div>
-			<input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm text-gray-900 rounded-full
-	
-	 bg-gray-50 focus:ring-blue-500 focus:border-blue-500" placeholder="Rechercher" />
+			<input type="search" id="input" onforminput="event.preventDefault()" class=" block w-full p-4 ps-10 text-sm
+				text-gray-900 rounded-full bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Rechercher" />
 		</div>
 	</form>
 	{{$letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X"
@@ -45,9 +44,9 @@
 		<div class="w-full">
 			<div class="text">
 				{{ range .Pages }}
-				<div class="bg-white my-2 rounded-2xl">
+				<div class="bg-white my-2 rounded-2xl element" id="{{ lower .Title }}">
 					<button class="w-full  px-6 py-5 flex flex-row justify-between drop-down__item h-fit">
-						<p class="text-h3 text-black text-left w-2/3">{{ .Title }}</p>
+						<p class="text-h3 text-black text-left w-2/3 title-element">{{ .Title }}</p>
 						<div class="self-center transition-all -rotate-90">
 							<img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
 						</div>
@@ -62,71 +61,9 @@
 	</div>
 </div>
 
-<h2>Thème 1</h2>
-<div class="checklist" data-theme="theme1">
-  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 3</label><br>
-</div>
-
-<h2>Thème 2</h2>
-<div class="checklist" data-theme="theme2">
-  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
-</div>
-
-<h2>Thème 3</h2>
-<div class="checklist" data-theme="theme3">
-  <label><input type="checkbox" class="check-item"> Tâche 1</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 2</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 3</label><br>
-  <label><input type="checkbox" class="check-item"> Tâche 4</label><br>
-</div>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const checklists = document.querySelectorAll('.checklist');
-
-    // Fonction pour charger l'état des thèmes
-    function loadState() {
-      return JSON.parse(localStorage.getItem('themesState')) || {};
-    }
-
-    // Fonction pour sauvegarder l'état des thèmes
-    function saveState(state) {
-      localStorage.setItem('themesState', JSON.stringify(state));
-    }
-
-    // Charger l'état au démarrage
-    const state = loadState();
-
-    // Initialiser les checklists
-    checklists.forEach(checklist => {
-      const theme = checklist.getAttribute('data-theme');
-      const items = checklist.querySelectorAll('.check-item');
-
-      // Charger l'état des cases pour ce thème
-      if (state[theme]) {
-        state[theme].forEach((checked, index) => {
-          if (items[index]) items[index].checked = checked;
-        });
-      }
-
-      // Ajouter un événement de changement
-      items.forEach((item, index) => {
-        item.addEventListener('change', () => {
-          if (!state[theme]) state[theme] = [];
-          state[theme][index] = item.checked;
-          saveState(state);
-        });
-      });
-    });
-  });
-</script>
-
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		// Sélectionnez l'élément contenant toutes les pages
+		// élément contenant toutes les pages
 		const textContainer = document.querySelector(".text");
 
 		if (!textContainer) return;
@@ -144,11 +81,13 @@
 		});
 
 		textContainer.innerHTML = "";
+		let words = [];
+		localStorage.setItem('words', JSON.stringify(words));
 
 		Object.keys(grouped).sort().forEach(letter => {
 			const groupDiv = document.createElement("div");
-			groupDiv.classList.add("flex", "mb-10", "group", "flex-col", "md:flex-row", "gap-3", "md:gap-0");
-			groupDiv.innerHTML = `<h2 class="text-7xl font-bold mr-28" id=${letter} style="min-width: 10%;">${letter}</h2>`;
+			groupDiv.classList.add("flex", "group", "mb-8", "flex-col", "md:flex-row", "gap-3", "md:gap-0");
+			groupDiv.innerHTML = `<h2 class="text-7xl font-bold mr-28 letter" data-elements="" id=${letter} style="min-width: 10%;">${letter}</h2>`;
 			groupDivFlex = document.createElement("div");
 			groupDivFlex.classList.add("flex");
 			groupDivFlex.classList.add("flex-col", "w-full");
@@ -156,13 +95,17 @@
 			groupDiv.appendChild(groupDivFlex);
 
 			grouped[letter].forEach(item => {
+				words.push(item.querySelector("p").innerText.trim());
 				groupDivFlex.appendChild(item);
 			});
 
 			textContainer.appendChild(groupDiv);
+			localStorage.setItem('words', JSON.stringify(words));
 		});
 	});
 
+	let test2 = localStorage.getItem('words');
+	console.log("test", test2);
 	// Gestion des dropdowns
 	const dropDownItems = document.querySelectorAll(".drop-down__item");
 
@@ -172,6 +115,100 @@
 			item.querySelector("img").classList.toggle("rotate-90");
 		});
 	});
+
+	// filtrer les éléments
+	function filter() {
+		var input, filter, ul, li, a, i, txtValue;
+		input = document.getElementById('input');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("myUL");
+		li = ul.getElementsByTagName('li');
+
+		// Loop through all list items, and hide those who don't match the search query
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+</script>
+
+<script>
+	const checklistDomains = ["mail", "travelling", "data", "privacy", "updates", "passwords", "shopping", "social-networks", "downloads", "wifi-bluetooth"];
+
+	localStorage.setItem("checklistDomains", JSON.stringify(checklistDomains));
+	const test = localStorage.getItem("checklistDomains");
+	console.log(test);
+
+
+
+</script>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const searchInput = document.getElementById("input");
+		const textContainer = document.querySelector(".text");
+
+		if (!textContainer || !searchInput) return;
+
+		// tous les éléments de définition
+		const elements = document.getElementsByClassName("element");
+
+		// toutes les lettres
+		const letters = document.getElementsByClassName("letter");
+
+		// Ajoute un événement d'entrée (input) sur la barre de recherche
+		searchInput.addEventListener("input", () => {
+			const searchValue = searchInput.value.toLowerCase();
+
+			// Filtre et masque les éléments en fonction de l'input
+			[...elements].forEach(item => {
+				const itemId = item.id.toLowerCase();
+				if (itemId.includes(searchValue)) {
+					item.style.display = "";
+				} else {
+					item.style.display = "none";
+				}
+			});
+
+			[...letters].forEach(letter => {
+				const dataElements = letter.getAttribute("data-elements").toLowerCase();
+				if (dataElements.includes(searchValue)) {
+					letter.style.display = "";
+					let parentDiv = letter.parentNode;
+					parentDiv.style.marginBottom = "2rem";
+				} else {
+					letter.style.display = "none";
+					let parentDiv = letter.parentNode;
+					parentDiv.style.marginBottom = "0";
+				}
+			});
+		});
+	});
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+
+		const headings = document.querySelectorAll(".letter");
+
+		headings.forEach(heading => {
+			const matchingItems = document.querySelectorAll(`.element .title-element`);
+
+			// Ajouter l'attribut data-elements à l'h2
+			let matchingTexts = [];
+			matchingItems.forEach(item => {
+				if (item.innerText.charAt(0).toUpperCase() === heading.innerText) {
+					matchingTexts.push(item.innerText);
+				}
+			});
+			heading.setAttribute("data-elements", matchingTexts.join(" "));
+		});
+	});
+
 </script>
 
 
