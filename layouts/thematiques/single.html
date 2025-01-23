@@ -2,12 +2,13 @@
 <section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
   <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
     src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-  <div class="container py-6 text-white text-center">
+  <div class="container py-6 text-white ">
     {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
     <h1 class="text-h1 mt-10">{{ .Title}}</h1>
     <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
   </div>
 </section>
+
 
 <section class="container my-20">
   <div>
@@ -29,7 +30,6 @@
   {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
   {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-  <h3 class="text-h2 text-black">Les vulnérabilités</h3>
 
   <nav class="grid-good-practice mt-5 grid-cols-1">
     {{ range $vulnerabilitiesLinked }}
@@ -38,13 +38,33 @@
           {{ .Title }}
         </a>
         {{ if .Params.risks }}
-          <h3 class="text-h4 mt-4 mt-10">Les risques</h3>
-          <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
-          <ul class="list-disc pl-6 md:w-2/3">
-            {{ range .Params.risks }}
-              <li class="my-2">{{ . }}</li>
+
+
+
+          <div class="bg-white my-2 rounded-2xl">
+            <button class="w-full  px-6 py-5 flex flex-row justify-between drop-down__item h-fit">
+              <p class="text-h3 text-black text-left w-2/3">Risques encourus</p>
+              <div class="self-center transition-all -rotate-90">
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+              </div>
+            </button>
+            <div class="bg-white hidden px-6 pb-6 pt-2 rounded-2xl">
+              {{ range .Params.risks }}
+              <p>{{ . }}</p>
             {{ end }}
-          </ul>
+            </div>
+          </div>
+          <div class="bg-white my-2 rounded-2xl">
+            <button class="w-full  px-6 py-5 flex flex-row justify-between drop-down__item h-fit">
+              <p class="text-h3 text-black text-left w-2/3">Ne pas faire</p>
+              <div class="self-center transition-all -rotate-90">
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+              </div>
+            </button>
+            <div class="bg-white hidden px-6 pb-6 pt-2 rounded-2xl">
+              <p>{{ .Title }}</p>
+            </div>
+          </div>
         {{ end }}
         {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
         {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
@@ -53,24 +73,26 @@
             <h2 class="text-h4 mt-4">Les bonnes pratiques</h2>
             <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
-            <nav>
-              {{ range $goodPracticesLinked}}
-                <div class="border-perso rounded-md px-3 py-5 mt-5">
-                  <a href="{{ .Permalink }}" class="no-underline">
-                    <p class="text-secondary">"{{ .Title }}"</p>
-                    {{ if .Params.advanced }}
-                      <small>(Niveau avancé)</small>
-                    {{ end }}
-                  </a>
-                </div>
-              {{ end }}
-            </nav>
+
           </div>
         {{ end }}
       </div>
     {{ end }}
   </nav>
   {{ end }}
+
+
+  <script>
+
+    const dropDownItems = document.querySelectorAll(".drop-down__item");
+
+    dropDownItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        item.nextElementSibling.classList.toggle("hidden");
+        item.querySelector("img").classList.toggle("rotate-90");
+      });
+    });
+  </script>
 
 
 </section>
