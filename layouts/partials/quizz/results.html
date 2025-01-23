@@ -1,57 +1,45 @@
-<section id="results" class="hidden min-h-screen pb-6 flex flex-col gap-y-8">
-  <section class="flex flex-col gap-4 justify-center items-center container pt-32">
-    <img src="/icons/quizz/feedback-icon.png" alt=" " class="m-0">
-    <h1 id="level" class="text-h1 text-black text-center">Fini !</h1>
-    <p id="sentence-level" class="text-center text-dark_gray text-md"></p>
-  </section>
-
-  <div class="container z-30">
-    <section
-      class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
-      <article class="w-full flex flex-col items-center justify-center gap-2">
-        <span class="text-label">Score</span>
-        <span id="result-score" class="text-3xl"></span>
-        <button id="quiz-redo" class=" text-primary text-label px-4 py-2 rounded-lg">
-          Refaire le quiz
-        </button>
-      </article>
-
-      <div class="w-1 bg-light_gray"></div>
-
-      <article class="w-full flex flex-col justify-center items-center gap-2">
-        <img id="result-image" class="w-12 h-auto" alt=" ">
-        <span id="result-sentence" class="text-label text-center"></span>
-
-
-      </article>
+<section id="results" class="hidden min-h-screen pb-6 flex flex-col gap-y-8 ">
+  <section class="bg-secondary pb-32 flex flex-col gap-12">
+    <section class="flex flex-col gap-4 justify-center items-center container pt-24">
+      <div class="text-white container">{{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}</div>
+      <img src="/icons/quizz/feedback-icon.png" alt=" " class="m-0">
+      <h1 id="level" class="text-h1 text-white text-center">Fini !</h1>
+      <p id="sentence-level" class="text-center text-white text-md"></p>
     </section>
 
 
-  </div>
+
+    <div class="container z-30">
+      <section
+        class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
+        <article class="w-full flex flex-col items-center justify-center gap-2">
+          <span class="text-label">Score</span>
+          <span id="result-score" class="text-3xl"></span>
+          <button id="quiz-redo" class=" text-primary text-label px-4 py-2 rounded-lg">
+            Refaire le quiz
+          </button>
+        </article>
+
+        <div class="w-1 bg-light_gray"></div>
+
+        <article class="w-full flex flex-col justify-center items-center gap-2">
+          <img id="result-image" class="w-12 h-auto" alt=" ">
+          <span id="result-sentence" class="text-label text-center"></span>
+
+
+        </article>
+      </section>
+
+
+    </div>
+  </section>
 
   <section class="overflow-hidden relative -mt-32 md:-mt-40 drop-shadow-xl pt-40 md:pt-52 text-white">
-    <div
-      class="md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[42%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover"
-      style="clip-path: polygon(40% 2%, 100% 31%, 100% 100%, 0 100%, 0 13%);"></div>
-    <div
-      class="max-md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[60%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover"
-      style="clip-path: polygon(67% 0, 100% 18%, 100% 100%, 0 100%, 0 24%);"></div>
+
 
     <section class="container flex flex-col gap-16 pb-16">
-      <div class="flex flex-col gap-4" id="result-question-good-practices">
-        <h2 class="text-h2">Les bonnes pratiques</h2>
-        <p>Découvrez comment éviter les risques en appliquant des solutions concrètes.</p>
-        <a href="/good-practices" class="w-fit bg-white text-primary p-4 rounded-xl">Voir les bonnes pratiques</a>
-      </div>
-
-      <div class="flex flex-col gap-4" id="result-question-thematique">
-        <h2 class="text-h2">Les thématiques</h2>
-        <p>Retrouvez les risques et bonnes pratiques par cas d'usage.</p>
-        <a href="/" class="w-fit bg-white text-primary p-4 rounded-xl">Voir les thématiques</a>
-      </div>
-
       <div class="flex flex-col gap-4">
-        <h2 class="text-h2">Corrigé</h2>
+        <h2 class="text-dark_gray text-h2">Corrigé</h2>
         <div class="grid grid-cols-4 md:grid-cols-8 gap-4" id="result-correction">
         </div>
       </div>
@@ -79,3 +67,8 @@
     <div class="absolute h-2 w-2 bg-current top-2 right-2 rounded-full"></div>
   </button>
 </template>
+
+<div class="hidden md:flex container items-center flex flex-col gap-4" id="result-question-good-practices">
+  <h2 class="text-dark_gray text-h2">Découvrir plus de bonnes pratiques</h2>
+  <a href="/thematiques" class="w-fit bg-secondary text-white p-4 rounded-xl">Compléter ma checklist</a>
+</div>
