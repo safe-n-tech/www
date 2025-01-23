@@ -29,24 +29,14 @@ menu:
   header:
     - identifier: thematiques
       weight: 1
-      name: Thématiques
+      name: Checklist
       title: thématiques
       url: /thematiques/
     - identifier: quizz
       weight: 2
-      name: Quiz
+      name: Test
       title: quiz
       url: /quizz/
-    - identifier: good-practices
-      weight: 3
-      name: Bonnes pratiques
-      title: bonnes pratiques
-      url: /good-practices/
-    - identifier: vulnerabilities
-      weight: 4
-      name: Vulnérabilités
-      title: vulnérabilités
-      url: /vulnerabilities/
     - identifier: definitions
       weight: 5
       name: Glossaire

@@ -1,53 +1,61 @@
 {{ define "main" }}
 
-    <section class="relative w-full pt-24 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-        <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
-             src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-        <div class="container flex flex-col md:flex-row">
-            <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
-                <div class="flex w-full justify-center my-8 md:justify-start">
-                    <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
-                </div>
-                <h1 class="md:text-left text-white text-2xl md:text-5xl my-8 text-h1 text-center mx-8 md:mx-0">Et si nous profitions du numérique en toute <span class="text-tertiary">sécurité</span> ?</h1>
-                <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
-                    <a href="/quizz" class="flex justify-center content-center w-40 py-2 bg-primary text-white rounded-lg whitespace-nowrap">
-                        <span class="whitespace-nowrap text-label pr-3">Lancer le quiz</span>
-                        <img src="/svgs/arrow.svg" alt="Flèche" class="w-4">
-                    </a>
-                    <a href="/thematiques" class="flex justify-center content-center w-40 py-2 border-2 border-primary text-white rounded-lg whitespace-nowrap">
-                        <span class="whitespace-nowrap text-label">Je me renseigne</span>
-                    </a>
-                </div>
+<section class="relative w-full pt-24 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 bg-secondary">
+    <div class="container flex flex-col md:flex-row">
+        <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+            <div class="flex w-full justify-center my-8 md:justify-start">
+                <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
             </div>
-            <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
-                <img class="w-7/12 md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png" alt="Icône page Accueil">
+            <h1 class="md:text-left text-white text-2xl md:text-5xl my-8 text-h1 text-center mx-8 md:mx-0">Et si nous
+                profitions du numérique en toute <span class="text-tertiary">sécurité</span> ?</h1>
+            <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+                <a href="/quizz"
+                    class="flex justify-center content-center w-40 py-2 bg-primary text-white font-bold text-sm  md:text-base rounded-xl whitespace-nowrap items-center hover:bg-white hover:text-primary ">
+                    <span class="whitespace-nowrap pr-3">Me tester</span>
+                </a>
+                <a href="/thematiques" class="flex justify-center content-center py-2 px-4 border-2 border-white text-white rounded-xl whitespace-nowrap font-bold text-sm md:text-base
+                        hover:bg-white hover:text-secondary
+                    ">
+                    <span class="whitespace-nowrap">Compléter ma liste de bonnes pratiques</span>
+                </a>
             </div>
         </div>
-    </section>
-
-    <div class="container md:w-2/3 pt-16 md:pt-32 pb-20 md:flex md:flex-col md:items-center">
-        <h2 class="text-dark_gray w-full text-3xl text-bold font-bold">Prenons conscience des dangers</h2>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-light_white md:w-5/6 mr-auto"></div>
-        <div class="flex flex-col text-dark_gray gap-6 py-6">
-            <p>
-                Perte de données personnelles, falsification d’identité, piratage de comptes bancaires sont autant d’exemples d’incidents qui peuvent naître de notre naïveté et méconnaissance.
-            </p>
-            <p>
-                C’est dans cette optique que nous avons créé « Safe N Tech » afin de vous sensibiliser à toutes les bonnes pratiques faciles à adopter, et pouvant sensiblement vous éloigner des risques.
-            </p>
-            <p>
-                Testez vos pratiques grâce au quiz que nous avons développé. Le résultat mettra en lumière les points sur lesquels vous pouvez vous améliorer, et toute la documentation ludique et facilement compréhensible vous aidera à le faire.
-            </p>
-            <p>
-                La cybersécurité est devenue l’affaire de tous, le plus difficile est de le conscientiser. Cet outil sera votre meilleur compagnon de route.
-            </p>
-        </div>
-        <div class="flex justify-center content-center pt-4">
-            <a href="/good-practices" class="flex justify-center content-center px-4 py-2 rounded-lg border-2 border-secondary bg-secondary text-white rounded-lg whitespace-nowrap">
-                <span class="whitespace-nowrap text-label">La liste des bonnes pratiques</span>
-            </a>
+        <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
+            <img class="w-7/12 md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png"
+                alt="Icône page Accueil">
         </div>
     </div>
+</section>
+
+<div class="container md:w-2/3 pt-16 md:pt-32 pb-20 md:flex md:flex-col md:items-center">
+    <h2 class="text-dark_gray w-full text-3xl text-bold font-bold">Prenons conscience des dangers</h2>
+    <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-light_white md:w-5/6 mr-auto"></div>
+    <div class="flex flex-col text-dark_gray gap-6 py-6">
+        <p>
+            Perte de données personnelles, falsification d’identité, piratage de comptes bancaires sont autant
+            d’exemples d’incidents qui peuvent naître de notre naïveté et méconnaissance.
+        </p>
+        <p>
+            C’est dans cette optique que nous avons créé « Safe N Tech » afin de vous sensibiliser à toutes les bonnes
+            pratiques faciles à adopter, et pouvant sensiblement vous éloigner des risques.
+        </p>
+        <p>
+            Testez vos pratiques grâce au quiz que nous avons développé. Le résultat mettra en lumière les points sur
+            lesquels vous pouvez vous améliorer, et toute la documentation ludique et facilement compréhensible vous
+            aidera à le faire.
+        </p>
+        <p>
+            La cybersécurité est devenue l’affaire de tous, le plus difficile est de le conscientiser. Cet outil sera
+            votre meilleur compagnon de route.
+        </p>
+    </div>
+    <div class="flex justify-center content-center pt-4">
+        <a href="/good-practices"
+            class="flex justify-center content-center px-4 py-2 rounded-lg border-2 border-secondary bg-secondary text-white rounded-lg whitespace-nowrap">
+            <span class="whitespace-nowrap text-label">La liste des bonnes pratiques</span>
+        </a>
+    </div>
+</div>
 
 
 {{ end }}
