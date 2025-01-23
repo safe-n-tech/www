@@ -8,13 +8,10 @@
 
 a {
   text-decoration: none;
+  text-underline-offset: 4px;
 }
 
 @layer components {
-
-  .perso-background {
-    background: linear-gradient(154.09deg, #2FA2EE 0%, #1B0A40 79.26%);
-  }
 
   .grid-body {
     @apply grid grid-cols-6 md:grid-cols-12 md:gap-x-12 xl:gap-x-20;
@@ -110,5 +107,33 @@ a {
 
   .breadcrumb-item {
     @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 text-left text-ellipsis;
+  }
+}
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+  }
+  input[type="checkbox"]:checked {
+    background-color: #43B166;
+  }
+
+  .basic-pastille {
+    background-color: #43B166;
+  }
+
+  .avancee-pastille {
+    background-color: #CF4339;
+  }
+
+  .background-dropdown {
+    background-color: #F6F5F5;
   }
 }
