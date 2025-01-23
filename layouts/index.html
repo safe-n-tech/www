@@ -14,7 +14,7 @@
 
 
        <p class="md:text-left text-white">On connaît tous ce tonton agaçant qui se croit à l’abri... jusqu'au piratage.  Ne faites pas comme lui : renforcez votre protection, testez-vous, et adoptez de meilleures pratiques.</p>
-     <div class="flex gap-6 items-center	 flex-col justify-center content-center w-full space-x-5 my-12 md:justify-start md:flex-row">
+     <div class="flex gap-6 md:gap-1 items-center flex-col justify-center content-center w-full space-x-5 my-12 md:justify-start md:flex-row">
        <a style="color: #153E60" href="/quizz"
          class="flex justify-center content-center w-full md:w-40 py-3 bg-white border-2 rounded-lg whitespace-nowrap">
          <span class="whitespace-nowrap text-label pr-3">Me tester</span>
@@ -186,15 +186,4 @@
     </div>
   </div>
  </section>
-
- {{ range .Pages }}
-    <a href="{{ .Permalink }}" class="no-underline">
-      <div
-        class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
-        <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
-        <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
-      </div>
-    </a>
-    {{ end }}
-
 {{ end }}

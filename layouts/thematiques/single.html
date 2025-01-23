@@ -1,77 +1,120 @@
 {{ define "main" }}
-<section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-  <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
-    src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
-  <div class="container py-6 text-white text-center">
-    {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
-    <h1 class="text-h1 mt-10">{{ .Title}}</h1>
-    <p class="text-h2 mt-4">{{ .Params.Subtitle }}</p>
-  </div>
-</section>
-
-<section class="container my-20">
-  <div>
-    {{ if (.Params.VideoUrl) }}
-    <iframe class="aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
-      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    {{ else }}
-    <div class="p-10 border-secondary border-2 rounded-2xl bg-white">
-      <p class="w-full italic text-center">Une vidéo présentant des témoignages arrive prochainement.</p>
+<section class="relative w-full pt-20 max-md:pb-12 max-md:-mb-12 md:pb-2 perso-background">
+  <div class="md:items-center container py-6 text-white flex flex-col gap-6 md:flex-row">
+    <div class="flex flex-col gap-6 md:w-1/2">
+      {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
+      <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+      <p>{{ .Params.Subtitle }}</p>
+      <p>{{ .Description }}</p>
     </div>
-    {{ end }}
+    <div class="md:w-1/2">
+      {{ if (.Params.VideoUrl) }}
+      <iframe class="aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      {{ else }}
+      <div class="p-10 border-secondary border-2 rounded-2xl bg-white">
+        <p class="w-full italic text-center">Une vidéo présentant des témoignages arrive prochainement.</p>
+      </div>
+      {{ end }}
+    </div>
   </div>
-  <p class="text-black mt-10">{{ .Description }}</p>
-
 </section>
 
 <section class="container text-dark_gray mt-20 mb-20">
-  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-  {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
-  {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-  <h3 class="text-h2 text-black">Les vulnérabilités</h3>
 
-  <nav class="grid-good-practice mt-5 grid-cols-1">
-    {{ range $vulnerabilitiesLinked }}
-      <div class="border-perso rounded-md bg-white p-5 ">
-        <a href="{{ .Permalink }}" class="no-underline text-orange text-h3">
-          {{ .Title }}
-        </a>
-        {{ if .Params.risks }}
-          <h3 class="text-h4 mt-4 mt-10">Les risques</h3>
-          <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
-          <ul class="list-disc pl-6 md:w-2/3">
-            {{ range .Params.risks }}
-              <li class="my-2">{{ . }}</li>
-            {{ end }}
-          </ul>
-        {{ end }}
-        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-        {{ if (gt (len $goodPracticesLinked) 0) }}
-          <div class="mt-10">
-            <h2 class="text-h4 mt-4">Les bonnes pratiques</h2>
-            <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-blue-300 to-transparent mb-6"></div>
 
-            <nav>
-              {{ range $goodPracticesLinked}}
-                <div class="border-perso rounded-md px-3 py-5 mt-5">
-                  <a href="{{ .Permalink }}" class="no-underline">
-                    <p class="text-secondary">"{{ .Title }}"</p>
-                    {{ if .Params.advanced }}
-                      <small>(Niveau avancé)</small>
-                    {{ end }}
-                  </a>
+    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
+
+    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+
+    <nav class="grid-good-practice mt-5 grid-cols-1">
+      {{ range $vulnerabilitiesLinked }}
+        <div class="flex  flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
+          <div class="flex flex-row items-center justify-between	md:items-start">
+            <input type="checkbox">
+
+            {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+            {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
+            {{ if (gt (len $goodPracticesLinked) 0) }}
+            <div class="flex flex-row">
+                  {{ range $goodPracticesLinked}}
+                        {{ if .Params.advanced }}
+                          <small class="avancee-pastille py-2 px-6 h-fit block md:hidden rounded-full bg-red text-white">Avancé</small>
+                        {{ else }}
+                          <small class="basic-pastille py-2 px-6 h-fit block md:hidden rounded-full text-white">Basique</small>
+                        {{ end }}
+                  {{ end }}
                 </div>
-              {{ end }}
-            </nav>
+            {{ end }}
+
           </div>
-        {{ end }}
-      </div>
-    {{ end }}
-  </nav>
+          <div class="w-full">
+            {{ if .Params.risks }}
+            {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+            {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
+            {{ if (gt (len $goodPracticesLinked) 0) }}
+              <div class="w-full">
+                <nav>
+                  {{ range $goodPracticesLinked}}
+                      <div class="flex mb-12 justify-between gap-16">
+                        <p class="text-dark_gray font-bold">{{ .Title }}</p>
+                        {{ if .Params.advanced }}
+                          <small class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
+                        {{ else }}
+                          <small class="basic-pastille avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full text-white">Basique</small>
+                        {{ end }}
+                      </div>
+                  {{ end }}
+                </nav>
+              </div>
+            {{ end }}
+
+            <div>
+              <div class="bg-white my-2 rounded-2xl mt-4">
+                <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+                  <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
+                  <div class="self-center transition-all -rotate-90">
+                    <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+                  </div>
+                </button>
+                <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
+                  {{ range .Params.risks }}
+                  <p>{{ . }}</p>
+                {{ end }}
+                </div>
+              </div>
+              <div class="bg-white my-2 rounded-2xl">
+                <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+                  <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
+                  <div class="self-center transition-all -rotate-90">
+                    <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+                  </div>
+                </button>
+                <div class=" background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
+                  <p>{{ .Title }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </nav>
   {{ end }}
 
 
+  <script>
+
+    const dropDownItems = document.querySelectorAll(".drop-down__item");
+
+    dropDownItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        item.nextElementSibling.classList.toggle("hidden");
+        item.querySelector("img").classList.toggle("rotate-90");
+      });
+    });
+  </script>
 </section>
 {{ end}}
