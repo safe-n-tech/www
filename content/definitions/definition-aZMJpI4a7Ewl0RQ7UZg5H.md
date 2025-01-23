@@ -1,7 +1,8 @@
 ---
-uuid: definition-aZMJpI4a7Ewl0RQ7UZg5H
 visibleInCms: true
+uuid: definition-aZMJpI4a7Ewl0RQ7UZg5H
 title: Réputation d’un site web
+contenu: Ou e-réputation, l’identité numérique d’un site Internet.
 ---
 <!--StartFragment-->
 
