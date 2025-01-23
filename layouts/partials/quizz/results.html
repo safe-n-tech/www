@@ -6,7 +6,8 @@
   </section>
 
   <div class="container z-30">
-    <section class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
+    <section
+      class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
       <article class="w-full flex flex-col items-center justify-center gap-2">
         <span class="text-label">Score</span>
         <span id="result-score" class="text-3xl"></span>
@@ -29,8 +30,12 @@
   </div>
 
   <section class="overflow-hidden relative -mt-32 md:-mt-40 drop-shadow-xl pt-40 md:pt-52 text-white">
-    <div class="md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[42%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover" style="clip-path: polygon(40% 2%, 100% 31%, 100% 100%, 0 100%, 0 13%);"></div>
-    <div class="max-md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[60%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover" style="clip-path: polygon(67% 0, 100% 18%, 100% 100%, 0 100%, 0 24%);"></div>
+    <div
+      class="md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[42%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover"
+      style="clip-path: polygon(40% 2%, 100% 31%, 100% 100%, 0 100%, 0 13%);"></div>
+    <div
+      class="max-md:hidden -z-10 absolute top-0 left-1/2 -translate-x-[60%] h-[200%] bg-gradient-to-t from-[#2FA2EE] to-[#1B0A40] aspect-video object-cover"
+      style="clip-path: polygon(67% 0, 100% 18%, 100% 100%, 0 100%, 0 24%);"></div>
 
     <section class="container flex flex-col gap-16 pb-16">
       <div class="flex flex-col gap-4" id="result-question-good-practices">
@@ -61,13 +66,15 @@
 </section>
 
 <template id="template-correction-item">
-  <button class="correction-btn aspect-square correct-btn bg-white rounded-xl text-green text-h1 aria-selected:text-white aria-selected:bg-green">
+  <button
+    class="correction-btn aspect-square correct-btn bg-white rounded-xl text-green text-h1 aria-selected:text-white aria-selected:bg-green">
     <span class="correct-btn-text"></span>
   </button>
 </template>
 
 <template id="template-correction-item-wrong">
-  <button class="correction-btn aspect-square relative bg-white rounded-xl text-orange text-h1 aria-selected:text-white aria-selected:bg-orange">
+  <button
+    class="correction-btn aspect-square relative bg-white rounded-xl text-red text-h1 aria-selected:text-white aria-selected:bg-red">
     <span class="correct-btn-text"></span>
     <div class="absolute h-2 w-2 bg-current top-2 right-2 rounded-full"></div>
   </button>
