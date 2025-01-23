@@ -1,27 +1,51 @@
 {{ define "main" }}
-<section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-	<img class="w-full h-full hero-bg-img object-cover " src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+{{/* <section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 bg-secondary">
 	<div class="container text-center text-white py-6">
-		{{ partial "breadcrumb" (dict "page" . ) }}
 		<h1 class="text-h1 md:text-5xl mt-10">Glossaire</h1>
 	</div>
+</section> */}}
+<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+	<div class="max-w-md ml-12 my-20">
+		{{ partial "breadcrumb" (dict "page" . ) }}
+	</div>
+	<h1 class="h1 text-5xl font-semibold w-fit mx-auto max-w-screen-lg">{{ .Title }}</h1>
+	<p class="w-fit mx-auto my-7">Retrouvez tous les termes inconnus au bataillon dans ce glossaire.</p>
+	<form class="mx-auto max-w-md w-full text-primary" onsubmit="event.preventDefault()">
+		<label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
+		<div class="relative w-full">
+			<div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M19.6714 18.0942L15.8949 14.3287C17.1134 12.7764 17.7745 10.8595 17.772 8.88603C17.772 7.12854 17.2509 5.41052 16.2745 3.94922C15.2981 2.48792 13.9103 1.34897 12.2866 0.676412C10.6629 0.00385016 8.87617 -0.172123 7.15245 0.170746C5.42873 0.513616 3.84539 1.35993 2.60266 2.60266C1.35993 3.84539 0.513616 5.42873 0.170746 7.15245C-0.172123 8.87617 0.00385016 10.6629 0.676412 12.2866C1.34897 13.9103 2.48792 15.2981 3.94922 16.2745C5.41052 17.2509 7.12854 17.772 8.88603 17.772C10.8595 17.7745 12.7764 17.1134 14.3287 15.8949L18.0942 19.6714C18.1974 19.7755 18.3203 19.8582 18.4556 19.9146C18.591 19.971 18.7362 20 18.8828 20C19.0294 20 19.1746 19.971 19.31 19.9146C19.4453 19.8582 19.5682 19.7755 19.6714 19.6714C19.7755 19.5682 19.8582 19.4453 19.9146 19.31C19.971 19.1746 20 19.0294 20 18.8828C20 18.7362 19.971 18.591 19.9146 18.4556C19.8582 18.3203 19.7755 18.1974 19.6714 18.0942ZM2.22151 8.88603C2.22151 7.56791 2.61238 6.27939 3.34468 5.18342C4.07699 4.08745 5.11785 3.23324 6.33563 2.72882C7.55341 2.22439 8.89342 2.09241 10.1862 2.34957C11.479 2.60672 12.6665 3.24145 13.5986 4.1735C14.5306 5.10555 15.1653 6.29305 15.4225 7.58584C15.6796 8.87863 15.5477 10.2186 15.0432 11.4364C14.5388 12.6542 13.6846 13.6951 12.5886 14.4274C11.4927 15.1597 10.2041 15.5505 8.88603 15.5505C7.11849 15.5505 5.42334 14.8484 4.1735 13.5986C2.92366 12.3487 2.22151 10.6536 2.22151 8.88603Z"
+						fill="#153e60" />
+				</svg>
+
+			</div>
+			<input type="search" id="input" onforminput="event.preventDefault()" class=" block w-full p-4 ps-10 text-sm
+				text-gray-900 rounded-full bg-gray-50 focus:ring-primary focus:border-primary" placeholder="Rechercher" />
+		</div>
+	</form>
+	{{$letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X"
+	"Y"
+	"Z"}}
+	<div class="flex gap-3 flex-wrap mx-auto w-fit my-20">
+		{{ range $letters }}
+		<a href="#{{.}}">{{.}}</a>
+		{{ end }}
+	</div>
+	</div>
+
 </section>
-{{$letters := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y"
-"Z"}}
-<div class="flex w-full gap-3 flex-wrap"></div>
-{{ range $letters }}
-<a href="#{{.}}">{{.}}</a>
-{{ end }}
-</div>
+
 <div class="container text-dark_gray mt-20">
 	<div class="flex w-full">
 		{{/* <span class="w-1/4 my-10 text-7xl font-bold">A</span> */}}
 		<div class="w-full">
 			<div class="text">
 				{{ range .Pages }}
-				<div class="bg-white my-2 rounded-2xl drop-shadow-sm">
+				<div class="bg-white my-2 rounded-2xl element" id="{{ lower .Title }}">
 					<button class="w-full  px-6 py-5 flex flex-row justify-between drop-down__item h-fit">
-						<p class="text-h3 text-black text-left w-2/3">{{ .Title }}</p>
+						<p class="text-h3 text-black text-left w-2/3 title-element">{{ .Title }}</p>
 						<div class="self-center transition-all -rotate-90">
 							<img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
 						</div>
@@ -38,7 +62,7 @@
 
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
-		// Sélectionnez l'élément contenant toutes les pages
+		// élément contenant toutes les pages
 		const textContainer = document.querySelector(".text");
 
 		if (!textContainer) return;
@@ -56,11 +80,13 @@
 		});
 
 		textContainer.innerHTML = "";
+		let words = [];
+		localStorage.setItem('words', JSON.stringify(words));
 
 		Object.keys(grouped).sort().forEach(letter => {
 			const groupDiv = document.createElement("div");
-			groupDiv.classList.add("flex", "mb-10", "group", "flex-col", "md:flex-row", "gap-3", "md:gap-0");
-			groupDiv.innerHTML = `<h2 class="text-7xl font-bold mr-28" id=${letter} style="min-width: 10%;">${letter}</h2>`;
+			groupDiv.classList.add("flex", "group", "mb-8", "flex-col", "md:flex-row", "gap-3", "md:gap-0");
+			groupDiv.innerHTML = `<h2 class="text-7xl font-bold mr-28 letter" data-elements="" id=${letter} style="min-width: 10%;">${letter}</h2>`;
 			groupDivFlex = document.createElement("div");
 			groupDivFlex.classList.add("flex");
 			groupDivFlex.classList.add("flex-col", "w-full");
@@ -68,13 +94,17 @@
 			groupDiv.appendChild(groupDivFlex);
 
 			grouped[letter].forEach(item => {
+				words.push(item.querySelector("p").innerText.trim());
 				groupDivFlex.appendChild(item);
 			});
 
 			textContainer.appendChild(groupDiv);
+			localStorage.setItem('words', JSON.stringify(words));
 		});
 	});
 
+	let test2 = localStorage.getItem('words');
+	console.log("test", test2);
 	// Gestion des dropdowns
 	const dropDownItems = document.querySelectorAll(".drop-down__item");
 
@@ -84,6 +114,100 @@
 			item.querySelector("img").classList.toggle("rotate-90");
 		});
 	});
+
+	// filtrer les éléments
+	function filter() {
+		var input, filter, ul, li, a, i, txtValue;
+		input = document.getElementById('input');
+		filter = input.value.toUpperCase();
+		ul = document.getElementById("myUL");
+		li = ul.getElementsByTagName('li');
+
+		// Loop through all list items, and hide those who don't match the search query
+		for (i = 0; i < li.length; i++) {
+			a = li[i].getElementsByTagName("a")[0];
+			txtValue = a.textContent || a.innerText;
+			if (txtValue.toUpperCase().indexOf(filter) > -1) {
+				li[i].style.display = "";
+			} else {
+				li[i].style.display = "none";
+			}
+		}
+	}
+</script>
+
+<script>
+	const checklistDomains = ["mail", "travelling", "data", "privacy", "updates", "passwords", "shopping", "social-networks", "downloads", "wifi-bluetooth"];
+
+	localStorage.setItem("checklistDomains", JSON.stringify(checklistDomains));
+	const test = localStorage.getItem("checklistDomains");
+	console.log(test);
+
+
+
+</script>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const searchInput = document.getElementById("input");
+		const textContainer = document.querySelector(".text");
+
+		if (!textContainer || !searchInput) return;
+
+		// tous les éléments de définition
+		const elements = document.getElementsByClassName("element");
+
+		// toutes les lettres
+		const letters = document.getElementsByClassName("letter");
+
+		// Ajoute un événement d'entrée (input) sur la barre de recherche
+		searchInput.addEventListener("input", () => {
+			const searchValue = searchInput.value.toLowerCase();
+
+			// Filtre et masque les éléments en fonction de l'input
+			[...elements].forEach(item => {
+				const itemId = item.id.toLowerCase();
+				if (itemId.includes(searchValue)) {
+					item.style.display = "";
+				} else {
+					item.style.display = "none";
+				}
+			});
+
+			[...letters].forEach(letter => {
+				const dataElements = letter.getAttribute("data-elements").toLowerCase();
+				if (dataElements.includes(searchValue)) {
+					letter.style.display = "";
+					let parentDiv = letter.parentNode;
+					parentDiv.style.marginBottom = "2rem";
+				} else {
+					letter.style.display = "none";
+					let parentDiv = letter.parentNode;
+					parentDiv.style.marginBottom = "0";
+				}
+			});
+		});
+	});
+</script>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+
+		const headings = document.querySelectorAll(".letter");
+
+		headings.forEach(heading => {
+			const matchingItems = document.querySelectorAll(`.element .title-element`);
+
+			// Ajouter l'attribut data-elements à l'h2
+			let matchingTexts = [];
+			matchingItems.forEach(item => {
+				if (item.innerText.charAt(0).toUpperCase() === heading.innerText) {
+					matchingTexts.push(item.innerText);
+				}
+			});
+			heading.setAttribute("data-elements", matchingTexts.join(" "));
+		});
+	});
+
 </script>
 
 

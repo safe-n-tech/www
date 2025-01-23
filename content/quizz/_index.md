@@ -1,4 +1,4 @@
 ---
-title: Quizz
+title: Test
 layout: index
 ---

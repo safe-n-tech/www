@@ -1,7 +1,5 @@
 {{ define "main" }}
-<section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 md:perso-background">
-    <img class="md:hidden w-full h-full hero-bg-img object-cover object-bottom"
-         src="/svgs/page-hero-bonnes-pratiques-bg.svg" alt="">
+<section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 bg-secondary">
     <div class="container py-6 text-white">
         {{ partial "breadcrumb" (dict "page" .) }}
         <h1 class="text-h1 mt-10 text-center">Page introuvable</h1>
@@ -10,8 +8,10 @@
 
 <div class="container flex flex-col items-start gap-4">
     <h1 class="pt-24 text-h1">Page introuvable</h1>
-    <h2 class="text-h4">Désolé, nous n'avons pas trouvé de page à cette adresse.</h2> 
-    <a href="/" class="mt-2 btn">Retour à l'accueil</a>
+    <h2 class="text-h4">Désolé, nous n'avons pas trouvé de page à cette adresse.</h2>
+    <a href="/" class="mt-2 rounded-xl bg-white px-8 py-4 
+        hover:bg-secondary hover:text-white
+    ">Retour à l'accueil</a>
 </div>
 
 {{ end }}

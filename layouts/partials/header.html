@@ -1,5 +1,5 @@
 <div id="menu-backdrop" class="hidden fixed z-40 top-0 w-full h-screen"></div>
-<header class="z-50 top-0 fixed w-full h-auto">
+<header class="z-50 top-0 w-full h-auto">
     <div id="menu-navbar"
         class="z-50 items-center p-8 w-full drop-shadow-md h-auto text-white bg-white flex justify-between">
 
@@ -16,7 +16,7 @@
             {{ range .Site.Menus.header }}
             <li>
                 <a href="{{ .URL }}" aria-selected="{{ eq $currentPage.Permalink (absURL .URL) }}"
-                    class="p-3 hover:bg-light_gray rounded-lg aria-selected:bg-primary aria-selected:text-white">{{
+                    class="py-3 px-12 text-secondary hover:bg-light_gray rounded-lg aria-selected:bg-secondary aria-selected:text-white">{{
                     .Name }}</a>
             </li>
             {{ end }}

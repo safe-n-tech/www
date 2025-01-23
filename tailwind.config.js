@@ -10,17 +10,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#153e60',
-        secondary: '#153e60',
+        primary: '#0449B8',
+        secondary: '#153E60',
+        tertiary: '#89D0FF',
         green: '#43B166',
         orange: '#DC8930',
         red: '#CF4339',
-        tertiary: '#89D0FF',
-        dark_gray: '#081926',
-        gray: '#000000',
         light_gray: '#F6F5F5',
+        gray: '#E0E0E0',
+        dark_gray: '#999999',
         white: '#FFFFFF',
-        light_white : '#F5F7FA',
+        light_white: '#F5F7FA',
+        black: '#000000',
       },
       data: {
         selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
@@ -31,7 +32,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Marianne', ...defaultTheme.fontFamily.sans],
+      sans: ['Arial', 'sans-serif'],
       display: ['Montserrat']
     },
     container: {
