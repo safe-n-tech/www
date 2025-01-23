@@ -115,10 +115,11 @@ a {
 
 
   input[type="checkbox"] {
-    -webkit-appearance: none;
+    /* -webkit-appearance: none;
     -moz-appearance: none;
-    appearance: none;
+    appearance: none; */
   }
+
   input[type="checkbox"] {
     width: 32px;
     height: 32px;
@@ -126,12 +127,13 @@ a {
     background-color: #f0f0f0;
     border-radius: 4px;
   }
+
   input[type="checkbox"]:checked {
-    background-color: #43B166;
+    background-color: #1C4A2B;
   }
 
   .basic-pastille {
-    background-color: #43B166;
+    background-color: #1C4A2B;
   }
 
   .avancee-pastille {
