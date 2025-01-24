@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique-vPOHpPFF_kFw2S80Eawqn
 title: Wifi et bluetooth
-icon: wifi-et-bluetooth.png
+icon: wifi-et-bluetooth.svg
 videoUrl: https://www.youtube.com/embed/G4t5JZFXx6Y
 subtitle: "“Un Wifi mal chiffré peut mettre en péril vos données.” "
 description: Le réseau Wifi et le Bluetooth sont des points d’accès souvent peu

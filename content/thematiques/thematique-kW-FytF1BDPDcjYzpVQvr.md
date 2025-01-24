@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique-kW-FytF1BDPDcjYzpVQvr
 title: Boîte mail
-icon: boite-mail.png
+icon: boite-mail.svg
 videoUrl: https://www.youtube.com/embed/4N0sGMk9zwc
 subtitle: “La voie royale du piratage.”
 description: "Le courrier électronique demeure la voie d'entrée favorite des

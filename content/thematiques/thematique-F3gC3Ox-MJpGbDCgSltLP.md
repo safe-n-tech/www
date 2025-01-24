@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique-F3gC3Ox-MJpGbDCgSltLP
 title: Réseaux sociaux
-icon: reseaux-sociaux.png
+icon: reseaux-sociaux.svg
 videoUrl: https://www.youtube.com/embed/huiUq21uQO0
 subtitle: “Pour vivre heureux, vivons cachés.”
 description: De nombreuses personnes confient leur vie privée sur les réseaux
