@@ -9,6 +9,8 @@ correction: "Eh oui ! Il est important de ne pas se limiter à une seule méthod
   clé USB) ou dans un cloud sécurisé. Cela réduit les risques de perte de
   données en cas de panne ou de problème technique. Et si possible je chiffre
   l'ensemble de ces données pour les rendre inintelligibles. "
+goodPractices:
+  - good-practice-E6KAsdnYUH6hk7IaZJWMV
 thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 choices:
   - isCorrect: true
