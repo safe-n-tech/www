@@ -1,11 +1,14 @@
 <section id="results" class="hidden min-h-screen pb-6 flex flex-col gap-y-8 ">
   <section class="bg-secondary pb-32 flex flex-col gap-12">
+    <div class="container md:container-none text-white max-w-md md:ml-12 mt-20">
+      {{ partial "breadcrumb" (dict "page" . ) }}
+    </div>
     <section class="flex flex-col gap-4 justify-center items-center container pt-24">
-      <div class="text-white container">{{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}</div>
       <img src="/icons/quizz/feedback-icon.png" alt=" " class="m-0">
       <h1 id="level" class="text-h1 text-white text-center">Fini !</h1>
       <p id="sentence-level" class="text-center text-white text-md"></p>
     </section>
+
 
 
 
