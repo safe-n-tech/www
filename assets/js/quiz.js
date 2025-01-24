@@ -292,7 +292,7 @@ function loadQuizFromLocalStorage() {
 
   const dataSaved = JSON.parse(dataSavedJson);
 
-  console.log('load questions from local storage')
+  // console.log('load questions from local storage')
   questions = dataSaved.questions;
   questionIndex = dataSaved.questionIndex;
 }
