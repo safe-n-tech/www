@@ -1,11 +1,16 @@
 {{ define "main" }}
-<section class="relative w-full pt-20 max-md:pb-12 max-md:-mb-12 md:pb-2 perso-background">
+<section class="relative w-full pt-8 max-md:pb-12 max-md:-mb-12 md:pb-2 bg-secondary">
   <div class="md:items-center container py-6 text-white flex flex-col gap-6 md:flex-row">
     <div class="flex flex-col gap-6 md:w-1/2">
       {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
-      <h1 class="text-h1 mt-10">{{ .Title}}</h1>
+      <h1 class="text-h1 mt-10">{{ .Title }}</h1>
       <p>{{ .Params.Subtitle }}</p>
       <p>{{ .Description }}</p>
+      <p id="percentage"></p>
+      <div class="progress-container mt-5">
+        <div class="progress-bar" id="progress-bar"></div>
+        <p id="progress-percentage" class="text-center mt-2"></p>
+      </div>
     </div>
     <div class="md:w-1/2">
       {{ if (.Params.VideoUrl) }}
@@ -21,12 +26,14 @@
 </section>
 
 <section class="container text-dark_gray mt-20 mb-20">
+  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+  {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
   {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
   {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
   {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-  <p id="percentage">test</p>
+
   <nav class="grid-good-practice mt-5 grid-cols-1">
     {{ range $vulnerabilitiesLinked }}
     <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-xl bg-white p-5 pl-8 parent"
@@ -103,15 +110,59 @@
   </nav>
   {{ end }}
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const thematiqueId = document.body.getAttribute('data-page-id');
+      if (!thematiqueId) {
+        console.error('Erreur : aucun identifiant de thématique trouvé dans data-page-id');
+        return;
+      }
+
+      const checkboxes = document.querySelectorAll(`.progress-checkbox[data-thematique="${thematiqueId}"]`);
+      const progressBar = document.getElementById('progress-bar');
+      const progressPercentage = document.getElementById('progress-percentage');
+
+      function loadChecklistState() {
+        const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+        checkboxes.forEach((checkbox, index) => {
+          checkbox.checked = state[index] || false;
+        });
+        updateProgress();
+      }
+
+      function saveChecklistState() {
+        const state = Array.from(checkboxes).map(checkbox => checkbox.checked);
+        localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
+      }
+
+      function updateProgress() {
+        const total = checkboxes.length;
+        const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+        const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+        progressBar.style.width = `${percentage}%`;
+        progressPercentage.textContent = `${percentage}%`;
+      }
+
+      checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+          saveChecklistState();
+          updateProgress();
+        });
+      });
+
+      loadChecklistState();
+    });
+  </script>
 
   <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const dropDownItems = document.querySelectorAll(".drop-down__item");
 
-    const dropDownItems = document.querySelectorAll(".drop-down__item");
-
-    dropDownItems.forEach((item) => {
-      item.addEventListener("click", () => {
-        item.nextElementSibling.classList.toggle("hidden");
-        item.querySelector("img").classList.toggle("rotate-90");
+      dropDownItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          item.nextElementSibling.classList.toggle("hidden");
+          item.querySelector("img").classList.toggle("rotate-90");
+        });
       });
     });
   </script>
@@ -125,7 +176,7 @@
       const percentageValue = Math.round((checked / total) * 100);
       const sectionTitle = document.querySelector('h1').textContent;
 
-      percentage.textContent = `Vous avez complété ${percentageValue}% des bonnes pratiques de la thématique : ${sectionTitle} (${checked} / ${checkboxes.length})`;
+      percentage.textContent = `${percentageValue}%  ${checked} / ${checkboxes.length}`;
       console.log(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
       localStorage.setItem(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
     }
