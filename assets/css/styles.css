@@ -46,15 +46,23 @@ a {
   }
 
   .text-label {
-    @apply text-base font-normal;
+    @apply text-base;
   }
 
-  .btn {
-    @apply text-primary bg-primary text-secondary border border-primary px-5 py-3;
+  .btn-primary {
+    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4;
   }
 
-  .btn:hover {
-    @apply text-primary bg-secondary;
+  .btn-primary:hover {
+    @apply bg-white text-primary;
+  }
+
+  .btn-secondary {
+    @apply text-white border-2 text-base md:text-xl rounded-xl font-semibold px-5 py-4;
+  }
+
+  .btn-secondary:hover {
+    @apply text-secondary bg-white;
   }
 
   .border-perso-light-gray {
@@ -109,31 +117,33 @@ a {
     @apply whitespace-nowrap overflow-hidden min-w-0 flex-1 text-left text-ellipsis;
   }
 }
-  input[type="checkbox"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-  }
-  input[type="checkbox"] {
-    width: 32px;
-    height: 32px;
-    border: 1px solid #ccc;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-  }
-  input[type="checkbox"]:checked {
-    background-color: #43B166;
-  }
 
-  .basic-pastille {
-    background-color: #43B166;
-  }
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
 
-  .avancee-pastille {
-    background-color: #CF4339;
-  }
+input[type="checkbox"] {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
 
-  .background-dropdown {
-    background-color: #F6F5F5;
-  }
+input[type="checkbox"]:checked {
+  background-color: #43B166;
+}
 
+.basic-pastille {
+  background-color: #43B166;
+}
+
+.avancee-pastille {
+  background-color: #CF4339;
+}
+
+.background-dropdown {
+  background-color: #F6F5F5;
+}
