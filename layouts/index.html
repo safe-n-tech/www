@@ -345,23 +345,23 @@
 
     const thematiques = ["Boîte mail", "Déplacements", "Données confidentielles", "Droit résiduel à la vie privée", "Mises à jour", "Mots de passe", "Paiements en ligne", "Réseaux sociaux", "Téléchargements et ingénierie sociale", "Wifi et bluetooth"];
     document.addEventListener('DOMContentLoaded', () => {
-        mail.textContent = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        mailProgress.style.width = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        mail.textContent = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        mailProgress.style.width = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase()) || '0'}%`;
 
-        deplacement.textContent = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        deplacementProgress.style.width = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        deplacement.textContent = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        deplacementProgress.style.width = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase()) || '0'}%`;
 
-        data.textContent = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        dataProgress.style.width = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        data.textContent = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        dataProgress.style.width = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase()) || '0'}%`;
 
-        privacy.textContent = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        privacyProgress.style.width = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        privacy.textContent = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        privacyProgress.style.width = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase()) || '0'}%`;
 
-        updates.textContent = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        updatesProgress.style.width = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        updates.textContent = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        updatesProgress.style.width = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase()) || '0'}%`;
 
-        passwords.textContent = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase())}%` || '0%';
-        passwordsProgress.style.width = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase())}%` || '0%';
+        passwords.textContent = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase()) || '0'}%`;
+        passwordsProgress.style.width = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase()) || '0'}%`;
     })
 </script>
 
