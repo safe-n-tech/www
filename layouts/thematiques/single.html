@@ -12,7 +12,7 @@
       <iframe class="aspect-video" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {{ else }}
-      <div class="p-10 border-secondary border-2 rounded-2xl bg-white">
+      <div class="p-10 border-secondary border-2 rounded-2xl">
         <p class="w-full italic text-center">Une vidéo présentant des témoignages arrive prochainement.</p>
       </div>
       {{ end }}
@@ -22,86 +22,85 @@
 
 <section class="container text-dark_gray mt-20 mb-20">
 
+  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
+  {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
-
-    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
-
-    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-
-    <nav class="grid-good-practice mt-5 grid-cols-1">
-      {{ range $vulnerabilitiesLinked }}
-        <div class="flex  flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
-          <div class="flex flex-row items-center justify-between	md:items-start">
-            <input type="checkbox">
-
-            {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-            {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-            {{ if (gt (len $goodPracticesLinked) 0) }}
-            <div class="flex flex-row">
-                  {{ range $goodPracticesLinked}}
-                        {{ if .Params.advanced }}
-                          <small class="avancee-pastille py-2 px-6 h-fit block md:hidden rounded-full bg-red text-white">Avancé</small>
-                        {{ else }}
-                          <small class="basic-pastille py-2 px-6 h-fit block md:hidden rounded-full text-white">Basique</small>
-                        {{ end }}
-                  {{ end }}
-                </div>
-            {{ end }}
-
-          </div>
-          <div class="w-full">
-            {{ if .Params.risks }}
-            {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-            {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-            {{ if (gt (len $goodPracticesLinked) 0) }}
-              <div class="w-full">
-                <nav>
-                  {{ range $goodPracticesLinked}}
-                      <div class="flex mb-12 justify-between gap-16">
-                        <p class="text-dark_gray font-bold">{{ .Title }}</p>
-                        {{ if .Params.advanced }}
-                          <small class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
-                        {{ else }}
-                          <small class="basic-pastille avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full text-white">Basique</small>
-                        {{ end }}
-                      </div>
-                  {{ end }}
-                </nav>
-              </div>
-            {{ end }}
-
-            <div>
-              <div class="bg-white my-2 rounded-2xl mt-4">
-                <button class="w-full flex flex-row justify-between drop-down__item h-fit">
-                  <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
-                  <div class="self-center transition-all -rotate-90">
-                    <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
-                  </div>
-                </button>
-                <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
-                  {{ range .Params.risks }}
-                  <p>{{ . }}</p>
-                {{ end }}
-                </div>
-              </div>
-              <div class="bg-white my-2 rounded-2xl">
-                <button class="w-full flex flex-row justify-between drop-down__item h-fit">
-                  <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
-                  <div class="self-center transition-all -rotate-90">
-                    <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
-                  </div>
-                </button>
-                <div class=" background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
-                  <p>{{ .Title }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
+  {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+  <p id="percentage">test</p>
+  <nav class="grid-good-practice mt-5 grid-cols-1">
+    {{ range $vulnerabilitiesLinked }}
+    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-xl bg-white p-5 pl-8 parent"
+      id="{{ lower (replace .Title " " "") }}">
+      <div class="flex flex-row items-center justify-between">
+        <input type="checkbox" class="toggle-background checkbox">
+        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
+        {{ if (gt (len $goodPracticesLinked) 0) }}
+        <div class="flex flex-row">
+          {{ range $goodPracticesLinked}}
+          {{ if .Params.advanced }}
+          <small class="avancee-pastille py-2 px-6 h-fit block md:hidden rounded-full bg-red text-white">Avancé</small>
+          {{ else }}
+          <small class="basic-pastille py-2 px-6 h-fit block md:hidden rounded-full text-white">Basique</small>
+          {{ end }}
           {{ end }}
         </div>
+        {{ end }}
+
+      </div>
+      <div class="w-full">
+        {{ if .Params.risks }}
+        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
+        {{ if (gt (len $goodPracticesLinked) 0) }}
+        <div class="w-full">
+          <nav>
+            {{ range $goodPracticesLinked}}
+            <div class="flex mb-12 justify-between gap-16">
+              <p class="text-dark_gray font-bold">{{ .Title }}</p>
+              {{ if .Params.advanced }}
+              <small
+                class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
+              {{ else }}
+              <small class="basic-pastille py-2 px-6 h-fit md:block hidden rounded-full text-white">Basique</small>
+              {{ end }}
+            </div>
+            {{ end }}
+          </nav>
+        </div>
+        {{ end }}
+
+        <div>
+          <div class="my-rounded-2xl my-8">
+            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+              <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
+              <div class="self-center transition-all -rotate-90">
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+              </div>
+            </button>
+            <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
+              {{ range .Params.risks }}
+              <p>{{ . }}</p>
+              {{ end }}
+            </div>
+          </div>
+          <div class="my-2 rounded-2xl">
+            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+              <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
+              <div class="self-center transition-all -rotate-90">
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+              </div>
+            </button>
+            <div class=" background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
+              <p>{{ .Title }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
       {{ end }}
-    </nav>
+    </div>
+    {{ end }}
+  </nav>
   {{ end }}
 
 
@@ -116,5 +115,50 @@
       });
     });
   </script>
+  <script>
+    const checkboxes = document.querySelectorAll('.checkbox');
+    const percentage = document.getElementById('percentage');
+
+    function updatePercentage() {
+      const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+      const total = checkboxes.length;
+      const percentageValue = Math.round((checked / total) * 100);
+      const sectionTitle = document.querySelector('h1').textContent;
+
+      percentage.textContent = `Vous avez complété ${percentageValue}% des bonnes pratiques de la thématique : ${sectionTitle} (${checked} / ${checkboxes.length})`;
+      console.log(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
+      localStorage.setItem(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
+    }
+
+    checkboxes.forEach(checkbox => {
+      const parent = checkbox.closest('.parent');
+      const savedState = localStorage.getItem(parent.id);
+
+      if (savedState === 'true') {
+        checkbox.checked = true;
+        parent.style.backgroundColor = '#e2f2e5';
+      } else {
+        parent.style.backgroundColor = 'white';
+      }
+
+      updatePercentage();
+    });
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', (event) => {
+        const parent = checkbox.closest('.parent');
+
+        if (checkbox.checked) {
+          parent.style.backgroundColor = '#e2f2e5';
+          localStorage.setItem(parent.id, 'true');
+        } else {
+          parent.style.backgroundColor = 'white';
+          localStorage.setItem(parent.id, 'false');
+        }
+        updatePercentage();
+      });
+    });
+  </script>
+
 </section>
 {{ end}}

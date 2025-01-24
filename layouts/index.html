@@ -1,6 +1,6 @@
 {{ define "main" }}
 
-<section class="relative w-full pt-24 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
+<section class="relative w-full pt-8 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
     <div class="container flex flex-col md:flex-row">
         <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
             <div class="flex w-full justify-center hidden md:block my-8 md:justify-start">
@@ -15,20 +15,19 @@
                 piratage. Ne faites pas comme lui : renforcez votre protection, testez-vous, et adoptez de meilleures
                 pratiques.</p>
             <div
-                class="flex gap-6 md:gap-1 items-center flex-col justify-center content-center w-full space-x-5 my-12 md:justify-start md:flex-row">
-                <a style="color: #153E60" href="/quizz"
-                    class="flex justify-center content-center w-full md:w-40 py-3 bg-white border-2 rounded-lg whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label pr-3">Me tester</span>
+                class="flex gap-4 items-center flex-col justify-center content-center w-full  my-12 md:justify-start md:flex-row">
+                <a href="/quizz"
+                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap  btn-primary">
+                    <span class="whitespace-nowrap text-label">Me tester</span>
                 </a>
-                <a style="margin-right: 20px;" href="/thematiques"
-                    class="flex justify-center content-center w-full md:w-fit px-3 py-3 border-2 text-white rounded-lg whitespace-nowrap">
+                <a href="/thematiques"
+                    class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap">
                     <span class="whitespace-nowrap text-label">Compléter ma liste de bonnes pratiques</span>
                 </a>
             </div>
         </div>
         <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
-            <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png"
-                alt="Icône page Accueil">
+            <img class="w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero-min.png" alt="Icône page Accueil">
         </div>
     </div>
 </section>
@@ -42,12 +41,9 @@
                 Complétez votre checklist et découvrez à quel point vous êtes un expert !</p>
 
 
-            <h2>Barres de progression par thème</h2>
-            <div id="theme-bars"></div>
 
-            <h2>Progression globale</h2>
             <div id="global-progress-container">
-                <p>Progression globale : <span id="global-progress-percentage">0%</span></p>
+                <p class="pb-2">Progression globale : <span id="global-progress-percentage">0%</span></p>
                 <div style="background: #eee; width: 100%; height: 20px; border-radius: 5px; overflow: hidden;">
                     <div id="global-progress-bar" style="background: #76c7c0; width: 0; height: 100%;"></div>
                 </div>
@@ -125,9 +121,9 @@
                 });
             </script>
 
-            <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
-                <a style="background-color:#153E60" href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-white rounded-lg whitespace-nowrap">
+            <div class="flex justify-center content-center w-full  my-12 md:justify-start">
+                <a href="/thematiques"
+                    class="flex justify-center content-center w-full md:w-80 btn-secondary whitespace-nowrap blue">
                     <span class="whitespace-nowrap text-label pr-3">Compléter ma checklist</span>
                 </a>
             </div>
@@ -138,8 +134,8 @@
     </div>
 </section>
 
-<section class="relative w-full pt-24 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
-    <div class="container flex flex-col md:flex-row">
+<section class="relative w-full pt-8 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
+    <div class="container flex flex-col md:flex-row md:items-center md:gap-24">
         <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
             <h2 class="text-white w-full text-3xl text-bold font-bold mb-8">Prenons conscience des dangers</h2>
             <p class="md:text-left text-white mb-4">Perte de données, usurpation d'identité, piratage bancaire : autant
@@ -153,26 +149,25 @@
             <p class="md:text-left text-white">Testez vos connaissances avec notre quiz et découvrez où vous améliorer.
                 Grâce
                 à notre documentation ludique, renforcez votre sécurité facilement. </p>
-            <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+            <div class="flex justify-center content-center w-full  my-12 md:justify-start">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-black rounded-lg whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label pr-3">Me tester</span>
+                    class="flex justify-center content-center w-full md:w-80 btn-primary whitespace-nowrap">
+                    <span class="whitespace-nowrap text-label">Me tester</span>
                 </a>
             </div>
         </div>
         <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
-            <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/cyber_illustration.svg"
+            <img class="md:w-6/6 w-full h-auto md:min-w-[15rem] object-fit" src="/images/cyber_illustration.svg"
                 alt="Icône page Accueil">
         </div>
     </div>
 </section>
 
 
-<section class="relative w-full pt-24 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
-    <div class="container flex flex-col-reverse md:flex-row">
+<section class="relative w-full pt-32 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
+    <div class="container flex flex-col-reverse md:flex-row md:items-center md:gap-24">
         <div class="flex justify-center items-center w-full justify-center reactive">
-            <img class="w-full md:w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/cheval.svg"
-                alt="Icône page Accueil">
+            <img class="md:w-6/6 w-full h-auto md:min-w-[15rem] object-fit" src="/images/cheval.svg" alt="Icône page Accueil">
         </div>
         <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
             <h2 class="text-dark_gray w-full text-3xl text-bold font-bold mb-4">Le projet</h2>
@@ -184,9 +179,9 @@
                 vous accompagner.</p>
             <p class="md:text-left text-dark_gray">Testez vos connaissances avec notre quiz et découvrez où vous
                 améliorer. Grâce à notre documentation ludique, renforcez votre sécurité facilement.</p>
-            <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
+            <div class="flex justify-center content-center w-full  my-12 md:justify-start">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 text-dark_gray border-2 rounded-lg whitespace-nowrap">
+                    class="flex justify-center content-center w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
                     <span class="whitespace-nowrap text-label pr-3">En savoir plus</span>
                 </a>
             </div>

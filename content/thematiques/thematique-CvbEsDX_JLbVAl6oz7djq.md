@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique-CvbEsDX_JLbVAl6oz7djq
 title: Données confidentielles
-icon: donnees-confidentielles.png
+icon: donnees-confidentielles.svg
 videoUrl: https://www.youtube.com/embed/X0bt3SWFTMw
 subtitle: “Vos données personnelles, une mine d’or pour les pirates.”
 description: Il existe sur Internet des risques de divulgation de vos données

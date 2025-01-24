@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique--kiTZR7ZZs8EMe4z11DSq
 title: Droit résiduel à la vie privée
-icon: droit-residuel-a-la-vie-privee.png
+icon: droit-residuel-a-la-vie-privee.svg
 videoUrl: https://www.youtube.com/embed/ZIbJfFQUO5g
 subtitle: “Au travail aussi, j'ai mes droits.”
 description: Afin de protéger vos données personnelles sur votre lieu de

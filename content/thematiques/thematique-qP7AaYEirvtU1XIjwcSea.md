@@ -2,7 +2,7 @@
 visibleInCms: true
 uuid: thematique-qP7AaYEirvtU1XIjwcSea
 title: Déplacements
-icon: deplacements.png
+icon: deplacements.svg
 videoUrl: https://www.youtube.com/embed/Dt9zWEE3BZE
 subtitle: “En déplacement, la vigilance est de mise.”
 description: Lorsque vous voyagez, une personne malveillante peut voler votre
