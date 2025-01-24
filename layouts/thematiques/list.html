@@ -2,22 +2,41 @@
 <section class="relative w-full pt-20 max-md:pb-36 max-md:-mb-20 md:pb-2 bg-secondary">
   <div class="container text-center text-white py-6">
     {{ partial "breadcrumb" (dict "page" . ) }}
-    <h1 class="text-h1 md:text-5xl mt-10">{{ .Title}}</h1>
+    <h1 class="text-h1 md:text-5xl mt-10">Checklist par thématiques</h1>
+    <p>Cochez les pratiques que vous avez mis en place dans votre quotidien avec le numérique.</p>
   </div>
 </section>
 
 <div class="container text-dark_gray my-20">
-  <h1 class="text-h1">Toutes les thématiques</h1>
   <nav class=" grid-good-practice mt-10">
     {{ range .Pages }}
     <a href="{{ .Permalink }}" class="no-underline">
-      <div
-        class="border-perso rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
+      <div class="rounded-lg text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
         <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
         <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
+        <div class="flex w-full items-baseline justify-center gap-3 mt-3">
+          <div class="w-full bg-gray-200 rounded-full h-2.5">
+            <div class="rounded-full w-full p-1 flex items-center bg-[#f6f5f5]">
+              <div class="bg-primary h-2.5 rounded-full {{.Title}}" id="" style="width: 0%"></div>
+            </div>
+          </div>
+          <span class="progression text-sm" id="{{.Title}}"></span>
+        </div>
       </div>
     </a>
     {{ end }}
   </nav>
 </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const progressions = document.querySelectorAll(".progression");
+    progressions.forEach(progression => {
+      console.log(progression.id.replaceAll(' ', '').toLowerCase())
+      const value = localStorage.getItem(progression.id.replaceAll(' ', '').toLowerCase()) || 0;
+      progression.textContent = progression.id ? `${value}%` : "0%";
+      document.getElementsByClassName(progression.id)[0].style.width = value + "%";
+    })
+  })
+</script>
 {{ end }}
