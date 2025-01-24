@@ -17,7 +17,7 @@
             <div
                 class="flex gap-6 md:gap-1 items-center flex-col justify-center content-center w-full space-x-5 my-12 md:justify-start md:flex-row">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap btn-primary">
+                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap  btn-primary">
                     <span class="whitespace-nowrap text-label">Me tester</span>
                 </a>
                 <a href="/thematiques"
@@ -42,12 +42,9 @@
                 Complétez votre checklist et découvrez à quel point vous êtes un expert !</p>
 
 
-            <h2>Barres de progression par thème</h2>
-            <div id="theme-bars"></div>
 
-            <h2>Progression globale</h2>
             <div id="global-progress-container">
-                <p>Progression globale : <span id="global-progress-percentage">0%</span></p>
+                <p class="pb-2">Progression globale : <span id="global-progress-percentage">0%</span></p>
                 <div style="background: #eee; width: 100%; height: 20px; border-radius: 5px; overflow: hidden;">
                     <div id="global-progress-bar" style="background: #76c7c0; width: 0; height: 100%;"></div>
                 </div>
@@ -126,8 +123,8 @@
             </script>
 
             <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
-                <a style="background-color:#153E60" href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-white rounded-lg whitespace-nowrap">
+                <a href="/thematiques"
+                    class="flex justify-center content-center w-full md:w-80 btn-secondary whitespace-nowrap blue">
                     <span class="whitespace-nowrap text-label pr-3">Compléter ma checklist</span>
                 </a>
             </div>
@@ -155,8 +152,8 @@
                 à notre documentation ludique, renforcez votre sécurité facilement. </p>
             <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 bg-white text-black rounded-lg whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label pr-3">Me tester</span>
+                    class="flex justify-center content-center w-full md:w-80 btn-primary whitespace-nowrap">
+                    <span class="whitespace-nowrap text-label">Me tester</span>
                 </a>
             </div>
         </div>
@@ -186,7 +183,7 @@
                 améliorer. Grâce à notre documentation ludique, renforcez votre sécurité facilement.</p>
             <div class="flex justify-center content-center w-full space-x-5 my-12 md:justify-start">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 py-3 text-dark_gray border-2 rounded-lg whitespace-nowrap">
+                    class="flex justify-center content-center w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
                     <span class="whitespace-nowrap text-label pr-3">En savoir plus</span>
                 </a>
             </div>

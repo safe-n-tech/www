@@ -61,8 +61,24 @@ a {
     @apply text-white border-2 text-base md:text-xl rounded-xl font-semibold px-5 py-4;
   }
 
+  .btn-secondary.blue {
+    @apply text-white bg-secondary border-0;
+  }
+
   .btn-secondary:hover {
     @apply text-secondary bg-white;
+  }
+
+  .btn-secondary.blue:hover {
+    @apply bg-white text-secondary;
+  }
+
+  .btn-tertiary {
+    @apply border-2 border-secondary text-secondary rounded-xl text-base md:text-xl font-semibold px-5 py-4;
+  }
+
+  .btn-tertiary:hover {
+    @apply text-white bg-secondary;
   }
 
   .border-perso-light-gray {
