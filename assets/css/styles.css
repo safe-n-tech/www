@@ -58,7 +58,7 @@ a {
   }
 
   .btn-secondary {
-    @apply text-white border-2 text-base md:text-xl rounded-xl font-semibold px-5 py-4;
+    @apply text-white border-2 text-base md:text-xl rounded-xl font-semibold px-5 py-4 mr-0;
   }
 
   .btn-secondary.blue {
