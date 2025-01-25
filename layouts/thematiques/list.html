@@ -1,23 +1,23 @@
 {{ define "main" }}
 <section class="relative flex flex-col align-center px-4 bg-secondary text-white">
-	<div class="max-w-md md:ml-12 my-20">
-		{{ partial "breadcrumb" (dict "page" . ) }}
-	</div>
-	<h1 class="h1 mb-20 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg">{{ .Title }}</h1>
-	</div>
+  <div class="max-w-md md:ml-12 my-20">
+    {{ partial "breadcrumb" (dict "page" . ) }}
+  </div>
+  <h1 class="h1 mb-20 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg">Thématiques</h1>
+  </div>
 </section>
 
 <div class="container text-dark_gray my-20">
-  <nav class=" grid-good-practice mt-10">
+  <nav class="grid-good-practice mt-10">
     {{ range .Pages }}
     <a href="{{ .Permalink }}" class="no-underline">
       <div class="rounded-lg text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
-        <img class="w-2/3" src="/icons/thematiques/{{.Params.icon}}" alt="">
+        <img class="w-2/3" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
         <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
         <div class="flex w-full items-baseline justify-center gap-3 mt-3">
           <div class="w-full bg-gray-200 rounded-full h-2.5">
             <div class="rounded-full w-full p-1 flex items-center bg-[#f6f5f5]">
-              <div class="bg-primary h-2.5 rounded-full {{.Title}}" id="" style="width: 0%"></div>
+              <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="" style="width: 0%"></div>
             </div>
           </div>
           <span class="progression text-sm" id="{{.Title}}"></span>

@@ -1,15 +1,20 @@
 {{ define "main" }}
-<section class="relative w-full pt-8 max-md:pb-12 max-md:-mb-12 md:pb-2 bg-secondary">
-  <div class="md:items-center container py-6 text-white flex flex-col gap-6 md:flex-row">
+<section class="relative w-full pt-20 max-md:pb-12 max-md:-mb-12 md:pb-2 bg-secondary">
+  <div class="md:items-center container py-6 text-white flex flex-col gap-8 md:flex-row">
     <div class="flex flex-col gap-6 md:w-1/2">
       {{ partial "breadcrumb" (dict "page" . "links" (slice "/thematiques")) }}
       <h1 class="text-h1 mt-10">{{ .Title }}</h1>
       <p>{{ .Params.Subtitle }}</p>
       <p>{{ .Description }}</p>
-      <p id="percentage"></p>
-      <div class="progress-container mt-5">
-        <div class="progress-bar" id="progress-bar"></div>
-        <p id="progress-percentage" class="text-center mt-2"></p>
+      <div class="flex justify-between w-full pr-3.5">
+        <span id="percentage">70%</span>
+        <span id="checked-text">12/23</span>
+      </div>
+      <div class="w-full bg-gray-200 rounded-full h-2.5">
+        <div class="rounded-full w-full p-1 flex items-center bg-gray">
+          <div class="bg-secondary h-2.5 rounded-full" id="progress" style="width: 30%">
+          </div>
+        </div>
       </div>
     </div>
     <div class="md:w-1/2">
@@ -33,7 +38,6 @@
   {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
   {{ if (gt (len $vulnerabilitiesLinked) 0) }}
-
   <nav class="grid-good-practice mt-5 grid-cols-1">
     {{ range $vulnerabilitiesLinked }}
     <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-xl bg-white p-5 pl-8 parent"
@@ -174,10 +178,14 @@
       const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
       const total = checkboxes.length;
       const percentageValue = Math.round((checked / total) * 100);
+      const checkedText = document.getElementById('checked-text');
       const sectionTitle = document.querySelector('h1').textContent;
+      const progress = document.getElementById('progress');
+      //% des bonnes pratiques de la thématique : ${sectionTitle} (${checked} / ${checkboxes.length})
 
-      percentage.textContent = `${percentageValue}%  ${checked} / ${checkboxes.length}`;
-      console.log(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
+      percentage.textContent = `${percentageValue}%`;
+      checkedText.textContent = `${checked} / ${total}`;
+      progress.style.width = `${percentageValue}%`;
       localStorage.setItem(`${sectionTitle.replaceAll(' ', '').toLowerCase()}`, percentageValue);
     }
 

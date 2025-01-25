@@ -1,5 +1,5 @@
 const STORAGE_APP_PREFIX = 'safe-n-tech';
-const QUESTIONS_NUMBER_QUIZ = 20;
+const QUESTIONS_NUMBER_QUIZ = 10;
 
 let questionIndex = 0;
 let questions = [];
@@ -43,7 +43,7 @@ function shuffleChoicesOfEachQuestions() {
 
 // CORRECTION
 
-function showResults(){
+function showResults() {
   calculateResults();
 
   document.querySelector("#quizz-ingame").classList.add("hidden");
@@ -54,16 +54,16 @@ function showResults(){
   document.getElementById("result-image").src = `/icons/quizz/emoji-${results.score <= 50 ? 'sad' : 'love'}.png`;
 
   let sentenceLevel;
-  if(results.score <= 25){
+  if (results.score <= 25) {
     sentenceLevel = "Vos appareils et vos données sont un trésor pour les pirates. Attention, ils sont parés à l’abordage !";
   }
-  else if (25 < results.score  && results.score <= 50){
+  else if (25 < results.score && results.score <= 50) {
     sentenceLevel = "Vous y êtes presque ! Mais pour les pirates, c’est comme si vous aviez fermé votre maison à clef, et laissé une fenêtre ouverte.";
   }
-  else if (50 < results.score && results.score <= 75){
+  else if (50 < results.score && results.score <= 75) {
     sentenceLevel = "Vous êtes sur la bonne voie, mais votre ennemi est mieux équipé.";
   }
-  else{
+  else {
     sentenceLevel = "Vous êtes la terreur des pirates ! Ne changez rien, restez vigilant.";
   }
 
@@ -75,34 +75,34 @@ function showResults(){
 }
 
 function calculateResults() {
-  questions.forEach(question=>{
+  questions.forEach(question => {
     question.isUserAnswerCorrect = false;
 
-    question.choices.forEach(choice=>{
-      if(!choice.isCorrect) {
+    question.choices.forEach(choice => {
+      if (!choice.isCorrect) {
         return
       }
 
-      if(choice.text === question.userAnswer) {
+      if (choice.text === question.userAnswer) {
         question.isUserAnswerCorrect = true
       }
     })
   })
 
-  const numberCorrect = questions.filter(question=>question.isUserAnswerCorrect).length,
-          score = Math.trunc(numberCorrect * 100 / (questions.length));
+  const numberCorrect = questions.filter(question => question.isUserAnswerCorrect).length,
+    score = Math.trunc(numberCorrect * 100 / (questions.length));
 
   let sentence;
-  if(score <= 25){
+  if (score <= 25) {
     sentence = "Vous êtes en danger";
   }
-  else if (score > 25 && score <= 50){
+  else if (score > 25 && score <= 50) {
     sentence = "Vous êtes vulnérable";
   }
-  else if (score > 50 && score <= 75){
+  else if (score > 50 && score <= 75) {
     sentence = "Vous êtes bon";
   }
-  else{
+  else {
     sentence = "Vous êtes parfait (ou presque) !";
   }
   results = {
@@ -113,7 +113,7 @@ function calculateResults() {
   }
 }
 
-function createCorrection(){
+function createCorrection() {
   questions.forEach((question, index) => {
     createElCorrection(question, index);
   });
@@ -121,14 +121,14 @@ function createCorrection(){
   showCorrectionOfQuestionIndex(0)
 }
 
-function createElCorrection(question, questionIndex){
-  const newCorrectionBtn = question.isUserAnswerCorrect?
-      correctionBtnTemplate.content.firstElementChild.cloneNode(true)
-          : correctionBtnTemplateWrong.content.firstElementChild.cloneNode(true);
+function createElCorrection(question, questionIndex) {
+  const newCorrectionBtn = question.isUserAnswerCorrect ?
+    correctionBtnTemplate.content.firstElementChild.cloneNode(true)
+    : correctionBtnTemplateWrong.content.firstElementChild.cloneNode(true);
 
   newCorrectionBtn.dataset.questionIndex = questionIndex;
-  newCorrectionBtn.querySelector(".correct-btn-text").innerText = questionIndex+1;
-  newCorrectionBtn.addEventListener("click", ()=>{
+  newCorrectionBtn.querySelector(".correct-btn-text").innerText = questionIndex + 1;
+  newCorrectionBtn.addEventListener("click", () => {
     showCorrectionOfQuestionIndex(questionIndex);
   });
   correctionBtnContainer.appendChild(newCorrectionBtn);
@@ -138,7 +138,7 @@ function showCorrectionOfQuestionIndex(questionIndex) {
   const question = questions[questionIndex];
   const correctionBtnClicked = document.querySelector(`[data-question-index="${questionIndex}"]`)
 
-  document.querySelectorAll('.correction-btn').forEach(btn=>btn.setAttribute('aria-selected', 'false'))
+  document.querySelectorAll('.correction-btn').forEach(btn => btn.setAttribute('aria-selected', 'false'))
   correctionBtnClicked.setAttribute('aria-selected', 'true');
 
   correctionEnonce.innerText = question.text;
@@ -148,7 +148,7 @@ function showCorrectionOfQuestionIndex(questionIndex) {
   loadCreateElChoiceCorrection(question);
 }
 
-function loadCreateElChoiceCorrection(question){
+function loadCreateElChoiceCorrection(question) {
   question.choices.forEach(choice => {
     createElChoiceCorrection(choice, question);
   });
@@ -157,8 +157,8 @@ function createElChoiceCorrection(choice, question) {
   const newChoiceCorrection = choiceCorrectionTemplate.content.firstElementChild.cloneNode(true);
   newChoiceCorrection.querySelector(".choice-text").innerText = choice.text;
 
-  if(choice.isCorrect) {
-    if(choice.text === question.userAnswer) {
+  if (choice.isCorrect) {
+    if (choice.text === question.userAnswer) {
       newChoiceCorrection.dataset.correctSelected = true;
     } else {
       newChoiceCorrection.dataset.correct = true;
@@ -195,7 +195,7 @@ function nextQuestion() {
   loadActualQuestion();
 }
 
-function handleAnswerSelected(questionSelected){
+function handleAnswerSelected(questionSelected) {
   resetQuestionAnswers();
   questionSelected.dataset.selected = true;
 
@@ -215,7 +215,7 @@ function clearQuestionAnswers() {
   }
 }
 function resetQuestionAnswers() {
-  Array.from(choicesContainer.children).forEach(child=>{
+  Array.from(choicesContainer.children).forEach(child => {
     child.dataset.selected = false;
   })
 }
@@ -223,14 +223,14 @@ function resetQuestionAnswers() {
 function loadActualQuestion() {
   saveQuizToLocalStorage();
 
-  if (questionIndex === questions.length){
+  if (questionIndex === questions.length) {
     showResults();
     return;
   }
 
-  window.scrollTo(0,0);
-  document.getElementById("quizz-progression-text").innerText = `Question ${questionIndex+1}/${questions.length}`;
-  document.getElementById("quizz-progression-bar-inner").style.width = `${(questionIndex+1) * 100 / (questions.length+1)}%`;
+  window.scrollTo(0, 0);
+  document.getElementById("quizz-progression-text").innerText = `Question ${questionIndex + 1}/${questions.length}`;
+  document.getElementById("quizz-progression-bar-inner").style.width = `${(questionIndex + 1) * 100 / (questions.length + 1)}%`;
   document.getElementById("quizz-question-text").innerText = questions[questionIndex].text;
 
   clearQuestionAnswers();
@@ -244,7 +244,7 @@ function createElChoice(choice) {
 
   newChoice.dataset.text = choice.text;
   newChoice.querySelector(".choice-text").innerText = choice.text;
-  newChoice.addEventListener("click", ()=>{
+  newChoice.addEventListener("click", () => {
     handleAnswerSelected(newChoice);
   });
 
@@ -252,7 +252,7 @@ function createElChoice(choice) {
 }
 
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length, randomIndex;
 
   // While there remain elements to shuffle.
   while (currentIndex !== 0) {
@@ -286,13 +286,13 @@ function clearQuizInLocalStorage() {
 function loadQuizFromLocalStorage() {
   const dataSavedJson = localStorage.getItem(`${STORAGE_APP_PREFIX}-questions`);
 
-  if(!dataSavedJson) {
+  if (!dataSavedJson) {
     return
   }
 
   const dataSaved = JSON.parse(dataSavedJson);
 
-  console.log('load questions from local storage')
+  // console.log('load questions from local storage')
   questions = dataSaved.questions;
   questionIndex = dataSaved.questionIndex;
 }

@@ -106,7 +106,6 @@
 	});
 
 	let test2 = localStorage.getItem('words');
-	console.log("test", test2);
 	// Gestion des dropdowns
 	const dropDownItems = document.querySelectorAll(".drop-down__item");
 
@@ -138,16 +137,6 @@
 	}
 </script>
 
-<script>
-	const checklistDomains = ["mail", "travelling", "data", "privacy", "updates", "passwords", "shopping", "social-networks", "downloads", "wifi-bluetooth"];
-
-	localStorage.setItem("checklistDomains", JSON.stringify(checklistDomains));
-	const test = localStorage.getItem("checklistDomains");
-	console.log(test);
-
-
-
-</script>
 <script>
 	document.addEventListener("DOMContentLoaded", () => {
 		const searchInput = document.getElementById("input");
