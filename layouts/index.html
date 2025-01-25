@@ -17,7 +17,7 @@
             <div
                 class="flex gap-4 items-center flex-col justify-center content-center w-full  my-12 md:justify-start md:flex-row">
                 <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap  btn-primary">
+                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap border-2 border-primary btn-primary">
                     <span class="whitespace-nowrap text-label">Me tester</span>
                 </a>
                 <a href="/thematiques"
@@ -32,242 +32,107 @@
     </div>
 </section>
 
-
-<section class="relative w-full pt-32 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
-    <div class="container flex flex-col md:flex-row">
-        <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
-            <h2 class="text-dark_gray w-full text-3xl text-bold font-bold mb-8">Votre checklist</h2>
-            <p class="md:text-left text-dark_gray mb-4">Avez-vous les bonnes pratiques en matière de cybersécurité ?
-                Complétez votre checklist et découvrez à quel point vous êtes un expert !</p>
-            <div class="flex gap-8 flex-col md:flex-row items-center md:items-start">
-                <div class="flex flex-col items-center gap-2 w-2/4">
-                    <div class="relative size-50">
-                        <svg class="size-full -rotate-90" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-                            <!-- Background Circle -->
-                            <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-gray"
-                                stroke-width="2"></circle>
-                            <!-- Progress Circle -->
-                            <circle cx="18" cy="18" r="16" fill="none" class="stroke-current text-secondary"
-                                stroke-width="2" stroke-dasharray="100" stroke-dashoffset="90" stroke-linecap="round">
-                            </circle>
-                        </svg>
-
-                        <!-- Percentage Text -->
-                        <div class="absolute top-1/2 start-1/2 transform -translate-y-1/2 -translate-x-1/2">
-                            <span class="text-center text-4xl font-bold text-secondary">35%</span>
-                        </div>
-                    </div>
-                    <p>de bonnes pratiques validées</p>
-                </div>
-                <div class="flex flex-col gap-4 w-full">
-                    <div class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/boite-mail.svg" alt="icon">
-                            <p class="text-black">Boîte mail</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div id="mail" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="mail-progress"
-                                            style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id="{{.Title}}"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0 thematique">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/deplacements.svg" alt="icon">
-                            <p class="text-black">Déplacements</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div class="min-w-[52px]" id="deplacement" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}"
-                                            id="deplacement-progress" style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id=""></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0 thematique">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/donnees-confidentielles.svg" alt="icon">
-                            <p class="text-black">Données confidentielles</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div class="min-w-[52px]" id="data" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="data-progress"
-                                            style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id=""></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0 thematique">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/droit-residuel-a-la-vie-privee.svg" alt="icon">
-                            <p class="text-black">Droit résiduel à la vie privée</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div class="min-w-[52px]" id="privacy" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="privacy-progress"
-                                            style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id=""></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0 thematique">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/mise-a-jour.svg" alt="icon">
-                            <p class="text-black">Mise à jour</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div class="min-w-[52px]" id="updates" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="updates-progress"
-                                            style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id=""></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex justify-between w-full flex-col md:flex-row items-center gap-4 md-gap-0 thematique">
-                        <div class="flex gap-4 w-full">
-                            <img src="/icons/thematiques/mots-de-passe.svg" alt="icon">
-                            <p class="text-black">Mots de passe</p>
-                        </div>
-                        <div class="flex gap-4 w-full items-center">
-                            <div class="min-w-[52px]" id="passwords" style="min-width: 55px">30%</div>
-                            <div class="flex w-full items-baseline justify-center gap-3">
-                                <div class="w-full bg-gray-200 rounded-full h-2.5">
-                                    <div class="rounded-full w-full flex items-center bg-gray">
-                                        <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="passwords-progress"
-                                            style="width: 30%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <span class="progression text-sm" id=""></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{/* <p class="pb-2">Progression globale : <span id="global-progress-percentage">0%</span></p>
-            <div style="background: #eee; width: 100%; height: 20px; border-radius: 5px; overflow: hidden;">
-                <div id="global-progress-bar" style="background: #76c7c0; width: 0; height: 100%;"></div>
-            </div> */}}
-
-            {{/*
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const themeBarsContainer = document.getElementById('theme-bars');
-                    const globalProgressBar = document.getElementById('global-progress-bar');
-                    const globalProgressPercentage = document.getElementById('global-progress-percentage');
-
-                    // Fonction pour charger l'état des thèmes
-                    function loadState() {
-                        return JSON.parse(localStorage.getItem('themesState')) || {};
-                    }
-
-                    // Fonction pour créer une barre de progression
-                    function createProgressBar(theme, percentage) {
-                        const container = document.createElement('div');
-                        container.style.marginBottom = '10px';
-
-                        const label = document.createElement('p');
-                        label.textContent = `Progression ${theme} : ${percentage}%`;
-
-                        const progressBarContainer = document.createElement('div');
-                        progressBarContainer.style.background = '#eee';
-                        progressBarContainer.style.width = '100%';
-                        progressBarContainer.style.height = '20px';
-                        progressBarContainer.style.borderRadius = '5px';
-                        progressBarContainer.style.overflow = 'hidden';
-
-                        const progressBar = document.createElement('div');
-                        progressBar.style.background = '#76c7c0';
-                        progressBar.style.width = `${percentage}%`;
-                        progressBar.style.height = '100%';
-
-                        progressBarContainer.appendChild(progressBar);
-                        container.appendChild(label);
-                        container.appendChild(progressBarContainer);
-
-                        themeBarsContainer.appendChild(container);
-                    }
-
-                    // Fonction pour calculer et afficher la progression
-                    function updateProgress() {
-                        const state = loadState();
-                        let totalTasks = 0;
-                        let totalChecked = 0;
-
-                        // Effacer les barres existantes
-                        themeBarsContainer.innerHTML = '';
-
-                        // Calculer la progression par thème
-                        for (const theme in state) {
-                            const tasks = state[theme].length;
-                            const checked = state[theme].filter(item => item).length;
-                            const percentage = tasks > 0 ? Math.round((checked / tasks) * 100) : 0;
-
-                            // Ajouter la barre de progression du thème
-                            createProgressBar(theme, percentage);
-
-                            // Ajouter aux totaux
-                            totalTasks += tasks;
-                            totalChecked += checked;
-                        }
-
-                        // Calculer la progression globale
-                        const globalPercentage = totalTasks > 0 ? Math.round((totalChecked / totalTasks) * 100) : 0;
-                        globalProgressBar.style.width = `${globalPercentage}%`;
-                        globalProgressPercentage.textContent = `${globalPercentage}%`;
-                    }
-
-                    // Mettre à jour la progression au démarrage
-                    updateProgress();
-                });
-            </script> */}}
-
-            <div class="flex justify-center content-center w-full  mx-auto mt-10">
-                <a href="/thematiques"
-                    class="flex justify-center content-center w-full md:w-80 btn-secondary whitespace-nowrap blue">
-                    <span class="whitespace-nowrap text-label pr-3">Compléter ma checklist</span>
-                </a>
-            </div>
-        </div>
+<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 ">
+  <div class="container flex flex-col gap-8 md:gap-12">
+    <div>
+      <h2 class="text-dark_gray text-3xl font-bold mb-8">Votre checklist</h2>
+      <p class="text-dark_gray mb-8">
+        Avez-vous les bonnes pratiques en matière de cybersécurité ? Complétez votre checklist et découvrez à quel point
+        vous êtes un expert !
+      </p>
     </div>
-</section>
+    <div class="flex flex-col md:flex-row gap-12 md:gap-24 md:justify-between">
+      <div class="global-progress-container gap-4 flex flex-col justify-center items-center">
+        <div class="circular-progress" id="global-progress">
+          <span class="progress-value" id="global-progress-value">0%</span>
+        </div>
+        <p class="text-secondary text-center">de bonnes pratiques validées</p>
+      </div>
+      <div class="flex gap-2 flex-col">
+        {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
+        {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
+          <div class="flex items-start md:flex-row flex-col md:items-center gap-2 md:gap-4 justify-between">
+            <div class="flex items-center gap-4">
+              <img class="w-10 h-10" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
+              <h3 class=" text-dark_gray">{{ $thematique.Title }}</h3>
+            </div>
+            <div class="barre-mobile flex gap-4 items-center">
+              <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-secondary"></p>
+              <div class="progress-container w-full md:w-[15vw]">
+                <div class="progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
+              </div>
+            </div>
+          </div>
+        {{ end }}
+        {{ end }}
+      </div>
+    </div>
+    <div>
+      <a href="/thematiques"
+      class="flex text-secondary mx-auto justify-center content-center md:mt-12 w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
+      <span class="whitespace-nowrap text-label">Compléter ma checklist</span>
+  </a>
+    </div>
+  </div>
+ </section>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const thematiques = document.querySelectorAll('.progress-container');
+
+    thematiques.forEach((container) => {
+      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
+      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
+      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
+
+      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+      const total = state.length;
+      const checked = state.filter((isChecked) => isChecked).length;
+      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+      progressBar.style.width = `${percentage}%`;
+      progressPercentage.textContent = `${percentage}%`;
+    });
+  });
+ </script>
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    function calculateGlobalProgress() {
+      const progressBars = document.querySelectorAll('.progress-bar');
+      let totalProgress = 0;
+      let totalThematiques = progressBars.length;
+      progressBars.forEach((progressBar) => {
+        const percentage = parseInt(progressBar.style.width, 10);
+        totalProgress += isNaN(percentage) ? 0 : percentage;
+      });
+      const globalProgress = totalThematiques > 0 ? Math.round(totalProgress / totalThematiques) : 0;
+      return globalProgress;
+    }
+
+    function updateGlobalProgress() {
+      const globalProgress = calculateGlobalProgress();
+      const progressCircle = document.getElementById('global-progress');
+      const progressValue = document.getElementById('global-progress-value');
+      const angle = globalProgress * 3.6;
+      progressCircle.style.background = `conic-gradient(#153E60 ${angle}deg, #e0e0e0 ${angle}deg)`;
+      progressValue.textContent = `${globalProgress}%`;
+    }
+
+    const thematiques = document.querySelectorAll('.progress-container');
+    thematiques.forEach((container) => {
+      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
+      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
+      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
+      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+      const total = state.length;
+      const checked = state.filter((isChecked) => isChecked).length;
+      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+      progressBar.style.width = `${percentage}%`;
+      progressPercentage.textContent = `${percentage}%`;
+    });
+    updateGlobalProgress();
+  });
+ </script>
 
 <section class="relative w-full pt-8 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
     <div class="container flex flex-col md:flex-row md:items-center md:gap-24">
@@ -298,7 +163,6 @@
     </div>
 </section>
 
-
 <section class="relative w-full pt-32 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
     <div class="container flex flex-col-reverse md:flex-row md:items-center md:gap-24">
         <div class="flex justify-center items-center w-full justify-center reactive">
@@ -324,45 +188,6 @@
         </div>
     </div>
 </section>
-<script>
-    const mail = document.getElementById('mail');
-    const mailProgress = document.getElementById('mail-progress');
 
-    const deplacement = document.getElementById('deplacement');
-    const deplacementProgress = document.getElementById('deplacement-progress');
-
-    const data = document.getElementById('data');
-    const dataProgress = document.getElementById('data-progress');
-
-    const privacy = document.getElementById('privacy');
-    const privacyProgress = document.getElementById('privacy-progress');
-
-    const updates = document.getElementById('updates');
-    const updatesProgress = document.getElementById('updates-progress');
-
-    const passwords = document.getElementById('passwords');
-    const passwordsProgress = document.getElementById('passwords-progress');
-
-    const thematiques = ["Boîte mail", "Déplacements", "Données confidentielles", "Droit résiduel à la vie privée", "Mises à jour", "Mots de passe", "Paiements en ligne", "Réseaux sociaux", "Téléchargements et ingénierie sociale", "Wifi et bluetooth"];
-    document.addEventListener('DOMContentLoaded', () => {
-        mail.textContent = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        mailProgress.style.width = `${localStorage.getItem(thematiques[0].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-
-        deplacement.textContent = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        deplacementProgress.style.width = `${localStorage.getItem(thematiques[1].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-
-        data.textContent = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        dataProgress.style.width = `${localStorage.getItem(thematiques[2].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-
-        privacy.textContent = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        privacyProgress.style.width = `${localStorage.getItem(thematiques[3].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-
-        updates.textContent = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        updatesProgress.style.width = `${localStorage.getItem(thematiques[4].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-
-        passwords.textContent = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-        passwordsProgress.style.width = `${localStorage.getItem(thematiques[5].replaceAll(' ', '').toLowerCase()) || '0'}%`;
-    })
-</script>
 
 {{ end }}

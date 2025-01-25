@@ -157,3 +157,55 @@ input[type="checkbox"]:checked {
 .background-dropdown {
   background-color: #F6F5F5;
 }
+
+.progress-container {
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 2px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #153E60;
+  width: 0;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.circular-progress {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: conic-gradient(#153E60 0% 0%, #e0e0e0 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circular-progress::before {
+  content: '';
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  background-color: #F6F5F5;
+  position: absolute;
+  z-index: 1;
+}
+
+.progress-value {
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  color: #153E60;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .barre-mobile {
+    width: 100%;
+  }
+}

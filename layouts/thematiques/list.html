@@ -8,35 +8,75 @@
 </section>
 
 <div class="container text-dark_gray my-20">
-  <nav class="grid-good-practice mt-10">
-    {{ range .Pages }}
+  <nav class=" grid-good-practice mt-10">
+    {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
+    {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
     <a href="{{ .Permalink }}" class="no-underline">
-      <div class="rounded-lg text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
+      <div
+        class="border-perso gap-4 rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
         <img class="w-2/3" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
         <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
-        <div class="flex w-full items-baseline justify-center gap-3 mt-3">
-          <div class="w-full bg-gray-200 rounded-full h-2.5">
-            <div class="rounded-full w-full p-1 flex items-center bg-[#f6f5f5]">
-              <div class="bg-secondary h-2.5 rounded-full {{.Title}}" id="" style="width: 0%"></div>
+        <div class="flex flex-row justify-center items-center mt-2 gap-2">
+          <span id="checkbox-counter-{{ $thematique.Params.uuid }}" class="text-dark_gray text-label"></span>
+        </div>
+        <div class="flex flex-row-reverse gap-2 w-full items-center">
+          <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-secondary font-bold"></p>
+          <div class=" gap-2 w-full items-center">
+            <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-dark_gray"></p>
+            <div class="progress-container">
+              <div class="w-full progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
             </div>
           </div>
-          <span class="progression text-sm" id="{{.Title}}"></span>
         </div>
       </div>
     </a>
     {{ end }}
+    {{ end }}
   </nav>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const progressions = document.querySelectorAll(".progression");
-    progressions.forEach(progression => {
-      console.log(progression.id.replaceAll(' ', '').toLowerCase())
-      const value = localStorage.getItem(progression.id.replaceAll(' ', '').toLowerCase()) || 0;
-      progression.textContent = progression.id ? `${value}%` : "0%";
-      document.getElementsByClassName(progression.id)[0].style.width = value + "%";
-    })
-  })
-</script>
+<style>
+  .progress-container {
+    width: 100%;
+    height: 15px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 2px;
+    width: 100%;
+  }
+
+  .progress-bar {
+    height: 100%;
+    background-color: #153E60;
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+  }
+ </style>
+
+
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const thematiques = document.querySelectorAll('.progress-container');
+
+    thematiques.forEach((container) => {
+      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
+      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
+      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
+      const checkboxCounter = document.getElementById(`checkbox-counter-${thematiqueId}`);
+
+      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+      const total = state.length;
+      const checked = state.filter((isChecked) => isChecked).length;
+
+      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+      progressBar.style.width = `${percentage}%`;
+      progressPercentage.textContent = `${percentage}%`;
+
+      checkboxCounter.textContent = `${checked}/${total}`;
+    });
+  });
+ </script>
 {{ end }}
