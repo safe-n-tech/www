@@ -1,13 +1,17 @@
 <section id="quizz-ingame" class="min-h-screen mb-24 flex flex-col gap-y-8">
-  <section class="pointer-events-none relative w-full pt-20 max-md:pb-12 max-md:mb-12 md:pb-2 bg-secondary">
-    <div class="container text-center text-white py-6 flex flex-col gap-5 md:gap-10">
+
+
+  <section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+    <div class="max-w-md md:ml-12 my-20">
       {{ partial "breadcrumb" (dict "page" . ) }}
+    </div>
+    <div class="flex flex-col items-center gap-5">
       <h1 id="quizz-progression-text" class="pt-5 text-h1 md:text-5xl">Question ?/?</h1>
       <div id="quizz-progression-bar-outer"
         class="overflow-hidden rounded-full bg-white w-full md:w-1/2 mx-auto h-4 p-0.5">
         <div id="quizz-progression-bar-inner" class="bg-secondary rounded-full h-full left-0"></div>
       </div>
-      <p id="quizz-question-text" class="md:text-2xl"></p>
+      <p id="quizz-question-text" class=" mb-20 md:text-2xl"></p>
     </div>
   </section>
 
