@@ -50,11 +50,11 @@ a {
   }
 
   .btn-primary {
-    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4;
+    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2 border-primary;
   }
 
   .btn-primary:hover {
-    @apply bg-white text-primary;
+    @apply bg-white text-primary border-white;
   }
 
   .btn-secondary {
@@ -143,11 +143,11 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: #43B166;
+  background-color: #1C4A2B;
 }
 
 .basic-pastille {
-  background-color: #43B166;
+  background-color: #1C4A2B;
 }
 
 .avancee-pastille {

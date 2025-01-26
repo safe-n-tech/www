@@ -21,7 +21,8 @@
     </div>
     <div class="md:w-2/3">
       {{ if (.Params.VideoUrl) }}
-      <iframe style="aspect-ratio: 570/363;" width="100%" src="{{ .Params.VideoUrl }}" frameborder="0"
+      <iframe title="interview sur la cybersécurité" style="aspect-ratio: 570/363;" width="100%"
+        src="{{ .Params.VideoUrl }}" frameborder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       {{ else }}
       <div class="p-10 border-secondary border-2 rounded-2xl">
@@ -30,7 +31,7 @@
       {{ end }}
     </div>
   </div>
- </section>
+</section>
 
 <section class="container text-dark_gray mt-20 mb-20">
   {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
@@ -43,7 +44,8 @@
     {{ range $vulnerabilitiesLinked }}
     <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
       <div class="flex flex-row items-center justify-between  md:items-start">
-        <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}" data-id="{{ .Params.uuid }}">
+        <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}"
+          data-id="{{ .Params.uuid }}">
 
         {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
         {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
@@ -70,7 +72,8 @@
             <div class="flex mb-12 justify-between gap-16">
               <p class="text-dark_gray font-bold">{{ .Title }}</p>
               {{ if .Params.advanced }}
-              <small class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
+              <small
+                class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
               {{ else }}
               <small class="basic-pastille py-2 px-6 h-fit md:block hidden rounded-full text-white">Basique</small>
               {{ end }}
@@ -86,7 +89,7 @@
             <button class="w-full flex flex-row justify-between drop-down__item h-fit">
               <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
               <div class="self-center transition-all -rotate-90">
-                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
               </div>
             </button>
             <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
@@ -99,7 +102,7 @@
             <button class="w-full flex flex-row justify-between drop-down__item h-fit">
               <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
               <div class="self-center transition-all -rotate-90">
-                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" />
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
               </div>
             </button>
             <div class="background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
@@ -228,27 +231,27 @@
 
       loadChecklistState();
     });
- </script>
+  </script>
 
- <style>
-  .progress-container {
-    width: 100%;
-    height: 20px;
-    background-color: white;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    padding: 2px;
-  }
+  <style>
+    .progress-container {
+      width: 100%;
+      height: 20px;
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      padding: 2px;
+    }
 
-  .progress-bar {
-    height: 100%;
-    background-color: #153E60;
-    width: 0;
-    transition: width 0.3s ease;
-    border-radius: 10px;
-  }
+    .progress-bar {
+      height: 100%;
+      background-color: #153E60;
+      width: 0;
+      transition: width 0.3s ease;
+      border-radius: 10px;
+    }
   </style>
 
- </section>
- {{ end }}
+</section>
+{{ end }}

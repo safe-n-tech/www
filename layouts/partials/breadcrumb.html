@@ -2,10 +2,12 @@
     <li><a href="/" class="breadcrumb-item underline">Accueil</a></li>
     {{ range .links }}
     {{ with $.page.GetPage . }}
-    <span>/</span>
+    <li><span>/</span></l>
     <li><a href="{{ .Permalink }}" class="breadcrumb-item underline">{{ .Title }}</a></li>
     {{ end }}
     {{ end }}
-    <span>/</span>
+    <li>
+        <span>/</span>
+    </li>
     <li class="breadcrumb-item">{{ .page.Title}}</li>
 </ul>

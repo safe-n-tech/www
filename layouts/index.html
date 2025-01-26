@@ -6,7 +6,7 @@
             <div class="flex w-full justify-center hidden md:block my-8 md:justify-start">
                 <img src="/svgs/white_logo.svg" alt="Logo de Safe'N'Tech">
             </div>
-            <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1  md:mx-0">Et si nous
+            <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1  md:mx-0 max-w-[610px]">Et si nous
                 profitions du numérique en toute sécurité ?</h1>
             <p class="md:text-left text-white mb-4 font-bold">“Ça ne m'arrivera jamais, je connais les risques” </p>
 
@@ -22,7 +22,7 @@
                 </a>
                 <a href="/thematiques"
                     class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label">Compléter ma liste de bonnes pratiques</span>
+                    <span class="whitespace-nowrap text-label">Ma checklist de bonnes pratiques</span>
                 </a>
             </div>
         </div>
@@ -33,106 +33,108 @@
 </section>
 
 <section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 ">
-  <div class="container flex flex-col gap-8 md:gap-12">
-    <div>
-      <h2 class="text-dark_gray text-3xl font-bold mb-8">Votre checklist</h2>
-      <p class="text-dark_gray mb-8">
-        Avez-vous les bonnes pratiques en matière de cybersécurité ? Complétez votre checklist et découvrez à quel point
-        vous êtes un expert !
-      </p>
-    </div>
-    <div class="flex flex-col md:flex-row gap-12 md:gap-24 md:justify-between">
-      <div class="global-progress-container gap-4 flex flex-col justify-center items-center">
-        <div class="circular-progress" id="global-progress">
-          <span class="progress-value" id="global-progress-value">0%</span>
+    <div class="container flex flex-col gap-8 md:gap-12">
+        <div>
+            <h2 class="text-dark_gray text-3xl font-bold mb-8">Votre checklist</h2>
+            <p class="text-dark_gray mb-8">
+                Avez-vous les bonnes pratiques en matière de cybersécurité ? Complétez votre checklist et découvrez à
+                quel point
+                vous êtes un expert !
+            </p>
         </div>
-        <p class="text-secondary text-center">de bonnes pratiques validées</p>
-      </div>
-      <div class="flex gap-2 flex-col">
-        {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
-        {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
-          <div class="flex items-start md:flex-row flex-col md:items-center gap-2 md:gap-4 justify-between">
-            <div class="flex items-center gap-4">
-              <img class="w-10 h-10" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
-              <h3 class=" text-dark_gray">{{ $thematique.Title }}</h3>
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24 md:justify-between">
+            <div class="global-progress-container gap-4 flex flex-col justify-center items-center">
+                <div class="circular-progress" id="global-progress">
+                    <span class="progress-value" id="global-progress-value">0%</span>
+                </div>
+                <p class="text-secondary text-center">de bonnes pratiques validées</p>
             </div>
-            <div class="barre-mobile flex gap-4 items-center">
-              <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-secondary"></p>
-              <div class="progress-container w-full md:w-[15vw]">
-                <div class="progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
-              </div>
+            <div class="flex gap-2 flex-col">
+                {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
+                {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
+                <div class="flex items-start md:flex-row flex-col md:items-center gap-2 md:gap-4 justify-between">
+                    <div class="flex items-center gap-4">
+                        <img class="w-10 h-10" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
+                        <h3 class=" text-dark_gray">{{ $thematique.Title }}</h3>
+                    </div>
+                    <div class="barre-mobile flex gap-4 items-center">
+                        <p id="progress-percentage-{{ $thematique.Params.uuid }}"
+                            class="text-center min-w-10 text-secondary"></p>
+                        <div class="progress-container w-full md:w-[15vw]">
+                            <div class="progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
+                {{ end }}
             </div>
-          </div>
-        {{ end }}
-        {{ end }}
-      </div>
+        </div>
+        <div>
+            <a href="/thematiques"
+                class="flex text-secondary mx-auto justify-center content-center md:mt-12 w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
+                <span class="whitespace-nowrap text-label">Ma checklist de bonnes pratiques</span>
+            </a>
+        </div>
     </div>
-    <div>
-      <a href="/thematiques"
-      class="flex text-secondary mx-auto justify-center content-center md:mt-12 w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
-      <span class="whitespace-nowrap text-label">Compléter ma checklist</span>
-  </a>
-    </div>
-  </div>
- </section>
+</section>
 
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const thematiques = document.querySelectorAll('.progress-container');
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const thematiques = document.querySelectorAll('.progress-container');
 
-    thematiques.forEach((container) => {
-      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
-      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
-      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
+        thematiques.forEach((container) => {
+            const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
+            const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
+            const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
 
-      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
-      const total = state.length;
-      const checked = state.filter((isChecked) => isChecked).length;
-      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-      progressBar.style.width = `${percentage}%`;
-      progressPercentage.textContent = `${percentage}%`;
+            const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+            const total = state.length;
+            const checked = state.filter((isChecked) => isChecked).length;
+            const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+            progressBar.style.width = `${percentage}%`;
+            progressPercentage.textContent = `${percentage}%`;
+        });
     });
-  });
- </script>
+</script>
 
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    function calculateGlobalProgress() {
-      const progressBars = document.querySelectorAll('.progress-bar');
-      let totalProgress = 0;
-      let totalThematiques = progressBars.length;
-      progressBars.forEach((progressBar) => {
-        const percentage = parseInt(progressBar.style.width, 10);
-        totalProgress += isNaN(percentage) ? 0 : percentage;
-      });
-      const globalProgress = totalThematiques > 0 ? Math.round(totalProgress / totalThematiques) : 0;
-      return globalProgress;
-    }
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        function calculateGlobalProgress() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            let totalProgress = 0;
+            let totalThematiques = progressBars.length;
+            progressBars.forEach((progressBar) => {
+                const percentage = parseInt(progressBar.style.width, 10);
+                totalProgress += isNaN(percentage) ? 0 : percentage;
+            });
+            const globalProgress = totalThematiques > 0 ? Math.round(totalProgress / totalThematiques) : 0;
+            return globalProgress;
+        }
 
-    function updateGlobalProgress() {
-      const globalProgress = calculateGlobalProgress();
-      const progressCircle = document.getElementById('global-progress');
-      const progressValue = document.getElementById('global-progress-value');
-      const angle = globalProgress * 3.6;
-      progressCircle.style.background = `conic-gradient(#153E60 ${angle}deg, #e0e0e0 ${angle}deg)`;
-      progressValue.textContent = `${globalProgress}%`;
-    }
+        function updateGlobalProgress() {
+            const globalProgress = calculateGlobalProgress();
+            const progressCircle = document.getElementById('global-progress');
+            const progressValue = document.getElementById('global-progress-value');
+            const angle = globalProgress * 3.6;
+            progressCircle.style.background = `conic-gradient(#153E60 ${angle}deg, #e0e0e0 ${angle}deg)`;
+            progressValue.textContent = `${globalProgress}%`;
+        }
 
-    const thematiques = document.querySelectorAll('.progress-container');
-    thematiques.forEach((container) => {
-      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
-      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
-      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
-      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
-      const total = state.length;
-      const checked = state.filter((isChecked) => isChecked).length;
-      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-      progressBar.style.width = `${percentage}%`;
-      progressPercentage.textContent = `${percentage}%`;
+        const thematiques = document.querySelectorAll('.progress-container');
+        thematiques.forEach((container) => {
+            const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
+            const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
+            const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
+            const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+            const total = state.length;
+            const checked = state.filter((isChecked) => isChecked).length;
+            const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+            progressBar.style.width = `${percentage}%`;
+            progressPercentage.textContent = `${percentage}%`;
+        });
+        updateGlobalProgress();
     });
-    updateGlobalProgress();
-  });
- </script>
+</script>
 
 <section class="relative w-full pt-8 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
     <div class="container flex flex-col md:flex-row md:items-center md:gap-24">
