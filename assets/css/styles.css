@@ -18,7 +18,7 @@ a {
   }
 
   .grid-good-practice {
-    @apply grid grid-cols-2 gap-2 sm:gap-5 lg:grid-cols-4
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5
   }
 
   .word-break {
@@ -50,11 +50,11 @@ a {
   }
 
   .btn-primary {
-    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4;
+    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2 border-primary;
   }
 
   .btn-primary:hover {
-    @apply bg-white text-primary;
+    @apply bg-white text-primary border-white;
   }
 
   .btn-secondary {
@@ -143,11 +143,11 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-  background-color: #43B166;
+  background-color: #1C4A2B;
 }
 
 .basic-pastille {
-  background-color: #43B166;
+  background-color: #1C4A2B;
 }
 
 .avancee-pastille {
@@ -156,4 +156,56 @@ input[type="checkbox"]:checked {
 
 .background-dropdown {
   background-color: #F6F5F5;
+}
+
+.progress-container {
+  height: 15px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  padding: 2px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #153E60;
+  width: 0;
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.circular-progress {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: conic-gradient(#153E60 0% 0%, #e0e0e0 0% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.circular-progress::before {
+  content: '';
+  width: 225px;
+  height: 225px;
+  border-radius: 50%;
+  background-color: #F6F5F5;
+  position: absolute;
+  z-index: 1;
+}
+
+.progress-value {
+  font-size: 35px;
+  font-weight: bold;
+  position: absolute;
+  color: #153E60;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .barre-mobile {
+    width: 100%;
+  }
 }

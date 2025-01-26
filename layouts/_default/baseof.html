@@ -41,7 +41,7 @@
     {{ end }}
 </head>
 
-<body class="bg-light_gray text-secondary text-xl">
+<body data-page-id="{{ .Params.uuid }}" class="bg-light_gray text-secondary text-xl">
     <div class="">
         {{- partial "header" . -}}
 
@@ -49,8 +49,6 @@
             {{- block "main" . }}{{- end }}
         </main>
     </div>
-    {{/*
-    <script src="/js/checklist.js"></script> */}}
     {{- partial "footer" . -}}
 </body>
 

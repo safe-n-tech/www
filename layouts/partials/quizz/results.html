@@ -1,45 +1,36 @@
 <section id="results" class="hidden min-h-screen pb-6 flex flex-col gap-y-8 ">
-  <section class="bg-secondary pb-32 flex flex-col gap-12">
-    <div class="container md:container-none text-white max-w-md md:ml-12 mt-20">
+  <section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+    <div class="text-white max-w-md md:ml-12 my-20 md:my-0 md:mt-20">
       {{ partial "breadcrumb" (dict "page" . ) }}
     </div>
-    <section class="flex flex-col gap-4 justify-center items-center container pt-24">
+    <section class="flex flex-col gap-8 md:gap-4 justify-center items-center container ">
       <img src="/icons/quizz/feedback-icon.png" alt=" " class="m-0">
       <h1 id="level" class="text-h1 text-white text-center">Fini !</h1>
       <p id="sentence-level" class="text-center text-white text-md"></p>
+
+      <div class="md:container mb-20 z-30">
+        <section
+          class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
+          <article class="w-full flex flex-col items-center justify-center gap-2">
+            <span class="text-label">Score</span>
+            <span id="result-score" class="text-3xl"></span>
+            <button id="quiz-redo" class=" text-primary text-label px-4 py-2 rounded-lg">
+              Refaire le quiz
+            </button>
+          </article>
+
+          <div class="w-1 bg-light_gray"></div>
+
+          <article class="w-full flex flex-col justify-center items-center gap-2">
+            <img id="result-image" class="w-12 h-auto" alt=" ">
+            <span id="result-sentence" class="text-label text-center"></span>
+          </article>
+        </section>
+      </div>
     </section>
-
-
-
-
-    <div class="container z-30">
-      <section
-        class="relative px-4 py-6 gap-3 rounded-2xl justify-center items-stretch bg-white shadow-2xl text-black flex flex-row">
-        <article class="w-full flex flex-col items-center justify-center gap-2">
-          <span class="text-label">Score</span>
-          <span id="result-score" class="text-3xl"></span>
-          <button id="quiz-redo" class=" text-primary text-label px-4 py-2 rounded-lg">
-            Refaire le quiz
-          </button>
-        </article>
-
-        <div class="w-1 bg-light_gray"></div>
-
-        <article class="w-full flex flex-col justify-center items-center gap-2">
-          <img id="result-image" class="w-12 h-auto" alt=" ">
-          <span id="result-sentence" class="text-label text-center"></span>
-
-
-        </article>
-      </section>
-
-
-    </div>
   </section>
 
   <section class="overflow-hidden relative -mt-32 md:-mt-40 drop-shadow-xl pt-40 md:pt-52 text-white">
-
-
     <section class="container flex flex-col gap-16 pb-16">
       <div class="flex flex-col gap-4">
         <h2 class="text-dark_gray text-h2">Corrigé</h2>
@@ -71,7 +62,7 @@
   </button>
 </template>
 
-<div class="hidden md:flex container items-center flex flex-col gap-4" id="result-question-good-practices">
+<div class="hidden md:flex mb-12 container items-center flex flex-col gap-12" id="result-question-good-practices">
   <h2 class="text-dark_gray text-h2">Découvrir plus de bonnes pratiques</h2>
-  <a href="/thematiques" class="w-fit btn-secondary blue">Compléter ma checklist</a>
+  <a href="/thematiques" class="w-fit btn-secondary blue">Ma checklist de bonnes pratiques</a>
 </div>
