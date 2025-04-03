@@ -44,3 +44,10 @@ sitemap:
   disable: false
   filename: sitemap.xml
   priority: -1
+
+backend:
+  name: git-gateway
+  branch: main
+
+
+publish_mode: editorial_workflow
