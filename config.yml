@@ -3,6 +3,7 @@ baseURL: https://safe-n-tech.netlify.app/
 removePathAccents: true
 
 params:
+  maxSlugLength: 100
   seo:
     author: MMI Bordeaux
     title: "Safe n' Tech : Votre boussole pour un web sécurisé"
