@@ -97,6 +97,11 @@ collections:
         widget: list
         required: false
 
+      - label: Ne pas faire
+        name: dontDo
+        widget: list
+        required: false
+
       - label: Bonnes pratiques
         name: goodPractices
         widget: relation
