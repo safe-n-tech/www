@@ -106,7 +106,14 @@
               </div>
             </button>
             <div class="background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
-              <p>{{ .dontDo }}</p>
+              {{ if .Params.dontDo }}
+              <div class="dont-do-section">
+                <h2>Ne pas faire</h2>
+                <div>
+                  {{ .Params.dontDo | markdownify }}
+                </div>
+              </div>
+              {{ end }}
             </div>
           </div>
         </div>
