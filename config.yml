@@ -38,6 +38,11 @@ menu:
       name: Glossaire
       title: glossaire
       url: /definitions/
+    - identifier: Mille Bugs
+      weight: 5
+      name: Mille Bugs
+      title: mille bugs
+      url: /mille-bugs/
 
 sitemap:
   changeFreq: ""
