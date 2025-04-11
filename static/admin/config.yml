@@ -97,11 +97,6 @@ collections:
         widget: list
         required: false
 
-      - label: Ne pas faire
-        name: dontDo
-        widget: list
-        required: false
-
       - label: Bonnes pratiques
         name: goodPractices
         widget: relation
@@ -122,8 +117,7 @@ collections:
         multiple: true
         required: false
 
-
-
+      - { label: "Ne pas faire", name: dontDo, widget: markdown, required: false }
 
   - name: good-practices
     slug: "{{fields.uuid}}"
