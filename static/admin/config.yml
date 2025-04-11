@@ -120,7 +120,7 @@ collections:
       - { label: "Ne pas faire", name: dontDo, widget: markdown, required: false }
 
   - name: good-practices
-    slug: "{{fields.uuid}}"
+    slug: "{{title | slugify | truncate(100)}}"
     label: Bonnes pratiques
     label_singular: Bonne pratique
     folder: content/good-practices
