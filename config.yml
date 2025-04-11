@@ -54,5 +54,17 @@ backend:
   name: git-gateway
   branch: main
 
+collections:
+  - name: "good-practices"
+    label: "Good Practices"
+    folder: "content/good-practices"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Categories", name: "categories", widget: "list" }
+      - { label: "Good Practices", name: "goodPractices", widget: "list" }
+      - { label: "Risks", name: "risks", widget: "list" }
+      - { label: "Don't Do", name: "dontDo", widget: "list" }
+      - { label: "Description", name: "description", widget: "text" }
 
 publish_mode: editorial_workflow
