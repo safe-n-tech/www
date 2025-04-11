@@ -1,6 +1,5 @@
 ---
-visibleInCms: true
-uuid: good-practice-Xm63WGGPuvGydMQ8zbXY7
+uuid: good-practice-ZOCy20SsIiC6OhCHaIadm
 title: Utilisez des adresses secondaires jetables ou anonymisées (alias e-mail).
   Cela vous permet de protéger votre adresse principale en la masquant derrière
   ces alias. Si vous recevez des spams ou si une fuite se produit, vous pouvez
