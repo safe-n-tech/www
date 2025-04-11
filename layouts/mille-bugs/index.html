@@ -1,0 +1,141 @@
+{{ define "main" }}
+
+<section
+  class="relative bg-[url('/images/hero-bg-mille-bugs.png')] bg-cover bg-center bg-no-repeat w-full pt-8 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
+  <div class="container flex flex-col md:flex-row">
+    <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+      <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1  md:mx-0 max-w-[610px]">Mille Bugs : Le jeu
+        de plateau pour sensibiliser les seniors à l’hygiène informatique</h1>
+
+      <p class="md:text-left text-white">On connaît tous cette mamie qui reçoit un appel d’un inconnu se faisant passer
+        pour son petit-fils, lui demandant de l’argent en urgence. Avec Mille Bugs, aidez vos proches à comprendre les
+        risques numériques et à adopter les bons réflexes en matière d’hygiène informatique.</p>
+      <div
+        class="flex gap-4 items-center flex-col justify-center content-center w-full  my-12 md:justify-start md:flex-row">
+        <a href="/pdf/impression-mille-bugs.pdf"
+          class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap" download>
+          <span class="whitespace-nowrap text-label">Télécharger le jeu ( 12,4 Mo PDF)</span>
+        </a>
+      </div>
+    </div>
+    <div class="flex items-center md:justify-end w-full reactive">
+      <img class="w-5/6 h-auto md:min-w-[15rem] object-fit" src="/images/mille-bugs-illu.svg" alt="Cartes Mille Bugs">
+    </div>
+  </div>
+</section>
+
+<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 flex flex-col gap-12">
+  <div class="container flex flex-col gap-8 md:gap-12">
+    <div>
+      <h2 class="text-dark_gray text-3xl font-bold mb-8">Présentation</h2>
+      <p class="text-dark_gray mb-8">
+        Mille Bugs est un jeu de société inspiré du Mille Bornes, conçu pour sensibiliser les personnes à partir de 60
+        ans aux risques numériques (phishing, arnaques, e-mails frauduleux…) de manière ludique, accessible et
+        bienveillante. À travers des cartes illustrées et un plateau de jeu, il vulgarise les bonnes pratiques en
+        hygiène informatique. Soutenu par la Gendarmerie nationale, permet d'assurer un apprentissage numérique durable,
+        concret et de proximité.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+<section
+  class="relative w-full pt-8 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary bg-[url('/images/bg-mille-bugs-contexte.png')] bg-cover bg-center">
+  <div class="container flex flex-col md:flex-row items-center md:gap-24">
+
+    <div class="md:w-2/3 md:h-[40rem] flex flex-col justify-center">
+      <h2 class="text-white w-full text-3xl font-bold mb-8">Contexte</h2>
+      <p class="md:text-left text-white mb-4">
+        “Dans un monde de plus en plus connecté, les seniors sont devenus une cible privilégiée des cybercriminels.
+        En 2022, près de 60 % des escroqueries en ligne ont touché cette tranche d’âge, souvent mal informée face
+        aux menaces comme le phishing, les e-mails frauduleux ou les faux services clients.”
+      </p>
+    </div>
+
+    <div class="md:w-1/3 flex justify-center md:justify-end">
+      <img class="w-3/4 max-w-xs h-auto object-contain" src="/images/phone-illu.svg" alt="Icône page Accueil" />
+    </div>
+
+  </div>
+</section>
+
+<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 flex flex-col gap-24">
+  <div class="container flex flex-col md:flex-row gap-12 md:gap-16">
+    <img class="w-full md:w-1/3 max-w-xs h-auto object-contain" src="/images/mille-bugs-rules.svg"
+      alt="Carte de règles">
+
+    <div class="md:w-2/3 md:flex md:flex-col md:justify-center">
+      <h2 class="text-dark_gray text-3xl font-bold mb-8">Comment fonctionne le jeu ?</h2>
+      <p class="text-dark_gray mb-8">
+        Atteignez exactement 1000 points avant vos adversaires dans ce jeu de cartes stratégique et amusant pour 2 à 8
+        joueurs. Chaque carte jouée peut vous faire avancer, vous protéger ou ralentir les autres. Les pièges numériques
+        prennent la forme de malus, les bonnes pratiques deviennent des bonus, et certaines cartes offrent une immunité
+        contre les arnaques les plus sournoises. Entre tactique, surprises et retournements de situation, chaque partie
+        est intense, dynamique et pleine de rebondissements. À vous de jouer pour franchir la ligne d’arrivée en premier
+        !
+      </p>
+      <a href="/pdf/regles-mille-bugs.pdf"
+        class="flex justify-center content-center w-full md:w-80 whitespace-nowrap border-2 border-primary btn-primary"
+        download>
+        <span class="whitespace-nowrap text-label">Télécharger les règles (4,6 Mo PDF)</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="container flex flex-col md:flex-row gap-8 md:gap-12">
+
+    <div class="md:w-5/12 md:flex md:flex-col md:justify-center">
+      <h2 class="text-dark_gray text-3xl font-bold mb-8">Jetez un coup d’œil à notre jeu !</h2>
+      <p class="text-dark_gray mb-8">
+
+        Toutes les cartes ont été conçues avec soin et rigueur. Chaque texte a été rédigé à la main, puis ajusté à la
+        suite de plusieurs sessions de test.
+        Jouez avec nous et sensibilisez tout en vous amusant&nbsp;!
+      </p>
+    </div>
+
+    <img class="w-full md:w-7/12 h-auto object-contain" src="/images/mille-bugs-card.png" alt="Cartes Milles Bugs">
+  </div>
+
+</section>
+
+<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 flex flex-col gap-24 bg-white">
+  <div class="container flex flex-col md:flex-row gap-12 md:gap-16">
+    <img class="w-full md:w-4/12 h-auto object-contain" src="/images/illu-print-and-play.svg" alt="Cartes Milles Bugs">
+    <div class="md:w-7/12 md:flex md:flex-col md:justify-center gap-8 md:gap-12">
+      <h2 class="text-dark_gray text-3xl font-bold mb-8">Print and play</h2>
+      <p class="text-dark_gray mb-8">
+        Le jeu est spécialement conçu pour les associations, les collectivités et les mairies engagées auprès des
+        seniors.
+        Nous mettons à disposition une version imprimable en PDF, comprenant les cartes à découper ainsi qu’un plateau
+        de
+        jeu au format A4 ou A5.
+      </p>
+      <a href="/pdf/impression-mille-bugs.pdf"
+        class="flex justify-center content-center w-full md:w-80 whitespace-nowrap border-2 border-primary btn-primary"
+        download>
+        <span class="whitespace-nowrap text-label">Télécharger le jeu ( 12,4 Mo PDF)</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="relative w-full min-h-[500px] bg-secondary flex items-center">
+  <div class="container flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+    <div class="md:w-2/3 flex flex-col justify-center">
+      <p class="text-white mb-4">
+        Il s'agit d'un projet réalisé par des étudiants de BUT Métiers du
+        Multimédia et de l’Internet à l’IUT Bordeaux Montaigne, université Bordeaux Montaigne.
+      </p>
+    </div>
+
+    <div class="md:w-1/3 flex flex-row justify-end items-center gap-12">
+      <img class="w-32 h-auto object-contain" src="/images/mmi-mille-bugs.svg" alt="Logo MMI">
+      <img class="w-24 h-auto object-contain" src="/images/logo-cybernetic.png" alt="Logo Cybernetic">
+    </div>
+  </div>
+</section>
+
+{{ end }}
