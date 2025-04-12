@@ -55,14 +55,13 @@
           {{ if .Params.advanced }}
           <small class="avancee-pastille py-2 px-6 h-fit block md:hidden rounded-full bg-red text-white">Avancé</small>
           {{ else }}
-          <small class="basic-pastille py-2 px-6 h-fit block md:hidden rounded-full text-white">Basique</small>
+          <small class="basic-pastille py-2 px-6 h-fit block md:hidden rounded-full bg-green text-white">Basique</small>
           {{ end }}
           {{ end }}
         </div>
         {{ end }}
       </div>
       <div class="w-full">
-        {{ if .Params.risks }}
         {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
         {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
         {{ if (gt (len $goodPracticesLinked) 0) }}
@@ -77,7 +76,7 @@
               {{ else if eq $niveau "essentiel" }}
               <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-yellow-500 text-white">Essentiel</small>
               {{ else if eq $niveau "basique" }}
-              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green-600 text-white">Basique</small>
+              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green text-white">Basique</small>
               {{ end }}
             </div>
             {{ end }}
@@ -94,9 +93,7 @@
               </div>
             </button>
             <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
-              {{ range .Params.risks }}
-              {{ .Params.dontDo | markdownify }}
-              {{ end }}
+              {{ .Params.risks | markdownify }}
             </div>
           </div>
           <div class="my-2">
@@ -118,7 +115,6 @@
           </div>
         </div>
       </div>
-      {{ end }}
     </div>
     {{ end }}
   </nav>
