@@ -8,7 +8,6 @@ slug:
   encoding: ascii
   clean_accents: true
 
-
 collections:
   - name: thematiques
     slug: "{{fields.uuid}}"
