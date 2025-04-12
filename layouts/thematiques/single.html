@@ -95,7 +95,7 @@
             </button>
             <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
               {{ range .Params.risks }}
-              <p>{{ . }}</p>
+              {{ .Params.dontDo | markdownify }}
               {{ end }}
             </div>
           </div>
