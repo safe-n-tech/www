@@ -71,18 +71,20 @@
             {{ range $goodPracticesLinked }}
             <div class="flex mb-12 justify-between gap-16">
               <p class="text-dark_gray font-bold">{{ .Title }}</p>
-              {{ if .Params.advanced }}
-              <small
-                class="avancee-pastille py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
-              {{ else }}
-              <small class="basic-pastille py-2 px-6 h-fit md:block hidden rounded-full text-white">Basique</small>
+              {{ $niveau := .Params.niveau }}
+              {{ if eq $niveau "avance" }}
+              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
+              {{ else if eq $niveau "essentiel" }}
+              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-yellow-500 text-white">Essentiel</small>
+              {{ else if eq $niveau "basique" }}
+              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green-600 text-white">Basique</small>
               {{ end }}
             </div>
             {{ end }}
           </nav>
         </div>
         {{ end }}
-
+        {{ end }}
 
         <div>
           <div class="my-2 mt-4">
@@ -121,6 +123,27 @@
     </div>
     {{ end }}
   </nav>
+  {{ end }}
+
+  {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+  {{ $goodPracticesByTheme := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
+
+  {{ if and (eq (len $vulnerabilitiesLinked) 0) (gt (len $goodPracticesByTheme) 0) }}
+  <div class="flex flex-col gap-6">
+    {{ range $goodPracticesByTheme }}
+    <div class="flex justify-between items-center p-6 rounded-xl bg-white shadow-sm">
+      <p class="text-dark_gray font-semibold">{{ .Title }}</p>
+      {{ $niveau := .Params.niveau }}
+      {{ if eq $niveau "avance" }}
+      <small class="py-2 px-6 rounded-full bg-red text-white">Avancé</small>
+      {{ else if eq $niveau "essentiel" }}
+      <small class="py-2 px-6 rounded-full bg-yellow-500 text-white">Essentiel</small>
+      {{ else if eq $niveau "basique" }}
+      <small class="py-2 px-6 rounded-full bg-green-600 text-white">Basique</small>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
   {{ end }}
 
 

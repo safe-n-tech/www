@@ -186,8 +186,15 @@ collections:
         multiple: true
         required: false
 
-      - { label: Contenu, name: body, required: false, widget: markdown }
-      - { label: Niveau avancé, name: advanced, required: false, widget: boolean }
+      - label: Niveau
+        name: niveau
+        widget: select
+        options:
+          - { label: Basique, value: basique }
+          - { label: Essentiel, value: essentiel }
+          - { label: Avancé, value: avance }
+        required: true
+
       - { label: Outil recommandé, name: tool, required: false, widget: text }
 
 
