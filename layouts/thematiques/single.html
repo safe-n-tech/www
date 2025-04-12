@@ -84,7 +84,6 @@
           </nav>
         </div>
         {{ end }}
-        {{ end }}
 
         <div>
           <div class="my-2 mt-4">
@@ -124,163 +123,163 @@
     {{ end }}
   </nav>
   {{ end }}
+</section>
 
-  {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-  {{ $goodPracticesByTheme := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
 
-  {{ if and (eq (len $vulnerabilitiesLinked) 0) (gt (len $goodPracticesByTheme) 0) }}
-  <div class="flex flex-col gap-6">
-    {{ range $goodPracticesByTheme }}
-    <div class="flex justify-between items-center p-6 rounded-xl bg-white shadow-sm">
-      <p class="text-dark_gray font-semibold">{{ .Title }}</p>
-      {{ $niveau := .Params.niveau }}
-      {{ if eq $niveau "avance" }}
-      <small class="py-2 px-6 rounded-full bg-red text-white">Avancé</small>
-      {{ else if eq $niveau "essentiel" }}
-      <small class="py-2 px-6 rounded-full bg-yellow-500 text-white">Essentiel</small>
-      {{ else if eq $niveau "basique" }}
-      <small class="py-2 px-6 rounded-full bg-green-600 text-white">Basique</small>
+{{ $allGoodPractices := (where .Site.Pages "Section" "good-practices") }}
+<section class="container text-dark_gray mt-20 mb-20">
+  <nav class="grid-good-practice mt-5 grid-cols-1">
+    {{ range $allGoodPractices }}
+    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
+      <div class="flex flex-row items-center justify-between  md:items-start">
+        <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}"
+          data-id="{{ .Params.uuid }}">
+        <h3 class="text-h3 font-bold mb-2">{{ .Title }}</h3>
+        <p class="text-sm text-gray-600">{{ .Params.description }}</p>
+        {{ if .Params.niveau }}
+        <small class="py-1 px-3 rounded-full text-white {{ if eq .Params.niveau " avance" }}bg-red{{ else if eq
+          .Params.niveau "essentiel" }}bg-yellow-500{{ else }}bg-green-600{{ end }}">
+          {{ .Params.niveau | title }}
+        </small>
+        {{ end }}
+      </div>
       {{ end }}
-    </div>
-    {{ end }}
-  </div>
-  {{ end }}
+
+  </nav>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const thematiqueId = document.body.getAttribute('data-page-id');
 
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const thematiqueId = document.body.getAttribute('data-page-id');
+    const checkboxes = document.querySelectorAll(`.progress-checkbox[data-thematique="${thematiqueId}"]`);
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercentage = document.getElementById('progress-percentage');
+    const progressCounter = document.getElementById('progress-counter');
 
 
-      const checkboxes = document.querySelectorAll(`.progress-checkbox[data-thematique="${thematiqueId}"]`);
-      const progressBar = document.getElementById('progress-bar');
-      const progressPercentage = document.getElementById('progress-percentage');
-      const progressCounter = document.getElementById('progress-counter');
+    function loadChecklistState() {
+      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+      checkboxes.forEach((checkbox, index) => {
+        checkbox.checked = state[index] || false;
+      });
+      updateProgress();
+    }
 
 
-      function loadChecklistState() {
-        const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
-        checkboxes.forEach((checkbox, index) => {
-          checkbox.checked = state[index] || false;
-        });
+    function saveChecklistState() {
+      const state = Array.from(checkboxes).map(checkbox => checkbox.checked);
+      localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
+    }
+
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
+      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
+
+
+      progressBar.style.width = `${percentage}%`;
+      progressPercentage.textContent = `${percentage}%`;
+
+
+      progressCounter.textContent = `${checked}/${total}`;
+      progressPercentage.textContent = `${percentage}%`;
+    }
+
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', () => {
+        saveChecklistState();
         updateProgress();
-      }
-
-
-      function saveChecklistState() {
-        const state = Array.from(checkboxes).map(checkbox => checkbox.checked);
-        localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
-      }
-
-
-      function updateProgress() {
-        const total = checkboxes.length;
-        const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
-        const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-
-
-        progressBar.style.width = `${percentage}%`;
-        progressPercentage.textContent = `${percentage}%`;
-
-
-        progressCounter.textContent = `${checked}/${total}`;
-        progressPercentage.textContent = `${percentage}%`;
-      }
-
-
-      checkboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', () => {
-          saveChecklistState();
-          updateProgress();
-        });
-      });
-
-
-      loadChecklistState();
-    });
-
-
-    document.addEventListener('DOMContentLoaded', function () {
-      const dropDownItems = document.querySelectorAll(".drop-down__item");
-
-
-      dropDownItems.forEach((item) => {
-        item.addEventListener("click", () => {
-          item.nextElementSibling.classList.toggle("hidden");
-          item.querySelector("img").classList.toggle("rotate-90");
-        });
       });
     });
 
-    document.addEventListener('DOMContentLoaded', function () {
-      const checkboxes = document.querySelectorAll('.progress-checkbox');
 
-      function loadChecklistState() {
-        const checklistState = JSON.parse(localStorage.getItem('checklistState')) || {};
-        checkboxes.forEach((checkbox) => {
-          const parentDiv = checkbox.closest('.rounded-md');
-          const checkboxId = checkbox.getAttribute('data-id');
+    loadChecklistState();
+  });
 
-          checkbox.checked = checklistState[checkboxId]?.checked || false;
 
-          if (checkbox.checked) {
-            parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
-          } else {
-            parentDiv.style.backgroundColor = 'white';
-          }
-        });
-      }
+  document.addEventListener('DOMContentLoaded', function () {
+    const dropDownItems = document.querySelectorAll(".drop-down__item");
 
-      function saveChecklistState() {
-        const checklistState = {};
-        checkboxes.forEach((checkbox) => {
-          const checkboxId = checkbox.getAttribute('data-id');
-          const parentDiv = checkbox.closest('.rounded-md');
 
-          checklistState[checkboxId] = {
-            checked: checkbox.checked,
-            color: checkbox.checked ? 'rgb(213, 241, 207)' : 'white',
-          };
-        });
-        localStorage.setItem('checklistState', JSON.stringify(checklistState));
-      }
+    dropDownItems.forEach((item) => {
+      item.addEventListener("click", () => {
+        item.nextElementSibling.classList.toggle("hidden");
+        item.querySelector("img").classList.toggle("rotate-90");
+      });
+    });
+  });
 
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.progress-checkbox');
+
+    function loadChecklistState() {
+      const checklistState = JSON.parse(localStorage.getItem('checklistState')) || {};
       checkboxes.forEach((checkbox) => {
         const parentDiv = checkbox.closest('.rounded-md');
+        const checkboxId = checkbox.getAttribute('data-id');
 
-        checkbox.addEventListener('change', () => {
-          if (checkbox.checked) {
-            parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
-          } else {
-            parentDiv.style.backgroundColor = 'white';
-          }
-          saveChecklistState();
-        });
+        checkbox.checked = checklistState[checkboxId]?.checked || false;
+
+        if (checkbox.checked) {
+          parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
+        } else {
+          parentDiv.style.backgroundColor = 'white';
+        }
       });
+    }
 
-      loadChecklistState();
+    function saveChecklistState() {
+      const checklistState = {};
+      checkboxes.forEach((checkbox) => {
+        const checkboxId = checkbox.getAttribute('data-id');
+        const parentDiv = checkbox.closest('.rounded-md');
+
+        checklistState[checkboxId] = {
+          checked: checkbox.checked,
+          color: checkbox.checked ? 'rgb(213, 241, 207)' : 'white',
+        };
+      });
+      localStorage.setItem('checklistState', JSON.stringify(checklistState));
+    }
+
+    checkboxes.forEach((checkbox) => {
+      const parentDiv = checkbox.closest('.rounded-md');
+
+      checkbox.addEventListener('change', () => {
+        if (checkbox.checked) {
+          parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
+        } else {
+          parentDiv.style.backgroundColor = 'white';
+        }
+        saveChecklistState();
+      });
     });
-  </script>
 
-  <style>
-    .progress-container {
-      width: 100%;
-      height: 20px;
-      background-color: white;
-      border-radius: 10px;
-      overflow: hidden;
-      position: relative;
-      padding: 2px;
-    }
+    loadChecklistState();
+  });
+</script>
 
-    .progress-bar {
-      height: 100%;
-      background-color: #153E60;
-      width: 0;
-      transition: width 0.3s ease;
-      border-radius: 10px;
-    }
-  </style>
+<style>
+  .progress-container {
+    width: 100%;
+    height: 20px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    padding: 2px;
+  }
 
-</section>
+  .progress-bar {
+    height: 100%;
+    background-color: #153E60;
+    width: 0;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+  }
+</style>
+
 {{ end }}
