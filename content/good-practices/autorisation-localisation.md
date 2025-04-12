@@ -6,6 +6,6 @@ title: Réglez vos paramètres pour n’autoriser la localisation de votre appar
   permet de contrôler quand votre localisation est partagée et d'éviter de la
   divulguer sans nécessité.
 slug: autorisation-localisation
-thematique: thematique-kW-FytF1BDPDcjYzpVQvr
+thematique: thematique-qP7AaYEirvtU1XIjwcSea
 niveau: essentiel
 ---
