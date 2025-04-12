@@ -161,7 +161,7 @@ collections:
 
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
 
-      - { label: Slug court (automatiquement utilisé dans l’URL), name: slug, required: true, pattern: ['^.{0,60}$', "Maximum 60 caractères"] }
+      - { label: Slug personnalisé (court, utilisé pour l’URL), name: slug, required: true, pattern: ['^.{1,60}$', "Maximum 60 caractères"] }
 
       - label: Thématique
         name: thematique
