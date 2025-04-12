@@ -13,6 +13,9 @@ params:
     hero: /sprites/hero-min.jpg
     logo: /sprites/logo-min.png
 
+slug:
+  truncate: 50
+  
 taxonomies:
   # disable all taxonomies
 

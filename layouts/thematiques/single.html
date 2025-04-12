@@ -122,31 +122,40 @@
     </div>
     {{ end }}
   </nav>
+  {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+  {{ $goodPracticesByTheme := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
+
+  {{ $linkedUUIDs := slice }}
+  {{ range $vulnerabilitiesLinked }}
+  {{ range .Params.goodPractices }}
+  {{ $linkedUUIDs = $linkedUUIDs | append . }}
+  {{ end }}
+  {{ end }}
+
+  {{ $standalonePractices := where $goodPracticesByTheme ".Params.uuid" "not in" $linkedUUIDs }}
+
+  {{ if gt (len $standalonePractices) 0 }}
+  <div class="flex flex-col gap-6 mt-20">
+    {{ range $standalonePractices }}
+    <div class="flex justify-between items-center p-6 rounded-xl bg-white shadow-sm">
+      <p class="text-dark_gray font-semibold">{{ .Title }}</p>
+      {{ $niveau := .Params.niveau }}
+      {{ if eq $niveau "avance" }}
+      <small class="py-2 px-6 rounded-full bg-red text-white">Avancé</small>
+      {{ else if eq $niveau "essentiel" }}
+      <small class="py-2 px-6 rounded-full bg-yellow-500 text-white">Essentiel</small>
+      {{ else if eq $niveau "basique" }}
+      <small class="py-2 px-6 rounded-full bg-green-600 text-white">Basique</small>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+
   {{ end }}
 </section>
 
 
-{{ $allGoodPractices := (where .Site.Pages "Section" "good-practices") }}
-<section class="container text-dark_gray mt-20 mb-20">
-  <nav class="grid-good-practice mt-5 grid-cols-1">
-    {{ range $allGoodPractices }}
-    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
-      <div class="flex flex-row items-center justify-between  md:items-start">
-        <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}"
-          data-id="{{ .Params.uuid }}">
-        <h3 class="text-h3 font-bold mb-2">{{ .Title }}</h3>
-        <p class="text-sm text-gray-600">{{ .Params.description }}</p>
-        {{ if .Params.niveau }}
-        <small class="py-1 px-3 rounded-full text-white {{ if eq .Params.niveau " avance" }}bg-red{{ else if eq
-          .Params.niveau "essentiel" }}bg-yellow-500{{ else }}bg-green-600{{ end }}">
-          {{ .Params.niveau | title }}
-        </small>
-        {{ end }}
-      </div>
-      {{ end }}
-
-  </nav>
-</section>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const thematiqueId = document.body.getAttribute('data-page-id');
