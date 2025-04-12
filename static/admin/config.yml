@@ -87,7 +87,7 @@ collections:
 
       - label: Risques
         name: risks
-        widget: list
+        widget: markdown
         required: false
 
       - label: Bonnes pratiques
