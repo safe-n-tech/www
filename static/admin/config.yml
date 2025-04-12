@@ -113,7 +113,7 @@ collections:
       - { label: "Ne pas faire", name: dontDo, widget: markdown, required: false }
 
   - name: good-practices
-    slug: "{{fields.uuid}}"
+    slug: "{{fields.slug | default: fields.uuid}}"
     label: Bonnes pratiques
     label_singular: Bonne pratique
     folder: content/good-practices
@@ -160,6 +160,8 @@ collections:
       - { label: 'UUID', name: 'uuid', widget: uuid, prefix: "good-practice" }
 
       - { label: Titre, name: title, pattern: ['.{0,100}', "Maximum 100 caractères"] }
+
+      - { label: Slug court (automatiquement utilisé dans l’URL), name: slug, required: true, pattern: ['^.{0,60}$', "Maximum 60 caractères"] }
 
       - label: Thématique
         name: thematique
