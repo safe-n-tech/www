@@ -1,6 +1,7 @@
 {{ define "main" }}
 
-<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+<section
+  class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat bg-secondary flex flex-col align-center px-4 text-white">
   <div class="max-w-md md:ml-12 mt-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
@@ -74,7 +75,7 @@
               {{ if eq $niveau "avance" }}
               <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
               {{ else if eq $niveau "essentiel" }}
-              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-yellow-500 text-white">Essentiel</small>
+              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-blue-500 text-white">Essentiel</small>
               {{ else if eq $niveau "basique" }}
               <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green text-white">Basique</small>
               {{ end }}
