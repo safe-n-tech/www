@@ -49,11 +49,11 @@ a {
   }
 
   .btn-primary {
-    @apply text-white bg-white text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2;
+    @apply text-[#153E60] bg-white text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2 border-white;
   }
 
   .btn-primary:hover {
-    @apply bg-white text-primary border-white;
+    @apply bg-[#153E60] text-white border-white;
   }
 
   .btn-secondary {
