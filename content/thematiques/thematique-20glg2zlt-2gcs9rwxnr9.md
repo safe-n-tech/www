@@ -2,13 +2,8 @@
 visibleInCms: true
 uuid: thematique-20gLG2zLt-2gCs9rWXnr9
 title: Appareils mobiles
-<<<<<<< Updated upstream
-icon: wifi-et-bluetooth.svg
 videoUrl: ""
-=======
 icon: appareils-mobiles.png
-videoUrl: https://youtu.be/G4t5JZFXx6Y
->>>>>>> Stashed changes
 subtitle: '"Le smartphone : l’espion que vous tenez vous-même."'
 description: La sécurité des appareils mobiles repose sur le verrouillage de
   l’accès, les mises à jour régulières, l’installation d’applications fiables,
