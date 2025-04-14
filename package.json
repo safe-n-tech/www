@@ -11,10 +11,10 @@
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^4.x",
-        "autoprefixer": "^10.x",
+        "autoprefixer": "^10.4.21",
         "concurrently": "^9.1.2",
-        "postcss": "^8.x",
+        "postcss": "^8.5.3",
         "postcss-cli": "^10.x",
-        "tailwindcss": "^3.2.1"
+        "tailwindcss": "^3.4.17"
     }
 }

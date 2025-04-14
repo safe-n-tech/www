@@ -4,7 +4,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@tailwind variants;
 
 a {
   text-decoration: none;
@@ -50,7 +49,7 @@ a {
   }
 
   .btn-primary {
-    @apply text-white bg-primary text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2 border-primary;
+    @apply text-white bg-white text-base md:text-xl rounded-xl font-semibold px-5 py-4 border-2;
   }
 
   .btn-primary:hover {
