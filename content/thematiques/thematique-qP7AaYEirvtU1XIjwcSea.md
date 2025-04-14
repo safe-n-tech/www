@@ -1,7 +1,7 @@
 ---
 visibleInCms: true
 uuid: thematique-qP7AaYEirvtU1XIjwcSea
-title: Déplacements
+title: En déplacement / Sécurité physique
 icon: deplacements.svg
 videoUrl: https://www.youtube.com/embed/Dt9zWEE3BZE
 subtitle: “En déplacement, la vigilance est de mise.”
