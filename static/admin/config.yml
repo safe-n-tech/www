@@ -73,6 +73,9 @@ collections:
       - label: Appareils mobiles
         field: thematiques
         pattern: Appareils mobiles
+      - label: Maison intelligente
+        field: thematiques
+        pattern: Maison intelligente
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 
@@ -160,6 +163,9 @@ collections:
       - label: Appareils mobiles
         field: thematiques
         pattern: Appareils mobiles
+      - label: Maison intelligente
+        field: thematiques
+        pattern: Maison intelligente
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 
@@ -266,6 +272,9 @@ collections:
       - label: Appareils mobiles
         field: thematiques
         pattern: Appareils mobiles
+      - label: Maison intelligente
+        field: thematiques
+        pattern: Maison intelligente
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 
