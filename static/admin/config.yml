@@ -70,6 +70,9 @@ collections:
       - label: Wifi et bluetooth
         field: thematiques
         pattern: Wifi et bluetooth
+      - label: Appareils mobiles
+        field: thematiques
+        pattern: Appareils mobiles
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 
@@ -154,6 +157,9 @@ collections:
       - label: Wifi et bluetooth
         field: thematiques
         pattern: Wifi et bluetooth
+      - label: Appareils mobiles
+        field: thematiques
+        pattern: Appareils mobiles
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 
@@ -257,6 +263,9 @@ collections:
       - label: Wifi et bluetooth
         field: thematiques
         pattern: Wifi et bluetooth
+      - label: Appareils mobiles
+        field: thematiques
+        pattern: Appareils mobiles
     fields:
       - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
 

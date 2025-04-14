@@ -53,7 +53,7 @@ a {
   }
 
   .btn-primary:hover {
-    @apply bg-[#153E60] text-white border-white;
+    @apply bg-[#153E60] text-white border-2 border-white;
   }
 
   .btn-secondary {
