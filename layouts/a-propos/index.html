@@ -1,5 +1,6 @@
 {{ define "main" }}
-<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+<section
+  class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat flex flex-col align-center px-4 bg-secondary text-white">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
@@ -7,41 +8,65 @@
   <p class="w-fit mb-20 mx-auto my-7">Qui sont les fondateurs de ce projet ? Quelle est l'origine de cette idée ?
     Apprenez-en davantage sur l'équipe de Safe N’ Tech.</p>
   </div>
- </section>
+</section>
 
 
 <section class="container text-dark_gray flex flex-col gap-8 py-16">
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">A l’origine du projet</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>À l’origine du projet, un constat simple : la nécessité d’ancrer de bonnes pratiques informatiques dans notre routine quotidienne pour éviter de nous exposer à des risques et menaces en ligne. Avec l’avènement des nouvelles technologies, adopter une “hygiène informatique” devient un enjeu capital.</p>
-      <p>Si les entreprises ont initié des actions de sensibilisation et commencé à former leurs propres acteurs aux défis de la cybersécurité, les particuliers demeurent souvent une cible privilégiée des exactions malveillantes, étant moins avisés, documentés ou encore accompagnés sur les préjudices qu’ils peuvent subir.</p>
-      <p>Cette plateforme à donc pour but d’informer sur les risques encourus et les conséquences concrètes auxquels ils s’exposent. En effet, bien souvent, les individus ne se sentent pas concernés par la thématique tant qu’ils n’ont pas été eux-mêmes victimes d’un piratage quel qu’il soit. C’est pourquoi l’accent est mis sur des mises en situations qui se veulent explicites et accessibles à tous. L’objectif ? Que tout le monde prenne conscience de la simplicité des actions à mettre en place pour se protéger.</p>
+      <p>À l’origine du projet, un constat simple : la nécessité d’ancrer de bonnes pratiques informatiques dans notre
+        routine quotidienne pour éviter de nous exposer à des risques et menaces en ligne. Avec l’avènement des
+        nouvelles technologies, adopter une “hygiène informatique” devient un enjeu capital.</p>
+      <p>Si les entreprises ont initié des actions de sensibilisation et commencé à former leurs propres acteurs aux
+        défis de la cybersécurité, les particuliers demeurent souvent une cible privilégiée des exactions malveillantes,
+        étant moins avisés, documentés ou encore accompagnés sur les préjudices qu’ils peuvent subir.</p>
+      <p>Cette plateforme à donc pour but d’informer sur les risques encourus et les conséquences concrètes auxquels ils
+        s’exposent. En effet, bien souvent, les individus ne se sentent pas concernés par la thématique tant qu’ils
+        n’ont pas été eux-mêmes victimes d’un piratage quel qu’il soit. C’est pourquoi l’accent est mis sur des mises en
+        situations qui se veulent explicites et accessibles à tous. L’objectif ? Que tout le monde prenne conscience de
+        la simplicité des actions à mettre en place pour se protéger.</p>
     </div>
   </div>
 
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">Fonctionnement du site</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Cette plateforme met à votre disposition plusieurs onglets dans lesquels vous pouvez retrouver certains des comportements maladroits voire préjudiciables que vous tenez en ligne et qui vous exposent à de grands risques.</p>
-      <p>Ces points de vulnérabilité vous sont détaillés et leurs conséquences expliquées. Enfin, vous avez accès aux bonnes pratiques à mettre en place pour remplacer vos mauvaises habitudes et agir en toute sécurité. Toutes ces informations sont classées par thématiques afin de vous permettre de mieux comprendre l’étendue des domaines concernés par l’hygiène informatique.</p>
+      <p>Cette plateforme met à votre disposition plusieurs onglets dans lesquels vous pouvez retrouver certains des
+        comportements maladroits voire préjudiciables que vous tenez en ligne et qui vous exposent à de grands risques.
+      </p>
+      <p>Ces points de vulnérabilité vous sont détaillés et leurs conséquences expliquées. Enfin, vous avez accès aux
+        bonnes pratiques à mettre en place pour remplacer vos mauvaises habitudes et agir en toute sécurité. Toutes ces
+        informations sont classées par thématiques afin de vous permettre de mieux comprendre l’étendue des domaines
+        concernés par l’hygiène informatique.</p>
     </div>
   </div>
 
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">Les thématiques</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Les bonnes pratiques sont un ensemble de conseils que vous pouvez adopter pour sécuriser l’usage que vous faites de l’informatique et des outils numériques. Ces conseils se veulent avant tout constructifs et bienveillants. L’objectif est de sécuriser la navigation des utilisateurs sans que cela ne soit contraignant. Les bonnes pratiques sont parfois accompagnées d’outils pour vous aider à les adopter le plus simplement possible.</p>
+      <p>Les bonnes pratiques sont un ensemble de conseils que vous pouvez adopter pour sécuriser l’usage que vous
+        faites de l’informatique et des outils numériques. Ces conseils se veulent avant tout constructifs et
+        bienveillants. L’objectif est de sécuriser la navigation des utilisateurs sans que cela ne soit contraignant.
+        Les bonnes pratiques sont parfois accompagnées d’outils pour vous aider à les adopter le plus simplement
+        possible.</p>
     </div>
   </div>
 
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">Le test</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>L’onglet “quiz”, vous permet de tester votre hygiène informatique. Répondez le plus honnêtement possible aux questions. L’objectif est simplement d’auto-évaluer vos pratiques et de voir comment vous pourriez les améliorer grâce à de bonnes pratiques.</p>
-      <p>En répondant aux questions, un score vous sera attribué. Ce résultat indicatif vous permet de vous situer et d’évaluer votre vulnérabilité face aux risques informatiques. Toute réponse erronée est l’opportunité de mieux comprendre vos points d’amélioration et de les mettre en action.</p>
-      <p>Vous pouvez également refaire ce quiz régulièrement pour tester de nouveau votre hygiène informatique après avoir adopté de nouvelles habitudes !</p>
-      <p>N’hésitez pas à partager votre score avec vos amis, votre famille, sur les réseaux sociaux… Il est important qu’un large panel de personnes réalisent cette auto-évaluation pour sensibiliser toutes les générations à ces questions primordiales.</p>
+      <p>L’onglet “quiz”, vous permet de tester votre hygiène informatique. Répondez le plus honnêtement possible aux
+        questions. L’objectif est simplement d’auto-évaluer vos pratiques et de voir comment vous pourriez les améliorer
+        grâce à de bonnes pratiques.</p>
+      <p>En répondant aux questions, un score vous sera attribué. Ce résultat indicatif vous permet de vous situer et
+        d’évaluer votre vulnérabilité face aux risques informatiques. Toute réponse erronée est l’opportunité de mieux
+        comprendre vos points d’amélioration et de les mettre en action.</p>
+      <p>Vous pouvez également refaire ce quiz régulièrement pour tester de nouveau votre hygiène informatique après
+        avoir adopté de nouvelles habitudes !</p>
+      <p>N’hésitez pas à partager votre score avec vos amis, votre famille, sur les réseaux sociaux… Il est important
+        qu’un large panel de personnes réalisent cette auto-évaluation pour sensibiliser toutes les générations à ces
+        questions primordiales.</p>
     </div>
   </div>
 </section>

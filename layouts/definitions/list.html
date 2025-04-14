@@ -1,5 +1,6 @@
 {{ define "main" }}
-<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+<section
+	class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat bg-secondary flex flex-col align-center px-4 bg-secondary text-white">
 	<div class="max-w-md md:ml-12 my-20">
 		{{ partial "breadcrumb" (dict "page" . ) }}
 	</div>

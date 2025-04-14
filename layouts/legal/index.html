@@ -1,21 +1,26 @@
 {{ define "seoRobots" }}
-    <meta name="robots" content="noindex">
+<meta name="robots" content="noindex">
 {{ end }}
 
 {{ define "main" }}
-<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+<section
+  class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat flex flex-col align-center px-4 bg-secondary text-white">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
   <h1 class="h1 mb-20 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg">{{ .Title }}</h1>
   </div>
- </section>
+</section>
 
 <section class="container text-dark_gray flex flex-col gap-8 py-16">
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">1. Édition du site</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <div>En vertu de <a class="color-blue underline" href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164#LEGIARTI000042038977">l'article 6 de la loi n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'économie numérique, il est précisé aux utilisateurs du site internet Safe N’Tech l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi:
+      <div>En vertu de <a class="color-blue underline"
+          href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000801164#LEGIARTI000042038977">l'article 6 de la loi
+          n° 2004-575 du 21 juin 2004</a> pour la confiance dans l'économie numérique, il est précisé aux utilisateurs
+        du site internet Safe N’Tech l'identité des différents intervenants dans le cadre de sa réalisation et de son
+        suivi:
       </div>
 
       <div>
@@ -30,116 +35,149 @@
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">2. Propriété intellectuelle et contrefaçons</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne est propriétaire des droits de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.</p>
-      <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable du département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne.</p>
-      <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des <a class="color-blue underline" href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032655082">articles L.335-2 et suivants du Code de Propriété Intellectuelle</a>.</p>
+      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne est propriétaire des droits
+        de propriété intellectuelle et détient les droits d’usage sur tous les éléments accessibles sur le site
+        internet, notamment les textes, images, graphismes, logos, vidéos, architecture, icônes et sons.</p>
+      <p>Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du
+        site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable
+        du département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne.</p>
+      <p>Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée
+        comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des <a
+          class="color-blue underline"
+          href="https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000032655082">articles L.335-2 et suivants du
+          Code de Propriété Intellectuelle</a>.</p>
     </div>
   </div>
 
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">3. Limitations de responsabilité</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a></p>
-      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a></p>
-      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne s’engage à sécuriser au mieux le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a>, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu.</p>
-      <p>Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données.</p>
-      <p>Le cas échéant, le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).</p>
+      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne ne pourra être tenu pour
+        responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site <a
+          class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a></p>
+      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne décline toute responsabilité
+        quant à l’utilisation qui pourrait être faite des informations et contenus présents sur <a
+          class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a></p>
+      <p>Le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne s’engage à sécuriser au mieux
+        le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a>, cependant sa
+        responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son
+        site à son insu.</p>
+      <p>Des espaces interactifs (espace contact ou commentaires) sont à la disposition des utilisateurs. Le département
+        Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne se réserve le droit de supprimer, sans mise
+        en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en
+        France, en particulier aux dispositions relatives à la protection des données.</p>
+      <p>Le cas échéant, le département Métiers du Multimédia et de l’Internet de l’IUT Bordeaux Montaigne se réserve
+        également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en
+        cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé
+        (texte, photographie …).</p>
     </div>
   </div>
 
   <div class="flex flex-col gap-4">
     <h2 class="bg-white px-12 py-8 rounded-lg font-bold">4. CNIL et gestion des données personnelles</h2>
     <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Conformément aux dispositions de la <a class="color-blue underline" href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000886460">loi 78-17 du 6 janvier 1978</a> modifiée, l’utilisateur du site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> dispose d’un droit d’accès, de modification et de suppression des informations collectées.</p>
-  </div>
-
-  <div class="flex flex-col gap-4">
-    <h2 class="bg-white px-12 py-8 rounded-lg font-bold">5. Liens hypertextes et cookies</h2>
-    <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a>.</p>
-      <p>La navigation sur le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.</p>
-      <p>Un "cookie" est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par exemple.</p>
-      <p>Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur. Aucun cookie ne sera déposé sans votre consentement.</p>
+      <p>Conformément aux dispositions de la <a class="color-blue underline"
+          href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000886460">loi 78-17 du 6 janvier 1978</a> modifiée,
+        l’utilisateur du site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a>
+        dispose d’un droit d’accès, de modification et de suppression des informations collectées.</p>
     </div>
-  </div>
 
-  <div class="flex flex-col gap-4">
-    <h2 class="bg-white px-12 py-8 rounded-lg font-bold">6. Droit applicable et attribution de juridiction</h2>
-    <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <p>Tout litige en relation avec l’utilisation du site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> est soumis au droit français. En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents.</p>
+    <div class="flex flex-col gap-4">
+      <h2 class="bg-white px-12 py-8 rounded-lg font-bold">5. Liens hypertextes et cookies</h2>
+      <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
+        <p>Le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> contient des
+          liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des
+          liens créés par d’autres sites vers <a class="color-blue underline"
+            href="https://safe-n-tech.netlify.app/">Safe N'Tech</a>.</p>
+        <p>La navigation sur le site <a class="color-blue underline" href="https://safe-n-tech.netlify.app/">Safe
+            N'Tech</a> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.</p>
+        <p>Un "cookie" est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un
+          utilisateur sur un site. Les données ainsi obtenues permettent d'obtenir des mesures de fréquentation, par
+          exemple.</p>
+        <p>Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre
+          navigateur. Aucun cookie ne sera déposé sans votre consentement.</p>
+      </div>
     </div>
-  </div>
 
-  <div class="flex flex-col gap-4">
-    <h2 class="bg-white px-12 py-8 rounded-lg font-bold">7. Crédits</h2>
-    <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
-      <div>
-        <h3 class="font-semibold mb-2">Chefs de projet</h3>
-        <p>Lucas Duverneuil</p>
-        <p>Camille Surget</p>
+    <div class="flex flex-col gap-4">
+      <h2 class="bg-white px-12 py-8 rounded-lg font-bold">6. Droit applicable et attribution de juridiction</h2>
+      <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
+        <p>Tout litige en relation avec l’utilisation du site <a class="color-blue underline"
+            href="https://safe-n-tech.netlify.app/">Safe N'Tech</a> est soumis au droit français. En dehors des cas où
+          la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents.</p>
       </div>
+    </div>
 
-      <div>
-        <h3 class="font-semibold mb-2">Développement/Intégration</h3>
-        <p>Simon Daguet-Kargl</p>
-        <p>Billel Tighidet</p>
-        <p>Louis Le Doussal</p>
-        <p>Arthaud Proust</p>
-        <p>Francia Bidzimou</p>
-        <p>Auréliane Dor</p>
-        <p>Nehémia Telusma</p>
-        <p>Louis Lasserre</p>
-        <p>Maxime Lust</p>
-        <p>Samuel Abadie</p>
-      </div>
-
-      <div>
-        <h3 class="font-semibold mb-2">Design, UX/UI</h3>
-        <p>Thomas Riquier</p>
-        <p>Edgard Quéméré</p>
-        <p>Tya Mazière</p>
-        <p>Alexis Juhel</p>
-        <p>Antoine Corberand</p>
-        <p>Cléo Laffargue</p>
-        <p>Anais Akkouche</p>
-        <p>Ly Luu Boriès</p>
-        <p>Leïly Coquard Misono</p>
-        <p>Jason Nago</p>
-        <p>Lucas Froidefond</p>
-        <p>Paul Reynier</p>
-        <p>Mathéo Reulier</p>
-        <p>Mikail Dumulu</p>
-      </div>
-
-      <div>
-        <h3 class="font-semibold mb-2">Audiovisuel</h3>
-        <p>Killian Jaffrelot</p>
-        <p>Clara Manhes</p>
-        <p>Audrey Millot</p>
-        <p>Camille Fourcade Palmier</p>
-        <p>Noé Braud</p>
-        <p>Maxence Cuillierier</p>
-        <p>Maxime Rebierre</p>
-        <p>Lilou Lopez Guilloret</p>
-      </div>
-
-      <div>
-        <h3 class="font-semibold mb-2">Rédaction/Contenus</h3>
+    <div class="flex flex-col gap-4">
+      <h2 class="bg-white px-12 py-8 rounded-lg font-bold">7. Crédits</h2>
+      <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6">
         <div>
-          <p>Peyo Suire</p>
-          <p>Thomas Marilleau</p>
-          <p>François Dacamara</p>
-          <p>Louna Charrieau</p>
-          <p>Anais Delavier</p>
-          <p>Perrine Joly</p>
-          <p>Alexandra Mallard</p>
-          <p>Chloé Leruez</p>
-          <p>Lucile Gouvenel</p>
+          <h3 class="font-semibold mb-2">Chefs de projet</h3>
+          <p>Lucas Duverneuil</p>
+          <p>Camille Surget</p>
         </div>
-      </div>
 
+        <div>
+          <h3 class="font-semibold mb-2">Développement/Intégration</h3>
+          <p>Simon Daguet-Kargl</p>
+          <p>Billel Tighidet</p>
+          <p>Louis Le Doussal</p>
+          <p>Arthaud Proust</p>
+          <p>Francia Bidzimou</p>
+          <p>Auréliane Dor</p>
+          <p>Nehémia Telusma</p>
+          <p>Louis Lasserre</p>
+          <p>Maxime Lust</p>
+          <p>Samuel Abadie</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold mb-2">Design, UX/UI</h3>
+          <p>Thomas Riquier</p>
+          <p>Edgard Quéméré</p>
+          <p>Tya Mazière</p>
+          <p>Alexis Juhel</p>
+          <p>Antoine Corberand</p>
+          <p>Cléo Laffargue</p>
+          <p>Anais Akkouche</p>
+          <p>Ly Luu Boriès</p>
+          <p>Leïly Coquard Misono</p>
+          <p>Jason Nago</p>
+          <p>Lucas Froidefond</p>
+          <p>Paul Reynier</p>
+          <p>Mathéo Reulier</p>
+          <p>Mikail Dumulu</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold mb-2">Audiovisuel</h3>
+          <p>Killian Jaffrelot</p>
+          <p>Clara Manhes</p>
+          <p>Audrey Millot</p>
+          <p>Camille Fourcade Palmier</p>
+          <p>Noé Braud</p>
+          <p>Maxence Cuillierier</p>
+          <p>Maxime Rebierre</p>
+          <p>Lilou Lopez Guilloret</p>
+        </div>
+
+        <div>
+          <h3 class="font-semibold mb-2">Rédaction/Contenus</h3>
+          <div>
+            <p>Peyo Suire</p>
+            <p>Thomas Marilleau</p>
+            <p>François Dacamara</p>
+            <p>Louna Charrieau</p>
+            <p>Anais Delavier</p>
+            <p>Perrine Joly</p>
+            <p>Alexandra Mallard</p>
+            <p>Chloé Leruez</p>
+            <p>Lucile Gouvenel</p>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
 </section>
 
 {{ end }}

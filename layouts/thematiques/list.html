@@ -1,5 +1,6 @@
 {{ define "main" }}
-<section class="relative flex flex-col align-center px-4 bg-secondary text-white">
+<section
+  class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat flex flex-col align-center px-4 bg-secondary text-white">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
@@ -20,7 +21,8 @@
           <span id="checkbox-counter-{{ $thematique.Params.uuid }}" class="text-dark_gray text-label"></span>
         </div>
         <div class="flex flex-row-reverse gap-2 w-full items-center">
-          <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-secondary font-bold"></p>
+          <p id="progress-percentage-{{ $thematique.Params.uuid }}"
+            class="text-center min-w-10 text-secondary font-bold"></p>
           <div class=" gap-2 w-full items-center">
             <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-dark_gray"></p>
             <div class="progress-container">
@@ -54,10 +56,10 @@
     transition: width 0.3s ease;
     border-radius: 10px;
   }
- </style>
+</style>
 
 
- <script>
+<script>
   document.addEventListener('DOMContentLoaded', function () {
     const thematiques = document.querySelectorAll('.progress-container');
 
@@ -78,5 +80,5 @@
       checkboxCounter.textContent = `${checked}/${total}`;
     });
   });
- </script>
+</script>
 {{ end }}
