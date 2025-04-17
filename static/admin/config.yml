@@ -201,10 +201,7 @@ collections:
           - { label: Essentiel, value: essentiel }
           - { label: Avancé, value: avance }
         required: true
-
-      - { label: Outil recommandé, name: tool, required: false, widget: text }
-
-
+        
 
   - name: definitions
     slug: "{{fields.uuid}}"

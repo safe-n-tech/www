@@ -1,13 +1,26 @@
 <ul id="breadcrumbs" class="breadcrumb pointer-events-auto">
     <li><a href="/" class="breadcrumb-item underline">Accueil</a></li>
+
+    {{ if eq $.page.Section "thematiques" }}
+    {{ if $.page.IsNode }}
+    <li><span>/</span></li>
+    <li class="breadcrumb-item">Thématiques</li>
+    {{ else }}
+    <li><span>/</span></li>
+    <li><a href="/thematiques/" class="breadcrumb-item underline">Thématiques</a></li>
+    <li><span>/</span></li>
+    <li class="breadcrumb-item">{{ .page.Title }}</li>
+    {{ end }}
+    {{ else }}
     {{ range .links }}
     {{ with $.page.GetPage . }}
-    <li><span>/</span></l>
+    <li><span>/</span></li>
     <li><a href="{{ .Permalink }}" class="breadcrumb-item underline">{{ .Title }}</a></li>
     {{ end }}
     {{ end }}
     <li>
         <span>/</span>
     </li>
-    <li class="breadcrumb-item">{{ .page.Title}}</li>
+    <li class="breadcrumb-item">{{ .page.Title }}</li>
+    {{ end }}
 </ul>

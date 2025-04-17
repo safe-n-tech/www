@@ -9,6 +9,7 @@
 </section>
 
 <div class="container text-dark_gray my-20">
+
   <nav class=" grid-good-practice mt-10">
     {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
     {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
@@ -18,8 +19,14 @@
         <img class="w-2/3" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
         <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
         <div class="flex flex-row justify-center items-center mt-2 gap-2">
-          <span id="checkbox-counter-{{ $thematique.Params.uuid }}" class="text-dark_gray text-label"></span>
+          {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
+          {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" $thematique.Params.uuid }}
+          <span id="checkbox-counter-{{ $thematique.Params.uuid }}" class="text-dark_gray text-label"
+            data-total-items="{{ len $goodPracticesLinked }}">
+            0/{{ len $goodPracticesLinked }}
+          </span>
         </div>
+
         <div class="flex flex-row-reverse gap-2 w-full items-center">
           <p id="progress-percentage-{{ $thematique.Params.uuid }}"
             class="text-center min-w-10 text-secondary font-bold"></p>
@@ -69,7 +76,16 @@
       const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
       const checkboxCounter = document.getElementById(`checkbox-counter-${thematiqueId}`);
 
-      const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
+      // Récupérer le nombre total d'éléments depuis l'attribut data-total-items
+      const totalItems = parseInt(checkboxCounter.getAttribute('data-total-items'), 10) || 0;
+
+      // Récupérer l'état depuis le localStorage ou initialiser un état par défaut
+      let state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`));
+      if (!state) {
+        state = Array(totalItems).fill(false);
+        localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
+      }
+
       const total = state.length;
       const checked = state.filter((isChecked) => isChecked).length;
 
@@ -77,7 +93,9 @@
       progressBar.style.width = `${percentage}%`;
       progressPercentage.textContent = `${percentage}%`;
 
-      checkboxCounter.textContent = `${checked}/${total}`;
+      // Mettre à jour uniquement la partie "cochée" avant le "/"
+      const totalText = checkboxCounter.textContent.split('/')[1]; // Récupérer la partie après le "/"
+      checkboxCounter.textContent = `${checked}/${totalText}`;
     });
   });
 </script>
