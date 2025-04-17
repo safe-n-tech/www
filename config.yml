@@ -33,7 +33,7 @@ menu:
       url: /thematiques/
     - identifier: quizz
       weight: 2
-      name: Test
+      name: Me tester
       title: quiz
       url: /quizz/
     - identifier: definitions
