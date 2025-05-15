@@ -7,10 +7,10 @@ https://gohugo.io/getting-started/installing/
 `yarn i`
 
 ### Démarrer le server
-`yarn dev`  
+`yarn dev`
 
 ## Hébergement
-Le site est hébergé sur Netlify, sur le compte de Noesya
+Le site est hébergé chez Deuxfleurs.
 
 ## Gestionnaire de contenu (CMS)
 [DecapCMS](https://decapcms.org/) est le gestionnaire de contenu utilisé pour Safe-N-Tech.
@@ -27,4 +27,3 @@ Vous pouvez inviter un utilisateur à se créer un compte dans Identity > Users
 
 #### Ajout via Github
 Si vous activez la connexion via GitHub, tous les utilisateurs de GitHub qui sont éditeurs sur ce projet pourront se connecter.
-
