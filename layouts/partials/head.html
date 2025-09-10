@@ -15,5 +15,3 @@
 {{- $styles := resources.Get "css/output/styles.css" -}}
 <link rel="preload" href="{{ $styles.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{{ $styles.RelPermalink }}"></noscript>
-
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>

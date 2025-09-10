@@ -12,12 +12,6 @@ https://gohugo.io/getting-started/installing/
 ## Hébergement
 Le site est hébergé chez Deuxfleurs.
 
-## Gestionnaire de contenu (CMS)
-[DecapCMS](https://decapcms.org/) est le gestionnaire de contenu utilisé pour Safe-N-Tech.
-
-### Gestion des utilisateurs
-Il faut aller sur le compte Netlify qui héberge le site > Site configuration > Identity > Registration
-
 > [!WARNING]
 > Mettre l'inscription à "Open" permet à n'importe qui de modifier le contenu du site. Il faut donc ajouter des utilisateur via Github, ou via un lien d'invitation.
 > **Vérifiez bien que "Registration preference" est à "Invite-Only**
