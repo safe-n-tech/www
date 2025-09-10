@@ -58,3 +58,18 @@ backend:
   branch: main
 
 publish_mode: editorial_workflow
+
+deployment:
+  ## CACHE
+  matchers:
+    - pattern: "^.+\\.(woff2|woff|svg|ttf|otf|eot|js|css)$"
+      cacheControl: "max-age=31536000, no-transform, public"
+      gzip: true
+    - pattern: "^.+\\.(png|jpg|jpeg|gif|webp)$"
+      cacheControl: "max-age=31536000, no-transform, public"
+      gzip: false
+  ## DEUXFLEURS
+  workers: 2
+  targets:
+    - name: "production"
+      URL: "s3://www.safe-n-tech.org?endpoint=garage.deuxfleurs.fr&s3ForcePathStyle=true&region=garage&awssdk=v1"
