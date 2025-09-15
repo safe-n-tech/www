@@ -5,8 +5,8 @@ removePathAccents: true
 params:
   seo:
     author: MMI Bordeaux
-    title: "Safe n' Tech : Votre boussole pour un web sécurisé"
-    desc: "Safe n' Tech : La web-application de cybersécurité qui vous guide vers une meilleure sécurité en ligne. Bénéficiez de notre checklist détaillée, de quiz interactifs, d’un glossaire et d'informations claires pour renforcer votre protection numérique avec les bonnes pratiques."
+    title: "Safe N Tech : Votre boussole pour un web sécurisé"
+    desc: "Safe N Tech : La web-application de cybersécurité qui vous guide vers une meilleure sécurité en ligne. Bénéficiez de notre checklist détaillée, de quiz interactifs, d’un glossaire et d'informations claires pour renforcer votre protection numérique avec les bonnes pratiques."
     subject: "cybersecurity"
     url: https://www.safe-n-tech.org
     hero: /sprites/hero-min.jpg
