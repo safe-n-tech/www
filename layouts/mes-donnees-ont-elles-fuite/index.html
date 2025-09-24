@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+<section
+  class="relative bg-[url('/images/hero-bg-mille-bugs.png')] bg-cover bg-center bg-no-repeat w-full pt-8 max-md:pb-12 max-md:-mb-20 md:pb-2 bg-secondary">
+  <div class="container flex flex-col md:flex-row">
+    <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
+      <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1  md:mx-0">Mes données ont-elles fuité ?</h1>
+
+      <p class="md:text-left text-white">
+        Vérifiez rapidement si vos données ont fuité — saisissez votre adresse e-mail et votre numéro
+        de téléphone pour savoir s’ils apparaissent dans des fuites connues (Have I Been Pwned et
+        Hack-Naq).
+      </p>
+      <div
+        class="flex gap-4 items-center flex-col justify-center content-center w-full  my-12 md:justify-start md:flex-row">
+        <a href="https://haveibeenpwned.com/"
+          target="_blank"
+          class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap" download>
+          <span class="whitespace-nowrap text-label">Have I Been Pwned</span>
+        </a>
+        <a href="https://www.campuscyber-na.fr/outils"
+          target="_blank"
+          class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap" download>
+          <span class="whitespace-nowrap text-label">Hack-Naq</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 flex flex-col gap-12">
+  <div class="container flex flex-col gap-8 md:gap-12">
+    <div>
+      <p class="text-dark_gray mb-8">
+        Votre adresse e-mail ou votre numéro de téléphone peuvent parfois apparaître dans des fuites
+        de données publiques sans que vous le sachiez. Pour le vérifier simplement :</p>
+      <ol class="text-dark_gray list-decimal list-inside mb-8">
+        <li class="mb-2">Entrez votre <b>adresse e-mail</b> et/ou <b>numéro de téléphone</b> dans les outils recommandés
+        : Have I Been Pwned (outil mondial bien connu) et Hack-Naq (service du Campus
+        régional de cybersécurité Nouvelle-Aquitaine).</li>
+        <li class="mb-2">Si le résultat indique une compromission, notez <b>quels services</b> sont concernés et
+        <b>quand</b> la fuite a eu lieu.</li>
+        <li class="mb-2">Actions recommandées : changez immédiatement le mot de passe du service concerné
+        en choisissant un mot de passe unique, activez l’authentification à deux facteurs (2FA)
+        quand c’est possible, et surveillez vos comptes bancaires et notifications.</li>
+      </ol>
+      <p class="text-dark_gray mb-8">
+        <b>Important — protection de votre vie privée</b> : n’entrez jamais de <b>mot de passe</b> sur ces pages ; les
+        services listent les adresses/numéros trouvés dans des fuites, mais ne vous demanderont
+        pas votre mot de passe pour faire la vérification. Pour la vérification de mots de passe, des
+        fonctions spécialisées existent (voir <a class="underline" href="https://haveibeenpwned.com/FAQs" target="_blank">FAQ Have I Been Pwned</a>).
+      </p>
+    </div>
+  </div>
+
+</section>
+
+{{ end }}

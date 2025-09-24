@@ -46,6 +46,11 @@ menu:
       name: Mille Bugs
       title: mille bugs
       url: /mille-bugs/
+    - identifier: Fuite données
+      weight: 6
+      name: Mes données ont-elles fuité ?
+      title: mes-donnees-ont-elles-fuite
+      url: /mes-donnees-ont-elles-fuite/
 
 sitemap:
   changeFreq: ""
