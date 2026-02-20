@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin - Safe N Tech</title>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Decap CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.10.0/dist/decap-cms.js"></script>
+    <!-- UUID Custom Widget -->
+    <script>
+        function nanoId(t = 21) {
+            return crypto.getRandomValues(new Uint8Array(t)).reduce((t, e) => (t += (e &= 63) < 36 ? e.toString(36) : e < 62 ? (e - 26).toString(36).toUpperCase() : e > 62 ? '-' : '_'), '')
+        }
+
+        const UuidWidget = createClass({
+            componentDidMount() {
+                const { value, onChange } = this.props
+                if (!value) {
+                    const prefix = this.props.field.get('prefix', false);
+                    const uuid = nanoId();
+                    const uuidFinal = prefix ? prefix+'-'+uuid : uuid
+
+                    onChange(uuidFinal)
+                }
+            },
+
+            render() {
+                const { value, classNameWrapper, forID } = this.props
+                return h(
+                    'span',
+                    {
+                        id: forID,
+                        style: { fontFamily: 'monospace', marginLeft: '1rem' },
+                        //className: classNameWrapper
+                    },
+                    value
+                )
+            },
+        })
+        CMS.registerWidget('uuid', UuidWidget)
+    </script>
+  </body>
+</html>
