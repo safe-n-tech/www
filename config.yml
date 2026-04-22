@@ -1,4 +1,4 @@
-languageCode: 'fr'
+﻿languageCode: 'fr'
 baseURL: https://www.safe-n-tech.org/
 removePathAccents: true
 
@@ -46,8 +46,13 @@ menu:
       name: Mille Bugs
       title: mille bugs
       url: /mille-bugs/
-    - identifier: Fuite données
+    - identifier: boite-a-outils
       weight: 6
+      name: "Boîte à outils"
+      title: boite-a-outils
+      url: /boite-a-outils/
+    - identifier: Fuite données
+      weight: 7
       name: Mes données ont-elles fuité ?
       title: mes-donnees-ont-elles-fuite
       url: /mes-donnees-ont-elles-fuite/

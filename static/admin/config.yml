@@ -232,6 +232,15 @@ collections:
           - { label: Avancé, value: avance }
         required: true
 
+      - label: Outil Associé
+        name: tool
+        widget: object
+        required: false
+        fields:
+          - { label: "Nom de l'outil", name: "name", required: true }
+          - { label: "URL de l'outil", name: "url", required: true }
+          - { label: "Description de l'outil", name: "description", required: false }
+
 
   - name: definitions
     slug: "{{fields.uuid}}"
