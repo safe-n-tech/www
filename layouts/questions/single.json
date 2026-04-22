@@ -1,9 +1,9 @@
 {
-  "text": "{{ .Params.text }}",
+  "text": {{ .Params.text | jsonify }},
   "userAnswer": null,
   "isUserAnswerCorrect": null,
-  "correction": "{{ .Params.correction }}",
-  "image": "{{ .Params.image }}",
+  "correction": {{ .Params.correction | jsonify }},
+  "image": {{ .Params.image | jsonify }},
   "choices": {{ .Params.choices | jsonify }},
   {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
   "goodPractices": [

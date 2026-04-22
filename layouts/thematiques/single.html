@@ -117,6 +117,31 @@
               {{ end }}
             </div>
           </div>
+          {{ $goodPractices2 := (where .Site.Pages "Section" "good-practices") }}
+          {{ $gpWithTool := where (where $goodPractices2 ".Params.uuid" "in" .Params.goodPractices) ".Params.tool" "ne" nil }}
+          {{ range $gpWithTool }}
+          {{ if (index .Params.tool "url") }}
+          <div class="my-2">
+            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+              <p class="text-dark_gray text-left w-2/3">Outil disponible</p>
+              <div class="self-center transition-all -rotate-90">
+                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
+              </div>
+            </button>
+            <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
+              <p class="font-semibold text-dark_gray mb-1">{{ index .Params.tool "name" }}</p>
+              {{ if (index .Params.tool "description") }}
+              <p class="text-sm text-dark_gray/70 mb-3">{{ index .Params.tool "description" }}</p>
+              {{ end }}
+              <a href="{{ index .Params.tool "url" }}" target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm font-medium text-secondary underline underline-offset-2 hover:opacity-70 transition-opacity">
+                Accéder à l'outil
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+          {{ end }}
+          {{ end }}
         </div>
       </div>
     </div>
