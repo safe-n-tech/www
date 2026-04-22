@@ -7,5 +7,8 @@ title: Utilisez des services comme campuscyber-na.fr/hack-naqd pour vérifier si
 slug: verifier-donnees-exposees
 thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 niveau: basique
-tool: https://www.campuscyber-na.fr/hack-naq
+tool:
+  name: "Have I Been Pwned"
+  url: "https://haveibeenpwned.com/"
+  description: "Vérifiez si votre adresse e-mail ou vos mots de passe ont été compromis dans une fuite de données"
 ---

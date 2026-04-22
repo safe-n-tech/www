@@ -8,4 +8,8 @@ title: Ajoutez un filigrane ou une mention sur vos documents sensibles avant de
 slug: ajoutez-filigrane-sur-docs-sensibles
 thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 niveau: essentiel
+tool:
+  name: "Filigrane (beta.gouv.fr)"
+  url: "https://filigrane.beta.gouv.fr/"
+  description: "Outil gratuit pour apposer un filigrane personnalisé sur vos documents PDF"
 ---

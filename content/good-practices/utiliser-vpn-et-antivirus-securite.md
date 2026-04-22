@@ -8,4 +8,8 @@ title: Utilisez un VPN qui chiffre votre connexion et masque votre adresse IP,
 slug: utiliser-vpn-et-antivirus-securite
 thematique: thematique-vPOHpPFF_kFw2S80Eawqn
 niveau: essentiel
+tool:
+  name: "ProtonVPN"
+  url: "https://protonvpn.com/"
+  description: "VPN sécurisé avec une version gratuite, sans logs, basé en Suisse"
 ---

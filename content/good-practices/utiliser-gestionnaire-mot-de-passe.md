@@ -9,4 +9,8 @@ title: Utiliser un gestionnaire de mot de passe.  Un gestionnaire de mots de
 slug: utiliser-gestionnaire-mot-de-passe
 thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 niveau: basique
+tool:
+  name: "Bitwarden"
+  url: "https://bitwarden.com/"
+  description: "Gestionnaire de mots de passe open source, gratuit et sécurisé"
 ---
