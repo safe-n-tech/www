@@ -1,6 +1,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
+  darkMode: 'class',
   content: [
     "./themes/**/layouts/**/*.html",
     "./content/**/layouts/**/*.html",
@@ -24,11 +25,11 @@ module.exports = {
         black: '#000000',
       },
       data: {
-        selected: 'selected="true"', // data-selected:bg-white => element[data-selected]
-        correct: 'correct="true"', // data-correct:bg-white => element[data-correct]
-        wrong: 'wrong="true"', // data-wrong:bg-white => element[data-wrong]
-        wrongSelected: 'wrong-selected="true"', // data-wrongSelected:bg-white => element[data-wrong-selected]
-        correctSelected: 'correct-selected="true"', // data-correctSelected:bg-white => element[data-correct-selected]
+        selected: 'selected="true"',
+        correct: 'correct="true"',
+        wrong: 'wrong="true"',
+        wrongSelected: 'wrong-selected="true"',
+        correctSelected: 'correct-selected="true"',
       },
     },
     fontFamily: {
@@ -45,8 +46,6 @@ module.exports = {
         '2xl': '12rem',
       },
     },
-
   },
-  plugins: [
-  ]
+  plugins: []
 }

@@ -46,10 +46,28 @@
     <div class="">
         {{- partial "header" . -}}
 
-        <main>
+        <main id="site-main">
             {{- block "main" . }}{{- end }}
         </main>
     </div>
+    <script>
+      (function() {
+        var header = document.getElementById('site-header');
+        var main   = document.getElementById('site-main');
+        function sync() {
+          if (header && main) main.style.paddingTop = header.offsetHeight + 'px';
+        }
+        // ResizeObserver : recalcule dès que le header change de taille
+        // (notamment quand le CSS async est enfin appliqué)
+        if (window.ResizeObserver) {
+          new ResizeObserver(sync).observe(header);
+        }
+        // Fallbacks
+        window.addEventListener('load',   sync);
+        window.addEventListener('resize', sync);
+        sync();
+      })();
+    </script>
     {{- partial "footer" . -}}
     {{- partial "plausible" . -}}
 </body>

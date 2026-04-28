@@ -243,16 +243,4 @@ Les UUIDs sont générés automatiquement par le widget `uuid` de Decap avec le 
 - **Mille Bugs** : jeu de plateau téléchargeable en PDF pour la sensibilisation des seniors
 ---
  
- 
-## Crédits
- 
-Projet réalisé par les étudiants du BUT Métiers du Multimédia et de l'Internet (MMI) de l'IUT Bordeaux Montaigne, sous la direction de Marlène Dulaurans et Jean-Christophe Fedherbe.
- 
-Voir la page [Mentions légales](https://www.safe-n-tech.org/legal/) pour la liste complète des contributeurs.
- 
----
- 
-## Licence
- 
-MIT
 

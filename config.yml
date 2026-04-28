@@ -1,4 +1,4 @@
-﻿languageCode: 'fr'
+languageCode: 'fr'
 baseURL: https://www.safe-n-tech.org/
 removePathAccents: true
 
@@ -56,6 +56,11 @@ menu:
       name: Mes données ont-elles fuité ?
       title: mes-donnees-ont-elles-fuite
       url: /mes-donnees-ont-elles-fuite/
+    - identifier: aide-pro
+      weight: 8
+      name: Aide Pro
+      title: aide-pro
+      url: /aide-pro/
 
 sitemap:
   changeFreq: ""

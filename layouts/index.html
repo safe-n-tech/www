@@ -118,7 +118,10 @@
             const progressCircle = document.getElementById('global-progress');
             const progressValue = document.getElementById('global-progress-value');
             const angle = globalProgress * 3.6;
-            progressCircle.style.background = `conic-gradient(#153E60 ${angle}deg, #e0e0e0 ${angle}deg)`;
+            const isDark = document.documentElement.classList.contains('dark');
+            const fillColor = isDark ? '#89D0FF' : '#153E60';
+            const trackColor = isDark ? '#334155' : '#e0e0e0';
+            progressCircle.style.background = `conic-gradient(${fillColor} ${angle}deg, ${trackColor} ${angle}deg)`;
             progressValue.textContent = `${globalProgress}%`;
         }
 

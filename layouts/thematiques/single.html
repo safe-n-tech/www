@@ -223,6 +223,7 @@
 
     function loadChecklistState() {
       const checklistState = JSON.parse(localStorage.getItem('checklistState')) || {};
+      const isDark = document.documentElement.classList.contains('dark');
       checkboxes.forEach((checkbox) => {
         const parentDiv = checkbox.closest('.rounded-md');
         const checkboxId = checkbox.getAttribute('data-id');
@@ -230,9 +231,9 @@
         checkbox.checked = checklistState[checkboxId]?.checked || false;
 
         if (checkbox.checked) {
-          parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
+          parentDiv.style.backgroundColor = isDark ? 'rgb(28, 74, 43)' : 'rgb(213, 241, 207)';
         } else {
-          parentDiv.style.backgroundColor = 'white';
+          parentDiv.style.backgroundColor = isDark ? '#1e293b' : 'white';
         }
       });
     }
@@ -255,10 +256,11 @@
       const parentDiv = checkbox.closest('.rounded-md');
 
       checkbox.addEventListener('change', () => {
+        const isDark = document.documentElement.classList.contains('dark');
         if (checkbox.checked) {
-          parentDiv.style.backgroundColor = 'rgb(213, 241, 207)';
+          parentDiv.style.backgroundColor = isDark ? 'rgb(28, 74, 43)' : 'rgb(213, 241, 207)';
         } else {
-          parentDiv.style.backgroundColor = 'white';
+          parentDiv.style.backgroundColor = isDark ? '#1e293b' : 'white';
         }
         saveChecklistState();
       });
@@ -285,6 +287,18 @@
     width: 0;
     transition: width 0.3s ease;
     border-radius: 10px;
+  }
+
+  html.dark .progress-container {
+    background-color: #334155 !important;
+  }
+
+  html.dark .progress-bar {
+    background-color: #89D0FF !important;
+  }
+
+  html.dark .rounded-md {
+    background-color: #1e293b !important;
   }
 </style>
 

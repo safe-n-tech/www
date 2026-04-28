@@ -5,6 +5,258 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   VARIABLES DE THEME (clair / sombre)
+   ============================================ */
+:root {
+  --color-bg:           #F6F5F5;
+  --color-surface:      #FFFFFF;
+  --color-surface-2:    #EDEDEC;
+  --color-text:         #153E60;
+  --color-text-muted:   #424242;
+  --color-border:       #E0E0E0;
+  --color-progress-bg:  #e0e0e0;
+  --color-input-bg:     #f0f0f0;
+  --color-dropdown-bg:  #F6F5F5;
+  --color-circular-bg:  #F6F5F5;
+  --color-shadow:       0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -2px rgba(0,0,0,.10);
+}
+
+html.dark {
+  --color-bg:           #0f172a;
+  --color-surface:      #1e293b;
+  --color-surface-2:    #253348;
+  --color-text:         #89D0FF;
+  --color-text-muted:   #cbd5e1;
+  --color-border:       #334155;
+  --color-progress-bg:  #334155;
+  --color-input-bg:     #1e293b;
+  --color-dropdown-bg:  #1e293b;
+  --color-circular-bg:  #0f172a;
+  --color-shadow:       0 4px 6px -1px rgba(0,0,0,.40), 0 2px 4px -2px rgba(0,0,0,.30);
+}
+
+/* ============================================
+   OVERRIDES DARK MODE
+   ============================================ */
+
+/* Fond general */
+html.dark body {
+  background-color: var(--color-bg);
+  color: var(--color-text-muted);
+}
+
+/* Header / navbar */
+html.dark #menu-navbar {
+  background-color: var(--color-surface);
+  box-shadow: var(--color-shadow);
+}
+
+html.dark #menu-links {
+  background-color: var(--color-surface);
+}
+
+/* Navigation liens */
+html.dark #menu-navbar a,
+html.dark #menu-links a {
+  color: var(--color-text-muted);
+}
+
+html.dark #menu-navbar a[aria-selected="true"],
+html.dark #menu-links a[aria-selected="true"] {
+  background-color: #153E60;
+  color: #FFFFFF;
+}
+
+html.dark #menu-navbar a:hover,
+html.dark #menu-links a:hover {
+  background-color: var(--color-surface-2);
+}
+
+/* Texte "Menu" mobile */
+html.dark #menu-toggle p {
+  color: var(--color-text-muted);
+}
+
+/* Footer */
+html.dark footer {
+  background-color: var(--color-surface);
+}
+
+html.dark footer a {
+  color: var(--color-text-muted);
+}
+
+/* Classes texte Tailwind overrides */
+html.dark .text-secondary,
+html.dark .md\:text-secondary {
+  color: var(--color-text) !important;
+}
+
+html.dark .text-dark_gray,
+html.dark .text-dark_gray\/80,
+html.dark .text-dark_gray\/60,
+html.dark .text-dark_gray\/70 {
+  color: var(--color-text-muted) !important;
+  --tw-text-opacity: 1 !important;
+}
+
+html.dark .text-black {
+  color: var(--color-text-muted) !important;
+}
+
+/* Fonds blancs -> surface sombre */
+html.dark .bg-white {
+  background-color: var(--color-surface) !important;
+}
+
+html.dark .bg-light_gray {
+  background-color: var(--color-bg) !important;
+}
+
+/* Bordures */
+html.dark .border-perso,
+html.dark .border-perso-light-gray {
+  border-color: var(--color-border) !important;
+}
+
+html.dark .border-gray {
+  border-color: var(--color-border) !important;
+}
+
+/* Dropdown / background-dropdown */
+html.dark .background-dropdown {
+  background-color: var(--color-dropdown-bg);
+}
+
+/* Switch component */
+html.dark .switch {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+}
+
+/* Barre de progression */
+html.dark .progress-container {
+  background-color: var(--color-progress-bg) !important;
+}
+
+/* Cercle de progression */
+html.dark .circular-progress::before {
+  background-color: var(--color-circular-bg);
+}
+
+html.dark .circular-progress {
+  background: conic-gradient(#89D0FF 0% 0%, #334155 0% 100%) !important;
+}
+
+/* Inputs checkbox */
+html.dark input[type="checkbox"] {
+  background-color: var(--color-input-bg);
+  border-color: var(--color-border);
+}
+
+/* Sections avec bg-light_gray sur le body */
+html.dark section:not([class*="bg-secondary"]) {
+  background-color: var(--color-bg);
+}
+
+/* Lien menu mobile bg-light_gray */
+html.dark #menu-links li a {
+  background-color: var(--color-surface-2);
+  color: var(--color-text-muted);
+}
+
+/* Bottom nav fade */
+html.dark .bottom-nav-section {
+  background-image: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+/* Separateur footer */
+html.dark footer .bg-secondary {
+  opacity: 0.4;
+}
+
+/* ============================================
+   BOUTONS EN DARK MODE
+   ============================================ */
+
+/* btn-primary : fond blanc -> texte #153E60 devient invisible sur fond sombre.
+   On le passe en outline bleu clair. */
+html.dark .btn-primary {
+  color: #89D0FF !important;
+  background-color: transparent !important;
+  border-color: #89D0FF !important;
+}
+html.dark .btn-primary:hover {
+  background-color: #89D0FF !important;
+  color: #0f172a !important;
+  border-color: #89D0FF !important;
+}
+
+/* btn-secondary hover ajuste */
+html.dark .btn-secondary:hover {
+  background-color: rgba(137, 208, 255, 0.12) !important;
+  color: #89D0FF !important;
+}
+
+/* btn-secondary.blue */
+html.dark .btn-secondary.blue {
+  background-color: #1e4a6e !important;
+  border-color: #89D0FF !important;
+}
+html.dark .btn-secondary.blue:hover {
+  background-color: #89D0FF !important;
+  color: #0f172a !important;
+}
+
+/* btn-tertiary : border-secondary reste navy -> bordure bleu clair */
+html.dark .btn-tertiary {
+  border-color: #89D0FF !important;
+  color: #89D0FF !important;
+}
+html.dark .btn-tertiary:hover {
+  background-color: #89D0FF !important;
+  color: #0f172a !important;
+}
+
+/* ============================================
+   ICONES ET LOGOS EN DARK MODE
+   ============================================ */
+
+/* Icones thematiques (SVG/PNG sombres sur fond sombre) */
+html.dark img[src*="/icons/thematiques/"] {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(37%) saturate(836%) hue-rotate(175deg) brightness(1.04);
+}
+
+/* Icone burger menu */
+html.dark #menu-toggle img[src*="icon_burger"] {
+  filter: invert(0.7);
+}
+
+/* Icone forward menu mobile */
+html.dark #menu-links img[src*="icon_forward"] {
+  filter: invert(0.6) sepia(1) saturate(2) hue-rotate(185deg);
+}
+
+/* Logos footer sombres */
+html.dark footer img[src*="logo-d2r"],
+html.dark footer img[src*="logo-mica"],
+html.dark footer img[src*="logo-universite"],
+html.dark footer img[src*="logo-mmi"] {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(37%) saturate(836%) hue-rotate(175deg) brightness(1.04);
+}
+
+html.dark footer img[src*="logo-cybernetic"] {
+  filter: brightness(1.3);
+}
+
+/* ============================================
+   TRANSITION DOUCE
+   ============================================ */
+html, body, header, footer, main, section, div, a, button, p, h1, h2, h3, h4 {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
 a {
   text-decoration: none;
   text-underline-offset: 4px;
@@ -174,6 +426,10 @@ input[type="checkbox"]:checked {
   border-radius: 10px;
 }
 
+html.dark .progress-bar {
+  background-color: #89D0FF;
+}
+
 .circular-progress {
   width: 260px;
   height: 260px;
@@ -201,6 +457,10 @@ input[type="checkbox"]:checked {
   position: absolute;
   color: #153E60;
   z-index: 2;
+}
+
+html.dark .progress-value {
+  color: #89D0FF;
 }
 
 @media (max-width: 768px) {
