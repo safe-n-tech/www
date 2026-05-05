@@ -221,20 +221,21 @@
   document.addEventListener('DOMContentLoaded', function () {
     const checkboxes = document.querySelectorAll('.progress-checkbox');
 
+    function getCardColor(isChecked) {
+      const isDark = document.documentElement.classList.contains('dark');
+      if (isChecked) {
+        return isDark ? 'rgb(28, 74, 43)' : 'rgb(213, 241, 207)';
+      }
+      return '';
+    }
+
     function loadChecklistState() {
       const checklistState = JSON.parse(localStorage.getItem('checklistState')) || {};
-      const isDark = document.documentElement.classList.contains('dark');
       checkboxes.forEach((checkbox) => {
         const parentDiv = checkbox.closest('.rounded-md');
         const checkboxId = checkbox.getAttribute('data-id');
-
         checkbox.checked = checklistState[checkboxId]?.checked || false;
-
-        if (checkbox.checked) {
-          parentDiv.style.backgroundColor = isDark ? 'rgb(28, 74, 43)' : 'rgb(213, 241, 207)';
-        } else {
-          parentDiv.style.backgroundColor = isDark ? '#1e293b' : 'white';
-        }
+        parentDiv.style.backgroundColor = getCardColor(checkbox.checked);
       });
     }
 
@@ -242,29 +243,28 @@
       const checklistState = {};
       checkboxes.forEach((checkbox) => {
         const checkboxId = checkbox.getAttribute('data-id');
-        const parentDiv = checkbox.closest('.rounded-md');
-
-        checklistState[checkboxId] = {
-          checked: checkbox.checked,
-          color: checkbox.checked ? 'rgb(213, 241, 207)' : 'white',
-        };
+        checklistState[checkboxId] = { checked: checkbox.checked };
       });
       localStorage.setItem('checklistState', JSON.stringify(checklistState));
     }
 
+    function updateAllCardColors() {
+      checkboxes.forEach((checkbox) => {
+        const parentDiv = checkbox.closest('.rounded-md');
+        parentDiv.style.backgroundColor = getCardColor(checkbox.checked);
+      });
+    }
+
     checkboxes.forEach((checkbox) => {
       const parentDiv = checkbox.closest('.rounded-md');
-
       checkbox.addEventListener('change', () => {
-        const isDark = document.documentElement.classList.contains('dark');
-        if (checkbox.checked) {
-          parentDiv.style.backgroundColor = isDark ? 'rgb(28, 74, 43)' : 'rgb(213, 241, 207)';
-        } else {
-          parentDiv.style.backgroundColor = isDark ? '#1e293b' : 'white';
-        }
+        parentDiv.style.backgroundColor = getCardColor(checkbox.checked);
         saveChecklistState();
       });
     });
+
+    document.getElementById('theme-toggle')?.addEventListener('click', updateAllCardColors);
+    document.getElementById('theme-toggle-mobile')?.addEventListener('click', updateAllCardColors);
 
     loadChecklistState();
   });
@@ -298,7 +298,7 @@
   }
 
   html.dark .rounded-md {
-    background-color: #1e293b !important;
+    background-color: #1e293b;
   }
 </style>
 
