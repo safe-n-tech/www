@@ -9,33 +9,26 @@
 </section>
 
 <div class="container text-dark_gray my-20">
-
-  <nav class=" grid-good-practice mt-10">
+  <nav class="mt-10" style="display:grid; grid-template-columns: repeat(auto-fill, 230px); gap: 1.5rem; justify-content: center;">
     {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
     {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
-    <a href="{{ .Permalink }}" class="no-underline">
-      <div
-        class="border-perso gap-4 rounded-md text-center sm:px-6 px-3 sm:py-5 py-2 h-full grid place-items-center bg-white">
-        <img class="w-2/3" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
-        <p class="md:text-secondary word-break text-label">{{ .Title }}</p>
-        <div class="flex flex-row justify-center items-center mt-2 gap-2">
-          {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-          {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" $thematique.Params.uuid }}
-          <span id="checkbox-counter-{{ $thematique.Params.uuid }}" class="text-dark_gray text-label"
-            data-total-items="{{ len $goodPracticesLinked }}">
-            0/{{ len $goodPracticesLinked }}
-          </span>
-        </div>
-
-        <div class="flex flex-row-reverse gap-2 w-full items-center">
-          <p id="progress-percentage-{{ $thematique.Params.uuid }}"
-            class="text-center min-w-10 text-secondary font-bold"></p>
-          <div class=" gap-2 w-full items-center">
-            <p id="progress-percentage-{{ $thematique.Params.uuid }}" class="text-center min-w-10 text-dark_gray"></p>
-            <div class="progress-container">
-              <div class="w-full progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
-            </div>
-          </div>
+    {{ $goodPractices := (where $.Site.Pages "Section" "good-practices") }}
+    {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" $thematique.Params.uuid }}
+    <a href="{{ .Permalink }}" class="no-underline flex justify-center group">
+      <div class="thematique-circle">
+        <svg class="thematique-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle class="ring-fill" cx="100" cy="100" r="88" />
+          <circle class="ring-track" cx="100" cy="100" r="88" />
+          <circle class="ring-progress"
+            cx="100" cy="100" r="88"
+            id="ring-progress-{{ $thematique.Params.uuid }}"
+            data-total-items="{{ len $goodPracticesLinked }}"
+            data-uuid="{{ $thematique.Params.uuid }}" />
+        </svg>
+        <div class="thematique-inner">
+          <img src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="" class="thematique-icon">
+          <p class="thematique-title">{{ .Title }}</p>
+          <span id="progress-percentage-{{ $thematique.Params.uuid }}" class="thematique-percent font-bold"></span>
         </div>
       </div>
     </a>
@@ -45,65 +38,122 @@
 </div>
 
 <style>
-  .progress-container {
-    width: 100%;
-    height: 15px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    overflow: hidden;
+  .thematique-circle {
     position: relative;
-    padding: 2px;
+    width: 230px;
+    height: 230px;
+  }
+
+  .thematique-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-  }
-
-  .progress-bar {
     height: 100%;
-    background-color: #153E60;
-    width: 0;
-    transition: width 0.3s ease;
-    border-radius: 10px;
+    transform: rotate(-90deg);
   }
 
-  html.dark .progress-container {
-    background-color: #334155 !important;
+  .ring-fill {
+    fill: #e5e7eb;
+    stroke: none;
   }
 
-  html.dark .progress-bar {
-    background-color: #89D0FF !important;
+  html.dark .ring-fill {
+    fill: #1e293b;
+  }
+
+  .ring-track {
+    fill: none;
+    stroke: #d1d5db;
+    stroke-width: 10;
+  }
+
+  html.dark .ring-track {
+    stroke: #334155;
+  }
+
+  .ring-progress {
+    fill: none;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 552.9;
+    stroke-dashoffset: 552.9;
+    transition: stroke-dashoffset 0.5s ease, stroke 0.3s ease;
+  }
+
+  .thematique-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .thematique-icon {
+    width: 52%;
+    margin-bottom: 6px;
+  }
+
+  .thematique-title {
+    font-size: 0.8rem;
+    line-height: 1.25;
+    word-break: break-word;
+    color: #153E60;
+    margin-bottom: 3px;
+  }
+
+  html.dark .thematique-title {
+    color: #89D0FF;
+  }
+
+  .thematique-percent {
+    font-size: 0.95rem;
+    color: #153E60;
+  }
+
+  html.dark .thematique-percent {
+    color: #89D0FF;
   }
 </style>
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
-    const thematiques = document.querySelectorAll('.progress-container');
+    const circumference = 2 * Math.PI * 88;
 
-    thematiques.forEach((container) => {
-      const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
-      const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
-      const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
-      const checkboxCounter = document.getElementById(`checkbox-counter-${thematiqueId}`);
+    function getColor(pct) {
+      if (pct === 0) return 'transparent';
+      if (pct <= 33) return '#F97316';
+      if (pct <= 66) return '#EAB308';
+      if (pct < 100) return '#84CC16';
+      return '#22C55E';
+    }
 
-      // Récupérer le nombre total d'éléments depuis l'attribut data-total-items
-      const totalItems = parseInt(checkboxCounter.getAttribute('data-total-items'), 10) || 0;
+    document.querySelectorAll('.ring-progress').forEach((ring) => {
+      const uuid = ring.getAttribute('data-uuid');
+      const totalItems = parseInt(ring.getAttribute('data-total-items'), 10) || 0;
+      const percentEl = document.getElementById(`progress-percentage-${uuid}`);
 
-      // Récupérer l'état depuis le localStorage ou initialiser un état par défaut
-      let state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`));
+      let state = JSON.parse(localStorage.getItem(`checklistState-${uuid}`));
       if (!state) {
         state = Array(totalItems).fill(false);
-        localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
+        localStorage.setItem(`checklistState-${uuid}`, JSON.stringify(state));
       }
 
-      const total = state.length;
-      const checked = state.filter((isChecked) => isChecked).length;
+      const checked = state.filter(Boolean).length;
+      const percentage = state.length > 0 ? Math.round((checked / state.length) * 100) : 0;
 
-      const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-      progressBar.style.width = `${percentage}%`;
-      progressPercentage.textContent = `${percentage}%`;
+      ring.style.strokeDashoffset = circumference * (1 - percentage / 100);
+      ring.style.stroke = getColor(percentage);
 
-      // Mettre à jour uniquement la partie "cochée" avant le "/"
-      const totalText = checkboxCounter.textContent.split('/')[1]; // Récupérer la partie après le "/"
-      checkboxCounter.textContent = `${checked}/${totalText}`;
+      if (percentEl) {
+        percentEl.textContent = `${percentage} %`;
+      }
     });
   });
 </script>
