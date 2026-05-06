@@ -10,11 +10,27 @@
 
 <div class="container text-dark_gray my-20">
   <nav class="mt-10" style="display:grid; grid-template-columns: repeat(auto-fill, 230px); gap: 1.5rem; justify-content: center;">
+    {{ $allVulns := (where .Site.Pages "Section" "vulnerabilities") }}
+    {{ $allGPs   := (where .Site.Pages "Section" "good-practices") }}
     {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
     {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
-    {{ $goodPractices := (where $.Site.Pages "Section" "good-practices") }}
-    {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" $thematique.Params.uuid }}
-    <a href="{{ .Permalink }}" class="no-underline flex justify-center group">
+
+    {{ $vulnsLinked := where $allVulns ".Params.thematique" $thematique.Params.uuid }}
+
+    {{/* Calcule un poids par vulnérabilité : essentiel=1, basique=2, avancé=3 */}}
+    {{ $weights     := slice }}
+    {{ $totalWeight := 0 }}
+    {{ range $vulnsLinked }}
+      {{ $w := 1 }}
+      {{ range (where $allGPs ".Params.uuid" "in" .Params.goodPractices) }}
+        {{ if eq .Params.niveau "basique" }}{{ if lt $w 2 }}{{ $w = 2 }}{{ end }}{{ end }}
+        {{ if eq .Params.niveau "avance"  }}{{ $w = 3 }}{{ end }}
+      {{ end }}
+      {{ $weights     = $weights | append $w }}
+      {{ $totalWeight = add $totalWeight $w }}
+    {{ end }}
+
+    <a href="{{ $thematique.Permalink }}" class="no-underline flex justify-center group">
       <div class="thematique-circle">
         <svg class="thematique-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
           <circle class="ring-fill" cx="100" cy="100" r="88" />
@@ -22,12 +38,14 @@
           <circle class="ring-progress"
             cx="100" cy="100" r="88"
             id="ring-progress-{{ $thematique.Params.uuid }}"
-            data-total-items="{{ len $goodPracticesLinked }}"
-            data-uuid="{{ $thematique.Params.uuid }}" />
+            data-uuid="{{ $thematique.Params.uuid }}"
+            data-total-items="{{ len $vulnsLinked }}"
+            data-weights='{{ $weights | jsonify }}'
+            data-total-weight="{{ $totalWeight }}" />
         </svg>
         <div class="thematique-inner">
-          <img src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="" class="thematique-icon">
-          <p class="thematique-title">{{ .Title }}</p>
+          <img src="/icons/thematiques/illustrations/{{ $thematique.Params.icon }}" alt="" class="thematique-icon">
+          <p class="thematique-title">{{ $thematique.Title }}</p>
           <span id="progress-percentage-{{ $thematique.Params.uuid }}" class="thematique-percent font-bold"></span>
         </div>
       </div>
@@ -135,9 +153,11 @@
 
   function updateRings() {
     document.querySelectorAll('.ring-progress').forEach((ring) => {
-      const uuid = ring.getAttribute('data-uuid');
-      const totalItems = parseInt(ring.getAttribute('data-total-items'), 10) || 0;
-      const percentEl = document.getElementById(`progress-percentage-${uuid}`);
+      const uuid        = ring.getAttribute('data-uuid');
+      const totalItems  = parseInt(ring.getAttribute('data-total-items'), 10) || 0;
+      const weights     = JSON.parse(ring.getAttribute('data-weights') || '[]');
+      const totalWeight = parseInt(ring.getAttribute('data-total-weight'), 10) || 0;
+      const percentEl   = document.getElementById(`progress-percentage-${uuid}`);
 
       let state = JSON.parse(localStorage.getItem(`checklistState-${uuid}`));
       if (!state) {
@@ -145,8 +165,11 @@
         localStorage.setItem(`checklistState-${uuid}`, JSON.stringify(state));
       }
 
-      const checked = state.filter(Boolean).length;
-      const percentage = state.length > 0 ? Math.round((checked / state.length) * 100) : 0;
+      const weightedChecked = state.reduce((sum, checked, i) => {
+        return sum + (checked ? (weights[i] ?? 1) : 0);
+      }, 0);
+
+      const percentage = totalWeight > 0 ? Math.round((weightedChecked / totalWeight) * 100) : 0;
 
       ring.style.strokeDashoffset = circumference * (1 - percentage / 100);
       ring.style.stroke = getColor(percentage);
