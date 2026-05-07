@@ -1,7 +1,7 @@
 .thematique-circle {
   position: relative;
-  width: 270px;
-  height: 270px;
+  width: 230px;
+  height: 230px;
 }
 
 .thematique-ring {
@@ -61,7 +61,7 @@ html.dark .ring-track {
 }
 
 .thematique-title {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   line-height: 1.25;
   word-break: break-word;
   color: #153E60;
@@ -73,7 +73,7 @@ html.dark .thematique-title {
 }
 
 .thematique-percent {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: #153E60;
 }
 
