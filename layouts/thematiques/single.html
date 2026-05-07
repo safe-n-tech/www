@@ -41,8 +41,25 @@
 
   {{ if (gt (len $vulnerabilitiesLinked) 0) }}
 
+  {{ $allGPsForSort := (where .Site.Pages "Section" "good-practices") }}
+  {{ $essentiels := slice }}
+  {{ $basiques := slice }}
+  {{ $avances := slice }}
+  {{ range $vulnerabilitiesLinked }}
+    {{ $gpsLinked := where $allGPsForSort ".Params.uuid" "in" .Params.goodPractices }}
+    {{ $maxNiveau := "essentiel" }}
+    {{ range $gpsLinked }}
+      {{ if eq .Params.niveau "avance" }}{{ $maxNiveau = "avance" }}{{ end }}
+      {{ if and (eq .Params.niveau "basique") (ne $maxNiveau "avance") }}{{ $maxNiveau = "basique" }}{{ end }}
+    {{ end }}
+    {{ if eq $maxNiveau "essentiel" }}{{ $essentiels = $essentiels | append . }}{{ end }}
+    {{ if eq $maxNiveau "basique" }}{{ $basiques = $basiques | append . }}{{ end }}
+    {{ if eq $maxNiveau "avance" }}{{ $avances = $avances | append . }}{{ end }}
+  {{ end }}
+  {{ $sortedVulnerabilities := $essentiels | append $basiques | append $avances }}
+
   <nav class="grid-good-practice mt-5 grid-cols-1">
-    {{ range $vulnerabilitiesLinked }}
+    {{ range $sortedVulnerabilities }}
     <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
       <div class="flex flex-row items-center justify-between  md:items-start">
         <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}"

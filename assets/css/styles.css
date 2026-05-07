@@ -1,4 +1,5 @@
 @import 'fonts.css';
+@import 'thematiques.css';
 /* TailwindCSS base styles */
 /* see https://tailwindcss.com/docs/functions-and-directives#tailwind */
 @tailwind base;
