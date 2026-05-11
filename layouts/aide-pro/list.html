@@ -1,6 +1,9 @@
 {{ define "main" }}
+{{ $recommandations := site.GetPage "aide-pro/recommandations-techniques" }}
+{{ $exigences := site.GetPage "aide-pro/exigences-contractuelles-minimales" }}
+
 <section
-  class="relative bg-[url('/images/bg-hero.png')] bg-cover bg-center bg-no-repeat flex flex-col align-center px-4 bg-secondary text-white">
+  class="relative bg-gradient-to-br from-secondary to-primary flex flex-col align-center px-4 bg-secondary text-white">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
@@ -13,12 +16,32 @@
 </section>
 
 <section class="container text-dark_gray flex flex-col gap-8 py-16">
-  <div class="bg-white px-12 py-8 rounded-lg flex flex-col gap-6 text-label prose max-w-none">
-    {{ if .Content }}
-      {{ .Content }}
-    {{ else }}
-      <p>Contenu à venir...</p>
-    {{ end }}
+  <div x-data="{ activeTab: 'recommandations' }" class="bg-white rounded-lg overflow-hidden">
+
+    <div class="flex border-b border-gray-200">
+      <button
+        @click="activeTab = 'recommandations'"
+        :class="activeTab === 'recommandations' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
+        class="px-8 py-4 text-base transition-colors cursor-pointer">
+        Recommandations techniques
+      </button>
+      <button
+        @click="activeTab = 'exigences'"
+        :class="activeTab === 'exigences' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
+        class="px-8 py-4 text-base transition-colors cursor-pointer">
+        Exigences contractuelles minimales
+      </button>
+    </div>
+
+    <div class="px-12 py-8">
+      <div x-show="activeTab === 'recommandations'" class="prose max-w-none text-label">
+        {{ if $recommandations }}{{ $recommandations.Content }}{{ end }}
+      </div>
+      <div x-show="activeTab === 'exigences'" class="prose max-w-none text-label">
+        {{ if $exigences }}{{ $exigences.Content }}{{ end }}
+      </div>
+    </div>
+
   </div>
 </section>
 {{ end }}
