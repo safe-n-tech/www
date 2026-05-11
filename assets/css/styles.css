@@ -156,12 +156,8 @@ html.dark input[type="checkbox"] {
 }
 
 /* Sections avec bg-light_gray sur le body */
-html.dark section:not([class*="bg-secondary"]):not(.hero-gradient) {
+html.dark section:not([class*="bg-secondary"]):not([style*="linear-gradient"]) {
   background-color: var(--color-bg);
-}
-
-.hero-gradient {
-  background: linear-gradient(to bottom right, #153E60, #0449B8);
 }
 
 /* Lien menu mobile bg-light_gray */
