@@ -35,130 +35,108 @@
 </section>
 
 <section class="container text-dark_gray mt-20 mb-20">
-  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-  {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.thematique" "eq" .Params.uuid }}
 
+  {{/* Get all good-practices belonging to this thematique, sorted by level: essentiel > basique > avance */}}
+  {{ $allGPs := (where .Site.Pages "Section" "good-practices") }}
+  {{ $themGPs := where $allGPs ".Params.thematique" "eq" .Params.uuid }}
 
-  {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+  {{ $essentiels := where $themGPs ".Params.niveau" "eq" "essentiel" }}
+  {{ $basiques   := where $themGPs ".Params.niveau" "eq" "basique" }}
+  {{ $avances    := where $themGPs ".Params.niveau" "eq" "avance" }}
+  {{ $sortedGPs  := $essentiels | append $basiques | append $avances }}
 
-  {{ $allGPsForSort := (where .Site.Pages "Section" "good-practices") }}
-  {{ $essentiels := slice }}
-  {{ $basiques := slice }}
-  {{ $avances := slice }}
-  {{ range $vulnerabilitiesLinked }}
-    {{ $gpsLinked := where $allGPsForSort ".Params.uuid" "in" .Params.goodPractices }}
-    {{ $maxNiveau := "essentiel" }}
-    {{ range $gpsLinked }}
-      {{ if eq .Params.niveau "avance" }}{{ $maxNiveau = "avance" }}{{ end }}
-      {{ if and (eq .Params.niveau "basique") (ne $maxNiveau "avance") }}{{ $maxNiveau = "basique" }}{{ end }}
-    {{ end }}
-    {{ if eq $maxNiveau "essentiel" }}{{ $essentiels = $essentiels | append . }}{{ end }}
-    {{ if eq $maxNiveau "basique" }}{{ $basiques = $basiques | append . }}{{ end }}
-    {{ if eq $maxNiveau "avance" }}{{ $avances = $avances | append . }}{{ end }}
-  {{ end }}
-  {{ $sortedVulnerabilities := $essentiels | append $basiques | append $avances }}
-
+  {{ if (gt (len $sortedGPs) 0) }}
   <nav class="grid-good-practice mt-5 grid-cols-1">
-    {{ range $sortedVulnerabilities }}
-    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8 ">
-      <div class="flex flex-row items-center justify-between  md:items-start">
+    {{ range $sortedGPs }}
+    <div class="flex flex-col md:flex-row gap-8 mb-8 md:mb-4 md:gap-16 rounded-md bg-white p-5 pl-8">
+      <div class="flex flex-row items-center justify-between md:items-start">
         <input type="checkbox" class="progress-checkbox" data-thematique="{{ $.Params.uuid }}"
           data-id="{{ .Params.uuid }}">
 
-        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-        {{ if (gt (len $goodPracticesLinked) 0) }}
-        <div class="flex flex-row">
-          {{ range $goodPracticesLinked }}
-          {{ $niveau := .Params.niveau }}
-          {{ if eq $niveau "avance" }}
-          <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-red text-white">Avancé</small>
-          {{ else if eq $niveau "essentiel" }}
-          <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-primary text-white">Essentiel</small>
-          {{ else if eq $niveau "basique" }}
-          <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-green text-white">Basique</small>
-          {{ end }}
-          {{ end }}
-        </div>
+        {{/* Mobile-only level badge next to checkbox */}}
+        {{ $niveau := .Params.niveau }}
+        {{ if eq $niveau "avance" }}
+        <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-red text-white">Avancé</small>
+        {{ else if eq $niveau "essentiel" }}
+        <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-primary text-white">Essentiel</small>
+        {{ else if eq $niveau "basique" }}
+        <small class="py-2 px-6 h-fit md:hidden block rounded-full bg-green text-white">Basique</small>
         {{ end }}
       </div>
+
       <div class="w-full">
-        {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-        {{ $goodPracticesLinked := where $goodPractices ".Params.uuid" "in" .Params.goodPractices }}
-        {{ if (gt (len $goodPracticesLinked) 0) }}
-        <div class="w-full">
-          <nav>
-            {{ range $goodPracticesLinked }}
-            <div class="flex mb-12 justify-between gap-16">
-              <p class="text-dark_gray font-bold">{{ .Title }}</p>
-              {{ $niveau := .Params.niveau }}
-              {{ if eq $niveau "avance" }}
-              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
-              {{ else if eq $niveau "essentiel" }}
-              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-primary text-white">Essentiel</small>
-              {{ else if eq $niveau "basique" }}
-              <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green text-white">Basique</small>
-              {{ end }}
+        {{/* Title + desktop level badge */}}
+        <div class="flex mb-6 justify-between gap-16">
+          <p class="text-dark_gray font-bold">{{ .Title }}</p>
+          {{ if eq $niveau "avance" }}
+          <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-red text-white">Avancé</small>
+          {{ else if eq $niveau "essentiel" }}
+          <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-primary text-white">Essentiel</small>
+          {{ else if eq $niveau "basique" }}
+          <small class="py-2 px-6 h-fit md:block hidden rounded-full bg-green text-white">Basique</small>
+          {{ end }}
+        </div>
+
+        {{/* Risks dropdown */}}
+        {{ if .Params.risks }}
+        <div class="my-2 mt-4">
+          <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+            <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
+            <div class="self-center transition-all -rotate-90">
+              <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
             </div>
-            {{ end }}
-          </nav>
+          </button>
+          <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
+            {{ .Params.risks | markdownify }}
+          </div>
         </div>
         {{ end }}
 
-        <div>
-          <div class="my-2 mt-4">
-            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
-              <p class="text-dark_gray text-left w-2/3">Risques encourus</p>
-              <div class="self-center transition-all -rotate-90">
-                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
+        {{/* Don't Do dropdown */}}
+        {{ if .Params.dontDo }}
+        <div class="my-2">
+          <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+            <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
+            <div class="self-center transition-all -rotate-90">
+              <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
+            </div>
+          </button>
+          <div class="background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
+            <div class="dont-do-section">
+              <div>
+                {{ .Params.dontDo | markdownify }}
               </div>
-            </button>
-            <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
-              {{ .Params.risks | markdownify }}
             </div>
           </div>
-          <div class="my-2">
-            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
-              <p class="text-dark_gray text-left w-2/3">Ne pas faire</p>
-              <div class="self-center transition-all -rotate-90">
-                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
-              </div>
-            </button>
-            <div class="background-dropdown mb-2 hidden mt-2 px-2 py-0 pb-3 pt-3 rounded-lg">
-              {{ if .Params.dontDo }}
-              <div class="dont-do-section">
-                <div>
-                  {{ .Params.dontDo | markdownify }}
-                </div>
-              </div>
-              {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Tool dropdown */}}
+        {{ if and .Params.tool (index .Params.tool "url") }}
+        <div class="my-2">
+          <button class="w-full flex flex-row justify-between drop-down__item h-fit">
+            <p class="text-dark_gray text-left w-2/3">Outil disponible</p>
+            <div class="self-center transition-all -rotate-90">
+              <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
             </div>
+          </button>
+          <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
+            <p class="font-semibold text-dark_gray mb-1">{{ index .Params.tool "name" }}</p>
+            {{ if (index .Params.tool "description") }}
+            <p class="text-sm text-dark_gray/70 mb-3">{{ index .Params.tool "description" }}</p>
+            {{ end }}
+            <a href="{{ index .Params.tool "url" }}" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm font-medium text-secondary underline underline-offset-2 hover:opacity-70 transition-opacity">
+              Accéder à l'outil
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
           </div>
-          {{ $goodPractices2 := (where .Site.Pages "Section" "good-practices") }}
-          {{ $gpWithTool := where (where $goodPractices2 ".Params.uuid" "in" .Params.goodPractices) ".Params.tool" "ne" nil }}
-          {{ range $gpWithTool }}
-          {{ if (index .Params.tool "url") }}
-          <div class="my-2">
-            <button class="w-full flex flex-row justify-between drop-down__item h-fit">
-              <p class="text-dark_gray text-left w-2/3">Outil disponible</p>
-              <div class="self-center transition-all -rotate-90">
-                <img src="/svgs/arrow_blue.svg" class="w-5 transition-all" alt="show more" />
-              </div>
-            </button>
-            <div class="background-dropdown hidden mt-2 px-2 pb-3 pt-3 rounded-2xl">
-              <p class="font-semibold text-dark_gray mb-1">{{ index .Params.tool "name" }}</p>
-              {{ if (index .Params.tool "description") }}
-              <p class="text-sm text-dark_gray/70 mb-3">{{ index .Params.tool "description" }}</p>
-              {{ end }}
-              <a href="{{ index .Params.tool "url" }}" target="_blank" rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-medium text-secondary underline underline-offset-2 hover:opacity-70 transition-opacity">
-                Accéder à l'outil
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              </a>
-            </div>
-          </div>
-          {{ end }}
-          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Link to the dedicated good-practice page */}}
+        <div class="mt-4">
+          <a href="{{ .Permalink }}" class="text-sm text-secondary underline underline-offset-2 hover:opacity-70">En savoir plus →</a>
         </div>
       </div>
     </div>
@@ -169,17 +147,14 @@
 </section>
 
 
-
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const thematiqueId = document.body.getAttribute('data-page-id');
-
 
     const checkboxes = document.querySelectorAll(`.progress-checkbox[data-thematique="${thematiqueId}"]`);
     const progressBar = document.getElementById('progress-bar');
     const progressPercentage = document.getElementById('progress-percentage');
     const progressCounter = document.getElementById('progress-counter');
-
 
     function loadChecklistState() {
       const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
@@ -189,27 +164,20 @@
       updateProgress();
     }
 
-
     function saveChecklistState() {
       const state = Array.from(checkboxes).map(checkbox => checkbox.checked);
       localStorage.setItem(`checklistState-${thematiqueId}`, JSON.stringify(state));
     }
-
 
     function updateProgress() {
       const total = checkboxes.length;
       const checked = Array.from(checkboxes).filter(checkbox => checkbox.checked).length;
       const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
 
-
       progressBar.style.width = `${percentage}%`;
       progressPercentage.textContent = `${percentage}%`;
-
-
       progressCounter.textContent = `${checked}/${total}`;
-      progressPercentage.textContent = `${percentage}%`;
     }
-
 
     checkboxes.forEach(checkbox => {
       checkbox.addEventListener('change', () => {
@@ -218,15 +186,11 @@
       });
     });
 
-
     loadChecklistState();
   });
 
-
   document.addEventListener('DOMContentLoaded', function () {
     const dropDownItems = document.querySelectorAll(".drop-down__item");
-
-
     dropDownItems.forEach((item) => {
       item.addEventListener("click", () => {
         item.nextElementSibling.classList.toggle("hidden");
@@ -297,7 +261,6 @@
     position: relative;
     padding: 2px;
   }
-
   .progress-bar {
     height: 100%;
     background-color: #153E60;
@@ -305,15 +268,12 @@
     transition: width 0.3s ease;
     border-radius: 10px;
   }
-
   html.dark .progress-container {
     background-color: #334155 !important;
   }
-
   html.dark .progress-bar {
     background-color: #89D0FF !important;
   }
-
   html.dark .rounded-md {
     background-color: #1e293b;
   }

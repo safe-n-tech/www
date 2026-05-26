@@ -1,15 +1,20 @@
 ---
 visibleInCms: true
 uuid: good-practice-rfsaqXH7Ych4p_Zg8A5II
-title: Ajoutez un filigrane ou une mention sur vos documents sensibles avant de
-  les partager, pour protéger leur contenu et en limiter la diffusion non
-  autorisée. Cela rend plus difficile leur utilisation frauduleuse, car il est
-  clairement indiqué à qui ils appartiennent et quel est leur but.
+title: Ajoutez un filigrane ou une mention sur vos documents sensibles avant de les
+  partager, pour protéger leur contenu et en limiter la diffusion non autorisée. Cela
+  rend plus difficile leur utilisation frauduleuse, car il est clairement indiqué
+  à qui ils appartiennent et quel est leur but.
 slug: ajoutez-filigrane-sur-docs-sensibles
 thematique: thematique-CvbEsDX_JLbVAl6oz7djq
 niveau: essentiel
 tool:
-  name: "Filigrane (beta.gouv.fr)"
-  url: "https://filigrane.beta.gouv.fr/"
-  description: "Outil gratuit pour apposer un filigrane personnalisé sur vos documents PDF"
+  name: Filigrane (beta.gouv.fr)
+  url: https://filigrane.beta.gouv.fr/
+  description: Outil gratuit pour apposer un filigrane personnalisé sur vos documents
+    PDF
+risks: Sans filigrane, vos documents peuvent être plus facilement réutilisés, copiés
+  ou diffusés à votre insu, ce qui peut entraîner des tentatives d'usurpation d'identité,
+  de fraude ou de diffusion non autorisée de données sensibles.
+dontDo: Envoyer vos documents sans filigrane ni mention de leur contenu.
 ---

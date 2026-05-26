@@ -1,9 +1,13 @@
 ---
 visibleInCms: true
 uuid: good-practice-DIH8tReEWUIWsJLs_CL_G
-title: Consultez fréquemment votre relevé de compte et vos transactions pour
-  vous assurer qu'aucune somme n'a été prélevée sans votre autorisation.
+title: Consultez fréquemment votre relevé de compte et vos transactions pour vous
+  assurer qu'aucune somme n'a été prélevée sans votre autorisation.
 slug: verifier-releve-compte-transactions
 thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 niveau: basique
+risks: Ne pas prendre connaissance à temps de prélèvements ou de souscriptions inconnus
+  sur le compte.
+dontDo: Ne pas consulter régulièrement son relevé de compte et ses différentes transactions
+  bancaires.
 ---

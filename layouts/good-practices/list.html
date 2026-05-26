@@ -6,27 +6,24 @@
         {{ partial "breadcrumb" (dict "page" .) }}
         <h1 class="text-h1 text-center md:text-5xl mt-10">Les bonnes pratiques</h1>
         <p class="text-label text-white text-center py-10">Nous mettons à votre disposition un ensemble de bonnes
-            pratiques
-            classées par
-            thématiques.</p>
+            pratiques classées par thématiques.</p>
     </div>
 </section>
 
 <section class="container md:w-2/3 md:mt-10 mb-20">
 
     {{ $thematiques := (where .Site.Pages "Section" "thematiques") }}
-    {{range $thematiques}}
-    {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
-    {{ $goodPracticesLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
+    {{ range $thematiques }}
+    {{ $goodPractices := (where $.Site.Pages "Section" "good-practices") }}
+    {{ $gpsLinked := where $goodPractices ".Params.thematique" "eq" .Params.uuid }}
 
-    {{ if (gt (len $goodPracticesLinked) 0) }}
+    {{ if (gt (len $gpsLinked) 0) }}
 
     <h3 class="text-h2 md:text-5xl text-black mt-16">{{ .Title }}</h3>
 
     <nav class="grid-good-practice mt-10 grid-cols-1">
-        {{ range $goodPracticesLinked}}
+        {{ range $gpsLinked }}
         <a href="{{ .Permalink }}" class="no-underline">
-
             <div class="bg-white mb-2 p-5 rounded-2xl">
                 <div class="flex flex-row justify-between">
                     <p class="text-sm md:text-xl text-black w-2/3">{{ .Title }}</p>

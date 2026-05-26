@@ -1,4 +1,10 @@
 {
-  "title": "{{ .Title }}",
-  "url": "{{ .Permalink }}"
+  "title": {{ .Title | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "uuid": {{ .Params.uuid | jsonify }},
+  "niveau": {{ .Params.niveau | jsonify }},
+  "thematique": {{ .Params.thematique | jsonify }},
+  "risks": {{ .Params.risks | jsonify }},
+  "dontDo": {{ .Params.dontDo | jsonify }},
+  "tool": {{ .Params.tool | jsonify }}
 }

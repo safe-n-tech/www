@@ -1,4 +1,0 @@
----
-visibleInCms: false
-title: Vulnérabilités
----

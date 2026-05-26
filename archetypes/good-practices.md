@@ -1,5 +1,8 @@
 ---
 visibleInCms: true
 title: "{{ replace .Name "-" " " | title }}"
-categories:
+thematique:
+niveau: basique
+risks:
+dontDo:
 ---

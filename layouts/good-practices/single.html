@@ -13,26 +13,58 @@
     <div class="text-label">{{ .Content }}</div>
     {{ end }}
 
-    {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $vulnerabilitiesLinked := where $vulnerabilities ".Params.goodPractices" "intersect" (slice .Params.uuid) }}
-    {{ if (gt (len $vulnerabilitiesLinked) 0) }}
+    {{/* Level badge */}}
+    {{ $niveau := .Params.niveau }}
+    {{ if $niveau }}
     <div>
-        <h2 class="text-h2 mt-4">Vulnérabilités associées</h2>
-        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-tertiary to-transparent mb-6"></div>
-
-        <nav class="grid-good-practice grid-cols-1 md:grid-cols-2">
-            {{ range $vulnerabilitiesLinked}}
-            <a href="{{ .Permalink }}" class="no-underline">
-
-                <div class="border-perso rounded-md text-center px-3 py-5 h-full grid place-items-center bg-white">
-                    <p class="text-secondary">"{{ .Title }}"</p>
-                </div>
-            </a>
-            {{ end }}
-        </nav>
+        {{ if eq $niveau "avance" }}
+        <span class="py-2 px-6 rounded-full bg-red text-white">Avancé</span>
+        {{ else if eq $niveau "essentiel" }}
+        <span class="py-2 px-6 rounded-full bg-primary text-white">Essentiel</span>
+        {{ else if eq $niveau "basique" }}
+        <span class="py-2 px-6 rounded-full bg-green text-white">Basique</span>
+        {{ end }}
     </div>
     {{ end }}
 
+    {{/* Risks */}}
+    {{ if .Params.risks }}
+    <div>
+        <h2 class="text-h2 mt-4">Risques encourus</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-tertiary to-transparent mb-6"></div>
+        <div class="text-label">{{ .Params.risks | markdownify }}</div>
+    </div>
+    {{ end }}
+
+    {{/* Don't Do */}}
+    {{ if .Params.dontDo }}
+    <div>
+        <h2 class="text-h2 mt-4">Ne pas faire</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-tertiary to-transparent mb-6"></div>
+        <div class="text-label">{{ .Params.dontDo | markdownify }}</div>
+    </div>
+    {{ end }}
+
+    {{/* Tool */}}
+    {{ if and .Params.tool (index .Params.tool "url") }}
+    <div>
+        <h2 class="text-h2 mt-4">Outil recommandé</h2>
+        <div class="h-1 w-3/6 mt-2 bg-gradient-to-r from-tertiary to-transparent mb-6"></div>
+        <div class="bg-white rounded-2xl p-6 flex flex-col gap-3">
+            <p class="font-bold text-secondary text-lg">{{ index .Params.tool "name" }}</p>
+            {{ if (index .Params.tool "description") }}
+            <p class="text-dark_gray/80">{{ index .Params.tool "description" }}</p>
+            {{ end }}
+            <a href="{{ index .Params.tool "url" }}" target="_blank" rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-secondary underline underline-offset-2 hover:opacity-70">
+                Accéder à l'outil
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </a>
+        </div>
+    </div>
+    {{ end }}
+
+    {{/* Link back to thematique */}}
     {{ $thematiquesLinked := where .Site.Pages.ByTitle ".Params.uuid" "eq" .Params.thematique }}
     {{ if (gt (len $thematiquesLinked) 0) }}
     <div class="flex flex-col items-start">

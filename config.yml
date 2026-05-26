@@ -21,7 +21,6 @@ taxonomies:
 
 permalinks:
   thematiques: /:section/:title/
-  vulnerabilities: /:section/:title/
   good-practices: /good-practices/:slug/
 
 menu:
@@ -53,7 +52,7 @@ menu:
       url: /boite-a-outils/
     - identifier: Fuite données
       weight: 7
-      name: Mes données ont-elles fuité ?
+      name: Mes données ont-elles fuité ?
       title: mes-donnees-ont-elles-fuite
       url: /mes-donnees-ont-elles-fuite/
     - identifier: aide-pro

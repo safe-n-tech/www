@@ -95,22 +95,19 @@ html.dark .thematique-percent {
 
 <div class="container text-dark_gray my-20">
   <nav class="mt-10" style="display:grid; grid-template-columns: repeat(auto-fill, 270px); gap: 1.5rem; justify-content: center;">
-    {{ $allVulns := (where .Site.Pages "Section" "vulnerabilities") }}
-    {{ $allGPs   := (where .Site.Pages "Section" "good-practices") }}
+    {{ $allGPs := (where .Site.Pages "Section" "good-practices") }}
     {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
     {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
 
-    {{ $vulnsLinked := where $allVulns ".Params.thematique" $thematique.Params.uuid }}
+    {{ $themGPs := where $allGPs ".Params.thematique" $thematique.Params.uuid }}
 
-    {{/* Calcule un poids par vulnérabilité : essentiel=1, basique=2, avancé=3 */}}
+    {{/* Per-item weight: essentiel=1, basique=2, avance=3 */}}
     {{ $weights     := slice }}
     {{ $totalWeight := 0 }}
-    {{ range $vulnsLinked }}
+    {{ range $themGPs }}
       {{ $w := 1 }}
-      {{ range (where $allGPs ".Params.uuid" "in" .Params.goodPractices) }}
-        {{ if eq .Params.niveau "basique" }}{{ if lt $w 2 }}{{ $w = 2 }}{{ end }}{{ end }}
-        {{ if eq .Params.niveau "avance"  }}{{ $w = 3 }}{{ end }}
-      {{ end }}
+      {{ if eq .Params.niveau "basique" }}{{ $w = 2 }}{{ end }}
+      {{ if eq .Params.niveau "avance"  }}{{ $w = 3 }}{{ end }}
       {{ $weights     = $weights | append $w }}
       {{ $totalWeight = add $totalWeight $w }}
     {{ end }}
@@ -124,7 +121,7 @@ html.dark .thematique-percent {
             cx="100" cy="100" r="88"
             id="ring-progress-{{ $thematique.Params.uuid }}"
             data-uuid="{{ $thematique.Params.uuid }}"
-            data-total-items="{{ len $vulnsLinked }}"
+            data-total-items="{{ len $themGPs }}"
             data-weights='{{ $weights | jsonify }}'
             data-total-weight="{{ $totalWeight }}" />
         </svg>

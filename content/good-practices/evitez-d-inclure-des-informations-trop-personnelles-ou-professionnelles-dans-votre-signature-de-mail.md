@@ -1,8 +1,17 @@
 ---
 visibleInCms: true
 uuid: good-practice-X5lCdgtM_Y4eFekMTsBwF
-title: Évitez d’inclure des informations trop personnelles ou professionnelles
-  dans votre signature d'e-mail.
+title: Évitez d’inclure des informations trop personnelles ou professionnelles dans
+  votre signature d'e-mail.
 thematique: thematique-kW-FytF1BDPDcjYzpVQvr
 niveau: avance
+risks: Les outils de collecte de données peuvent analyser automatiquement les signatures
+  d’e-mails et récolter des informations personnelles pour créer des bases de données
+  d’adresses e-mail et autres informations sensibles, pour utiliser ces données pour
+  des attaques de phishing ou des campagnes de spam, pour exploiter vos informations
+  pour des tentatives d’usurpation d’identité ou de fraude.
+dontDo: 'Mettre trop d’informations personnelles ou sensibles dans votre signature
+  qui peuvent être facilement exploités par des personnes malveillantes ou des outils
+  automatisés, comme votre adresse personnelle, votre numéro de téléphone privé, des
+  informations sensibles sur votre travail (exemple : rôle précis, projets confidentiels).'
 ---

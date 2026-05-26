@@ -10,11 +10,5 @@
     {{- range $index, $goodPracticesLinked := (where $goodPractices ".Params.uuid" "in" .Params.goodPractices) -}}
     {{- if $index -}},{{- end -}} {{ .Render "single" }}
     {{- end -}}
-  ],
-  {{ $vulnerabilities := (where .Site.Pages "Section" "vulnerabilities") }}
-  "vulnerabilities": [
-    {{- range $index, $vulnerabilitiesLinked := (where $vulnerabilities ".Params.goodPractices" "intersect" .Params.goodPractices)  -}}
-      {{- if $index -}},{{- end -}} {{ .Render "single" }}
-    {{- end -}}
   ]
 }
