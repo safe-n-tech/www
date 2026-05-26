@@ -21,6 +21,14 @@
 {{- $script := resources.Get "js/main.js" -}}
 <script src="{{ $script.RelPermalink }}"></script>
 <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+<style>
+    #navbar-search-results mark {
+        background: transparent;
+        color: #0449B8;
+        font-weight: 600;
+    }
+    #navbar-search-input::-webkit-search-cancel-button { display: none; }
+</style>
 
 {{- $styles := resources.Get "css/output/styles.css" -}}
 <link rel="preload" href="{{ $styles.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">

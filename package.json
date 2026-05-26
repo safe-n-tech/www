@@ -7,7 +7,7 @@
         "hugo:build": "hugo --gc --minify",
         "tailwind": "npx tailwindcss -i ./assets/css/styles.css -o ./assets/css/output/styles.css --watch",
         "tailwind:build": "npx tailwindcss -i ./assets/css/styles.css -o ./assets/css/output/styles.css --minify",
-        "build": "npm run tailwind:build && npm run hugo:build"
+        "build": "npm run tailwind:build && npm run hugo:build && npx pagefind --site public"
     },
     "devDependencies": {
         "@fullhuman/postcss-purgecss": "^4.x",

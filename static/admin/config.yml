@@ -39,6 +39,28 @@ slug:
   clean_accents: true
 
 collections:
+  - name: aide-pro
+    label: Aide Pro
+    files:
+      - name: aide-pro-index
+        label: Aide Pro (titre et description)
+        file: content/aide-pro/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text, required: false }
+      - name: recommandations-techniques
+        label: Recommandations techniques
+        file: content/aide-pro/recommandations-techniques.md
+        fields:
+          - { label: Titre, name: title, widget: hidden, default: Recommandations techniques }
+          - { label: Contenu, name: body, widget: markdown }
+      - name: exigences-contractuelles-minimales
+        label: Exigences contractuelles minimales
+        file: content/aide-pro/exigences-contractuelles-minimales.md
+        fields:
+          - { label: Titre, name: title, widget: hidden, default: Exigences contractuelles minimales }
+          - { label: Contenu, name: body, widget: markdown }
+
   - name: thematiques
     slug: "{{fields.uuid}}"
     label: Catégories
