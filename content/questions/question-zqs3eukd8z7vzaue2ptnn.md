@@ -11,7 +11,7 @@ correction: >-
 choices:
   - isCorrect: false
     text: Zeus
-  - isCorrect: false
+  - isCorrect: true
     text: Pegasus
   - isCorrect: false
     text: Joker
