@@ -19,6 +19,5 @@ choices:
     text: Plus de 70 %
   - isCorrect: false
     text: Près de 95 %
-  - text: Près de 95 %
 quizCultureGenerale: true
 ---
