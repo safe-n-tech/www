@@ -183,3 +183,10 @@ collections:
         fields:
           - { label: Texte, name: text }
           - { label: Bonne réponse, name: isCorrect, widget: boolean, default: false, required: false }
+
+      - label: Quiz Culture Générale Cybercriminalité
+        name: quizCultureGenerale
+        widget: boolean
+        default: false
+        required: false
+        hint: "Activer pour inclure cette question dans le quiz de culture générale sur la cybercriminalité"

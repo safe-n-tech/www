@@ -5,6 +5,7 @@
   "correction": {{ .Params.correction | jsonify }},
   "image": {{ .Params.image | jsonify }},
   "choices": {{ .Params.choices | jsonify }},
+  "quizCultureGenerale": {{ .Params.quizCultureGenerale | default false | jsonify }},
   {{ $goodPractices := (where .Site.Pages "Section" "good-practices") }}
   "goodPractices": [
     {{- range $index, $goodPracticesLinked := (where $goodPractices ".Params.uuid" "in" .Params.goodPractices) -}}
