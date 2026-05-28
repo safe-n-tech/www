@@ -1,5 +1,6 @@
 const STORAGE_APP_PREFIX = 'safe-n-tech';
 const STORAGE_KEY = `${STORAGE_APP_PREFIX}-questions-culture-generale`;
+// Nombre de maximal de questions affichées dans le quiz
 const QUESTIONS_NUMBER_QUIZ = 20;
 
 let questionIndex = 0;
