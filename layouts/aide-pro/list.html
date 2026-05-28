@@ -1,6 +1,4 @@
 {{ define "main" }}
-{{ $recommandations := site.GetPage "aide-pro/recommandations-techniques" }}
-{{ $exigences := site.GetPage "aide-pro/exigences-contractuelles-minimales" }}
 
 <section
   class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
@@ -16,29 +14,20 @@
 </section>
 
 <section class="container text-dark_gray flex flex-col gap-8 py-16">
-  <div x-data="{ activeTab: 'recommandations' }" class="bg-white rounded-lg overflow-hidden">
+  <div x-data="{ activeTab: 'assurance' }" class="bg-white rounded-lg overflow-hidden">
 
     <div class="flex border-b border-gray-200">
       <button
-        @click="activeTab = 'recommandations'"
-        :class="activeTab === 'recommandations' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
+        @click="activeTab = 'assurance'"
+        :class="activeTab === 'assurance' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
         class="px-8 py-4 text-base transition-colors cursor-pointer">
-        Recommandations techniques
-      </button>
-      <button
-        @click="activeTab = 'exigences'"
-        :class="activeTab === 'exigences' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
-        class="px-8 py-4 text-base transition-colors cursor-pointer">
-        Exigences contractuelles minimales
+        Assurance
       </button>
     </div>
 
     <div class="px-12 py-8">
-      <div x-show="activeTab === 'recommandations'" class="prose max-w-none text-label">
-        {{ if $recommandations }}{{ $recommandations.Content }}{{ end }}
-      </div>
-      <div x-show="activeTab === 'exigences'" class="prose max-w-none text-label">
-        {{ if $exigences }}{{ $exigences.Content }}{{ end }}
+      <div x-show="activeTab === 'assurance'" class="flex flex-col items-center gap-6">
+        <img src="/images/matrice_cyber_risques.png" alt="Matrice synthétique des garanties cyber" class="max-w-full rounded-lg shadow-sm" />
       </div>
     </div>
 
