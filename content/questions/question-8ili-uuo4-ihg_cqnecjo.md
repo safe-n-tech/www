@@ -18,5 +18,5 @@ choices:
     text: 1 plainte pour 250 faits recensés
   - isCorrect: false
     text: Aucune statistique n'existe
-quizCultureGenerale: false
+quizCultureGenerale: true
 ---
