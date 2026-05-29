@@ -1,0 +1,22 @@
+{{/*
+  partials/get-tool.html
+  Résout un UUID d'outil (.Params.tool d'une good-practice) vers la page outil
+  correspondante dans la collection "tools".
+
+  Usage :
+    {{ $tool := partial "get-tool.html" . }}
+    {{ with $tool }}
+      {{ .Params.name }} — {{ .Params.url }} — {{ .Params.description }}
+    {{ end }}
+
+  Renvoie la Page de l'outil, ou rien si .Params.tool est vide / introuvable.
+  Accepte aussi bien l'ancien format objet (tool.url) ignoré que le nouveau
+  format chaîne (UUID).
+*/}}
+{{ $found := false }}
+{{ $uuid := .Params.tool }}
+{{ if and $uuid (eq (printf "%T" $uuid) "string") }}
+  {{ $matches := where (where site.Pages "Section" "tools") ".Params.uuid" "eq" $uuid }}
+  {{ $found = index $matches 0 }}
+{{ end }}
+{{ return $found }}

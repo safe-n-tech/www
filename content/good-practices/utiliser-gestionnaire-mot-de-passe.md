@@ -8,10 +8,7 @@ title: Utiliser un gestionnaire de mot de passe.  Un gestionnaire de mots de pas
 slug: utiliser-gestionnaire-mot-de-passe
 thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 niveau: basique
-tool:
-  name: Bitwarden
-  url: https://bitwarden.com/
-  description: Gestionnaire de mots de passe open source, gratuit et sécurisé
+tool: tool-bitwarden
 risks: S’exposer à un risque de divulgation intentionel ou accidentel du mot de passe
   par une personne tierce ou utilisation frauduleuse en son nom.
 dontDo: Noter ses mots de passe (sur un post-it collé sur son écran, sur un document

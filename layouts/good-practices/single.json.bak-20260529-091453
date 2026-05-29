@@ -6,6 +6,5 @@
   "thematique": {{ .Params.thematique | jsonify }},
   "risks": {{ .Params.risks | jsonify }},
   "dontDo": {{ .Params.dontDo | jsonify }},
-  {{ $tool := partial "get-tool.html" . }}
-  "tool": {{ with $tool }}{{ dict "name" .Params.name "url" .Params.url "description" .Params.description | jsonify }}{{ else }}null{{ end }}
+  "tool": {{ .Params.tool | jsonify }}
 }

@@ -7,11 +7,7 @@ title: Avant de publier des photos ou vidéos en ligne, assurez-vous de supprime
 slug: supprimer-metadonnees-avant-publier
 thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 niveau: avance
-tool:
-  name: ExifEraser (web)
-  url: https://www.exifremove.com/
-  description: Outil en ligne gratuit pour supprimer les métadonnées EXIF de vos photos
-    avant de les publier
+tool: tool-exiferaser-web
 risks: Les métadonnées peuvent contenir des informations sensibles, ce qui peut être
   exploité pour vous localiser ou vous cibler dans des attaques.
 dontDo: Publier des photos ou vidéos directement sans vérifier ou supprimer les métadonnées

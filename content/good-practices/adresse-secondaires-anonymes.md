@@ -8,11 +8,7 @@ title: Utilisez des adresses secondaires jetables ou anonymisées (alias e-mail)
 slug: adresse-secondaires-anonymes
 thematique: thematique-kW-FytF1BDPDcjYzpVQvr
 niveau: avance
-tool:
-  name: SimpleLogin
-  url: https://simplelogin.io/
-  description: Service gratuit (open source) pour créer des alias e-mail anonymes
-    jetables
+tool: tool-simplelogin
 risks: Exposer votre adresse e-mail principale sans protection vous rend vulnérable
   à des spams envahissants, des tentatives de phishing, des fuites de données personnelles.
 dontDo: Partager directement votre adresse e-mail principale avec tous les services

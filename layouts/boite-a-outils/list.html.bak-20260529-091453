@@ -1,8 +1,13 @@
 {{ define "main" }}
 
-{{/* Collect all tools from the dedicated "tools" collection */}}
-{{ $allTools := (where .Site.Pages "Section" "tools") }}
+{{/* Collect all good practices that have a tool defined */}}
 {{ $allGoodPractices := (where .Site.Pages "Section" "good-practices") }}
+{{ $practicesWithTool := slice }}
+{{ range $allGoodPractices }}
+  {{ if and .Params.tool (index .Params.tool "url") }}
+    {{ $practicesWithTool = $practicesWithTool | append . }}
+  {{ end }}
+{{ end }}
 
 <section
   class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
@@ -13,7 +18,7 @@
     <h1 class="text-h1 text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
     <p class="max-w-2xl text-white/90 text-lg mb-4">{{ .Description }}</p>
     <p class="text-white/70 text-sm">
-      {{ len $allTools }} outil{{ if gt (len $allTools) 1 }}s{{ end }} référencé{{ if gt (len $allTools) 1 }}s{{ end }},
+      {{ len $practicesWithTool }} outil{{ if gt (len $practicesWithTool) 1 }}s{{ end }} référencé{{ if gt (len $practicesWithTool) 1 }}s{{ end }},
       classés par thématique.
     </p>
   </div>
@@ -25,25 +30,15 @@
   {{ range $thematiques }}
     {{ $thematique := . }}
 
-    {{/* Tools used by at least one good-practice of this thematique.
-         A tool is shown under a thematique if a good-practice in that
-         thematique references it (via .Params.tool == tool uuid). */}}
-    {{ $themTools := slice }}
-    {{ $seen := slice }}
-    {{ range $allGoodPractices }}
+    {{/* Filter practices for this thematique that have a tool */}}
+    {{ $themPractices := slice }}
+    {{ range $practicesWithTool }}
       {{ if eq .Params.thematique $thematique.Params.uuid }}
-        {{ $toolUuid := .Params.tool }}
-        {{ if and $toolUuid (not (in $seen $toolUuid)) }}
-          {{ $matches := where $allTools ".Params.uuid" "eq" $toolUuid }}
-          {{ with index $matches 0 }}
-            {{ $themTools = $themTools | append (dict "tool" . "niveau" $.Params.niveau) }}
-            {{ $seen = $seen | append $toolUuid }}
-          {{ end }}
-        {{ end }}
+        {{ $themPractices = $themPractices | append . }}
       {{ end }}
     {{ end }}
 
-    {{ if gt (len $themTools) 0 }}
+    {{ if gt (len $themPractices) 0 }}
     <div class="flex flex-col gap-4">
 
       {{/* Thematique header */}}
@@ -56,14 +51,13 @@
 
       {{/* Tools grid */}}
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {{ range $themTools }}
-        {{ $t := .tool }}
-        <a href="{{ $t.Params.url }}" target="_blank" rel="noopener noreferrer"
+        {{ range $themPractices }}
+        <a href="{{ index .Params.tool "url" }}" target="_blank" rel="noopener noreferrer"
           class="group bg-white rounded-2xl p-6 flex flex-col gap-3 border-2 border-transparent hover:border-secondary/20 hover:shadow-md transition-all">
 
           {{/* Tool name + icon */}}
           <div class="flex items-center justify-between">
-            <span class="font-bold text-secondary text-lg">{{ $t.Params.name }}</span>
+            <span class="font-bold text-secondary text-lg">{{ index .Params.tool "name" }}</span>
             <span class="text-secondary/40 group-hover:text-secondary transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -75,12 +69,12 @@
           </div>
 
           {{/* Tool description */}}
-          {{ with $t.Params.description }}
-          <p class="text-dark_gray/80 text-sm leading-relaxed">{{ . }}</p>
+          {{ if index .Params.tool "description" }}
+          <p class="text-dark_gray/80 text-sm leading-relaxed">{{ index .Params.tool "description" }}</p>
           {{ end }}
 
-          {{/* Level badge (niveau of the good-practice that references this tool) */}}
-          {{ $niveau := .niveau }}
+          {{/* Level badge */}}
+          {{ $niveau := .Params.niveau }}
           <div class="mt-1">
             {{ if eq $niveau "avance" }}
             <span class="py-1 px-3 text-xs rounded-full bg-red text-white">Avancé</span>
@@ -100,7 +94,7 @@
   {{ end }}
 
   {{/* Empty state */}}
-  {{ if eq (len $allTools) 0 }}
+  {{ if eq (len $practicesWithTool) 0 }}
   <div class="flex flex-col items-center justify-center py-24 text-center">
     <p class="text-dark_gray/50 text-lg">Aucun outil référencé pour le moment.</p>
   </div>

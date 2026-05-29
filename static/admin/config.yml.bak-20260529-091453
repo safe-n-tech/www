@@ -52,35 +52,6 @@ collections:
       - { label: Sous-titre, name: subtitle, required: false }
       - { label: Description, name: description, required: false, widget: text }
 
-  # --- NOUVELLE COLLECTION : OUTILS ---
-  - name: tools
-    slug: "{{fields.uuid}}"
-    label: Outils
-    label_singular: Outil
-    folder: content/tools
-    create: true
-    editor: { preview: false }
-    filter: { field: "visibleInCms", value: true }
-    identifier_field: name
-    summary: "{{name}}"
-    fields:
-      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
-      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: tool }
-      - label: "Nom de l'outil"
-        name: name
-        widget: string
-        hint: "Nom affiché de l'outil (ex. : Bitwarden, Proton Mail)."
-      - label: "URL de l'outil"
-        name: url
-        widget: string
-        pattern: ['^https://', "L'URL doit commencer par https://"]
-        hint: "Lien officiel vers l'outil, commençant par https://"
-      - label: "Description"
-        name: description
-        widget: text
-        required: false
-        hint: "Courte description de ce que fait l'outil."
-
   - name: good-practices
     slug: "{{fields.slug | default: fields.uuid}}"
     label: Bonnes pratiques
@@ -123,7 +94,6 @@ collections:
         search_fields: [ "title" ]
         value_field: uuid
         display_fields: [ "title" ]
-        hint: "Obligatoire : une bonne pratique sans thématique n'apparaît dans aucune checklist."
 
       - label: Niveau
         name: niveau
@@ -146,16 +116,15 @@ collections:
         required: false
         hint: "Comportement à éviter, formulé positivement comme un contre-exemple."
 
-      # --- CHAMP OUTIL : désormais une RELATION (liste déroulante), plus un objet ---
-      - label: Outil recommandé
+      - label: Outil associé
         name: tool
-        widget: relation
-        collection: tools
-        search_fields: [ "name" ]
-        value_field: uuid
-        display_fields: [ "name" ]
+        widget: object
         required: false
-        hint: "Sélectionnez un outil dans la liste. Pour en ajouter un nouveau, créez-le d'abord dans la collection « Outils »."
+        collapsed: true
+        fields:
+          - { label: "Nom de l'outil", name: "name", required: true }
+          - { label: "URL de l'outil", name: "url", required: true }
+          - { label: "Description de l'outil", name: "description", required: false, widget: text }
 
   - name: definitions
     slug: "{{fields.uuid}}"
@@ -214,10 +183,3 @@ collections:
         fields:
           - { label: Texte, name: text }
           - { label: Bonne réponse, name: isCorrect, widget: boolean, default: false, required: false }
-
-      - label: Quiz Culture Générale Cybercriminalité
-        name: quizCultureGenerale
-        widget: boolean
-        default: false
-        required: false
-        hint: "Activer pour inclure cette question dans le quiz de culture générale sur la cybercriminalité"

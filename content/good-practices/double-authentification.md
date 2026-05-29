@@ -7,11 +7,7 @@ title: La double authentification ajoute une couche de sécurité supplémentair
 slug: double-authentification
 thematique: thematique-nGkbk6oSlC5_p3eqoXX2o
 niveau: essentiel
-tool:
-  name: 2FAS
-  url: https://2fas.com/
-  description: Application gratuite et open source pour gérer vos codes d'authentification
-    double facteur
+tool: tool-2fas
 risks: Rendre moins complexe l’accès à ses données en cas de divulgation ou de fuite
   du mot de passe
 dontDo: Ne pas avoir de double authentification (code temporaire d’accès à un compte

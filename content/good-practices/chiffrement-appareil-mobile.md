@@ -6,10 +6,7 @@ title: Activez le chiffrement de votre appareil pour protéger vos données en c
 slug: chiffrement-appareil-mobile
 thematique: thematique-qP7AaYEirvtU1XIjwcSea
 niveau: avance
-tool:
-  name: VeraCrypt
-  url: https://veracrypt.io/en/Home.html
-  description: Création de partition chiffré
+tool: tool-veracrypt
 risks: Si quelqu’un accède physiquement à votre appareil, il pourra extraire vos données
   si elles ne sont pas chiffrées — mot de passe ou non.
 dontDo: Laisser votre appareil sans chiffrement, même s’il est verrouillé par un mot
