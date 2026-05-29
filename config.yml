@@ -30,21 +30,14 @@ menu:
       name: Checklist
       title: thématiques
       url: /thematiques/
-    - identifier: me-tester
+    - identifier: quizz
       weight: 2
       name: Me tester
-      title: Me tester
-
-    - identifier: quizz
-      weight: 1
-      parent: me-tester
-      name: Hygiène informatique
-      title: quiz hygiène informatique
+      title: quiz
       url: /quizz/
     - identifier: quizz-culture-generale
-      weight: 2
-      parent: me-tester
-      name: Cybercriminalité
+      weight: 3
+      name: Culture générale cybercriminalité
       title: quiz culture générale cybercriminalité
       url: /quizz-culture-generale/
     - identifier: definitions
