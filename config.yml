@@ -35,11 +35,6 @@ menu:
       name: Me tester
       title: quiz
       url: /quizz/
-    - identifier: quizz-culture-generale
-      weight: 3
-      name: Culture générale cybercriminalité
-      title: quiz culture générale cybercriminalité
-      url: /quizz-culture-generale/
     - identifier: definitions
       weight: 5
       name: Glossaire
