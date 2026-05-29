@@ -12,4 +12,5 @@ risks: Les outils d'IA américains sont soumis à une loi qui autorise le
 dontDo: Ne pas considérer qu'un outil d'IA est sûr simplement parce qu'il est
   connu ou populaire. Ne pas utiliser des outils non européens pour traiter des
   données sensibles dans un contexte professionnel ou réglementé.
+tool: tool-x_OlTwPOOQbCm0OleWP3g
 ---
