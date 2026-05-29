@@ -71,7 +71,7 @@ collections:
         widget: string
         hint: "Nom affiché de l'outil (ex. : Bitwarden, Proton Mail)."
       - label: "URL de l'outil"
-        name: url
+        name: link
         widget: string
         pattern: ['^https://', "L'URL doit commencer par https://"]
         hint: "Lien officiel vers l'outil, commençant par https://"
