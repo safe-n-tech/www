@@ -3,14 +3,14 @@
   command = "yarn run build"
 
 [build.environment]
-  HUGO_VERSION = "0.123.7"
+  HUGO_VERSION = "0.145.0"
   HUGO_ENV = "production"
   HUGO_ENABLEGITINFO = "false"
-  MISE_DEFAULT_VERSION = "hugo-extended@0.123.7"
+  MISE_DEFAULT_VERSION = "hugo-extended@0.145.0"
   MISE_VERBOSE = "1"
 
 [context.production.environment]
-  HUGO_VERSION = "0.123.7"
+  HUGO_VERSION = "0.145.0"
 
 [[headers]]
   for = "/*"
