@@ -24,6 +24,8 @@
 {{ partial "quizz/ingame" . }}
 {{ partial "quizz/results" . }}
 
+{{- $engine := resources.Get "js/quiz-engine.js" -}}
+<script src="{{ $engine.RelPermalink }}"></script>
 {{- $script := resources.Get "js/quiz.js" -}}
 <script src="{{ $script.RelPermalink }}"></script>
 {{ end }}
