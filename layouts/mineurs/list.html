@@ -104,10 +104,10 @@
 
             <!-- Feedback Details -->
             <div x-show="answered" x-transition class="rounded-xl p-5 mt-4 border"
-              :class="selectedAnswer === scenarios[currentStep].correct ? 'bg-green-500/5 border-green' : 'bg-red/5 border-red'">
+              :class="selectedAnswer === scenarios[currentStep].correct ? 'bg-green-500/5 border-green' : (dangerLevels[selectedAnswer] > dangerLevels[scenarios[currentStep].correct] ? 'bg-orange-500/5 border-orange' : 'bg-red/5 border-red')">
               <div class="flex items-center gap-2 mb-2 font-bold text-lg"
-                :class="selectedAnswer === scenarios[currentStep].correct ? 'text-green-700' : 'text-red-700'">
-                <span x-text="selectedAnswer === scenarios[currentStep].correct ? '🎉 Bonne réponse !' : '❌ Dommage !'"></span>
+                :class="selectedAnswer === scenarios[currentStep].correct ? 'text-green-700' : (dangerLevels[selectedAnswer] > dangerLevels[scenarios[currentStep].correct] ? 'text-orange-600' : 'text-red-700')">
+                <span x-text="selectedAnswer === scenarios[currentStep].correct ? '🎉 Bonne réponse !' : (dangerLevels[selectedAnswer] > dangerLevels[scenarios[currentStep].correct] ? '🛡️ Prudence extrême !' : '🚨 Danger sous-estimé !')"></span>
               </div>
               <p class="text-dark_gray leading-relaxed text-base" x-text="scenarios[currentStep].explanation"></p>
               
@@ -125,7 +125,7 @@
             <h3 class="text-3xl font-extrabold text-secondary">Jeu terminé !</h3>
             <p class="text-dark_gray leading-relaxed max-w-md">
               Tu as obtenu un score de <strong class="text-secondary" x-text="correctAnswers + ' / ' + scenarios.length"></strong> bonnes réponses. 
-              <span x-text="thermometerTemp >= 80 ? 'Félicitations, tu es un vrai gardien du web ! 🛡️' : 'Continue de t\'entraîner pour devenir incollable !'"></span>
+              <span class="block mt-2 font-bold" :class="thermometerTemp <= 20 ? 'text-green-700' : 'text-red-600'" x-text="thermometerTemp <= 20 ? 'Félicitations, tu as su éviter les dangers du web ! 🛡️' : 'Attention, ton thermomètre a chauffé. Relis bien les conseils pour ne plus te faire piéger !'"></span>
             </p>
             <button @click="reset()" class="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full shadow-md cursor-pointer transition-all hover:scale-105 select-none">
               Rejouer 🔄
