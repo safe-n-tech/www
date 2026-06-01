@@ -144,13 +144,13 @@
             <!-- Liquid rise element -->
             <div class="w-full rounded-full transition-all duration-500 ease-out" 
               :style="'height: ' + thermometerTemp + '%'"
-              :class="thermometerTemp <= 33 ? 'bg-red' : (thermometerTemp <= 66 ? 'bg-orange' : 'bg-green')"></div>
+              :class="thermometerTemp <= 33 ? 'bg-green' : (thermometerTemp <= 66 ? 'bg-orange' : 'bg-red')"></div>
           </div>
 
           <!-- The Bulb -->
           <div class="w-14 h-14 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center shadow-inner"
-            :class="thermometerTemp <= 33 ? 'bg-red text-white' : (thermometerTemp <= 66 ? 'bg-orange text-white' : 'bg-green text-white')">
-            <span class="font-bold text-sm" x-text="thermometerTemp + '%'"></span>
+            :class="thermometerTemp <= 33 ? 'bg-green text-white' : (thermometerTemp <= 66 ? 'bg-orange text-white' : 'bg-red text-white')">
+            <span class="font-bold text-sm" x-text="thermometerTemp + '°C'"></span>
           </div>
         </div>
       </div>
