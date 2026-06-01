@@ -4,37 +4,112 @@
 
 {{ define "main" }}
 
-<section
-  class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+<!-- Header -->
+<section class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
-  <h1 class="h1 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center">{{ .Title }}</h1>
+  <h1 class="h1 text-4xl md:text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center mt-6">{{ .Title }}</h1>
   {{ if .Params.description }}
-  <p class="w-fit mb-20 mx-auto my-7 text-center">{{ .Params.description }}</p>
+  <p class="w-fit mb-20 mx-auto my-7 text-center max-w-screen-md leading-relaxed px-4 text-white/90">{{ .Params.description }}</p>
   {{ else }}
   <div class="mb-20"></div>
   {{ end }}
 </section>
 
-<section class="container text-dark_gray flex flex-col gap-8 py-16">
-  <div x-data="{ activeTab: 'assurance' }" class="bg-white rounded-lg overflow-hidden">
+<!-- Tabs Area -->
+<section class="container text-dark_gray flex flex-col gap-8 py-16 px-4 max-w-5xl mx-auto">
+  <div x-data="{ activeTab: 'preconisations' }" class="bg-white rounded-2xl shadow-sm border border-perso overflow-hidden">
 
-    <div class="flex border-b border-gray-200">
+    <!-- Tabs headers -->
+    <div class="flex border-b border-perso bg-light_gray/20 overflow-x-auto whitespace-nowrap">
+      <button
+        @click="activeTab = 'preconisations'"
+        :class="activeTab === 'preconisations' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
+        class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
+        📋 Préconisations Cyber
+      </button>
       <button
         @click="activeTab = 'assurance'"
-        :class="activeTab === 'assurance' ? 'border-b-2 border-secondary text-secondary font-semibold' : 'text-gray-500 hover:text-secondary'"
-        class="px-8 py-4 text-base transition-colors cursor-pointer">
-        Assurance
+        :class="activeTab === 'assurance' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
+        class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
+        🛡️ Assurances Cyber
+      </button>
+      <button
+        @click="activeTab = 'kits'"
+        :class="activeTab === 'kits' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
+        class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
+        🚨 Réaction & Kits TPME
       </button>
     </div>
 
-    <div class="px-12 py-8">
-      <div x-show="activeTab === 'assurance'" class="flex flex-col items-center gap-6">
-        <img src="/images/matrice_cyber_risques.png" alt="Matrice synthétique des garanties cyber" class="max-w-full rounded-lg shadow-sm" />
-      </div>
-    </div>
+    <!-- Tabs content -->
+    <div class="p-6 md:p-10">
 
+      <!-- TAB 1: PRECONISATIONS -->
+      <div x-show="activeTab === 'preconisations'" x-transition class="flex flex-col gap-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-4 border-b border-perso pb-4">Guide des bonnes préconisations pour dirigeant de TPE/PME</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {{ range $section := .Params.preconisations }}
+          <div class="bg-light_gray/20 border border-perso rounded-2xl p-6 flex flex-col gap-4">
+            <h3 class="text-lg md:text-xl font-bold text-secondary">{{ $section.category }}</h3>
+            <ul class="list-disc pl-5 text-sm md:text-base text-dark_gray flex flex-col gap-3 leading-relaxed">
+              {{ range $item := $section.items }}
+              <li>{{ $item }}</li>
+              {{ end }}
+            </ul>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- TAB 2: ASSURANCES CYBER -->
+      <div x-show="activeTab === 'assurance'" x-transition class="flex flex-col gap-8">
+        <div class="flex flex-col gap-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-secondary">{{ .Params.assurances.title }}</h2>
+          <p class="text-sm md:text-base text-dark_gray opacity-80 leading-relaxed max-w-3xl">{{ .Params.assurances.intro }}</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-4">
+          {{ range $level := .Params.assurances.levels }}
+          <div class="bg-light_gray/10 border border-perso rounded-xl p-5 flex flex-col gap-3">
+            <h4 class="font-bold text-base md:text-lg text-secondary">{{ $level.name }}</h4>
+            <p class="text-xs md:text-sm text-dark_gray opacity-85 leading-relaxed">{{ $level.text | markdownify }}</p>
+          </div>
+          {{ end }}
+        </div>
+
+        <div class="border-t border-perso pt-8 flex flex-col items-center gap-6 mt-4">
+          <h3 class="text-xl font-bold text-secondary text-center">Matrice synthétique des garanties cyber risques</h3>
+          <img src="/images/matrice_cyber_risques.png" alt="Matrice synthétique des garanties cyber" class="max-w-full rounded-2xl border border-perso shadow-sm" />
+        </div>
+      </div>
+
+      <!-- TAB 3: REACTION & KITS -->
+      <div x-show="activeTab === 'kits'" x-transition class="flex flex-col gap-8">
+        <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-4 border-b border-perso pb-4">{{ .Params.tpme_kits.title }}</h2>
+
+        <div class="max-w-2xl mx-auto w-full">
+          <!-- Kits column -->
+          <div class="flex flex-col gap-6">
+            <h3 class="text-lg md:text-xl font-bold text-secondary">🗂️ Kits de réaction en cas de crise</h3>
+            <div class="flex flex-col gap-4">
+              {{ range $kit := .Params.tpme_kits.kits }}
+              <div class="bg-light_gray/30 border border-perso rounded-2xl p-5 flex flex-col gap-2">
+                <div class="flex items-center justify-between">
+                  <h4 class="font-bold text-base md:text-lg text-secondary">{{ $kit.name }}</h4>
+                  <span class="bg-red/10 text-red text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">{{ $kit.type }}</span>
+                </div>
+                <p class="text-xs md:text-sm text-dark_gray leading-relaxed">{{ $kit.description }}</p>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 {{ end }}

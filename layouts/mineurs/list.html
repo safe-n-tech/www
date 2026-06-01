@@ -1,0 +1,280 @@
+{{ define "pageHead" }}
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+{{- $script := resources.Get "js/cyberborder.js" -}}
+<script src="{{ $script.RelPermalink }}" defer></script>
+{{ end }}
+
+{{ define "main" }}
+<!-- Main Section -->
+<section class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+  <div class="max-w-md md:ml-12 mt-20">
+    {{ partial "breadcrumb" (dict "page" . ) }}
+  </div>
+  <h1 class="h1 text-4xl md:text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center mt-6">{{ .Title }}</h1>
+  {{ if .Params.description }}
+  <p class="w-fit mb-20 mx-auto my-7 text-center max-w-screen-md leading-relaxed px-4 text-white/90">{{ .Params.description }}</p>
+  {{ else }}
+  <div class="mb-20"></div>
+  {{ end }}
+</section>
+
+<!-- Tabs System -->
+<div x-data="{ activeTab: 0 }" class="w-full">
+  <div class="flex flex-wrap gap-3 justify-center mt-12 mb-4 px-4 max-w-5xl mx-auto">
+    <button @click="activeTab = 0"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer"
+      :class="activeTab === 0 ? 'bg-secondary text-white border-secondary scale-105' : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      🎮 Mini-Jeu
+    </button>
+    <button @click="activeTab = 1"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer"
+      :class="activeTab === 1 ? 'bg-secondary text-white border-secondary scale-105' : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      🛡️ Pièges en ligne
+    </button>
+    <button @click="activeTab = 2"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer"
+      :class="activeTab === 2 ? 'bg-secondary text-white border-secondary scale-105' : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      🚨 Que faire si...
+    </button>
+    <button @click="activeTab = 3"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer"
+      :class="activeTab === 3 ? 'bg-secondary text-white border-secondary scale-105' : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      🎭 Les Brouteurs
+    </button>
+  </div>
+  
+  <div class="relative w-full">
+
+<!-- CyberBorder Game Section -->
+<section x-show="activeTab === 0" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;" class="container py-12 px-4 max-w-5xl mx-auto">
+  <div class="bg-white rounded-3xl shadow-sm border border-perso overflow-hidden p-6 md:p-10 flex flex-col gap-8">
+    <div class="text-center">
+      <span class="bg-primary/10 text-primary font-bold text-xs uppercase tracking-widest px-4 py-1.5 rounded-full">Mini-Jeu Interactif</span>
+      <h2 class="text-3xl font-extrabold text-secondary mt-3">{{ .Params.cyberborder.title }}</h2>
+      <p class="text-dark_gray opacity-80 mt-2 max-w-2xl mx-auto">{{ .Params.cyberborder.intro }}</p>
+    </div>
+
+    <!-- AlpineJS Game Widget -->
+    <div x-data="cyberborderGame({{ .Params.cyberborder.scenarios | jsonify }})" class="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch mt-4 bg-light_gray/20 rounded-2xl p-6 md:p-8">
+      
+      <!-- Scenario Player (left) -->
+      <div class="md:col-span-9 flex flex-col justify-between gap-6">
+        
+        <!-- Game Play Area -->
+        <template x-if="!isFinished">
+          <div class="flex flex-col gap-6 w-full">
+            <div class="flex items-center justify-between text-sm text-dark_gray font-semibold border-b border-perso pb-4">
+              <span class="text-secondary font-bold" x-text="'Situation ' + (currentStep + 1) + ' / ' + scenarios.length"></span>
+              <span class="text-green-700 bg-green-500/10 px-3 py-1 rounded-full" x-text="correctAnswers + ' correct(s)'"></span>
+            </div>
+
+            <div class="min-h-[100px] flex items-center">
+              <p class="text-xl md:text-2xl font-bold text-secondary leading-relaxed" x-text="scenarios[currentStep].question"></p>
+            </div>
+
+            <!-- Choice Actions -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
+              <button @click="submitAnswer('green')" :disabled="answered" 
+                class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
+                :class="answered 
+                  ? (scenarios[currentStep].correct === 'green' ? 'bg-green-500/10 border-green text-green-700' : 'bg-gray-100 border-gray-300 text-gray-400')
+                  : 'bg-white border-green hover:bg-green-500/10 text-green-700 hover:scale-102'">
+                <span class="text-2xl mb-1">🟢</span>
+                C'est OK, on partage !
+              </button>
+
+              <button @click="submitAnswer('orange')" :disabled="answered" 
+                class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
+                :class="answered 
+                  ? (scenarios[currentStep].correct === 'orange' ? 'bg-orange-500/10 border-orange text-orange-700' : 'bg-gray-100 border-gray-300 text-gray-400')
+                  : 'bg-white border-orange hover:bg-orange-500/10 text-orange-700 hover:scale-102'">
+                <span class="text-2xl mb-1">🟠</span>
+                Bof, attention...
+              </button>
+
+              <button @click="submitAnswer('red')" :disabled="answered" 
+                class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
+                :class="answered 
+                  ? (scenarios[currentStep].correct === 'red' ? 'bg-red/10 border-red text-red-700' : 'bg-gray-100 border-gray-300 text-gray-400')
+                  : 'bg-white border-red hover:bg-red/10 text-red-700 hover:scale-102'">
+                <span class="text-2xl mb-1">🔴</span>
+                STOP ! Danger
+              </button>
+            </div>
+
+            <!-- Feedback Details -->
+            <div x-show="answered" x-transition class="rounded-xl p-5 mt-4 border"
+              :class="selectedAnswer === scenarios[currentStep].correct ? 'bg-green-500/5 border-green' : 'bg-red/5 border-red'">
+              <div class="flex items-center gap-2 mb-2 font-bold text-lg"
+                :class="selectedAnswer === scenarios[currentStep].correct ? 'text-green-700' : 'text-red-700'">
+                <span x-text="selectedAnswer === scenarios[currentStep].correct ? '🎉 Bonne réponse !' : '❌ Dommage !'"></span>
+              </div>
+              <p class="text-dark_gray leading-relaxed text-base" x-text="scenarios[currentStep].explanation"></p>
+              
+              <button @click="next()" class="mt-4 bg-secondary hover:bg-secondary/90 text-white font-bold py-2 px-6 rounded-full inline-flex items-center gap-1 cursor-pointer transition-all">
+                Suivant <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </template>
+
+        <!-- Final Results -->
+        <template x-if="isFinished">
+          <div class="flex flex-col items-center justify-center text-center gap-6 py-6 w-full">
+            <span class="text-6xl">🏆</span>
+            <h3 class="text-3xl font-extrabold text-secondary">Jeu terminé !</h3>
+            <p class="text-dark_gray leading-relaxed max-w-md">
+              Tu as obtenu un score de <strong class="text-secondary" x-text="correctAnswers + ' / ' + scenarios.length"></strong> bonnes réponses. 
+              <span x-text="thermometerTemp >= 80 ? 'Félicitations, tu es un vrai gardien du web ! 🛡️' : 'Continue de t\'entraîner pour devenir incollable !'"></span>
+            </p>
+            <button @click="reset()" class="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full shadow-md cursor-pointer transition-all hover:scale-105 select-none">
+              Rejouer 🔄
+            </button>
+          </div>
+        </template>
+      </div>
+
+      <!-- Thermometer Widget (right) -->
+      <div class="md:col-span-3 flex flex-col items-center justify-center border-l md:border-l border-perso/50 pt-6 md:pt-0 pl-0 md:pl-6">
+        <span class="text-xs font-bold text-dark_gray opacity-70 mb-4 select-none">THERMOMÈTRE DE SÉCURITÉ</span>
+        
+        <div class="flex flex-row md:flex-col items-center gap-4">
+          <!-- The visual Thermometer Tube -->
+          <div class="relative w-10 h-64 bg-slate-200 dark:bg-slate-700 rounded-full border-2 border-slate-300 dark:border-slate-600 flex flex-col justify-end p-0.5 overflow-hidden">
+            <!-- Liquid rise element -->
+            <div class="w-full rounded-full transition-all duration-500 ease-out" 
+              :style="'height: ' + thermometerTemp + '%'"
+              :class="thermometerTemp <= 33 ? 'bg-red' : (thermometerTemp <= 66 ? 'bg-orange' : 'bg-green')"></div>
+          </div>
+
+          <!-- The Bulb -->
+          <div class="w-14 h-14 rounded-full border-2 border-slate-300 dark:border-slate-600 flex items-center justify-center shadow-inner"
+            :class="thermometerTemp <= 33 ? 'bg-red text-white' : (thermometerTemp <= 66 ? 'bg-orange text-white' : 'bg-green text-white')">
+            <span class="font-bold text-sm" x-text="thermometerTemp + '%'"></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Banking and Photos Warnings -->
+<section x-show="activeTab === 1" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;" class="container py-8 px-4 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+  <!-- Banking Card -->
+  <div class="bg-white rounded-3xl shadow-sm border border-perso overflow-hidden p-6 md:p-8 flex flex-col justify-between">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-2xl font-extrabold text-secondary flex items-center gap-2">🎮 {{ .Params.bancaire.title }}</h3>
+      <p class="text-sm md:text-base text-dark_gray leading-relaxed">{{ .Params.bancaire.text }}</p>
+      
+      <div class="bg-red/5 dark:bg-red/10 border-l-4 border-red p-4 rounded-r-xl">
+        <p class="text-sm font-bold text-red-700 dark:text-red-400 mb-1">🛑 Règle d'or</p>
+        <p class="text-xs md:text-sm text-dark_gray opacity-90 font-medium">{{ .Params.bancaire.rule }}</p>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-2">
+        <p class="text-sm font-bold text-secondary">Pourquoi ?</p>
+        <ul class="list-disc pl-5 text-xs md:text-sm text-dark_gray flex flex-col gap-1">
+          {{ range $reason := .Params.bancaire.reasons }}
+          <li>{{ $reason | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="bg-green-500/5 dark:bg-green-500/10 border border-green/30 p-4 rounded-xl mt-6 text-sm text-dark_gray leading-relaxed">
+      ✨ <strong>Le bon réflexe :</strong> {{ .Params.bancaire.reflex }}
+    </div>
+  </div>
+
+  <!-- Photos Card -->
+  <div class="bg-white rounded-3xl shadow-sm border border-perso overflow-hidden p-6 md:p-8 flex flex-col justify-between">
+    <div class="flex flex-col gap-4">
+      <h3 class="text-2xl font-extrabold text-secondary flex items-center gap-2">📸 {{ .Params.photos.title }}</h3>
+      <p class="text-sm md:text-base text-dark_gray leading-relaxed">{{ .Params.photos.text }}</p>
+      
+      <div class="bg-red/5 dark:bg-red/10 border-l-4 border-red p-4 rounded-r-xl">
+        <p class="text-sm font-bold text-red-700 dark:text-red-400 mb-2">🚫 Il est interdit de publier :</p>
+        <ul class="list-disc pl-5 text-xs md:text-sm text-dark_gray flex flex-col gap-1">
+          {{ range $item := .Params.photos.forbidden }}
+          <li>{{ $item | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2 mt-2">
+        <p class="text-sm font-bold text-secondary">Quel est le danger ?</p>
+        <ul class="list-disc pl-5 text-xs md:text-sm text-dark_gray flex flex-col gap-1">
+          {{ range $reason := .Params.photos.reasons }}
+          <li>{{ $reason | markdownify }}</li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="bg-green-500/5 dark:bg-green-500/10 border border-green/30 p-4 rounded-xl mt-6 text-sm text-dark_gray leading-relaxed">
+      ✨ <strong>Le bon réflexe :</strong> {{ .Params.photos.reflex }}
+    </div>
+  </div>
+</section>
+
+<!-- Que faire en cas de... (Accordion Panel) -->
+<section x-show="activeTab === 2" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;" class="container py-8 px-4 max-w-5xl mx-auto">
+  <div class="bg-white rounded-3xl shadow-sm border border-perso p-6 md:p-10">
+    <h2 class="text-3xl font-extrabold text-secondary mb-6 text-center">🚨 {{ .Params.que_faire.title }}</h2>
+
+    <div x-data="{ activeIndex: null }" class="flex flex-col gap-4">
+      {{ range $index, $case := .Params.que_faire.cases }}
+      <div class="border border-perso rounded-2xl overflow-hidden transition-all">
+        <button @click="activeIndex = (activeIndex === {{ $index }} ? null : {{ $index }})" 
+          class="w-full text-left p-5 flex items-center justify-between font-bold text-lg md:text-xl text-secondary bg-light_gray/20 hover:bg-light_gray/40 cursor-pointer focus:outline-none select-none">
+          <span>{{ $case.name }}</span>
+          <svg class="w-5 h-5 text-secondary transform transition-transform duration-300" :class="activeIndex === {{ $index }} ? 'rotate-180' : ''" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </button>
+        
+        <div x-show="activeIndex === {{ $index }}" x-collapse x-cloak class="p-6 flex flex-col gap-4 border-t border-perso bg-white">
+          <div class="flex flex-col gap-1">
+            <p class="text-sm font-bold text-red-600 dark:text-red-400">Le danger :</p>
+            <p class="text-sm md:text-base text-dark_gray leading-relaxed">{{ $case.danger }}</p>
+          </div>
+          <div class="flex flex-col gap-1">
+            <p class="text-sm font-bold text-green-700 dark:text-green-400">Pour réagir :</p>
+            <p class="text-sm md:text-base text-dark_gray leading-relaxed">{{ $case.action | markdownify }}</p>
+          </div>
+          <div class="text-xs text-secondary/70 italic border-t border-perso/50 pt-3">
+            ⚖️ {{ $case.law }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<!-- Brouteurs Section -->
+<section x-show="activeTab === 3" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" style="display: none;" class="container py-8 pb-20 px-4 max-w-5xl mx-auto">
+  <div class="bg-white rounded-3xl shadow-sm border border-perso p-6 md:p-10 flex flex-col gap-8">
+    <div class="text-center">
+      <h2 class="text-3xl font-extrabold text-secondary">{{ .Params.brouteurs.title }}</h2>
+      <p class="text-dark_gray opacity-80 mt-2">Apprends à repérer les signaux d'alerte des manipulateurs affectifs en ligne.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {{ range $step := .Params.brouteurs.steps }}
+      <div class="bg-light_gray/20 border border-perso rounded-2xl p-5 flex flex-col gap-3">
+        <h4 class="font-bold text-base md:text-lg text-secondary">{{ $step.title }}</h4>
+        <p class="text-xs md:text-sm text-dark_gray opacity-80 leading-relaxed">{{ $step.text }}</p>
+      </div>
+      {{ end }}
+    </div>
+
+    <div class="bg-red/5 dark:bg-red/10 border border-red/30 p-5 rounded-2xl text-sm md:text-base text-dark_gray leading-relaxed mt-2">
+      ⚠️ <strong>Le réflexe absolu :</strong> {{ .Params.brouteurs.reflex }}
+    </div>
+  </div>
+</section>
+  </div>
+</div>
+{{ end }}

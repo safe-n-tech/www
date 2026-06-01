@@ -1,0 +1,75 @@
+{{ define "pageHead" }}
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+{{ end }}
+
+{{ define "main" }}
+<section
+  class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+  <div class="max-w-md md:ml-12 my-20">
+    {{ partial "breadcrumb" (dict "page" . ) }}
+  </div>
+  <h1 class="h1 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center">{{ .Title }}</h1>
+  {{ if .Params.description }}
+  <p class="w-fit mb-20 mx-auto my-7 text-center max-w-screen-md leading-relaxed px-4">{{ .Params.description }}</p>
+  {{ else }}
+  <div class="mb-20"></div>
+  {{ end }}
+</section>
+
+<section class="container text-dark_gray flex flex-col gap-8 py-16 px-4">
+  <div x-data="{ activeTab: 0 }" class="max-w-4xl mx-auto w-full">
+    
+    <!-- Tabs Navigation -->
+    <div class="flex flex-wrap gap-3 justify-center mb-10">
+      {{ range $index, $topic := .Params.topics }}
+      <button @click="activeTab = {{ $index }}"
+        class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer"
+        :class="activeTab === {{ $index }} 
+          ? 'bg-secondary text-white border-secondary scale-105' 
+          : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+        {{ $topic.title }}
+      </button>
+      {{ end }}
+    </div>
+
+    <!-- Tabs Content -->
+    <div class="relative">
+      {{ range $index, $topic := .Params.topics }}
+      <div x-show="activeTab === {{ $index }}" 
+           x-transition:enter="transition ease-out duration-300" 
+           x-transition:enter-start="opacity-0 translate-y-2" 
+           x-transition:enter-end="opacity-100 translate-y-0" 
+           style="display: none;" 
+           class="bg-white rounded-2xl shadow-sm border border-perso overflow-hidden">
+        
+        <div class="p-6 md:p-8 flex flex-col gap-6 bg-light_gray/10">
+          {{ if $topic.summary }}
+          <p class="text-lg md:text-xl text-dark_gray font-medium mb-2 border-b border-perso pb-4">{{ $topic.summary }}</p>
+          {{ end }}
+
+          {{ range $section := $topic.sections }}
+          <div class="flex flex-col gap-3">
+            <h4 class="text-lg font-semibold text-secondary flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-secondary"></span>
+              {{ $section.title }}
+            </h4>
+            
+            {{ if eq $section.type "list" }}
+              <ul class="list-disc pl-6 text-base text-dark_gray flex flex-col gap-2">
+                {{ range $item := $section.items }}
+                <li class="leading-relaxed">{{ $item | markdownify }}</li>
+                {{ end }}
+              </ul>
+            {{ else }}
+              <p class="text-base text-dark_gray leading-relaxed pl-4">{{ $section.content | markdownify }}</p>
+            {{ end }}
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+  </div>
+</section>
+{{ end }}

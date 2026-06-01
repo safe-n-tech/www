@@ -1,119 +1,64 @@
 ---
-title: Aide Pro
-recommandations_techniques: >-
-  \*\*Inventaire et connaissance du matériel\*\*
-
-
-  \* Faites l'inventaire de l'ensemble de vos matériels (ordinateurs, mobiles, périphériques comme les imprimantes ou clés 4G) et de vos logiciels.
-
-
-  \* Identifiez les données vitales pour votre activité, telles que les fichiers clients, les factures ou votre savoir-faire de fabrication.
-
-
-
-
-  \*\*Sauvegardes\*\*
-
-
-  \* Planifiez des sauvegardes régulières, par exemple à un rythme hebdomadaire ou mensuel en fonction du volume de données que vous produisez.
-
-
-  \* Privilégiez la sauvegarde sur un support physique (comme un disque dur externe), et déconnectez-le impérativement de votre ordinateur une fois la sauvegarde terminée pour le protéger d'une intrusion.
-
-
-  \* Testez régulièrement vos sauvegardes pour vous assurer que les données pourront être restaurées correctement le jour où vous en aurez besoin.
-
-
-
-
-  \*\*Mises à jour et protection logicielle\*\*
-
-
-  \* Activez les fonctions de mise à jour automatique proposées par les éditeurs pour votre système d'exploitation et vos logiciels.
-
-
-  \* Mettez au rebut ou désinstallez tout matériel ou logiciel obsolète qui ne reçoit plus de correctifs de sécurité de la part de son fabricant.
-
-
-  \* Déployez un antivirus sur tous vos équipements connectés à Internet.
-
-
-  \* Activez dans les paramètres de votre antivirus la mise à jour automatique et l'analyse automatique de vos espaces de stockage.
-
-
-  \* Activez et conservez le pare-feu local préinstallé sur votre poste de travail avec ses paramètres par défaut pour bloquer toute connexion entrante depuis Internet.
-
-
-
-
-  \*\*Mots de passe et sécurisation des accès\*\*
-
-
-  \* Utilisez des mots de passe systématiquement différents pour chaque service et séparez rigoureusement vos mots de passe professionnels et personnels.
-
-
-  \* Optez pour des mots de passe robustes d'au moins 9 caractères pour les services peu critiques, incluant majuscules, minuscules, chiffres et caractères spéciaux. Vous pouvez également utiliser des phrases de passe (une suite de mots aléatoires) pour faciliter la mémorisation.
-
-
-  \* Activez systématiquement l'authentification multifacteurs (ou à deux étapes) dès qu'elle est proposée par un service.
-
-
-
-
-  \*\*Usages quotidiens et navigation\*\*
-
-
-  \* Pour la navigation quotidienne sur Internet, utilisez un compte utilisateur classique, sans privilèges d'administrateur, afin de limiter les risques d'installation de programmes malveillants.
-
-
-  \* Dédiez idéalement un ordinateur uniquement à votre activité professionnelle sans y associer d'usage familial ou personnel ; si ce n'est pas possible, créez des comptes utilisateurs séparés pour chaque usage.
-
-
-  \* Prêtez une grande attention aux courriels reçus pour éviter le hameçonnage (phishing) en vérifiant l'expéditeur et la cohérence des liens avant de cliquer, et ne transférez jamais vos messages professionnels vers votre messagerie personnelle.
-
-
-
-
-  \*\*Déplacements professionnels\*\*
-
-
-  \* Avant de partir en déplacement, sauvegardez vos données pour ne pas les perdre en cas de vol de votre matériel.
-
-
-  \* Ne connectez jamais d'équipements de tiers (comme un téléphone ou une clé USB) sur votre ordinateur professionnel.
-
-
-  \* N'utilisez jamais les clés USB qui ont pu vous être offertes lors de salons ou réunions, car elles sont susceptibles de contenir des codes malveillants.
-
-
-
-
-  \*\*Réaction face aux cyberattaques\*\*
-
-
-  \* En cas d'incident ou de cyberattaque, déconnectez immédiatement votre équipement d'Internet (en retirant le câble ou en coupant le WiFi) pour bloquer l'action de l'attaquant, mais n'éteignez pas l'ordinateur.
-
-
-  \* Ne payez jamais la rançon demandée par un rançongiciel et orientez-vous vers la plateforme Cybermalveillance.gouv.fr pour obtenir un diagnostic et une assistance.
-exigences_contractuelles_minimales: >-
-  **1. Maintien en Conditions de Sécurité (MCS) et gestion des correctifs**
-
-  Le contrat de prestation doit stipuler l'obligation pour le sous-traitant d'assurer une gestion rigoureuse des vulnérabilités. Le document doit imposer l'application systématique des mises à jour de sécurité sur l'ensemble des systèmes et équipements numériques de l'entreprise dès leur mise à disposition.
-
-
-  **2. Politique de sauvegarde et garantie de restauration**
-
-  Le prestataire doit s'engager contractuellement sur l'exécution, la fréquence, le contrôle et la viabilité des sauvegardes du système d'information. Le contrat doit inclure une garantie de restauration certifiant la capacité technique du prestataire à restituer l'intégralité des données dans un délai précis, compatible avec la continuité de l'activité.
-
-
-  **3. Clause de réversibilité et restitution des données**
-
-  Le contrat doit intégrer une clause de réversibilité définissant les conditions de fin de prestation. Cette clause garantit qu'en cas de rupture ou d'échéance du contrat, le prestataire s'engage à restituer l'intégralité des données, configurations et documentations de l'entreprise dans un format standard et exploitable, selon des modalités techniques et financières définies dès la signature.
-
-
-  **4. Engagements de Niveaux de Service (SLA)**
-
-  Le document contractuel doit quantifier de manière univoque les engagements de réactivité du prestataire en cas d'anomalie. Cela exige la définition contractuelle d'une Garantie de Temps d'Intervention (GTI), correspondant au délai maximal de prise en charge d'un incident, et d'une Garantie de Temps de Rétablissement (GTR), fixant le délai maximal alloué pour la remise en état opérationnel du système.
+title: "Aide Pro : Cybersécurité pour votre Entreprise"
+description: "Garantissez la sécurité, la conformité réglementaire et la résilience de votre entreprise face aux menaces numériques. Découvrez nos préconisations, nos fiches réflexes et les conseils d'assurance."
+
+preconisations:
+  - category: "🔐 Facteurs humains"
+    items:
+      - "Sensibiliser et former tous les collaborateurs (y compris CDD, stagiaires, alternants) aux bonnes pratiques cyber — et étendre cette exigence aux sous-traitants et prestataires."
+      - "Désigner un responsable clairement identifié pour piloter la politique de gestion du risque cyber."
+  
+  - category: "🔑 Hygiène informatique quotidienne"
+    items:
+      - "Utiliser des mots de passe longs plutôt que complexes (16 caractères simples > 8 caractères spéciaux) et un gestionnaire de mots de passe."
+      - "Verrouiller son poste à chaque absence, éviter les supports personnels (clé USB) et les réseaux Wi-Fi non sécurisés."
+      - "Appliquer régulièrement les mises à jour de tous les logiciels — chaque faille non corrigée est une porte d'entrée."
+
+  - category: "🛡️ Outils de protection"
+    items:
+      - "Déployer antivirus et pare-feux, mis à jour quotidiennement de façon automatique."
+      - "Compléter par des outils de détection d'intrusion (IDS/IPS, SIEM) et, selon la taille de la structure, un SOC."
+
+  - category: "💾 Résilience"
+    items:
+      - "Effectuer des sauvegardes idéalement quotidiennes, sur des supports distincts et hors site."
+      - "Tester la restauration des sauvegardes au moins une fois par an — une sauvegarde non testée n'est pas fiable."
+      - "Disposer d'un Plan de Continuité d'Activité (PCA) incluant un Plan de Reprise d'Activité (PRA)."
+
+  - category: "🚨 En cas d'incident"
+    items:
+      - "Contacter son assureur sans délai avant toute décision."
+      - "Déposer plainte rapidement auprès de la police ou gendarmerie territoriale."
+      - "En cas de fuite de données personnelles, notifier la CNIL dans les 72 heures (art. 33 RGPD)."
+      - "Conserver les preuves numériques pour l'enquête."
+
+assurances:
+  title: "Assurer son organisation face au risque cyber"
+  intro: "Le risque cyber touche toutes les dimensions de l'entreprise : son patrimoine, ses responsabilités juridiques et sa réputation. Trois niveaux de couverture essentiels sont à connaître."
+  levels:
+    - name: "Protéger ses biens et actifs (Dommages)"
+      text: "Les contrats de dommages aux biens couvrent les sinistres d'origine cyber (comme les incendies ou la destruction matérielle). Les contrats d'assurance cyber complètent cette protection en prenant en charge la reconstitution de données, les pertes d'exploitation financières et les frais réglementaires liés à une fuite de données (frais de notification CNIL, information des personnes)."
+    - name: "Couvrir sa responsabilité envers les tiers (Responsabilité)"
+      text: "La responsabilité civile générale indemnise les dommages causés à des tiers (clients, salariés...). Attention toutefois : la couverture des dommages causés à des tiers suite à une cyberattaque n'est pas systématiquement incluse dans les contrats classiques. *Vérifier ce point spécifique avec son assureur est indispensable.*"
+    - name: "Être accompagné en cas de crise (Gestion de crise)"
+      text: "Les contrats cyber permettent de mobiliser immédiatement une plateforme de gestion de crise : des experts en sécurité informatique pour bloquer l'attaque, des conseillers juridiques pour la conformité, et des spécialistes en communication pour limiter l'impact réputationnel."
+
+tpme_kits:
+  title: "Fiches Réflexes & Ressources TPME"
+  kits:
+    - name: "Kit en cas de piratage informatique"
+      type: "Feuille réflexe"
+      description: "Procédure immédiate en cas d'infection : déconnexion réseau, préservation des preuves, alerte des équipes."
+    - name: "Kit en cas de fuite de données"
+      type: "Feuille réflexe"
+      description: "Checklist réglementaire pour qualifier la fuite de données et notifier la CNIL sous 72h."
+  insurances:
+    - name: "AXA - Assurance Cyber Risques"
+      url: "https://www.axa.fr/pro/assurance-materiel-informatique/assurance-cyber-risques.html"
+    - name: "Macif - Assurance Professionnelle"
+      url: "https://www.macif.fr/"
+    - name: "Groupama - Solutions Cyber"
+      url: "https://www.groupama.fr/"
+    - name: "CMMA - Assurance Mutuelle"
+      url: "https://www.cmma.fr/"
 ---
-
-En construction

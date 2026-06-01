@@ -1,0 +1,115 @@
+{{ define "pageHead" }}
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+{{ end }}
+
+{{ define "main" }}
+<div x-data="{ largeText: false }" :class="largeText ? 'text-lg md:text-xl' : ''">
+
+  <!-- Header -->
+  <section class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+    <div class="max-w-md md:ml-12 mt-20">
+      {{ partial "breadcrumb" (dict "page" . ) }}
+    </div>
+    
+    <!-- Accessibility Control -->
+    <div class="absolute top-24 right-4 md:right-12 z-10">
+      <button @click="largeText = !largeText" 
+        class="bg-white/20 hover:bg-white/30 text-white font-semibold py-2 px-4 rounded-full border border-white/40 flex items-center gap-2 text-sm transition-all focus:outline-none cursor-pointer">
+        <span x-text="largeText ? 'Format de texte standard' : 'Agrandir le texte 🔍'"></span>
+      </button>
+    </div>
+
+    <h1 class="h1 text-4xl md:text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center mt-6">{{ .Title }}</h1>
+    {{ if .Params.description }}
+    <p class="w-fit mb-20 mx-auto my-7 text-center max-w-screen-md leading-relaxed px-4">{{ .Params.description }}</p>
+    {{ else }}
+    <div class="mb-20"></div>
+    {{ end }}
+  </section>
+
+  <!-- Content Tabs -->
+  <section class="container text-dark_gray flex flex-col gap-12 py-16 px-4 max-w-4xl mx-auto">
+    
+    <div x-data="{ activeTab: 0 }" class="w-full">
+      <!-- Tabs Navigation -->
+      <div class="flex flex-wrap gap-3 justify-center mb-10">
+        {{ range $index, $card := .Params.cards }}
+        <button @click="activeTab = {{ $index }}"
+          class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+          :class="activeTab === {{ $index }} 
+            ? 'bg-secondary text-white border-secondary scale-105' 
+            : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+          <span>
+            {{ if eq $card.icon "bell" }}🚨
+            {{ else if eq $card.icon "document" }}📂
+            {{ else if eq $card.icon "heart" }}💖
+            {{ end }}
+          </span>
+          {{ $card.title }}
+        </button>
+        {{ end }}
+      </div>
+
+      <!-- Tabs Content -->
+      <div class="relative">
+        {{ range $index, $card := .Params.cards }}
+        <div x-show="activeTab === {{ $index }}" 
+             x-transition:enter="transition ease-out duration-300" 
+             x-transition:enter-start="opacity-0 translate-y-2" 
+             x-transition:enter-end="opacity-100 translate-y-0" 
+             style="display: none;" 
+             class="bg-white rounded-2xl shadow-sm border border-perso overflow-hidden flex flex-col gap-6 p-6 md:p-8">
+          <h2 class="text-2xl md:text-3xl font-bold text-secondary flex items-center gap-3 border-b border-perso pb-4">
+            {{ $card.title }}
+          </h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-2">
+            <!-- Danger Box -->
+            <div class="bg-red/5 dark:bg-red/10 border-l-4 border-red rounded-r-xl p-5">
+              <h3 class="text-lg md:text-xl font-bold text-red-700 dark:text-red-400 mb-2 flex items-center gap-1">
+                ⚠️ {{ $card.danger_title }}
+              </h3>
+              <p class="text-sm md:text-base leading-relaxed text-dark_gray opacity-90">{{ $card.danger_text | markdownify }}</p>
+            </div>
+
+            <!-- Reflex Box -->
+            <div class="bg-green-500/5 dark:bg-green-500/10 border-l-4 border-green rounded-r-xl p-5">
+              <h3 class="text-lg md:text-xl font-bold text-green-700 dark:text-green-400 mb-2 flex items-center gap-1">
+                ✅ {{ $card.reflex_title }}
+              </h3>
+              <p class="text-sm md:text-base leading-relaxed text-dark_gray opacity-90">{{ $card.reflex_text | markdownify }}</p>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+    <!-- Contacts Area -->
+    <div class="bg-white rounded-2xl shadow-sm border border-perso p-6 md:p-8 mt-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-6 text-center">
+        📞 {{ .Params.phone_numbers.title }}
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {{ range $service := .Params.phone_numbers.services }}
+        <div class="bg-light_gray/30 border border-perso rounded-xl p-5 flex flex-col justify-between items-center text-center gap-4">
+          <div class="flex flex-col gap-2">
+            <h3 class="font-bold text-base md:text-lg text-secondary">{{ $service.name }}</h3>
+            <p class="text-xs md:text-sm text-dark_gray opacity-80 leading-relaxed">{{ $service.info }}</p>
+          </div>
+          {{ if $service.number }}
+          <a href="tel:{{ replace $service.number " " "" }}" 
+            class="inline-block bg-secondary hover:bg-secondary/90 text-white font-bold text-lg md:text-xl py-3 px-6 rounded-full shadow-sm hover:scale-105 transition-all w-full select-none cursor-pointer">
+            {{ $service.number }}
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+    </div>
+
+  </section>
+
+</div>
+{{ end }}

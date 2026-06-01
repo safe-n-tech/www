@@ -221,3 +221,166 @@ collections:
         default: false
         required: false
         hint: "Activer pour inclure cette question dans le quiz de culture générale sur la cybercriminalité"
+
+  - name: pages
+    label: Pages Spécifiques
+    delete: false
+    editor: { preview: false }
+    files:
+      - name: parents
+        label: Espace Parents
+        file: content/parents/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Sujets / Rubriques
+            name: topics
+            widget: list
+            fields:
+              - { label: Titre du sujet, name: title, widget: string }
+              - { label: Résumé, name: summary, widget: string }
+              - label: Sections détaillées
+                name: sections
+                widget: list
+                fields:
+                  - { label: Titre de la section, name: title, widget: string }
+                  - { label: Type d'affichage, name: type, widget: select, options: [{label: "Texte", value: "text"}, {label: "Liste à puces", value: "list"}], default: "text" }
+                  - { label: Contenu (Markdown), name: content, widget: text, required: false }
+                  - { label: Lignes de la liste (Markdown), name: items, widget: list, field: {label: Ligne, name: item, widget: string}, required: false }
+      
+      - name: seniors
+        label: Espace Seniors
+        file: content/seniors/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Cartes de conseils
+            name: cards
+            widget: list
+            fields:
+              - { label: Titre, name: title, widget: string }
+              - { label: Icône, name: icon, widget: select, options: [bell, document, heart] }
+              - { label: Titre du danger, name: danger_title, widget: string }
+              - { label: Texte du danger, name: danger_text, widget: text }
+              - { label: Titre du réflexe, name: reflex_title, widget: string }
+              - { label: Texte du réflexe, name: reflex_text, widget: text }
+          - label: Contacts et réflexes
+            name: phone_numbers
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - label: Services / Contacts
+                name: services
+                widget: list
+                fields:
+                  - { label: Nom du service, name: name, widget: string }
+                  - { label: Numéro (optionnel), name: number, widget: string, required: false }
+                  - { label: Informations / Conseils, name: info, widget: text, required: false }
+
+      - name: mineurs
+        label: Espace Mineurs & Ados
+        file: content/mineurs/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Jeu CyberBorder
+            name: cyberborder
+            widget: object
+            fields:
+              - { label: Titre du jeu, name: title, widget: string }
+              - { label: Introduction, name: intro, widget: text }
+              - label: Scénarios du jeu
+                name: scenarios
+                widget: list
+                fields:
+                  - { label: ID, name: id, widget: number, value_type: int }
+                  - { label: Question, name: question, widget: text }
+                  - { label: Couleur correcte, name: correct, widget: select, options: [{label: "🟢 Vert", value: "green"}, {label: "🟠 Orange", value: "orange"}, {label: "🔴 Rouge", value: "red"}] }
+                  - { label: Explication, name: explanation, widget: text }
+          - label: Données Bancaires
+            name: bancaire
+            widget: object
+            fields:
+              - { label: Titre, name: title, widget: string }
+              - { label: Introduction, name: text, widget: text }
+              - { label: Règle d'or, name: rule, widget: string }
+              - { label: Pourquoi (raisons), name: reasons, widget: list, field: {label: Raison, name: item, widget: string} }
+              - { label: Le bon réflexe, name: reflex, widget: text }
+          - label: Publication de photos
+            name: photos
+            widget: object
+            fields:
+              - { label: Titre, name: title, widget: string }
+              - { label: Introduction, name: text, widget: text }
+              - { label: Interdictions, name: forbidden, widget: list, field: {label: Interdiction, name: item, widget: string} }
+              - { label: Dangers (raisons), name: reasons, widget: list, field: {label: Raison, name: item, widget: string} }
+              - { label: Le bon réflexe, name: reflex, widget: text }
+          - label: Que faire en cas de...
+            name: que_faire
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - label: Scénarios
+                name: cases
+                widget: list
+                fields:
+                  - { label: Titre, name: name, widget: string }
+                  - { label: Le danger, name: danger, widget: text }
+                  - { label: Pour réagir, name: action, widget: text }
+                  - { label: Ce que dit la loi, name: law, widget: string }
+          - label: Reconnaître un brouteur
+            name: brouteurs
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - label: Étapes / Signaux
+                name: steps
+                widget: list
+                fields:
+                  - { label: Titre de l'étape, name: title, widget: string }
+                  - { label: Explication, name: text, widget: text }
+              - { label: Réflexe de sécurité, name: reflex, widget: text }
+
+      - name: aide_pro
+        label: Espace Professionnels (Aide Pro)
+        file: content/aide-pro/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Préconisations Cyber
+            name: preconisations
+            widget: list
+            fields:
+              - { label: Catégorie, name: category, widget: string }
+              - { label: Recommandations, name: items, widget: list, field: {label: Recommandation, name: item, widget: string} }
+          - label: Assurances Cyber
+            name: assurances
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - { label: Introduction, name: intro, widget: text }
+              - label: Niveaux de couverture
+                name: levels
+                widget: list
+                fields:
+                  - { label: Nom du niveau, name: name, widget: string }
+                  - { label: Détails, name: text, widget: text }
+          - label: Fiches Réflexes & Ressources
+            name: tpme_kits
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - label: Fiches de réaction
+                name: kits
+                widget: list
+                fields:
+                  - { label: Nom de la fiche, name: name, widget: string }
+                  - { label: Type (ex. Feuille réflexe), name: type, widget: string }
+                  - { label: Description, name: description, widget: text }
+              - label: Assureurs recommandés
+                name: insurances
+                widget: list
+                fields:
+                  - { label: Nom de l'assureur, name: name, widget: string }
+                  - { label: URL, name: url, widget: string }
+
