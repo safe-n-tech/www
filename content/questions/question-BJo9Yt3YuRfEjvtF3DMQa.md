@@ -8,9 +8,9 @@ correction: "Utiliser toujours le même mot de passe est un risque : en cas de
   plus, si vous souhaitez supprimer votre compte Facebook pour une raison
   quelconque, vous perdrez l’accès à tous les comptes que vous avez créé depuis
   celui-ci. Il est préférable d’utiliser différents mots de passe."
+thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 goodPractices:
   - good-practice-N4kQLSnGCs0MXfLDaPku4
-thematique: thematique-F3gC3Ox-MJpGbDCgSltLP
 choices:
   - isCorrect: false
     text: de me connecter via Google ou mon compte Facebook.
@@ -18,4 +18,7 @@ choices:
     text: d’utiliser toujours le même mot de passe.
   - isCorrect: true
     text: d’utiliser un mot de passe différent pour chaque compte.
+  - isCorrect: false
+    text: D'écrire tout de suite le nouveau mot de passe dans un fichier texte caché
+      ou dans l'application "Notes" de mon téléphone pour ne pas l'oublier.
 ---
