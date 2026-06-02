@@ -11,9 +11,12 @@ goodPractices:
   - good-practice-3mIJouHs-IFXdXo5QTOKr
 choices:
   - isCorrect: false
-    text: hors de question, c’est privé !
-  - isCorrect: false
-    text: la douane fait figure d’autorité, je m’exécute.
+    text: "La douane fait figure d’autorité, je m’exécute.  "
   - isCorrect: true
-    text: je prends ma décision en fonction des pratiques en vigueur du pays visité.
+    text: Je prends ma décision en fonction des pratiques en vigueur du pays visité.
+  - isCorrect: false
+    text: Je leur fournis uniquement mes identifiants professionnels, pas mes
+      identifiants personnels
+  - isCorrect: false
+    text: "Hors de question, c’est privé ! "
 ---
