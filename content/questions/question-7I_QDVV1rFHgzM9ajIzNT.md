@@ -11,12 +11,19 @@ correction: Le cadenas présent devant l’URL du site permet de préciser que l
   navigateur de se souvenir des sites que vous visitez dans l’historique.
   Attention, le petit cadenas ne permet pas de valider l’authenticité du site,
   il est nécessaire de rester méfiant.
+thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 goodPractices:
   - good-practice-Man2ad3UvXNORDVodm96j
-thematique: thematique-b2NrlcXR_BqRhZ9FigQAW
 choices:
   - isCorrect: true
     text: je vérifie si le petit cadenas est présent au niveau de l’URL du site.
   - isCorrect: false
-    text: je ne fais rien de particulier et procède au paiement.
+    text: Je privilégie les sites qui proposent une inscription obligatoire avec mot
+      de passe pour garantir la confidentialité de mes futures commandes.
+  - isCorrect: false
+    text: Je m'assure que le site est bien noté par les avis clients affichés
+      directement sur la page du produit.
+  - isCorrect: false
+    text: Je m'assure simplement que le prix affiché inclut la livraison gratuite,
+      car les sites frauduleux facturent souvent des frais cachés.
 ---
