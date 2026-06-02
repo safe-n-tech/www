@@ -10,16 +10,17 @@ correction: Les mises à jour régulières des applications, telles que WhatsApp
   réinstaller l’application peut ne pas résoudre les problèmes de sécurité à
   long terme, et il est toujours préférable de suivre les recommandations de
   mise à jour dès que possible.
+thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 goodPractices:
   - good-practice-ZqeOFMUd3PIILT2zT2_6w
-thematique: thematique-pXhlU6Uzh80hZ6cMMDbks
 choices:
   - isCorrect: false
-    text: Je ne fais pas de mises à jour, je n'ai plus de stockage
+    text: Je préfère attendre d'être connecté sur un réseau Wi-Fi public sécurisé
+      pour lancer le téléchargement
+  - isCorrect: false
+    text: Je l'ignore si l'application actuelle fonctionne encore correctement.
+  - isCorrect: false
+    text: Je désinstalle WhatsApp et réinstalle.
   - isCorrect: true
-    text: Je la fais tout de suite
-  - isCorrect: false
-    text: Je le ferai plus tard quand j'aurai le temps
-  - isCorrect: false
-    text: Je desinstalle whatsapp et réinstalle
+    text: "Je la fais tout de suite. "
 ---
