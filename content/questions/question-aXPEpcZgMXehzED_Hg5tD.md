@@ -12,9 +12,9 @@ correction: "Selon l’Arrêt Nikon du 2 Octobre 2001, vous êtes en droit de
   cette nomenclature : “Dossier Personnel Nom Prénom”. Le cas échéant, si un
   collègue découvre le dossier, il saura qu’il ne doit pas regarder son
   contenu."
+thematique: thematique--kiTZR7ZZs8EMe4z11DSq
 goodPractices:
   - good-practice-uH6tQTpfZfn66qPSLsze5
-thematique: thematique--kiTZR7ZZs8EMe4z11DSq
 choices:
   - isCorrect: false
     text: '"photos vacances".'
@@ -22,4 +22,6 @@ choices:
     text: '"perso".'
   - isCorrect: true
     text: '"dossier personnel Nom + Prénom".'
+  - isCorrect: false
+    text: photos
 ---
