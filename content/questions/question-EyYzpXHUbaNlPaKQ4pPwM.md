@@ -17,5 +17,9 @@ choices:
   - isCorrect: true
     text: j’emporte mes affaires avec moi.
   - isCorrect: false
-    text: je laisse mes affaires à ma place.
+    text: Je laisse mon ordinateur sur la table mais je le recouvre avec mon manteau
+      ou une écharpe pour qu'on ne voie pas qu'il s'agit d'un appareil cher.
+  - isCorrect: false
+    text: Je range l'ordinateur dans ma valise volumineuse restée sur le
+      porte-bagages au bout du wagon.
 ---
