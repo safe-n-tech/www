@@ -25,60 +25,68 @@ permalinks:
 
 menu:
   header:
-    - identifier: thematiques
+    - identifier: je-suis
       weight: 10
-      name: Checklist
-      title: thématiques
-      url: /thematiques/
-    - identifier: quizz
-      weight: 20
-      name: Me tester
-      title: quiz
-      url: /quizz/
-    - identifier: quizz-culture-generale
-      weight: 30
-      name: Culture générale cybercriminalité
-      title: quiz culture générale cybercriminalité
-      url: /quizz-culture-generale/
+      name: "Je suis ..."
+      url: ""
+    - identifier: professionnel
+      parent: je-suis
+      weight: 11
+      name: Professionnel
+      url: /aide-pro/
+    - identifier: particulier
+      parent: je-suis
+      weight: 12
+      name: Particulier
+      url: ""
     - identifier: mineurs
-      weight: 40
-      name: Mineurs & Ados
-      title: mineurs
+      parent: particulier
+      weight: 13
+      name: "Mineurs / Ados"
       url: /mineurs/
     - identifier: parents
-      weight: 50
-      name: Espace Parents
-      title: parents
+      parent: particulier
+      weight: 14
+      name: Parent
       url: /parents/
     - identifier: seniors
-      weight: 60
-      name: Espace Seniors
-      title: seniors
+      parent: particulier
+      weight: 15
+      name: Senior
       url: /seniors/
+    - identifier: me-tester
+      weight: 20
+      name: Me tester
+      url: ""
+    - identifier: quizz-culture-generale
+      parent: me-tester
+      weight: 21
+      name: "Culture générale cybersécurité"
+      url: /quizz-culture-generale/
+    - identifier: quizz-hygiene
+      parent: me-tester
+      weight: 22
+      name: "Hygiène numérique"
+      url: /quizz/
     - identifier: aide-pro
-      weight: 70
+      weight: 30
       name: Aide Pro
-      title: aide-pro
       url: /aide-pro/
-    - identifier: Mille Bugs
-      weight: 80
-      name: Mille Bugs
-      title: mille bugs
-      url: /mille-bugs/
     - identifier: boite-a-outils
-      weight: 90
+      weight: 40
       name: "Boîte à outils"
-      title: boite-a-outils
       url: /boite-a-outils/
-    - identifier: Fuite données
-      weight: 100
-      name: Mes données ont-elles fuité ?
-      title: mes-donnees-ont-elles-fuite
+    - identifier: mille-bugs
+      weight: 50
+      name: Mille Bugs
+      url: /mille-bugs/
+    - identifier: fuite-donnees
+      weight: 60
+      name: "Mes données ont-elles fuité ?"
       url: /mes-donnees-ont-elles-fuite/
     - identifier: definitions
-      weight: 110
+      weight: 70
       name: Glossaire
-      title: glossaire
       url: /definitions/
 
 
