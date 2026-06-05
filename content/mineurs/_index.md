@@ -55,6 +55,44 @@ cyberborder:
       explanation: C'est un piège ! Dans la vraie vie comme sur Internet, les cadeaux
         magiques et gratuits n'existent pas. Si tu donnes ton mot de passe, il
         va te voler ton compte. On garde ses secrets pour soi !
+    - correct: orange
+      id: 7
+      question: "Sur TikTok ou YouTube, ton influenceur préféré annonce un immense
+        jeu-concours : « Pour gagner la toute dernière console, clique sur le
+        lien dans ma bio, remplis le formulaire et partage cette vidéo à 15 de
+        tes potes en privé pour valider tes chances ! » "
+      explanation: "Attention, Même si tu adores cet influenceur, son compte a pu être
+        piraté, ou alors c'est un faux profil qui lui ressemble comme deux
+        gouttes d'eau. Les techniques qui te demandent de \"spammer\" tes amis
+        ou de remplir des formulaires bizarres cachent souvent des pièges pour
+        voler des données. Avant de cliquer, va vérifier sur son compte officiel
+        (avec le badge bleu) s'il a vraiment parlé de ce concours. "
+    - id: 8
+      question: "Un joueur avec qui tu t'es disputé sur un serveur Discord t'envoie un
+        message privé avec une photo : il a pris ton visage (trouvé sur ton
+        profil) et l'a collé sur le corps de quelqu'un d'autre pour te faire
+        passer pour un voleur ou pour te ridiculiser. Il te dit : « Si tu ne me
+        donnes pas ton compte de jeu, j'envoie cette photo à tout ton collège.
+        »"
+      correct: red
+      explanation: Feu rouge absolu, c'est du cyberharcèlement et du chantage ! Ne
+        cède jamais, ne lui donne rien et surtout, ne reste pas seul. Ce genre
+        de montage s'appelle un deepfake ou un photomontage, et c'est totalement
+        interdit par la loi. Ne réponds pas, fais immédiatement des captures
+        d'écran de ses menaces pour garder des preuves, bloque-le, et va tout de
+        suite voir tes parents ou un professeur. Ils sauront comment le signaler
+        et te protéger.
+    - id: 10
+      question: "Tu bloques complètement sur un exercice de maths ou sur le codage
+        d'un mini-jeu. Tu ouvres une Intelligence Artificielle (comme ChatGPT)
+        et tu lui demandes : « Donne-moi un exemple de code ou explique-moi ce
+        problème étape par étape pour que je comprenne. » "
+      correct: green
+      explanation: "C'est un feu vert ! Utiliser Internet et les IA pour apprendre,
+        créer, t'entraîner ou développer ta curiosité, c'est l'un des meilleurs
+        usages possibles. Tant que tu t'en sers pour progresser (et pas juste
+        pour tricher en copiant-collant sans réfléchir) et que tu ne lui
+        racontes pas ta vie privée, c'est une super utilisation du Web. "
 bancaire:
   title: Gestion des données bancaires
   text: Les jeux vidéo (comme Fortnite, Roblox, Clash Royale...) adorent te
