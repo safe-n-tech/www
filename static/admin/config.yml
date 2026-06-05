@@ -341,6 +341,20 @@ collections:
                   - { label: Explication, name: text, widget: text }
               - { label: Réflexe de sécurité, name: reflex, widget: text }
 
+      - name: pas_le_temps_de_lire
+        label: "Pas le temps de lire"
+        file: content/pas-le-temps-de-lire/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Recommandations
+            name: recommendations
+            widget: list
+            fields:
+              - { label: Icône (emoji), name: icon, widget: string }
+              - { label: Titre court, name: title, widget: string }
+              - { label: Texte (1-2 phrases), name: text, widget: text }
+
       - name: aide_pro
         label: Espace Professionnels (Aide Pro)
         file: content/aide-pro/_index.md

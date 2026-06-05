@@ -1,0 +1,47 @@
+{{ define "main" }}
+
+<section class="relative flex flex-col px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+    <div class="max-w-md md:ml-12 mt-20">
+        {{ partial "breadcrumb" (dict "page" . ) }}
+    </div>
+    <div class="container pb-16 text-white">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="text-4xl">⚡</span>
+            <h1 class="text-4xl md:text-5xl font-bold">{{ .Title }}</h1>
+        </div>
+        <p class="max-w-2xl text-white/90 text-lg">{{ .Params.description }}</p>
+    </div>
+</section>
+
+<section class="container py-16">
+    {{ if .Params.recommendations }}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {{ range $i, $rec := .Params.recommendations }}
+        <div class="bg-white rounded-2xl p-6 shadow-sm border border-transparent flex flex-col gap-3">
+            <div class="flex items-start justify-between">
+                <span class="text-3xl leading-none">{{ $rec.icon }}</span>
+                <span class="text-xs font-bold text-secondary/30 tabular-nums">{{ printf "%02d" (add $i 1) }}</span>
+            </div>
+            <h2 class="text-secondary font-bold text-base leading-snug">{{ $rec.title }}</h2>
+            <p class="text-dark_gray text-sm leading-relaxed">{{ $rec.text }}</p>
+        </div>
+        {{ end }}
+    </div>
+    {{ else }}
+    <p class="text-dark_gray/50 text-center py-24">Aucune recommandation pour le moment.</p>
+    {{ end }}
+
+    <div class="mt-16 text-center">
+        <p class="text-dark_gray/60 text-sm mb-4">Vous avez un peu plus de temps ?</p>
+        <div class="flex flex-wrap gap-4 justify-center">
+            <a href="/thematiques/" class="btn-tertiary blue whitespace-nowrap">
+                Ma checklist complète
+            </a>
+            <a href="/quizz/" class="btn-tertiary blue whitespace-nowrap">
+                Me tester
+            </a>
+        </div>
+    </div>
+</section>
+
+{{ end }}
