@@ -6,28 +6,109 @@
             <div class="flex w-full justify-center hidden md:block my-8 md:justify-start">
                 <img src="/svgs/white_logo.svg" alt="Logo de Safe N Tech">
             </div>
-            <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1 md:mx-0 max-w-[700px]">« Et si nous profitions pleinement du numérique… en toute sécurité ? »</h1>
-            <p class="md:text-left text-white mb-4 font-bold italic">"Ça ne m’arrivera jamais, je connais les risques."</p>
-
-
-            <p class="md:text-left text-white">Beaucoup pensent être à l’abri… jusqu’au jour où ils sont victimes d’une attaque.
-                Adoptez dès aujourd’hui les bons réflexes : évaluez vos habitudes, renforcez vos protections
+            <h1 class="md:text-left text-white text-3xl md:text-5xl my-8 text-h1 md:mx-0 max-w-[700px]">« Et si nous profitions pleinement du numérique… en toute sécurité ? »</h1>
+            <p class="md:text-left text-white mb-4 font-bold italic">"Ça ne m'arrivera jamais, je connais les risques."</p>
+            <p class="md:text-left text-white">Beaucoup pensent être à l'abri… jusqu'au jour où ils sont victimes d'une attaque.
+                Adoptez dès aujourd'hui les bons réflexes : évaluez vos habitudes, renforcez vos protections
                 et naviguez en toute confiance.</p>
-            <div
-                class="flex gap-4 items-center flex-col justify-center content-center w-full  my-12 md:justify-start md:flex-row">
-                <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-40 whitespace-nowrap btn-primary">
-                    <span class="whitespace-nowrap text-label">Me tester</span>
+            <div class="flex gap-2 flex-wrap md:flex-nowrap w-full my-12" id="hero-nav">
+
+                <!-- 1. Qui suis-je -->
+                <div class="relative hero-dropdown shrink-0">
+                    <button class="hero-dropdown-toggle flex items-center gap-1.5 whitespace-nowrap text-white border-2 border-white rounded-xl font-semibold text-sm px-3 py-2.5" aria-expanded="false">
+                        Qui suis-je
+                        <svg class="hero-chevron w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hero-dropdown-menu hidden absolute top-full left-0 mt-2 w-52 bg-white rounded-xl shadow-lg z-50 overflow-hidden">
+                        <a href="/mineurs/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🎮 Mineur / Ado</a>
+                        <a href="/parents/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">👨‍👩‍👧 Parent / Adulte</a>
+                        <a href="/seniors/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">👵 Senior</a>
+                        <a href="/aide-pro/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">💼 Professionnel</a>
+                    </div>
+                </div>
+
+                <!-- 2. Me tester -->
+                <div class="relative hero-dropdown shrink-0">
+                    <button class="hero-dropdown-toggle flex items-center gap-1.5 whitespace-nowrap text-white border-2 border-white rounded-xl font-semibold text-sm px-3 py-2.5" aria-expanded="false">
+                        Me tester
+                        <svg class="hero-chevron w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hero-dropdown-menu hidden absolute top-full left-0 mt-2 w-60 bg-white rounded-xl shadow-lg z-50 overflow-hidden">
+                        <a href="/quizz/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🛡️ Hygiène informatique</a>
+                        <a href="/quizz-culture-generale/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🧠 Culture générale cyber</a>
+                        <a href="/mineurs/" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🕹️ CyberBorder</a>
+                    </div>
+                </div>
+
+                <!-- 3. Mes données ont-elles fuité -->
+                <a href="/mes-donnees-ont-elles-fuite/"
+                    class="shrink-0 flex items-center whitespace-nowrap text-white border-2 border-white rounded-xl font-semibold text-sm px-3 py-2.5">
+                    Mes données ont-elles fuité ?
                 </a>
-                <a href="/thematiques"
-                    class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label">Ma checklist de bonnes pratiques</span>
+
+                <!-- 4. Pas le temps de lire -->
+                <a href="/boite-a-outils/"
+                    class="shrink-0 flex items-center whitespace-nowrap text-white border-2 border-white rounded-xl font-semibold text-sm px-3 py-2.5">
+                    Pas le temps de lire
                 </a>
-                <a href="/mes-donnees-ont-elles-fuite"
-                    class="flex justify-center btn-secondary content-center w-full md:w-fit whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label">Mes données ont-elles fuité ?</span>
-                </a>
+
+                <!-- 5. Je suis victime -->
+                <div class="relative hero-dropdown shrink-0">
+                    <button class="hero-dropdown-toggle flex items-center gap-1.5 whitespace-nowrap text-[#153E60] bg-white border-2 border-white rounded-xl font-semibold text-sm px-3 py-2.5" aria-expanded="false">
+                        Je suis victime
+                        <svg class="hero-chevron w-3.5 h-3.5 flex-shrink-0 transition-transform duration-200" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="hero-dropdown-menu hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-lg z-50 overflow-hidden">
+                        <a href="https://www.masecurite.fr/" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🔐 MaSécurité</a>
+                        <a href="https://www.thesee.interieur.gouv.fr/" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">⚖️ Thésée</a>
+                        <a href="https://www.perceval.gendarmerie.interieur.gouv.fr/" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">🛡️ Perceval</a>
+                        <a href="https://www.17cyber.fr/" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">📞 17Cyber</a>
+                        <a href="https://www.internet-signalement.gouv.fr/" target="_blank" rel="noopener" class="flex items-center gap-2 px-4 py-3 text-secondary hover:bg-light_gray text-sm font-medium">👁️ Pharos – je suis témoin</a>
+                    </div>
+                </div>
+
             </div>
+
+            <script>
+                (function () {
+                    document.querySelectorAll('#hero-nav .hero-dropdown').forEach(function (dd) {
+                        var toggle = dd.querySelector('.hero-dropdown-toggle');
+                        var menu   = dd.querySelector('.hero-dropdown-menu');
+                        var chevron = dd.querySelector('.hero-chevron');
+
+                        toggle.addEventListener('click', function (e) {
+                            e.stopPropagation();
+                            var isOpen = !menu.classList.contains('hidden');
+                            document.querySelectorAll('#hero-nav .hero-dropdown-menu').forEach(function (m) {
+                                m.classList.add('hidden');
+                            });
+                            document.querySelectorAll('#hero-nav .hero-chevron').forEach(function (c) {
+                                c.style.transform = '';
+                            });
+                            document.querySelectorAll('#hero-nav .hero-dropdown-toggle').forEach(function (t) {
+                                t.setAttribute('aria-expanded', 'false');
+                            });
+                            if (!isOpen) {
+                                menu.classList.remove('hidden');
+                                chevron.style.transform = 'rotate(180deg)';
+                                toggle.setAttribute('aria-expanded', 'true');
+                            }
+                        });
+                    });
+
+                    document.addEventListener('click', function () {
+                        document.querySelectorAll('#hero-nav .hero-dropdown-menu').forEach(function (m) {
+                            m.classList.add('hidden');
+                        });
+                        document.querySelectorAll('#hero-nav .hero-chevron').forEach(function (c) {
+                            c.style.transform = '';
+                        });
+                        document.querySelectorAll('#hero-nav .hero-dropdown-toggle').forEach(function (t) {
+                            t.setAttribute('aria-expanded', 'false');
+                        });
+                    });
+                })();
+            </script>
         </div>
         <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
             <img class="w-4/6 h-auto md:min-w-[15rem] object-fit" src="/images/hero.svg" alt="Icône page Accueil">
@@ -35,228 +116,154 @@
     </div>
 </section>
 
-<section class="relative w-full pt-32 md:pt-24 max-md:pb-36 max-md:-mb-20 md:pb-24 ">
-    <div class="container flex flex-col gap-8 md:gap-12">
+<section class="relative w-full py-16 md:py-24">
+    <div class="container flex flex-col gap-10">
+        <div class="text-center">
+            <h2 class="text-dark_gray text-3xl font-bold mb-4">Explorez le site</h2>
+            <p class="text-dark_gray opacity-80 max-w-2xl mx-auto">
+                Tout ce dont vous avez besoin pour naviguer en toute sécurité, au même endroit.
+            </p>
+        </div>
+
+        <!-- Profils utilisateurs -->
         <div>
-            <h2 class="text-dark_gray text-3xl font-bold mb-8">Votre checklist</h2>
-            <p class="text-dark_gray mb-8">
-                Êtes-vous vraiment prêt face aux risques numériques ? Faites le test avec notre checklist et
-                mesurez votre niveau d’expertise en cybersécurité.
-            </p>
-        </div>
-        <div class="flex flex-col md:flex-row gap-12 md:gap-24 md:justify-between">
-            <div class="global-progress-container gap-4 flex flex-col justify-center items-center">
-                <div class="circular-progress" id="global-progress">
-                    <span class="progress-value" id="global-progress-value">0%</span>
-                </div>
-                <p class="text-secondary text-center">de bonnes pratiques validées</p>
-            </div>
-            <div class="flex gap-2 flex-col">
-                {{ range $index, $thematique := (where .Site.Pages "Section" "thematiques") }}
-                {{ if and (isset $thematique.Params "icon") (isset $thematique.Params "uuid") }}
-                <div class="flex items-start md:flex-row flex-col md:items-center gap-2 md:gap-4 justify-between">
-                    <div class="flex items-center gap-4">
-                        <img class="w-10 h-10" src="/icons/thematiques/illustrations/{{.Params.icon}}" alt="">
-                        <h3 class=" text-dark_gray">{{ $thematique.Title }}</h3>
+            <h3 class="text-secondary font-semibold text-lg mb-4 uppercase tracking-wide">Je suis…</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <a href="/mineurs/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🎮</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Mineur / Ado</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Teste tes réflexes avec le jeu interactif CyberBorder et apprends à surfer et jouer en toute sécurité.</p>
                     </div>
-                    <div class="barre-mobile flex gap-4 items-center">
-                        <p id="progress-percentage-{{ $thematique.Params.uuid }}"
-                            class="text-center min-w-10 text-secondary"></p>
-                        <div class="progress-container w-full md:w-[15vw]">
-                            <div class="progress-bar" id="progress-bar-{{ $thematique.Params.uuid }}"></div>
-                        </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Découvrir
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="/parents/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">👨‍👩‍👧</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Parent</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Accompagnez votre enfant en ligne : contrôle parental, grooming, revenge porn, prévention et dialogue.</p>
                     </div>
-                </div>
-                {{ end }}
-                {{ end }}
-            </div>
-        </div>
-        <div>
-            <a href="/thematiques"
-                class="flex text-secondary mx-auto justify-center content-center md:mt-12 w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
-                <span class="whitespace-nowrap text-label">Ma checklist de bonnes pratiques</span>
-            </a>
-        </div>
-    </div>
-</section>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Découvrir le guide
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
 
-<section class="relative w-full pt-16 pb-20 bg-light_gray/20 border-t border-b border-perso">
-    <div class="container flex flex-col gap-8">
-        <div class="text-center md:text-left">
-            <h2 class="text-dark_gray text-3xl font-bold mb-4">Espaces d'accompagnement dédiés</h2>
-            <p class="text-dark_gray opacity-80 max-w-3xl">
-                Découvrez des guides pratiques et ressources adaptées aux différents besoins de votre famille et de votre entreprise pour surfer et travailler en toute sérénité.
-            </p>
-        </div>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Card Parents -->
-            <a href="/parents/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
-                <div>
-                    <h3 class="text-secondary font-bold text-xl mb-3 flex items-center gap-1.5">👨‍👩‍👧 Espace Parents</h3>
-                    <p class="text-sm text-dark_gray mb-6 leading-relaxed">Accompagnez votre enfant en ligne : revenge porn, contrôle parental, grooming, prévention et dialogue.</p>
-                </div>
-                <span class="text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">Découvrir le guide <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></span>
-            </a>
-            <!-- Card Seniors -->
-            <a href="/seniors/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
-                <div>
-                    <h3 class="text-secondary font-bold text-xl mb-3 flex items-center gap-1.5">👵 Espace Seniors</h3>
-                    <p class="text-sm text-dark_gray mb-6 leading-relaxed">Déjouez les pièges et fausses urgences, protégez vos documents d'identité, et trouvez les contacts utiles.</p>
-                </div>
-                <span class="text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">Découvrir le guide <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></span>
-            </a>
-            <!-- Card Mineurs -->
-            <a href="/mineurs/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
-                <div>
-                    <h3 class="text-secondary font-bold text-xl mb-3 flex items-center gap-1.5">🎮 Mineurs & Ados</h3>
-                    <p class="text-sm text-dark_gray mb-6 leading-relaxed">Teste tes réflexes avec le jeu interactif CyberBorder et découvre comment surfer et jouer en toute sécurité !</p>
-                </div>
-                <span class="text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">Jouer et apprendre <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></span>
-            </a>
-            <!-- Card Professionnels -->
-            <a href="/aide-pro/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
-                <div>
-                    <h3 class="text-secondary font-bold text-xl mb-3 flex items-center gap-1.5">💼 Aide Pro & TPME</h3>
-                    <p class="text-sm text-dark_gray mb-6 leading-relaxed">Sécurisez votre TPE/PME : bonnes pratiques cyber, couverture d'assurance et fiches réflexes en cas de piratage.</p>
-                </div>
-                <span class="text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">Accéder aux conseils <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg></span>
-            </a>
-        </div>
-    </div>
-</section>
+                <a href="/seniors/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">👵</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Senior</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Déjouez les pièges et fausses urgences, protégez vos documents d'identité et trouvez les contacts utiles.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Découvrir le guide
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const thematiques = document.querySelectorAll('.progress-container');
-
-        thematiques.forEach((container) => {
-            const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
-            const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
-            const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
-
-            const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
-            const total = state.length;
-            const checked = state.filter((isChecked) => isChecked).length;
-            const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-            progressBar.style.width = `${percentage}%`;
-            progressPercentage.textContent = `${percentage}%`;
-        });
-    });
-</script>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        function calculateGlobalProgress() {
-            const progressBars = document.querySelectorAll('.progress-bar');
-            let totalProgress = 0;
-            let totalThematiques = progressBars.length;
-            progressBars.forEach((progressBar) => {
-                const percentage = parseInt(progressBar.style.width, 10);
-                totalProgress += isNaN(percentage) ? 0 : percentage;
-            });
-            const globalProgress = totalThematiques > 0 ? Math.round(totalProgress / totalThematiques) : 0;
-            return globalProgress;
-        }
-
-        function updateGlobalProgress() {
-            const globalProgress = calculateGlobalProgress();
-            const progressCircle = document.getElementById('global-progress');
-            const progressValue = document.getElementById('global-progress-value');
-            const angle = globalProgress * 3.6;
-            const isDark = document.documentElement.classList.contains('dark');
-            const fillColor = isDark ? '#89D0FF' : '#153E60';
-            const trackColor = isDark ? '#334155' : '#e0e0e0';
-            progressCircle.style.background = `conic-gradient(${fillColor} ${angle}deg, ${trackColor} ${angle}deg)`;
-            progressValue.textContent = `${globalProgress}%`;
-        }
-
-        const thematiques = document.querySelectorAll('.progress-container');
-        thematiques.forEach((container) => {
-            const thematiqueId = container.querySelector('.progress-bar').id.split('progress-bar-')[1];
-            const progressBar = document.getElementById(`progress-bar-${thematiqueId}`);
-            const progressPercentage = document.getElementById(`progress-percentage-${thematiqueId}`);
-            const state = JSON.parse(localStorage.getItem(`checklistState-${thematiqueId}`)) || [];
-            const total = state.length;
-            const checked = state.filter((isChecked) => isChecked).length;
-            const percentage = total > 0 ? Math.round((checked / total) * 100) : 0;
-            progressBar.style.width = `${percentage}%`;
-            progressPercentage.textContent = `${percentage}%`;
-        });
-        updateGlobalProgress();
-    });
-</script>
-
-<section class="relative w-full pt-8 md:pt-10 max-md:pb-12 max-md:-mb-20 md:pb-2" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
-    <div class="container flex flex-col md:flex-row md:items-center md:gap-24">
-        <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
-
-
-
-
-
-
-            <h2 class="text-white w-full text-3xl text-bold font-bold mb-8">Prenons conscience des dangers</h2>
-            <p class="md:text-left text-white mb-4">
-                Perte de données, usurpation d’identité, piratage bancaire… Les risques sont bien réels, et
-                souvent liés à un simple manque de vigilance.
-            </p>
-            <p class="md:text-left text-white mb-4">
-                C’est pour y répondre que nous avons créé « Safe N Tech » : une plateforme de sensibilisation
-                aux bonnes pratiques numériques, simples et accessibles à tous.
-            </p>
-            <p class="md:text-left text-white mb-4">
-                La cybersécurité nous concerne tous. Cet outil a été conçu pour vous accompagner pas à pas
-                au quotidien.
-            </p>
-            <p class="md:text-left text-white mb-4">
-                Testez vos connaissances avec notre quiz, identifiez vos points d’amélioration et découvrez
-                des conseils pratiques.
-            </p>
-            <p class="md:text-left text-white">
-                Avec notre documentation ludique, renforcez facilement votre sécurité et naviguez en toute
-                confiance.
-            </p>
-            <div class="flex justify-center content-center w-full  my-12 md:justify-start">
-                <a href="/quizz"
-                    class="flex justify-center content-center w-full md:w-80 btn-primary white whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label">Me tester</span>
+                <a href="/aide-pro/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">💼</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Professionnel / TPME</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Sécurisez votre TPE/PME : bonnes pratiques cyber, assurance et fiches réflexes en cas de piratage.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Accéder aux conseils
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
                 </a>
             </div>
         </div>
-        <div class="flex justify-center items-center md:justify-end w-full justify-center reactive">
-            <img class="w-5/6 md:w-2/3 h-auto object-contain" src="/images/cyber_illustration.svg"
-                alt="Icône page Accueil">
 
-        </div>
-    </div>
-</section>
+        <!-- Se tester -->
+        <div>
+            <h3 class="text-secondary font-semibold text-lg mb-4 uppercase tracking-wide">Me tester</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <a href="/quizz-culture-generale/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🧠</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Culture générale cybersécurité</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Testez vos connaissances sur les grandes notions de la cybersécurité : phishing, mots de passe, ransomware…</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Démarrer le quiz
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
 
-<section class="relative w-full pt-32 md:pt-10 max-md:pb-36 max-md:-mb-20 md:pb-2 ">
-    <div class="container flex flex-col-reverse md:flex-row md:items-center md:gap-24">
-        <div class="flex justify-center items-center w-full justify-center reactive">
-            <img class="w-5/6 md:w-2/3 h-auto md:min-w-[15rem] object-fit" src="/images/cheval.svg"
-                alt="Icône page Accueil">
-        </div>
-        <div class="md:h-[40rem] md:flex md:flex-col md:justify-center">
-            <h2 class="text-dark_gray w-full text-3xl text-bold font-bold mb-4">Le projet</h2>
-            <p class="md:text-left text-dark_gray mb-4">Le projet part d'un constat simple : intégrer de bonnes
-                pratiques informatiques est crucial pour éviter les risques en ligne.</p>
-            <p class="md:text-left text-dark_gray mb-4">C’est pour y répondre que nous avons créé « Safe N Tech » : une plateforme de sensibilisation
-                aux bonnes pratiques numériques, simples et accessibles à tous.</p>
-            <p class="md:text-left text-dark_gray mb-4">La cybersécurité nous concerne tous. Cet outil a été conçu pour vous accompagner pas à pas
-                au quotidien.</p>
-            <p class="md:text-left text-dark_gray">Testez vos connaissances avec notre quiz, identifiez vos points d’amélioration et découvrez
-                des conseils pratiques. Avec notre documentation ludique, renforcez facilement votre sécurité et naviguez en toute
-                confiance.</p>
-            <div class="flex justify-center content-center w-full  my-12 md:justify-start">
-                <a href="/a-propos"
-                    class="flex justify-center content-center w-full md:w-80 py-3 btn-tertiary blue whitespace-nowrap">
-                    <span class="whitespace-nowrap text-label pr-3">En savoir plus</span>
+                <a href="/quizz/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🛡️</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Hygiène numérique</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Évaluez vos habitudes numériques au quotidien et identifiez vos points d'amélioration concrets.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Démarrer le quiz
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
                 </a>
             </div>
         </div>
+
+        <!-- Ressources -->
+        <div>
+            <h3 class="text-secondary font-semibold text-lg mb-4 uppercase tracking-wide">Ressources</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                <a href="/boite-a-outils/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🧰</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Boîte à outils</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Une sélection d'outils fiables et gratuits pour renforcer votre sécurité numérique au quotidien.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Voir les outils
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="/mille-bugs/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🐛</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Mille Bugs</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Découvrez les menaces et arnaques du moment : exemples réels, décryptage et conseils pour ne pas tomber dans le piège.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Voir les menaces
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="/mes-donnees-ont-elles-fuite/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+                    <div>
+                        <div class="text-3xl mb-3">🔍</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Mes données ont-elles fuité ?</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Vérifiez si vos adresses e-mail ou mots de passe ont été compromis lors de fuites de données connues.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Vérifier maintenant
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+
+                <a href="/definitions/" class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer sm:col-span-2 lg:col-span-1">
+                    <div>
+                        <div class="text-3xl mb-3">📖</div>
+                        <h4 class="text-secondary font-bold text-lg mb-2">Glossaire</h4>
+                        <p class="text-sm text-dark_gray leading-relaxed">Ransomware, phishing, RGPD… Retrouvez les définitions claires de tous les termes clés de la cybersécurité.</p>
+                    </div>
+                    <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+                        Consulter le glossaire
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+                    </span>
+                </a>
+            </div>
+        </div>
+
     </div>
 </section>
-
 
 {{ end }}
