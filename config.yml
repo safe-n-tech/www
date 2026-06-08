@@ -72,6 +72,10 @@ menu:
       weight: 30
       name: Aide Pro
       url: /aide-pro/
+    - identifier: checklist
+      weight: 35
+      name: "checklist"
+      url: /thematiques/
     - identifier: boite-a-outils
       weight: 40
       name: "Boîte à outils"
