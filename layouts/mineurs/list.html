@@ -59,10 +59,9 @@
       
       <!-- Scenario Player (left) -->
       <div class="md:col-span-9 flex flex-col justify-between gap-6">
-        
+
         <!-- Game Play Area -->
-        <template x-if="!isFinished">
-          <div class="flex flex-col gap-6 w-full">
+        <div x-show="!isFinished" class="flex flex-col gap-6 w-full">
             <div class="flex items-center justify-between text-sm text-dark_gray font-semibold border-b border-perso pb-4">
               <span class="text-secondary font-bold" x-text="'Situation ' + (currentStep + 1) + ' / ' + scenarios.length"></span>
               <span class="text-green-700 bg-green-500/10 px-3 py-1 rounded-full" x-text="correctAnswers + ' correct(s)'"></span>
@@ -74,27 +73,27 @@
 
             <!-- Choice Actions -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-4">
-              <button @click="submitAnswer('green')" :disabled="answered" 
+              <button @click="submitAnswer('green')" :disabled="answered"
                 class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
-                :class="answered 
+                :class="answered
                   ? (scenarios[currentStep].correct === 'green' ? 'bg-green-500/10 border-green text-green-700' : 'bg-gray-100 border-gray-300 text-gray-400')
                   : 'bg-white border-green hover:bg-green-500/10 text-green-700 hover:scale-102'">
                 <span class="text-2xl mb-1">🟢</span>
                 C'est OK, on partage !
               </button>
 
-              <button @click="submitAnswer('orange')" :disabled="answered" 
+              <button @click="submitAnswer('orange')" :disabled="answered"
                 class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
-                :class="answered 
+                :class="answered
                   ? (scenarios[currentStep].correct === 'orange' ? 'bg-orange-500/10 border-orange text-orange-700' : 'bg-gray-100 border-gray-300 text-gray-400')
                   : 'bg-white border-orange hover:bg-orange-500/10 text-orange-700 hover:scale-102'">
                 <span class="text-2xl mb-1">🟠</span>
                 Bof, attention...
               </button>
 
-              <button @click="submitAnswer('red')" :disabled="answered" 
+              <button @click="submitAnswer('red')" :disabled="answered"
                 class="flex flex-col items-center justify-center p-4 rounded-xl border-2 transition-all cursor-pointer font-bold select-none text-base"
-                :class="answered 
+                :class="answered
                   ? (scenarios[currentStep].correct === 'red' ? 'bg-red/10 border-red text-red-700' : 'bg-gray-100 border-gray-300 text-gray-400')
                   : 'bg-white border-red hover:bg-red/10 text-red-700 hover:scale-102'">
                 <span class="text-2xl mb-1">🔴</span>
@@ -110,28 +109,35 @@
                 <span x-text="selectedAnswer === scenarios[currentStep].correct ? '🎉 Bonne réponse !' : (dangerLevels[selectedAnswer] > dangerLevels[scenarios[currentStep].correct] ? '🛡️ Prudence extrême !' : '🚨 Danger sous-estimé !')"></span>
               </div>
               <p class="text-dark_gray leading-relaxed text-base" x-text="scenarios[currentStep].explanation"></p>
-              
+
               <button @click="next()" class="mt-4 bg-secondary hover:bg-secondary/90 text-white font-bold py-2 px-6 rounded-full inline-flex items-center gap-1 cursor-pointer transition-all">
                 Suivant <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
-          </div>
-        </template>
+        </div>
 
         <!-- Final Results -->
-        <template x-if="isFinished">
-          <div class="flex flex-col items-center justify-center text-center gap-6 py-6 w-full">
-            <span class="text-6xl">🏆</span>
-            <h3 class="text-3xl font-extrabold text-secondary">Jeu terminé !</h3>
-            <p class="text-dark_gray leading-relaxed max-w-md">
-              Tu as obtenu un score de <strong class="text-secondary" x-text="correctAnswers + ' / ' + scenarios.length"></strong> bonnes réponses. 
-              <span class="block mt-2 font-bold" :class="thermometerTemp <= 20 ? 'text-green-700' : 'text-red-600'" x-text="thermometerTemp <= 20 ? 'Félicitations, tu as su éviter les dangers du web ! 🛡️' : 'Attention, ton thermomètre a chauffé. Relis bien les conseils pour ne plus te faire piéger !'"></span>
-            </p>
+        <div x-show="isFinished" style="display:none" class="flex flex-col items-center text-center gap-6 py-4 w-full">
+            <span class="text-6xl" x-text="finalEmoji"></span>
+            <div>
+              <p class="text-xs font-bold uppercase tracking-widest text-dark_gray opacity-60 mb-1">Résultat final — <span x-text="correctAnswers + ' / ' + scenarios.length"></span> bonnes réponses</p>
+              <h3 class="text-2xl font-extrabold text-secondary" x-text="finalTitle"></h3>
+            </div>
+
+            <div class="rounded-2xl border p-5 text-left max-w-lg w-full"
+              :class="finalColor === 'green' ? 'bg-green-500/5 border-green/30' : (finalColor === 'orange' ? 'bg-orange-500/5 border-orange/40' : 'bg-red/5 border-red/30')">
+              <p class="text-sm md:text-base text-dark_gray leading-relaxed" x-text="finalSentence"></p>
+            </div>
+
+            <div class="rounded-2xl bg-secondary/5 border border-secondary/20 p-5 text-left max-w-lg w-full">
+              <p class="text-xs font-bold text-secondary uppercase tracking-widest mb-1">Le conseil</p>
+              <p class="text-sm md:text-base text-dark_gray leading-relaxed" x-text="finalAdvice"></p>
+            </div>
+
             <button @click="reset()" class="bg-secondary hover:bg-secondary/90 text-white font-bold py-3 px-8 rounded-full shadow-md cursor-pointer transition-all hover:scale-105 select-none">
               Rejouer 🔄
             </button>
-          </div>
-        </template>
+        </div>
       </div>
 
       <!-- Thermometer Widget (right) -->
