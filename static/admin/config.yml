@@ -247,7 +247,6 @@ collections:
                   - { label: Type d'affichage, name: type, widget: select, options: [{label: "Texte", value: "text"}, {label: "Liste à puces", value: "list"}], default: "text" }
                   - { label: Contenu (Markdown), name: content, widget: text, required: false }
                   - { label: Lignes de la liste (Markdown), name: items, widget: list, field: {label: Ligne, name: item, widget: string}, required: false }
-      
       - name: seniors
         label: Espace Seniors
         file: content/seniors/_index.md
@@ -340,7 +339,17 @@ collections:
                   - { label: Titre de l'étape, name: title, widget: string }
                   - { label: Explication, name: text, widget: text }
               - { label: Réflexe de sécurité, name: reflex, widget: text }
-
+          - label: Liens utiles
+            name: links
+            widget: object
+            fields:
+              - { label: Titre principal, name: title, widget: string }
+              - label: Liens recommandés
+                name: items
+                widget: list
+                fields:
+                  - { label: Nom du lien, name: name, widget: string }
+                  - { label: URL, name: url, widget: string }
       - name: pas_le_temps_de_lire
         label: "Pas le temps de lire"
         file: content/pas-le-temps-de-lire/_index.md
@@ -391,6 +400,7 @@ collections:
                   - { label: Nom de la fiche, name: name, widget: string }
                   - { label: Type (ex. Feuille réflexe), name: type, widget: string }
                   - { label: Description, name: description, widget: text }
+                  - { label: URL du document, name: pdf, widget: string }
               - label: Assureurs recommandés
                 name: insurances
                 widget: list

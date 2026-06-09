@@ -102,6 +102,11 @@
                   <span class="bg-red/10 text-red text-xs font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">{{ $kit.type }}</span>
                 </div>
                 <p class="text-xs md:text-sm text-dark_gray leading-relaxed">{{ $kit.description }}</p>
+                {{ if $kit.pdf }}
+                <a href="{{ $kit.pdf }}" download class="mt-2 inline-flex items-center gap-2 self-start bg-secondary text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-secondary/80 transition-colors">
+                  ⬇ Télécharger la fiche
+                </a>
+                {{ end }}
               </div>
               {{ end }}
             </div>

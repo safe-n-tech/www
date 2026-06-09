@@ -49,9 +49,11 @@ tpme_kits:
     - name: "Kit en cas de piratage informatique"
       type: "Feuille réflexe"
       description: "Procédure immédiate en cas d'infection : déconnexion réseau, préservation des preuves, alerte des équipes."
+      pdf: "/pdf/Fiche Réflexe Cyber - Campus Cyber Nouvelle-Aquitaine.pdf"
     - name: "Kit en cas de fuite de données"
       type: "Feuille réflexe"
       description: "Checklist réglementaire pour qualifier la fuite de données et notifier la CNIL sous 72h."
+      pdf: "/pdf/Guide Cybersécurité - Campus Cyber Nouvelle-Aquitaine.pdf"
   insurances:
     - name: "AXA - Assurance Cyber Risques"
       url: "https://www.axa.fr/pro/assurance-materiel-informatique/assurance-cyber-risques.html"
