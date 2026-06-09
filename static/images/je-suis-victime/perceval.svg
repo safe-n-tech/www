@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="0" y="0" width="8" height="80" fill="#002395"/>
+  <rect x="8" y="0" width="8" height="80" fill="#ffffff"/>
+  <rect x="16" y="0" width="8" height="80" fill="#ED2939"/>
+  <g transform="translate(32, 10)">
+    <rect x="2" y="2" width="36" height="28" rx="3" fill="#000091"/>
+    <rect x="6" y="18" width="28" height="4" rx="1" fill="white"/>
+    <rect x="6" y="10" width="14" height="3" rx="1" fill="rgba(255,255,255,0.5)"/>
+  </g>
+  <text x="82" y="32" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000091">Perceval</text>
+  <text x="82" y="49" font-family="Arial, sans-serif" font-size="8.5" fill="#333">Fraude bancaire</text>
+  <text x="82" y="62" font-family="Arial, sans-serif" font-size="8" fill="#666">gendarmerie.gouv.fr</text>
+</svg>

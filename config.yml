@@ -88,6 +88,10 @@ menu:
       weight: 60
       name: "Mes données ont-elles fuité ?"
       url: /mes-donnees-ont-elles-fuite/
+    - identifier: je-suis-victime
+      weight: 65
+      name: "Je suis victime"
+      url: /je-suis-victime/
     - identifier: definitions
       weight: 70
       name: Glossaire

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="0" y="0" width="8" height="80" fill="#002395"/>
+  <rect x="8" y="0" width="8" height="80" fill="#ffffff"/>
+  <rect x="16" y="0" width="8" height="80" fill="#ED2939"/>
+  <g transform="translate(32, 12)">
+    <path d="M16 0 L32 6 L32 22 C32 30 24 36 16 40 C8 36 0 30 0 22 L0 6 Z" fill="#000091"/>
+    <path d="M16 4 L28 9 L28 22 C28 28 22 33 16 36 C10 33 4 28 4 22 L4 9 Z" fill="white"/>
+    <path d="M22 16 L14 24 L10 20 L8 22 L14 28 L24 18 Z" fill="#000091"/>
+  </g>
+  <text x="82" y="32" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#000091">Ma</text>
+  <text x="82" y="47" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#000091">Sécurité</text>
+  <text x="82" y="62" font-family="Arial, sans-serif" font-size="8" fill="#666">interieur.gouv.fr</text>
+</svg>

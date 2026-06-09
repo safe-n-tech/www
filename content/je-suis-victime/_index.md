@@ -1,0 +1,26 @@
+---
+title: "Je suis victime"
+description: "Vous êtes victime d'une cyberattaque, d'une arnaque ou d'un contenu illicite en ligne ? Voici les plateformes officielles pour signaler, déposer plainte ou obtenir de l'aide."
+
+links:
+  - logo: "/images/je-suis-victime/masecurite.svg"
+    name: "MaSécurité"
+    url: "https://www.masecurite.fr/"
+    description: "Plateforme de la gendarmerie nationale pour signaler une cybermenace, obtenir des conseils personnalisés et être mis en relation avec des spécialistes en cas de cyberattaque."
+  - logo: "/images/je-suis-victime/thesee.svg"
+    name: "Thésée"
+    url: "https://www.thesee.interieur.gouv.fr/"
+    description: "Service du Ministère de l'Intérieur pour déposer une pré-plainte en ligne suite à une escroquerie sur internet, sans avoir à vous déplacer au commissariat."
+  - logo: "/images/je-suis-victime/perceval.svg"
+    name: "Perceval"
+    url: "https://www.perceval.gendarmerie.interieur.gouv.fr/"
+    description: "Outil de la gendarmerie nationale pour signaler une utilisation frauduleuse de votre carte bancaire, même si vous n'avez pas encore constaté de débit."
+  - logo: "/images/je-suis-victime/17cyber.svg"
+    name: "17Cyber"
+    url: "https://www.17cyber.fr/"
+    description: "Numéro national d'assistance aux victimes de cybermalveillance, disponible 7j/7. Mise en relation avec des professionnels de la sécurité informatique près de chez vous."
+  - logo: "/images/je-suis-victime/pharos.svg"
+    name: "Pharos — je suis témoin"
+    url: "https://www.internet-signalement.gouv.fr/"
+    description: "Plateforme officielle pour signaler des contenus illicites sur internet : pédopornographie, apologie du terrorisme, haine en ligne, arnaques… Accessible à toute personne témoin."
+---

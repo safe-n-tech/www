@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80">
+  <rect x="0" y="0" width="8" height="80" fill="#002395"/>
+  <rect x="8" y="0" width="8" height="80" fill="#ffffff"/>
+  <rect x="16" y="0" width="8" height="80" fill="#ED2939"/>
+  <g transform="translate(32, 10)">
+    <circle cx="20" cy="20" r="18" fill="#000091"/>
+    <text x="20" y="27" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">⚖</text>
+  </g>
+  <text x="82" y="32" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#000091">Thésée</text>
+  <text x="82" y="49" font-family="Arial, sans-serif" font-size="8.5" fill="#333">Plainte en ligne</text>
+  <text x="82" y="62" font-family="Arial, sans-serif" font-size="8" fill="#666">interieur.gouv.fr</text>
+</svg>
