@@ -15,6 +15,6 @@ choices:
   - isCorrect: true
     text: Près de 50 %
   - isCorrect: false
-    text: Environ 5 %
+    text: Environ 70 %
 quizCultureGenerale: true
 ---
