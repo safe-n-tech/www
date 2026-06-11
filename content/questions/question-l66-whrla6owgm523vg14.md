@@ -12,12 +12,12 @@ correction: Les ordinateurs modernes peuvent tester des milliards de
   spéciaux.
 choices:
   - isCorrect: false
-    text: Environ 2 ans
-  - isCorrect: false
     text: Environ 3 semaines
   - isCorrect: true
     text: Moins d'une seconde
   - isCorrect: false
     text: Environ 5 jours
+  - isCorrect: false
+    text: Moins d'une heure
 quizCultureGenerale: true
 ---
