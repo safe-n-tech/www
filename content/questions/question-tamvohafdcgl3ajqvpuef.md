@@ -16,6 +16,6 @@ choices:
   - isCorrect: false
     text: Toutes les 10 minutes
   - isCorrect: false
-    text: Une fois par jour
+    text: Toutes les 3 minutes
 quizCultureGenerale: true
 ---
