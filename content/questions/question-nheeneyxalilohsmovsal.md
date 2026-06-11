@@ -13,8 +13,8 @@ choices:
   - isCorrect: false
     text: À la 15ème place
   - isCorrect: false
-    text: À la 120ème place
-  - isCorrect: false
     text: À la 4ème place
+  - isCorrect: false
+    text: À la 9ème place
 quizCultureGenerale: true
 ---
