@@ -2,11 +2,25 @@
 title: Pas le temps de lire
 description: Pas le temps de tout lire ? Voici les réflexes qui font vraiment la différence.
 recommendations:
-  - title: Pour renforcer la sécurité de vos comptes, créez des mots de passe longs
-      (au moins 12 caractères) qui mélangent des lettres, des chiffres et des
-      symboles (caractères spéciaux)
+  - title: " 01 — Mots de passe longs et complexes"
     icon: 🔑
-    text: "  "
+    text: >2
+        Longueur et structure
+      •	Minimum 16 à 20 caractères — les GPU modernes cassent un mot de passe de 12 caractères en quelques heures par force brute.
+
+      •	Privilégier une phrase de passe (passphrase) : 4 à 5 mots aléatoires assemblés — ex. ChienPluieMontagneBougie — plus solide et mémorisable qu'une suite de caractères illisible.
+
+      À ne jamais utiliser
+
+      •	Prénoms, dates de naissance, noms d'animaux
+
+      •	Suites clavier : azerty, 123456, qwerty
+
+      •	Tout stockage en clair : fichier texte, post-it, notes de smartphone — un mot de passe doit rester secret.
+
+      Vérification de robustesse
+
+      •	A titre éducatif, vous pouvez vérifier si un mot de passe a déjà fuité sur haveibeenpwned.com/passwords — en navigation privée pour éviter toute identification et à ne pas tester sur un véritable mot de passe.
   - title: Pour sécuriser vos informations, créez un mot de passe distinct pour
       chaque service en ligne que vous utilisez. Cela garantit qu'une
       compromission d'un seul compte n'entraîne pas la compromission de tous vos
