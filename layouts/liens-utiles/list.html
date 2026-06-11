@@ -1,0 +1,137 @@
+{{ define "pageHead" }}
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+{{ end }}
+
+{{ define "main" }}
+
+{{/* Collect all liens-utiles pages */}}
+{{ $allLiens := (where .Site.Pages "Section" "liens-utiles") }}
+{{ $liens := where $allLiens ".Params.visibleInCms" "eq" true }}
+
+{{/* Build the JSON payload consumed by Alpine for filtering */}}
+{{ $items := slice }}
+{{ range $liens }}
+  {{ $tags := .Params.tags | default (slice) }}
+  {{ $items = $items | append (dict
+      "title"       .Params.title
+      "link"        .Params.link
+      "description" (.Params.description | default "")
+      "tags"        $tags
+  ) }}
+{{ end }}
+
+{{/* Tag definitions: id, label, emoji. Order = display order. */}}
+{{ $tagDefs := slice
+  (dict "id" "mineurs"     "label" "Mineurs / Ados"  "emoji" "🎮")
+  (dict "id" "parents"     "label" "Parents"         "emoji" "👨‍👩‍👧")
+  (dict "id" "seniors"     "label" "Seniors"         "emoji" "👵")
+  (dict "id" "aide-pro"    "label" "Professionnels"  "emoji" "💼")
+  (dict "id" "particulier" "label" "Particuliers"    "emoji" "🏠")
+}}
+
+<section
+  class="relative flex flex-col align-center px-4 text-white"
+  style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+  <div class="max-w-md md:ml-12 my-20">
+    {{ partial "breadcrumb" (dict "page" . ) }}
+  </div>
+  <div class="container pb-16 text-white">
+    <h1 class="text-h1 text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
+    <p class="max-w-2xl text-white/90 text-lg mb-4">{{ .Params.description }}</p>
+    <p class="text-white/70 text-sm">
+      {{ len $liens }} lien{{ if gt (len $liens) 1 }}s{{ end }} référencé{{ if gt (len $liens) 1 }}s{{ end }},
+      filtrables par public cible.
+    </p>
+  </div>
+</section>
+
+<section class="container py-12 px-4 max-w-6xl mx-auto"
+  x-data='{
+    activeTag: "all",
+    items: {{ $items | jsonify }},
+    get filtered() {
+      if (this.activeTag === "all") return this.items;
+      return this.items.filter(item => (item.tags || []).includes(this.activeTag));
+    }
+  }'>
+
+  {{/* Filter buttons */}}
+  <div class="flex flex-wrap gap-3 justify-center mb-12">
+    <button @click="activeTag = 'all'"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+      :class="activeTag === 'all'
+        ? 'bg-secondary text-white border-secondary scale-105'
+        : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      <span>✨</span> Tous
+      <span class="text-xs opacity-70" x-text="'(' + items.length + ')'"></span>
+    </button>
+
+    {{ range $tagDefs }}
+    {{ $tagId := .id }}
+    {{ $count := 0 }}
+    {{ range $items }}
+      {{ if in .tags $tagId }}{{ $count = add $count 1 }}{{ end }}
+    {{ end }}
+    {{ if gt $count 0 }}
+    <button @click="activeTag = '{{ .id }}'"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+      :class="activeTag === '{{ .id }}'
+        ? 'bg-secondary text-white border-secondary scale-105'
+        : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      <span>{{ .emoji }}</span> {{ .label }}
+      <span class="text-xs opacity-70">({{ $count }})</span>
+    </button>
+    {{ end }}
+    {{ end }}
+  </div>
+
+  {{/* Cards grid */}}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <template x-for="item in filtered" :key="item.title">
+      <a :href="item.link" target="_blank" rel="noopener noreferrer"
+        class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between gap-4 select-none cursor-pointer">
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-secondary font-bold text-lg leading-snug" x-text="item.title"></h3>
+            <svg class="w-4 h-4 text-secondary/40 group-hover:text-secondary transition-colors flex-shrink-0 mt-1"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </div>
+
+          <template x-if="item.description">
+            <p class="text-dark_gray/80 text-sm leading-relaxed" x-text="item.description"></p>
+          </template>
+        </div>
+
+        {{/* Tag badges */}}
+        <div class="flex flex-wrap gap-1.5">
+          <template x-for="tag in item.tags" :key="tag">
+            <span class="inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-light_gray text-secondary border border-perso"
+              x-text="
+                tag === 'mineurs' ? '🎮 Mineurs' :
+                tag === 'parents' ? '👨‍👩‍👧 Parents' :
+                tag === 'seniors' ? '👵 Seniors' :
+                tag === 'aide-pro' ? '💼 Pro' :
+                tag === 'particulier' ? '🏠 Particulier' : tag
+              "></span>
+          </template>
+        </div>
+      </a>
+    </template>
+  </div>
+
+  {{/* Empty state */}}
+  <template x-if="filtered.length === 0">
+    <div class="flex flex-col items-center justify-center py-24 text-center">
+      <p class="text-dark_gray/50 text-lg">Aucun lien pour ce filtre.</p>
+    </div>
+  </template>
+
+</section>
+
+{{ end }}

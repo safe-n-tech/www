@@ -52,7 +52,7 @@ collections:
       - { label: Sous-titre, name: subtitle, required: false }
       - { label: Description, name: description, required: false, widget: text }
 
-  # --- NOUVELLE COLLECTION : OUTILS ---
+  # --- COLLECTION OUTILS ---
   - name: tools
     slug: "{{fields.uuid}}"
     label: Outils
@@ -80,6 +80,50 @@ collections:
         widget: text
         required: false
         hint: "Courte description de ce que fait l'outil."
+
+  # --- NOUVELLE COLLECTION : LIENS UTILES ---
+  - name: liens-utiles
+    slug: "{{fields.uuid}}"
+    label: Liens utiles
+    label_singular: Lien utile
+    folder: content/liens-utiles
+    create: true
+    editor: { preview: false }
+    filter: { field: "visibleInCms", value: true }
+    identifier_field: title
+    summary: "{{title}}"
+    view_groups:
+      - label: Public cible (premier tag)
+        field: tags
+    fields:
+      - { label: "Visible", name: "visibleInCms", widget: hidden, default: true }
+      - { label: 'UUID', name: 'uuid', widget: uuid, prefix: lien }
+      - label: "Titre"
+        name: title
+        widget: string
+        hint: "Nom du site, de l'association ou du dispositif."
+      - label: "Lien (URL)"
+        name: link
+        widget: string
+        pattern: ['^https?://', "L'URL doit commencer par http:// ou https://"]
+        hint: "URL complète vers la ressource."
+      - label: "Description"
+        name: description
+        widget: text
+        required: false
+        hint: "Description courte de la ressource (1-3 phrases)."
+      - label: "Tags (public cible)"
+        name: tags
+        widget: select
+        multiple: true
+        min: 1
+        options:
+          - { label: "Mineurs / Ados", value: mineurs }
+          - { label: "Parents", value: parents }
+          - { label: "Seniors", value: seniors }
+          - { label: "Professionnels", value: aide-pro }
+          - { label: "Particuliers", value: particulier }
+        hint: "Sélectionnez un ou plusieurs publics cibles. Les utilisateurs pourront filtrer par tag."
 
   - name: good-practices
     slug: "{{fields.slug | default: fields.uuid}}"
@@ -146,7 +190,6 @@ collections:
         required: false
         hint: "Comportement à éviter, formulé positivement comme un contre-exemple."
 
-      # --- CHAMP OUTIL : désormais une RELATION (liste déroulante), plus un objet ---
       - label: Outil recommandé
         name: tool
         widget: relation
@@ -429,4 +472,3 @@ collections:
                 fields:
                   - { label: Nom de l'assureur, name: name, widget: string }
                   - { label: URL, name: url, widget: string }
-
