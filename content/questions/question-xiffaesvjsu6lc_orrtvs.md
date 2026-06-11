@@ -10,13 +10,13 @@ correction: Selon le rapport de Digital Shadows (2022), plus de 24 milliards de
   HaveIBeenPwned.com permettent de vérifier si votre adresse e-mail a été
   exposée dans une fuite connue.
 choices:
-  - isCorrect: false
-    text: Quelques millions de comptes
   - isCorrect: true
     text: Plus de 24 milliards d'identifiants et de mots de passe
   - isCorrect: false
     text: Environ 500 millions de fichiers
   - isCorrect: false
     text: L'équivalent de la population de la France
+  - isCorrect: false
+    text: Plus de 5.3 milliards de données personnelles
 quizCultureGenerale: true
 ---
