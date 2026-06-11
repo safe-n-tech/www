@@ -222,8 +222,8 @@ collections:
         required: false
         hint: "Activer pour inclure cette question dans le quiz de culture générale sur la cybercriminalité"
 
-  - name: pages
-    label: Pages Spécifiques
+  - name: parents
+    label: Espace Parents
     delete: false
     editor: { preview: false }
     files:
@@ -247,6 +247,12 @@ collections:
                   - { label: Type d'affichage, name: type, widget: select, options: [{label: "Texte", value: "text"}, {label: "Liste à puces", value: "list"}], default: "text" }
                   - { label: Contenu (Markdown), name: content, widget: text, required: false }
                   - { label: Lignes de la liste (Markdown), name: items, widget: list, field: {label: Ligne, name: item, widget: string}, required: false }
+
+  - name: seniors
+    label: Espace Seniors
+    delete: false
+    editor: { preview: false }
+    files:
       - name: seniors
         label: Espace Seniors
         file: content/seniors/_index.md
@@ -276,6 +282,11 @@ collections:
                   - { label: Numéro (optionnel), name: number, widget: string, required: false }
                   - { label: Informations / Conseils, name: info, widget: text, required: false }
 
+  - name: mineurs
+    label: Espace Mineurs & Ados
+    delete: false
+    editor: { preview: false }
+    files:
       - name: mineurs
         label: Espace Mineurs & Ados
         file: content/mineurs/_index.md
@@ -350,6 +361,12 @@ collections:
                 fields:
                   - { label: Nom du lien, name: name, widget: string }
                   - { label: URL, name: url, widget: string }
+
+  - name: pas_le_temps_de_lire
+    label: "Pas le temps de lire"
+    delete: false
+    editor: { preview: false }
+    files:
       - name: pas_le_temps_de_lire
         label: "Pas le temps de lire"
         file: content/pas-le-temps-de-lire/_index.md
@@ -364,6 +381,11 @@ collections:
               - { label: Titre court, name: title, widget: string }
               - { label: Texte (1-2 phrases), name: text, widget: text }
 
+  - name: aide_pro
+    label: Espace Professionnels
+    delete: false
+    editor: { preview: false }
+    files:
       - name: aide_pro
         label: Espace Professionnels (Aide Pro)
         file: content/aide-pro/_index.md
