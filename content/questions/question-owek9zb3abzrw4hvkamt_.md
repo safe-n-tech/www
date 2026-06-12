@@ -22,7 +22,7 @@ choices:
     text: "En me rendant dans une gendarmerie locale ou un commissariat de police. "
   - isCorrect: true
     text: "Sur internet, sur la plateforme de plainte en ligne THESEE "
-  - isCorrect: false
+  - isCorrect: true
     text: Sur internet, sur la plateforme de signalement en ligne PHAROS
 quizCultureGenerale: true
 ---
