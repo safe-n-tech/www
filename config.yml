@@ -80,6 +80,10 @@ menu:
       weight: 40
       name: "Boîte à outils"
       url: /boite-a-outils/
+    - identifier: liens-utiles
+      weight: 45
+      name: "Liens utiles"
+      url: /liens-utiles/
     - identifier: mille-bugs
       weight: 50
       name: Mille Bugs
