@@ -9,12 +9,12 @@ correction: >-
   Une étude de l'Université de l'Illinois a semé 297 clés USB dans des lieux publics : plus de 98 % ont été ramassées, et 45 à 65 % ont été branchées sur un ordinateur. C'est une technique classique d'attaque appelée « USB drop attack » : un hacker dépose intentionnellement des clés infectées sur un parking d'entreprise pour que des employés curieux les branchent, installant ainsi un malware sans le savoir.
 choices:
   - isCorrect: false
-    text: Environ 10 %
-  - isCorrect: false
     text: Moins de 25 %
   - isCorrect: false
     text: Près de 50 %
   - isCorrect: true
     text: Plus de 65 %
+  - isCorrect: false
+    text: Près de 40%
 quizCultureGenerale: true
 ---

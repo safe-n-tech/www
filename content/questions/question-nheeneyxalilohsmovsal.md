@@ -8,13 +8,13 @@ correction: >-
 
   Le coût mondial du cybercrime est estimé à plus de 8 000 milliards de dollars par an selon Cybersecurity Ventures. Ce chiffre dépasse le PIB de la plupart des pays du monde et continue de croître chaque année. Cela inclut les rançons versées, les vols de données, les pertes de productivité et les coûts de remédiation des entreprises attaquées.
 choices:
-  - isCorrect: false
-    text: À la 50ème place
   - isCorrect: true
     text: À la 3ème place
   - isCorrect: false
     text: À la 15ème place
   - isCorrect: false
-    text: À la 120ème place
+    text: À la 4ème place
+  - isCorrect: false
+    text: À la 9ème place
 quizCultureGenerale: true
 ---
