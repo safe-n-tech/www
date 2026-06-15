@@ -30,10 +30,6 @@ document.addEventListener('alpine:init', () => {
       return 4;
     },
 
-    get finalEmoji() {
-      return ['🔒','✅','⚖️','⚠️','🚨'][this.finalLevel];
-    },
-
     get finalTitle() {
       return [
         'Alors là, respect... ou flippant, on ne sait pas trop !',

@@ -1,11 +1,78 @@
+{{ define "pageHead" }}
+<script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+{{ end }}
+
 {{ define "main" }}
 
-{{/* Collect all tools from the dedicated "tools" collection */}}
-{{ $allTools := (where .Site.Pages "Section" "tools") }}
-{{ $allGoodPractices := (where .Site.Pages "Section" "good-practices") }}
+{{/* ── Resources ──────────────────────────────────────────────────────────── */}}
+{{ $allTools        := where .Site.Pages "Section" "tools" }}
+{{ $allGoodPractices := where .Site.Pages "Section" "good-practices" }}
+{{ $thematiques     := where .Site.Pages "Section" "thematiques" }}
 
+{{/* ── tool UUID → [thematique UUIDs] mapping ────────────────────────────── */}}
+{{ $toolThemMap := dict }}
+{{ range $allGoodPractices }}
+  {{ if and .Params.tool .Params.thematique }}
+    {{ $tUuid := .Params.tool }}
+    {{ $hUuid := .Params.thematique }}
+    {{ $existing := index $toolThemMap $tUuid | default (slice) }}
+    {{ if not (in $existing $hUuid) }}
+      {{ $toolThemMap = merge $toolThemMap (dict $tUuid ($existing | append $hUuid)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ── thematique UUID → title mapping (for tag labels in Alpine) ─────────── */}}
+{{ $themLabels := dict }}
+{{ range $thematiques }}
+  {{ if .Params.uuid }}
+    {{ $themLabels = merge $themLabels (dict .Params.uuid .Title) }}
+  {{ end }}
+{{ end }}
+
+{{/* ── Items list for Alpine ──────────────────────────────────────────────── */}}
+{{ $items := slice }}
+{{ range $allTools }}
+  {{ $uuid := .Params.uuid }}
+  {{ $tags := index $toolThemMap $uuid | default (slice) }}
+  {{ $items = $items | append (dict
+      "name"        .Params.name
+      "link"        (.Params.link | default .Params.url | default "")
+      "description" (.Params.description | default "")
+      "tags"        $tags
+  ) }}
+{{ end }}
+
+{{/* ── Tag definitions: thematiques that have at least one tool ───────────── */}}
+{{ $tagDefs := slice }}
+{{ range $thematiques }}
+  {{ if .Params.uuid }}
+    {{ $hUuid := .Params.uuid }}
+    {{ $count := 0 }}
+    {{ range $items }}
+      {{ if in .tags $hUuid }}{{ $count = add $count 1 }}{{ end }}
+    {{ end }}
+    {{ if gt $count 0 }}
+      {{ $tagDefs = $tagDefs | append (dict
+          "id"    $hUuid
+          "label" .Title
+          "icon"  (.Params.icon | default "")
+          "count" $count
+      ) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{/* ── Count tools with no thematique ────────────────────────────────────── */}}
+{{ $otherCount := 0 }}
+{{ range $items }}
+  {{ if eq (len .tags) 0 }}{{ $otherCount = add $otherCount 1 }}{{ end }}
+{{ end }}
+
+{{/* ── Hero ────────────────────────────────────────────────────────────────── */}}
 <section
-  class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+  class="relative flex flex-col align-center px-4 text-white"
+  style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
   <div class="max-w-md md:ml-12 my-20">
     {{ partial "breadcrumb" (dict "page" . ) }}
   </div>
@@ -13,98 +80,110 @@
     <h1 class="text-h1 text-4xl md:text-5xl font-bold mb-6">{{ .Title }}</h1>
     <p class="max-w-2xl text-white/90 text-lg mb-4">{{ .Description }}</p>
     <p class="text-white/70 text-sm">
-      {{ len $allTools }} outil{{ if gt (len $allTools) 1 }}s{{ end }} référencé{{ if gt (len $allTools) 1 }}s{{ end }},
-      classés par thématique.
+      {{ len $items }} outil{{ if gt (len $items) 1 }}s{{ end }} référencé{{ if gt (len $items) 1 }}s{{ end }},
+      filtrables par thématique.
     </p>
   </div>
 </section>
 
-<section class="container text-dark_gray flex flex-col gap-12 py-16">
+{{/* ── Filterable section ───────────────────────────────────────────────────── */}}
+<section class="container py-12 px-4 max-w-6xl mx-auto"
+  x-data='{
+    activeTag: "all",
+    items: {{ $items | jsonify }},
+    tagLabels: {{ $themLabels | jsonify }},
+    get filtered() {
+      if (this.activeTag === "all")   return this.items;
+      if (this.activeTag === "other") return this.items.filter(i => i.tags.length === 0);
+      return this.items.filter(i => i.tags.includes(this.activeTag));
+    }
+  }'>
 
-  {{ $thematiques := (where .Site.Pages "Section" "thematiques") }}
-  {{ range $thematiques }}
-    {{ $thematique := . }}
+  {{/* Filter buttons */}}
+  <div class="flex flex-wrap gap-3 justify-center mb-12">
 
-    {{/* Tools used by at least one good-practice of this thematique.
-         A tool is shown under a thematique if a good-practice in that
-         thematique references it (via .Params.tool == tool uuid). */}}
-    {{ $themTools := slice }}
-    {{ $seen := slice }}
-    {{ range $allGoodPractices }}
-      {{ if eq .Params.thematique $thematique.Params.uuid }}
-        {{ $toolUuid := .Params.tool }}
-        {{ if and $toolUuid (not (in $seen $toolUuid)) }}
-          {{ $matches := where $allTools ".Params.uuid" "eq" $toolUuid }}
-          {{ with index $matches 0 }}
-            {{ $themTools = $themTools | append (dict "tool" . "niveau" $.Params.niveau) }}
-            {{ $seen = $seen | append $toolUuid }}
-          {{ end }}
-        {{ end }}
+    {{/* Tous */}}
+    <button @click="activeTag = 'all'"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+      :class="activeTag === 'all'
+        ? 'bg-secondary text-white border-secondary scale-105'
+        : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      <i data-lucide="sparkles" class="w-4 h-4"></i> Tous
+      <span class="text-xs opacity-70" x-text="'(' + items.length + ')'"></span>
+    </button>
+
+    {{/* One button per thematique */}}
+    {{ range $tagDefs }}
+    <button @click="activeTag = '{{ .id }}'"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+      :class="activeTag === '{{ .id }}'
+        ? 'bg-secondary text-white border-secondary scale-105'
+        : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      {{ if .icon }}
+      <img src="/icons/thematiques/illustrations/{{ .icon }}" alt="" class="w-4 h-4 object-contain">
+      {{ else }}
+      <i data-lucide="tag" class="w-4 h-4"></i>
       {{ end }}
+      {{ .label }}
+      <span class="text-xs opacity-70">({{ .count }})</span>
+    </button>
     {{ end }}
 
-    {{ if gt (len $themTools) 0 }}
-    <div class="flex flex-col gap-4">
-
-      {{/* Thematique header */}}
-      <div class="flex items-center gap-4 mb-2">
-        {{ if .Params.icon }}
-        <img class="w-10 h-10" src="/icons/thematiques/illustrations/{{ .Params.icon }}" alt="">
-        {{ end }}
-        <h2 class="text-2xl font-bold text-secondary">{{ .Title }}</h2>
-      </div>
-
-      {{/* Tools grid */}}
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {{ range $themTools }}
-        {{ $t := .tool }}
-        <a href="{{ $t.Params.url }}" target="_blank" rel="noopener noreferrer"
-          class="group bg-white rounded-2xl p-6 flex flex-col gap-3 border-2 border-transparent hover:border-secondary/20 hover:shadow-md transition-all">
-
-          {{/* Tool name + icon */}}
-          <div class="flex items-center justify-between">
-            <span class="font-bold text-secondary text-lg">{{ $t.Params.name }}</span>
-            <span class="text-secondary/40 group-hover:text-secondary transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </span>
-          </div>
-
-          {{/* Tool description */}}
-          {{ with $t.Params.description }}
-          <p class="text-dark_gray/80 text-sm leading-relaxed">{{ . }}</p>
-          {{ end }}
-
-          {{/* Level badge (niveau of the good-practice that references this tool) */}}
-          {{ $niveau := .niveau }}
-          <div class="mt-1">
-            {{ if eq $niveau "avance" }}
-            <span class="py-1 px-3 text-xs rounded-full bg-red text-white">Avancé</span>
-            {{ else if eq $niveau "essentiel" }}
-            <span class="py-1 px-3 text-xs rounded-full bg-primary text-white">Essentiel</span>
-            {{ else if eq $niveau "basique" }}
-            <span class="py-1 px-3 text-xs rounded-full bg-green text-white">Basique</span>
-            {{ end }}
-          </div>
-
-        </a>
-        {{ end }}
-      </div>
-
-    </div>
+    {{/* Autres — only when unlinked tools exist */}}
+    {{ if gt $otherCount 0 }}
+    <button @click="activeTag = 'other'"
+      class="px-6 py-3 rounded-full font-bold text-sm md:text-base border transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
+      :class="activeTag === 'other'
+        ? 'bg-secondary text-white border-secondary scale-105'
+        : 'bg-white text-secondary border-perso hover:bg-light_gray'">
+      <i data-lucide="circle-help" class="w-4 h-4"></i> Autres
+      <span class="text-xs opacity-70">({{ $otherCount }})</span>
+    </button>
     {{ end }}
-  {{ end }}
+
+  </div>
+
+  {{/* Cards grid */}}
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+    <template x-for="item in filtered" :key="item.name">
+      <a :href="item.link" target="_blank" rel="noopener noreferrer"
+        class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between gap-4 select-none cursor-pointer">
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-secondary font-bold text-lg leading-snug" x-text="item.name"></h3>
+            <svg class="w-4 h-4 text-secondary/40 group-hover:text-secondary transition-colors flex-shrink-0 mt-1"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" y1="14" x2="21" y2="3"/>
+            </svg>
+          </div>
+
+          <template x-if="item.description">
+            <p class="text-dark_gray/80 text-sm leading-relaxed" x-text="item.description"></p>
+          </template>
+        </div>
+
+        {{/* Thematique tag badges */}}
+        <div class="flex flex-wrap gap-1.5">
+          <template x-for="tag in item.tags" :key="tag">
+            <span class="inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-light_gray text-secondary border border-perso"
+              x-text="tagLabels[tag] || tag"></span>
+          </template>
+        </div>
+
+      </a>
+    </template>
+  </div>
 
   {{/* Empty state */}}
-  {{ if eq (len $allTools) 0 }}
-  <div class="flex flex-col items-center justify-center py-24 text-center">
-    <p class="text-dark_gray/50 text-lg">Aucun outil référencé pour le moment.</p>
-  </div>
-  {{ end }}
+  <template x-if="filtered.length === 0">
+    <div class="flex flex-col items-center justify-center py-24 text-center">
+      <p class="text-dark_gray/50 text-lg">Aucun outil pour ce filtre.</p>
+    </div>
+  </template>
 
 </section>
 

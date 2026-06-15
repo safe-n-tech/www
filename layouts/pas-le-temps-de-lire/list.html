@@ -6,7 +6,7 @@
     </div>
     <div class="container pb-16 text-white">
         <div class="flex items-center gap-3 mb-4">
-            <span class="text-4xl">⚡</span>
+            <i data-lucide="zap" class="w-10 h-10 flex-shrink-0"></i>
             <h1 class="text-4xl md:text-5xl font-bold">{{ .Title }}</h1>
         </div>
         <p class="max-w-2xl text-white/90 text-lg">{{ .Params.description }}</p>
@@ -19,7 +19,7 @@
         {{ range $i, $rec := .Params.recommendations }}
         <div class="bg-white rounded-2xl p-6 shadow-sm border border-transparent flex flex-col gap-3">
             <div class="flex items-start justify-between">
-                <span class="text-3xl leading-none">{{ $rec.icon }}</span>
+                <i data-lucide="{{ $rec.icon }}" class="w-7 h-7 text-secondary"></i>
                 <span class="text-xs font-bold text-secondary/30 tabular-nums">{{ printf "%02d" (add $i 1) }}</span>
             </div>
             <h2 class="text-secondary font-bold text-base leading-snug">{{ $rec.title }}</h2>

@@ -40,6 +40,7 @@
     <meta name="twitter:description" content="{{ $description }}" />
     {{ end }}
     <script data-goatcounter="https://safentech.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 </head>
 
 <body data-page-id="{{ .Params.uuid }}" class="bg-light_gray text-secondary text-xl">
@@ -70,6 +71,7 @@
     </script>
     {{- partial "footer" . -}}
     {{- partial "plausible" . -}}
+    <script>lucide.createIcons();</script>
 </body>
 
 </html>

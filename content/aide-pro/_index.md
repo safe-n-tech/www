@@ -3,29 +3,29 @@ title: "Aide Pro : Cybersécurité pour votre Entreprise"
 description: "Garantissez la sécurité, la conformité réglementaire et la résilience de votre entreprise face aux menaces numériques. Découvrez nos préconisations, nos fiches réflexes et les conseils d'assurance."
 
 preconisations:
-  - category: "🔐 Facteurs humains"
+  - category: "Facteurs humains"
     items:
       - "Sensibiliser et former tous les collaborateurs (y compris CDD, stagiaires, alternants) aux bonnes pratiques cyber — et étendre cette exigence aux sous-traitants et prestataires."
       - "Désigner un responsable clairement identifié pour piloter la politique de gestion du risque cyber."
   
-  - category: "🔑 Hygiène informatique quotidienne"
+  - category: "Hygiène informatique quotidienne"
     items:
       - "Utiliser des mots de passe longs plutôt que complexes (16 caractères simples > 8 caractères spéciaux) et un gestionnaire de mots de passe."
       - "Verrouiller son poste à chaque absence, éviter les supports personnels (clé USB) et les réseaux Wi-Fi non sécurisés."
       - "Appliquer régulièrement les mises à jour de tous les logiciels — chaque faille non corrigée est une porte d'entrée."
 
-  - category: "🛡️ Outils de protection"
+  - category: "Outils de protection"
     items:
       - "Déployer antivirus et pare-feux, mis à jour quotidiennement de façon automatique."
       - "Compléter par des outils de détection d'intrusion (IDS/IPS, SIEM) et, selon la taille de la structure, un SOC."
 
-  - category: "💾 Résilience"
+  - category: "Résilience"
     items:
       - "Effectuer des sauvegardes idéalement quotidiennes, sur des supports distincts et hors site."
       - "Tester la restauration des sauvegardes au moins une fois par an — une sauvegarde non testée n'est pas fiable."
       - "Disposer d'un Plan de Continuité d'Activité (PCA) incluant un Plan de Reprise d'Activité (PRA)."
 
-  - category: "🚨 En cas d'incident"
+  - category: "En cas d'incident"
     items:
       - "Contacter son assureur sans délai avant toute décision."
       - "Déposer plainte rapidement auprès de la police ou gendarmerie territoriale."

@@ -22,11 +22,11 @@
 
 {{/* Tag definitions: id, label, emoji. Order = display order. */}}
 {{ $tagDefs := slice
-  (dict "id" "mineurs"     "label" "Mineurs / Ados"  "emoji" "🎮")
-  (dict "id" "parents"     "label" "Parents"         "emoji" "👨‍👩‍👧")
-  (dict "id" "seniors"     "label" "Seniors"         "emoji" "👵")
-  (dict "id" "aide-pro"    "label" "Professionnels"  "emoji" "💼")
-  (dict "id" "particulier" "label" "Particuliers"    "emoji" "🏠")
+  (dict "id" "mineurs"     "label" "Mineurs / Ados"  "icon" "gamepad-2")
+  (dict "id" "parents"     "label" "Parents"         "icon" "users")
+  (dict "id" "seniors"     "label" "Seniors"         "icon" "user")
+  (dict "id" "aide-pro"    "label" "Professionnels"  "icon" "briefcase")
+  (dict "id" "particulier" "label" "Particuliers"    "icon" "house")
 }}
 
 <section
@@ -62,7 +62,7 @@
       :class="activeTag === 'all'
         ? 'bg-secondary text-white border-secondary scale-105'
         : 'bg-white text-secondary border-perso hover:bg-light_gray'">
-      <span>✨</span> Tous
+      <i data-lucide="sparkles" class="w-4 h-4"></i> Tous
       <span class="text-xs opacity-70" x-text="'(' + items.length + ')'"></span>
     </button>
 
@@ -78,7 +78,7 @@
       :class="activeTag === '{{ .id }}'
         ? 'bg-secondary text-white border-secondary scale-105'
         : 'bg-white text-secondary border-perso hover:bg-light_gray'">
-      <span>{{ .emoji }}</span> {{ .label }}
+      <i data-lucide="{{ .icon }}" class="w-4 h-4"></i> {{ .label }}
       <span class="text-xs opacity-70">({{ $count }})</span>
     </button>
     {{ end }}
@@ -113,11 +113,11 @@
           <template x-for="tag in item.tags" :key="tag">
             <span class="inline-flex items-center text-xs px-2.5 py-1 rounded-full bg-light_gray text-secondary border border-perso"
               x-text="
-                tag === 'mineurs' ? '🎮 Mineurs' :
-                tag === 'parents' ? '👨‍👩‍👧 Parents' :
-                tag === 'seniors' ? '👵 Seniors' :
-                tag === 'aide-pro' ? '💼 Pro' :
-                tag === 'particulier' ? '🏠 Particulier' : tag
+                tag === 'mineurs' ? 'Mineurs' :
+                tag === 'parents' ? 'Parents' :
+                tag === 'seniors' ? 'Seniors' :
+                tag === 'aide-pro' ? 'Pro' :
+                tag === 'particulier' ? 'Particulier' : tag
               "></span>
           </template>
         </div>

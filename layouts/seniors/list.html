@@ -15,7 +15,10 @@
     <div class="absolute top-24 right-4 md:right-12 z-10">
       <button @click="largeText = !largeText" 
         class="bg-white/20 hover:bg-white/30 text-white font-semibold py-2 px-4 rounded-full border border-white/40 flex items-center gap-2 text-sm transition-all focus:outline-none cursor-pointer">
-        <span x-text="largeText ? 'Format de texte standard' : 'Agrandir le texte 🔍'"></span>
+        <span class="flex items-center gap-1.5">
+          <span x-text="largeText ? 'Format de texte standard' : 'Agrandir le texte'"></span>
+          <i data-lucide="search" class="w-4 h-4" x-show="!largeText"></i>
+        </span>
       </button>
     </div>
 
@@ -40,9 +43,9 @@
             ? 'bg-secondary text-white border-secondary scale-105' 
             : 'bg-white text-secondary border-perso hover:bg-light_gray'">
           <span>
-            {{ if eq $card.icon "bell" }}🚨
-            {{ else if eq $card.icon "document" }}📂
-            {{ else if eq $card.icon "heart" }}💖
+            {{ if eq $card.icon "bell" }}<i data-lucide="siren" class="w-5 h-5"></i>
+            {{ else if eq $card.icon "document" }}<i data-lucide="folder-open" class="w-5 h-5"></i>
+            {{ else if eq $card.icon "heart" }}<i data-lucide="heart" class="w-5 h-5"></i>
             {{ end }}
           </span>
           {{ $card.title }}
@@ -67,7 +70,7 @@
             <!-- Danger Box -->
             <div class="bg-red/5 dark:bg-red/10 border-l-4 border-red rounded-r-xl p-5">
               <h3 class="text-lg md:text-xl font-bold text-red-700 dark:text-red-400 mb-2 flex items-center gap-1">
-                ⚠️ {{ $card.danger_title }}
+                <i data-lucide="triangle-alert" class="w-5 h-5 flex-shrink-0"></i> {{ $card.danger_title }}
               </h3>
               <p class="text-sm md:text-base leading-relaxed text-dark_gray opacity-90">{{ $card.danger_text | markdownify }}</p>
             </div>
@@ -75,7 +78,7 @@
             <!-- Reflex Box -->
             <div class="bg-green-500/5 dark:bg-green-500/10 border-l-4 border-green rounded-r-xl p-5">
               <h3 class="text-lg md:text-xl font-bold text-green-700 dark:text-green-400 mb-2 flex items-center gap-1">
-                ✅ {{ $card.reflex_title }}
+                <i data-lucide="check-circle" class="w-5 h-5 flex-shrink-0"></i> {{ $card.reflex_title }}
               </h3>
               <p class="text-sm md:text-base leading-relaxed text-dark_gray opacity-90">{{ $card.reflex_text | markdownify }}</p>
             </div>
@@ -87,8 +90,8 @@
 
     <!-- Contacts Area -->
     <div class="bg-white rounded-2xl shadow-sm border border-perso p-6 md:p-8 mt-4">
-      <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-6 text-center">
-        📞 {{ .Params.phone_numbers.title }}
+      <h2 class="text-2xl md:text-3xl font-bold text-secondary mb-6 text-center flex items-center justify-center gap-2">
+        <i data-lucide="phone" class="w-6 h-6"></i> {{ .Params.phone_numbers.title }}
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">

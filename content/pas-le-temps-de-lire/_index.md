@@ -3,7 +3,7 @@ title: Pas le temps de lire
 description: Pas le temps de tout lire ? Voici les réflexes qui font vraiment la différence.
 recommendations:
   - title: " 01 — Mots de passe longs et complexes"
-    icon: 🔑
+    icon: key
     text: >2
         Longueur et structure
       •	Minimum 16 à 20 caractères — les GPU modernes cassent un mot de passe de 12 caractères en quelques heures par force brute.
@@ -22,7 +22,7 @@ recommendations:
 
       •	A titre éducatif, vous pouvez vérifier si un mot de passe a déjà fuité sur haveibeenpwned.com/passwords — en navigation privée pour éviter toute identification et à ne pas tester sur un véritable mot de passe.
   - title: 02 — Un mot de passe différent par service
-    icon: 🔑
+    icon: key
     text: >
       Comprendre le risque : credential stuffing
 
@@ -38,7 +38,7 @@ recommendations:
 
       Ces comptes doivent avoir des mots de passe uniques même en l'absence de gestionnaire de mots de passe. Dans la mesure du possible, ayez recours à la double authentification
   - title: 03 — Gestionnaire de mots de passe
-    icon: 🧰
+    icon: wrench
     text: >2
        Solutions recommandées
       •	KeePassXC — hors ligne, open source, préconisé par l'ANSSI
@@ -59,7 +59,7 @@ recommendations:
 
       •	Ne pas synchroniser son coffre sur un cloud non maîtrisé si l'on gère des données professionnelles sensibles.
   - title: 04 — Double authentification (2FA / MFA)
-    icon: 🤳
+    icon: smartphone
     text: >2
        Hiérarchie des méthodes (de la moins à la plus sécurisée)
       •	❌ SMS — vulnérable au SIM swapping et à l'interception SS7 — à éviter
@@ -76,7 +76,7 @@ recommendations:
 
       •	Ne jamais communiquer un code 2FA par téléphone, même à quelqu'un se présentant comme le support technique (vishing et spoofing).
   - title: 05 — Protection antivirus et EDR
-    icon: 🦠
+    icon: virus
     text: >2
        Solutions recommandées
       •	Bitdefender, ESET, Malwarebytes Premium — régulièrement bien notés par https://www.av-test.org et https://av-comparatives.org 
@@ -89,7 +89,7 @@ recommendations:
 
       •	Antivirus sur smartphone Android ( https://www.av-test.org) souvent négligé mais pertinent (iOS est plus fermé par architecture).
   - title: 06 — Alias e-mail et adresses jetables
-    icon: ✉️
+    icon: mail
     text: >2
        Services d'alias (permanents)
       •	https://simplelogin.io  (par Proton, open source) — « alias » permanents redirigés vers votre vraie boîte, réponse possible sans révéler l'adresse réelle.
@@ -114,7 +114,7 @@ recommendations:
 
       •	Compartimenter : un alias achats, un alias newsletters, un alias forums.
   - title: 07 — Segmentation des adresses e-mail
-    icon: 📥
+    icon: inbox
     text: >2
        Architecture recommandée
       •	Adresse pro institutionnelle — communications professionnelles officielles uniquement.
@@ -131,7 +131,7 @@ recommendations:
 
       •	Éviter prenom.nom comme identifiant dans le corps de son adresse émail: facilite le doxing et le spear phishing.
   - title: 08 — Données sensibles et IA grand public
-    icon: 🧠
+    icon: brain
     text: >2
        Ce qui ne doit jamais être saisi dans une IA grand public
       •	Noms de personnes, données personnelles, informations sensibles nominatives
@@ -154,7 +154,7 @@ recommendations:
 
       Distinguer impérativement : IA grand public (risque élevé) vs IA sur infrastructure maîtrisée (risque contrôlé).
   - title: 09 — Mises à jour régulières
-    icon: 💻
+    icon: laptop
     text: >2
        Urgence des correctifs
       •	Une vulnérabilité critique est souvent exploitée dans les 72 heures suivant sa publication. Les mises à jour automatiques sont une nécessité, pas une option.
@@ -177,7 +177,7 @@ recommendations:
 
       •	WSUS / SCCM pour les structures professionnelles : centraliser la gestion des mises à jour pour garantir un déploiement homogène.
   - title: 10 — Vigilance phishing — toutes formes
-    icon: 👺
+    icon: shield-alert
     text: >2
        Vérifications techniques de base
       •	Display name spoofing : l'affichage du nom peut être falsifié. Toujours vérifier l'adresse réelle entre chevrons <email@domaine.com>.

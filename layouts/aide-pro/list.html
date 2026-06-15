@@ -27,19 +27,19 @@
         @click="activeTab = 'preconisations'"
         :class="activeTab === 'preconisations' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
         class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
-        📋 Préconisations Cyber
+        <i data-lucide="clipboard-list" class="w-4 h-4 inline-block mr-1"></i> Préconisations Cyber
       </button>
       <button
         @click="activeTab = 'assurance'"
         :class="activeTab === 'assurance' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
         class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
-        🛡️ Assurances Cyber
+        <i data-lucide="shield" class="w-4 h-4 inline-block mr-1"></i> Assurances Cyber
       </button>
       <button
         @click="activeTab = 'kits'"
         :class="activeTab === 'kits' ? 'border-b-2 border-secondary text-secondary font-bold bg-white' : 'text-gray-500 hover:text-secondary hover:bg-white/50'"
         class="px-6 md:px-8 py-4 text-base transition-colors cursor-pointer select-none focus:outline-none">
-        🚨 Réaction & Kits TPME
+        <i data-lucide="siren" class="w-4 h-4 inline-block mr-1"></i> Réaction & Kits TPME
       </button>
     </div>
 
@@ -93,7 +93,7 @@
         <div class="max-w-2xl mx-auto w-full">
           <!-- Kits column -->
           <div class="flex flex-col gap-6">
-            <h3 class="text-lg md:text-xl font-bold text-secondary">🗂️ Kits de réaction en cas de crise</h3>
+            <h3 class="text-lg md:text-xl font-bold text-secondary flex items-center gap-2"><i data-lucide="folder-open" class="w-5 h-5"></i> Kits de réaction en cas de crise</h3>
             <div class="flex flex-col gap-4">
               {{ range $kit := .Params.tpme_kits.kits }}
               <div class="bg-light_gray/30 border border-perso rounded-2xl p-5 flex flex-col gap-2">
@@ -104,7 +104,7 @@
                 <p class="text-xs md:text-sm text-dark_gray leading-relaxed">{{ $kit.description }}</p>
                 {{ if $kit.pdf }}
                 <a href="{{ $kit.pdf }}" download class="mt-2 inline-flex items-center gap-2 self-start bg-secondary text-white text-xs font-semibold px-4 py-2 rounded-full hover:bg-secondary/80 transition-colors">
-                  ⬇ Télécharger la fiche
+                  <i data-lucide="download" class="w-4 h-4"></i> Télécharger la fiche
                 </a>
                 {{ end }}
               </div>
