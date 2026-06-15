@@ -14,13 +14,13 @@
 </section>
 
 <section class="container text-dark_gray flex flex-col gap-6 py-16 px-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto w-full">
-    {{ range .Params.links }}
+  <div class="max-w-5xl mx-auto w-full">
+    {{ range .Params.links }}{{ if eq .name "17Cyber" }}
     <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
       class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
       <div>
-        <div class="mb-4 h-10 flex items-center">
-          <img src="{{ .logo }}" alt="{{ .name }}" class="h-10 w-auto object-contain">
+        <div class="mb-4 h-16 flex items-center">
+          <img src="{{ .logo }}" alt="{{ .name }}" class="h-16 w-auto object-contain">
         </div>
         <h2 class="text-secondary font-bold text-lg mb-3">{{ .name }}</h2>
         <p class="text-sm text-dark_gray leading-relaxed">{{ .description }}</p>
@@ -30,7 +30,28 @@
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
       </span>
     </a>
-    {{ end }}
+    {{ end }}{{ end }}
+
+    <h2 class="text-dark_gray font-semibold text-xl mt-10 mb-4">Pour aller plus loin :</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range .Params.links }}{{ if ne .name "17Cyber" }}
+      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
+        class="group bg-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-transparent hover:border-secondary flex flex-col justify-between select-none cursor-pointer">
+        <div>
+          <div class="mb-4 h-16 flex items-center">
+            <img src="{{ .logo }}" alt="{{ .name }}" class="h-16 w-auto object-contain">
+          </div>
+          <h2 class="text-secondary font-bold text-lg mb-3">{{ .name }}</h2>
+          <p class="text-sm text-dark_gray leading-relaxed">{{ .description }}</p>
+        </div>
+        <span class="mt-5 text-secondary text-sm font-semibold group-hover:underline flex items-center gap-1">
+          Accéder au site
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </span>
+      </a>
+      {{ end }}{{ end }}
+    </div>
   </div>
 </section>
 
