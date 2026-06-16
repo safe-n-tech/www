@@ -25,7 +25,7 @@ topics:
           - '**Ne rediffusez pas** : Ne partagez pas les contenus, même pour
             "montrer" ce qui se passe.'
       - title: Comment stopper et signaler la diffusion ?
-        content: "Utilisez la plateforme **[StopNCII.org](https://stopncii.org/)/
+        content: "Utilisez la plateforme **[https://stopncii.org/](StopNCII.org)/
           [DISRUPT](https://www.pointdecontact.net/disrupt/)**. Cet outil permet
           d'agir directement à la racine : vous soumettez le contenu de manière
           totalement sécurisée pour créer une \"empreinte numérique\". Grâce à
