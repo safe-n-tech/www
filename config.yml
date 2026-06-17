@@ -74,7 +74,7 @@ menu:
       url: /aide-pro/
     - identifier: checklist
       weight: 35
-      name: "checklist"
+      name: "Checklist"
       url: /thematiques/
     - identifier: boite-a-outils
       weight: 40
