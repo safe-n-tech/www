@@ -1,0 +1,50 @@
+{{ define "main" }}
+<section
+  class="relative flex flex-col align-center px-4 text-white" style="background: linear-gradient(to bottom right, #153E60, #0449B8)">
+  <div class="max-w-md md:ml-12 my-20">
+    {{ partial "breadcrumb" (dict "page" . ) }}
+  </div>
+  <h1 class="h1 text-5xl font-semibold w-fit md:mx-auto max-w-screen-lg text-center">{{ .Title }}</h1>
+  {{ if .Params.description }}
+  <p class="w-fit mb-20 mx-auto my-7 text-center max-w-screen-md leading-relaxed px-4">{{ .Params.description }}</p>
+  {{ else }}
+  <div class="mb-20"></div>
+  {{ end }}
+</section>
+
+<section class="container text-dark_gray flex flex-col gap-8 py-16 px-4">
+  <div class="max-w-4xl mx-auto w-full flex flex-col gap-12">
+    
+    {{ range $category := .Params.categories }}
+    <div class="bg-white rounded-2xl shadow-sm border border-perso overflow-hidden">
+      <div class="p-6 md:p-8 flex flex-col gap-6 bg-light_gray/10">
+        <h2 class="text-2xl font-bold text-secondary">{{ $category.title }}</h2>
+        
+        {{ if $category.description }}
+        <p class="text-base text-dark_gray leading-relaxed">{{ $category.description }}</p>
+        {{ end }}
+
+        <div class="flex flex-col gap-4 mt-2">
+          {{ range $link := $category.links }}
+          <a href="{{ $link.url }}" target="_blank" rel="noopener noreferrer" class="group flex flex-col sm:flex-row sm:items-center justify-between p-4 bg-white border border-perso rounded-xl hover:border-secondary hover:shadow-md transition-all duration-200">
+            <div class="flex flex-col gap-1">
+              <span class="text-lg font-semibold text-secondary group-hover:text-primary transition-colors duration-200">{{ $link.name }}</span>
+              {{ if $link.description }}
+              <span class="text-sm text-dark_gray">{{ $link.description }}</span>
+              {{ end }}
+            </div>
+            <div class="mt-4 sm:mt-0 text-secondary group-hover:text-primary transition-colors duration-200">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </div>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+    
+  </div>
+</section>
+{{ end }}

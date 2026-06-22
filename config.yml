@@ -84,14 +84,14 @@ menu:
       weight: 45
       name: "Liens utiles"
       url: /liens-utiles/
+    - identifier: verification
+      weight: 46
+      name: "Vérification"
+      url: /verification/
     - identifier: mille-bugs
       weight: 50
       name: Mille Bugs
       url: /mille-bugs/
-    - identifier: fuite-donnees
-      weight: 60
-      name: "Mes données ont-elles fuité ?"
-      url: /mes-donnees-ont-elles-fuite/
     - identifier: je-suis-victime
       weight: 65
       name: "Je suis victime"

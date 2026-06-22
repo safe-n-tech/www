@@ -472,3 +472,28 @@ collections:
                 fields:
                   - { label: Nom de l'assureur, name: name, widget: string }
                   - { label: URL, name: url, widget: string }
+
+  - name: verification
+    label: Vérification
+    delete: false
+    editor: { preview: false }
+    files:
+      - name: verification
+        label: Page Vérification
+        file: content/verification/_index.md
+        fields:
+          - { label: Titre, name: title, widget: string }
+          - { label: Description, name: description, widget: text }
+          - label: Catégories
+            name: categories
+            widget: list
+            fields:
+              - { label: Titre de la catégorie, name: title, widget: string }
+              - { label: Description de la catégorie, name: description, widget: text, required: false }
+              - label: Liens
+                name: links
+                widget: list
+                fields:
+                  - { label: Nom du lien, name: name, widget: string }
+                  - { label: URL, name: url, widget: string }
+                  - { label: Description courte, name: description, widget: string, required: false }
