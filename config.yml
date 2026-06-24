@@ -68,6 +68,11 @@ menu:
       weight: 22
       name: "Hygiène numérique"
       url: /quizz/
+    - identifier: cyberborder-mineurs
+      parent: me-tester
+      weight: 23
+      name: "CyberBorder (mineurs)"
+      url: /mineurs/
     - identifier: aide-pro
       weight: 30
       name: Aide Pro
