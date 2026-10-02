@@ -85,7 +85,7 @@ Les fichiers générés se trouvent dans le dossier `public/`.
     │   ├── 📁questions/                    Questions du quiz (~50)
     │   ├── 📁quizz/                        Page d'accueil du quiz
     │   ├── 📁boite-a-outils/               Outils recommandés
-    │   ├── 📁mes-donnees-ont-elles-fuite/  Vérificateur de fuite de données
+    │   ├── 📁verification/                 Vérificateur de fuite de données
     │   ├── 📁mille-bugs/                   Jeu de cartes "Mille Bugs"
     │   ├── 📁a-propos/                     Page à propos
     │   └── 📁legal/                        Mentions légales
