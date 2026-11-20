@@ -20,6 +20,9 @@
   --color-dropdown-bg:  #F6F5F5;
   --color-circular-bg:  #F6F5F5;
   --color-shadow:       0 4px 6px -1px rgba(0,0,0,.10), 0 2px 4px -2px rgba(0,0,0,.10);
+  /* Accents des icônes vectorielles (page "Pas le temps de lire") */
+  --icon-accent:        #0284c7;
+  --icon-danger:        #e11d48;
 }
 
 html.dark {
@@ -34,6 +37,13 @@ html.dark {
   --color-dropdown-bg:  #1e293b;
   --color-circular-bg:  #0f172a;
   --color-shadow:       0 4px 6px -1px rgba(0,0,0,.40), 0 2px 4px -2px rgba(0,0,0,.30);
+  --icon-accent:        #38bdf8;
+  --icon-danger:        #fb7185;
+}
+
+/* Tuile de fond des illustrations (page "Pas le temps de lire") */
+.reco-illustration {
+  background-color: color-mix(in srgb, var(--icon-accent) 8%, transparent);
 }
 
 /* ============================================

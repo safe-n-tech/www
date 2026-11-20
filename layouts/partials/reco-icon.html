@@ -1,0 +1,110 @@
+{{- /*
+  Icônes de la page "Pas le temps de lire".
+  Usage : {{ partial "reco-icon" (dict "name" "passphrase" "class" "w-12 h-12") }}
+  Les contours utilisent currentColor ; les accents utilisent --icon-accent / --icon-danger
+  (définies dans assets/css/styles.css pour les thèmes clair et sombre).
+  Si le nom n'est pas reconnu, on retombe sur une icône Lucide du même nom.
+*/ -}}
+{{- $name := .name -}}
+{{- $class := .class | default "w-12 h-12" -}}
+{{- $open := printf `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" aria-hidden="true" class="%s">` $class -}}
+{{- if eq $name "passphrase" -}}
+{{ $open | safeHTML }}
+  <path d="M25 22V16a7 7 0 0 1 14 0v6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+  <rect x="20" y="22" width="24" height="17" rx="3.5" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.16" stroke="currentColor" stroke-width="2.2" />
+  <circle cx="32" cy="29" r="2" fill="var(--icon-accent, #0ea5e9)" />
+  <path d="M32 31v3.5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" />
+  <rect x="8" y="45" width="48" height="11" rx="5.5" stroke="currentColor" stroke-width="2.2" />
+  <path d="M14 50.5h5M24 50.5h5M35 50.5h5M45 50.5h5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.8" stroke-linecap="round" />
+</svg>
+{{- else if eq $name "unique-keys" -}}
+{{ $open | safeHTML }}
+  <circle cx="15" cy="18" r="5.5" stroke="currentColor" stroke-width="2.2" />
+  <path d="M15 23.5V52M15 41h4M15 47h3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+  <rect x="26.5" y="10" width="11" height="11" rx="2.5" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.18" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" />
+  <path d="M32 21v33M32 37h5M32 43h3M32 49h5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M49 12.5L55 18.5L49 24.5L43 18.5Z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+  <path d="M49 24.5V52M49 39h4M49 46h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+</svg>
+{{- else if eq $name "vault" -}}
+{{ $open | safeHTML }}
+  <rect x="10" y="10" width="44" height="44" rx="6" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.14" stroke="currentColor" stroke-width="2.2" />
+  <rect x="16" y="16" width="32" height="32" rx="3" stroke="currentColor" stroke-width="1.6" stroke-opacity="0.5" />
+  <path d="M10 21h4M10 43h4M17 54v3M47 54v3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+  <circle cx="32" cy="32" r="8.5" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.2" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" />
+  <circle cx="32" cy="32" r="2.2" fill="var(--icon-accent, #0ea5e9)" />
+  <path d="M32 23.5v3M32 37.5v3M23.5 32h3M37.5 32h3" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" />
+</svg>
+{{- else if eq $name "mfa" -}}
+{{ $open | safeHTML }}
+  <rect x="14" y="10" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="2.2" />
+  <rect x="11" y="19" width="16" height="33" rx="3.5" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.14" stroke="currentColor" stroke-width="2.2" />
+  <circle cx="19" cy="33" r="4.2" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" />
+  <circle cx="19" cy="45.5" r="1.5" fill="currentColor" />
+  <path d="M43 21l11 4.5v8.5c0 7.5-4.7 13.8-11 16.5-6.3-2.7-11-9-11-16.5v-8.5L43 21z" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.16" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+  <path d="M38.5 35.5l3 3 6.5-6.5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+{{- else if eq $name "antivirus" -}}
+{{ $open | safeHTML }}
+  <path d="M32 8L12 16v14c0 13.5 8.5 23.5 20 27 11.5-3.5 20-13.5 20-27V16L32 8z" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.14" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+  <ellipse cx="32" cy="34.5" rx="5.5" ry="7.5" fill="var(--icon-danger, #f43f5e)" fill-opacity="0.18" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" />
+  <path d="M29 27.5a3 3 0 0 1 6 0M26.5 31l-4-2M26.5 35h-4.5M27 39l-3.5 2M37.5 31l4-2M37.5 35H42M37 39l3.5 2" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" stroke-linecap="round" />
+  <line x1="21.5" y1="43.5" x2="42.5" y2="22.5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" />
+</svg>
+{{- else if eq $name "email-alias" -}}
+{{ $open | safeHTML }}
+  <rect x="8" y="10" width="28" height="19" rx="3" stroke="currentColor" stroke-width="2" stroke-dasharray="3.5 3" />
+  <path d="M9.5 11.5L22 20.5l12.5-9" stroke="currentColor" stroke-width="2" stroke-dasharray="3.5 3" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M40 19h4a5 5 0 0 1 5 5v6" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M45.5 27.5L49 31l3.5-3.5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="28" y="35" width="28" height="19" rx="3" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.16" stroke="currentColor" stroke-width="2.2" />
+  <path d="M29.5 36.5L42 45.5l12.5-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M16 38l6 2.5v4.5c0 4-2.5 7.2-6 8.8-3.5-1.6-6-4.8-6-8.8v-4.5L16 38z" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.18" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2" stroke-linejoin="round" />
+</svg>
+{{- else if eq $name "email-segmentation" -}}
+{{ $open | safeHTML }}
+  <rect x="8" y="8" width="21" height="21" rx="4" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.16" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2" />
+  <rect x="13" y="14.5" width="11" height="8" rx="1.2" stroke="var(--icon-accent, #0ea5e9)" stroke-width="1.8" />
+  <path d="M13.5 15.5l5 3.5 5-3.5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="35" y="8" width="21" height="21" rx="4" stroke="currentColor" stroke-width="2" />
+  <rect x="40" y="14.5" width="11" height="8" rx="1.2" stroke="currentColor" stroke-width="1.8" />
+  <path d="M40.5 15.5l5 3.5 5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="8" y="35" width="21" height="21" rx="4" stroke="currentColor" stroke-width="2" />
+  <rect x="13" y="41.5" width="11" height="8" rx="1.2" stroke="currentColor" stroke-width="1.8" />
+  <path d="M13.5 42.5l5 3.5 5-3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="35" y="35" width="21" height="21" rx="4" fill="var(--icon-danger, #f43f5e)" fill-opacity="0.14" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" stroke-dasharray="3.5 2.5" />
+  <rect x="40" y="41.5" width="11" height="8" rx="1.2" stroke="var(--icon-danger, #f43f5e)" stroke-width="1.8" />
+  <path d="M40.5 42.5l5 3.5 5-3.5" stroke="var(--icon-danger, #f43f5e)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+{{- else if eq $name "ai-data" -}}
+{{ $open | safeHTML }}
+  <path d="M10 15h11l5 5v28a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V17a2 2 0 0 1 2-2z" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+  <path d="M21 15v5h5M12 24h7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <rect x="12.5" y="33" width="9" height="7.5" rx="1.5" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.2" stroke="var(--icon-accent, #0ea5e9)" stroke-width="1.8" />
+  <path d="M14.5 33v-2a2.5 2.5 0 0 1 5 0v2" stroke="var(--icon-accent, #0ea5e9)" stroke-width="1.8" />
+  <path d="M33 11v13M33 40v13" stroke="var(--icon-danger, #f43f5e)" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="3 3" />
+  <circle cx="33" cy="32" r="5" fill="var(--icon-danger, #f43f5e)" fill-opacity="0.16" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" />
+  <line x1="29.8" y1="35.2" x2="36.2" y2="28.8" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" stroke-linecap="round" />
+  <path d="M49 17c0 6 2.2 9 8 9-5.8 0-8 3-8 9 0-6-2.2-9-8-9 5.8 0 8-3 8-9z" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.18" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2" stroke-linejoin="round" />
+  <path d="M45 39.5c0 2.8 1.2 4.5 4.2 4.5-3 0-4.2 1.7-4.2 4.5 0-2.8-1.2-4.5-4.2-4.5 3 0 4.2-1.7 4.2-4.5z" fill="var(--icon-accent, #0ea5e9)" />
+</svg>
+{{- else if eq $name "updates" -}}
+{{ $open | safeHTML }}
+  <path d="M12.5 25A21 21 0 0 1 51.5 25" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M46.5 22.5L51.5 25L53 19.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M51.5 39A21 21 0 0 1 12.5 39" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" />
+  <path d="M17.5 41.5L12.5 39L11 44.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M32 20l10 4v7.5c0 6.5-4.2 11.8-10 14-5.8-2.2-10-7.5-10-14V24l10-4z" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.16" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" />
+  <path d="M32 37v-9M28.5 31.5L32 28l3.5 3.5" stroke="var(--icon-accent, #0ea5e9)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+{{- else if eq $name "phishing" -}}
+{{ $open | safeHTML }}
+  <circle cx="28" cy="28" r="17" fill="var(--icon-accent, #0ea5e9)" fill-opacity="0.12" stroke="currentColor" stroke-width="2.2" />
+  <path d="M17.6 22A12 12 0 0 1 22 17.6" stroke="var(--icon-accent, #0ea5e9)" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.7" />
+  <line x1="40.5" y1="40.5" x2="54" y2="54" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" />
+  <circle cx="32" cy="18" r="2.2" stroke="var(--icon-danger, #f43f5e)" stroke-width="2" />
+  <path d="M32 20.2V32a5.5 5.5 0 0 1-11 0v-2.5l3 2" stroke="var(--icon-danger, #f43f5e)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
+{{- else if $name -}}
+<i data-lucide="{{ $name }}" class="{{ $class }}"></i>
+{{- end -}}

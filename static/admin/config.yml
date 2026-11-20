@@ -420,7 +420,20 @@ collections:
             name: recommendations
             widget: list
             fields:
-              - { label: Icône (emoji), name: icon, widget: string }
+              - label: Icône
+                name: icon
+                widget: select
+                options:
+                  - { label: "Mots de passe longs (cadenas + phrase de passe)", value: passphrase }
+                  - { label: "Mot de passe unique par service (3 clés)", value: unique-keys }
+                  - { label: "Gestionnaire de mots de passe (coffre-fort)", value: vault }
+                  - { label: "Double authentification (clé FIDO2 + bouclier)", value: mfa }
+                  - { label: "Antivirus / EDR (bouclier + virus)", value: antivirus }
+                  - { label: "Alias e-mail (enveloppe redirigée)", value: email-alias }
+                  - { label: "Segmentation e-mail (4 compartiments)", value: email-segmentation }
+                  - { label: "Données sensibles et IA (document + IA)", value: ai-data }
+                  - { label: "Mises à jour (cycle + bouclier)", value: updates }
+                  - { label: "Phishing (loupe + hameçon)", value: phishing }
               - { label: Titre court, name: title, widget: string }
               - { label: Texte (1-2 phrases), name: text, widget: text }
 

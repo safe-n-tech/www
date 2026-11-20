@@ -3,7 +3,7 @@ title: Pas le temps de lire
 description: Pas le temps de tout lire ? Voici les réflexes qui font vraiment la différence.
 recommendations:
   - title: 01. Des mots de passe longs
-    icon: key
+    icon: passphrase
     text: >-
       Visez au moins 16 caractères. Une carte graphique récente casse un mot de
       passe de 12 caractères en quelques heures.
@@ -17,7 +17,7 @@ recommendations:
 
       Pour voir si un mot de passe circule déjà dans des fuites, il y a haveibeenpwned.com/passwords. Faites-le en navigation privée, et pas avec un mot de passe que vous utilisez réellement.
   - title: 02. Un mot de passe par compte
-    icon: key
+    icon: unique-keys
     text: >-
       Quand un site se fait pirater, les identifiants volés sont testés
       automatiquement sur des centaines d'autres sites. C'est le credential
@@ -27,7 +27,7 @@ recommendations:
 
       Commencez par votre boîte mail principale : c'est elle qui sert à réinitialiser tous les autres mots de passe. Ensuite la banque et PayPal, puis les réseaux sociaux, le site des impôts et Ameli. Ces comptes-là doivent avoir un mot de passe unique, même si vous n'utilisez pas de gestionnaire. Activez aussi la double authentification quand elle est proposée.
   - title: 03. Un gestionnaire de mots de passe
-    icon: wrench
+    icon: vault
     text: >+
       Trois options sérieuses :
        
@@ -42,7 +42,7 @@ recommendations:
       Le mot de passe maître doit être une phrase de passe longue, utilisée nulle part ailleurs et jamais stockée en ligne. Exportez votre coffre de temps en temps sur un support chiffré, hors ligne. Si vous y gardez des accès professionnels, ne le synchronisez pas sur un cloud que vous ne maîtrisez pas.
 
   - title: 04. La double authentification
-    icon: smartphone
+    icon: mfa
     text: >
       04. La double authentification
        
@@ -58,7 +58,7 @@ recommendations:
 
       À l'activation, le service vous donne des codes de récupération. Gardez-les hors ligne. Et ne donnez jamais un code par téléphone, même à quelqu'un qui dit appeler du support technique.
   - title: 05. Un antivirus
-    icon: virus
+    icon: antivirus
     text: >+
       Bitdefender, ESET et Malwarebytes Premium obtiennent régulièrement de bons
       résultats chez AV-Test (av-test.org) et AV-Comparatives
@@ -71,7 +71,7 @@ recommendations:
       Sur Android, un antivirus a aussi sa place, même si on y pense rarement. iOS est plus fermé et donc moins exposé.
 
   - title: 06. Alias et adresses jetables
-    icon: mail
+    icon: email-alias
     text: >
       Un alias est une adresse qui redirige vers votre vraie boîte. Vous pouvez
       répondre depuis l'alias sans révéler votre adresse réelle.
@@ -90,7 +90,7 @@ recommendations:
        
       Enfin, n'utilisez pas votre adresse professionnelle pour vous inscrire sur des services tiers.
   - title: 07. Plusieurs adresses e-mail
-    icon: inbox
+    icon: email-segmentation
     text: >+
       Quatre adresses, chacune avec son rôle :
        
@@ -105,7 +105,7 @@ recommendations:
       Pour les usages sensibles, préférez Proton Mail (proton.me, Suisse) ou Tuta (tuta.com/fr, Allemagne) à Gmail ou Yahoo. Évitez aussi le format prenom.nom : il facilite le doxing et le phishing ciblé.
 
   - title: 08. Ce qu'on ne donne pas à une IA grand public
-    icon: brain
+    icon: ai-data
     text: >-
       Ne collez jamais dans ChatGPT, Gemini ou Copilot :
        
@@ -119,7 +119,7 @@ recommendations:
        
       Pour un usage pro, il y a deux pistes : une IA installée en local (Ollama avec Llama ou Mistral, rien ne sort de la machine), ou une offre cloud souveraine (Mistral AI entreprise, Azure avec données hébergées en France).
   - title: 09. Les mises à jour
-    icon: laptop
+    icon: updates
     text: >
       Une faille critique est souvent exploitée dans les 72 heures après sa
       publication. Activez les mises à jour automatiques.
@@ -130,7 +130,7 @@ recommendations:
        
       En entreprise, WSUS ou SCCM permettent de centraliser les mises à jour pour que tous les postes soient au même niveau.
   - title: 10. Le phishing, sous toutes ses formes
-    icon: shield-alert
+    icon: phishing
     text: >-
       Le nom affiché d'un expéditeur se falsifie très facilement. Regardez
       l'adresse réelle, celle entre chevrons : <email@domaine.com>.
