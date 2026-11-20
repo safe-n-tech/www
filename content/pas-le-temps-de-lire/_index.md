@@ -2,199 +2,148 @@
 title: Pas le temps de lire
 description: Pas le temps de tout lire ? Voici les réflexes qui font vraiment la différence.
 recommendations:
-  - title: " 01 — Mots de passe longs et complexes"
+  - title: 01. Des mots de passe longs
     icon: key
-    text: >2
-        Longueur et structure
-      •	Minimum 16 à 20 caractères — les GPU modernes cassent un mot de passe de 12 caractères en quelques heures par force brute.
+    text: >-
+      Visez au moins 16 caractères. Une carte graphique récente casse un mot de
+      passe de 12 caractères en quelques heures.
 
-      •	Privilégier une phrase de passe (passphrase) : 4 à 5 mots aléatoires assemblés — ex. ChienPluieMontagneBougie — plus solide et mémorisable qu'une suite de caractères illisible.
 
-      À ne jamais utiliser
+      Le plus simple est d'enchaîner 4 ou 5 mots pris au hasard, par exemple ChienPluieMontagneBougie. C'est plus solide qu'un mélange illisible, et vous vous en souviendrez.
 
-      •	Prénoms, dates de naissance, noms d'animaux
 
-      •	Suites clavier : azerty, 123456, qwerty
+      À éviter : prénoms, dates de naissance, nom du chat, suites clavier (azerty, 123456). Et pas de mot de passe noté sur un post-it, dans un fichier texte ou dans les notes du téléphone.
 
-      •	Tout stockage en clair : fichier texte, post-it, notes de smartphone — un mot de passe doit rester secret.
 
-      Vérification de robustesse
-
-      •	A titre éducatif, vous pouvez vérifier si un mot de passe a déjà fuité sur haveibeenpwned.com/passwords — en navigation privée pour éviter toute identification et à ne pas tester sur un véritable mot de passe.
-  - title: 02 — Un mot de passe différent par service
+      Pour voir si un mot de passe circule déjà dans des fuites, il y a haveibeenpwned.com/passwords. Faites-le en navigation privée, et pas avec un mot de passe que vous utilisez réellement.
+  - title: 02. Un mot de passe par compte
     icon: key
-    text: >
-      Comprendre le risque : credential stuffing
+    text: >-
+      Quand un site se fait pirater, les identifiants volés sont testés
+      automatiquement sur des centaines d'autres sites. C'est le credential
+      stuffing. Si vous utilisez partout le même mot de passe, une seule fuite
+      suffit à ouvrir tous vos comptes.
 
-      •	Les attaquants testent en masse des couples login/mot de passe issus de fuites sur des centaines de sites. Un seul mot de passe réutilisé = compromission en cascade.
 
-      Comptes à sécuriser en priorité absolue
-
-      •	Messagerie principale — c'est la clé maîtresse : tous les autres mots de passe se réinitialisent via cette boîte email.
-
-      •	Banque et services financiers comme Paypal
-
-      •	Réseaux sociaux, espace impôts, Ameli
-
-      Ces comptes doivent avoir des mots de passe uniques même en l'absence de gestionnaire de mots de passe. Dans la mesure du possible, ayez recours à la double authentification
-  - title: 03 — Gestionnaire de mots de passe
+      Commencez par votre boîte mail principale : c'est elle qui sert à réinitialiser tous les autres mots de passe. Ensuite la banque et PayPal, puis les réseaux sociaux, le site des impôts et Ameli. Ces comptes-là doivent avoir un mot de passe unique, même si vous n'utilisez pas de gestionnaire. Activez aussi la double authentification quand elle est proposée.
+  - title: 03. Un gestionnaire de mots de passe
     icon: wrench
-    text: >2
-       Solutions recommandées
-      •	KeePassXC — hors ligne, open source, préconisé par l'ANSSI
+    text: >+
+      Trois options sérieuses :
+       
+      - KeePassXC : hors ligne, open source, recommandé par l'ANSSI.
 
-      •	Bitwarden — open source, audité indépendamment
+      - Bitwarden : open source, audité de façon indépendante.
 
-      •	Proton Pass — hébergement suisse, chiffrement E2E
+      - Proton Pass : hébergé en Suisse, chiffré de bout en bout.
 
-      •	Proscrire les gestionnaires intégrés aux navigateurs pour les usages sensibles.
+      Pour les comptes sensibles, évitez le gestionnaire intégré au navigateur.
+       
+      Le mot de passe maître doit être une phrase de passe longue, utilisée nulle part ailleurs et jamais stockée en ligne. Exportez votre coffre de temps en temps sur un support chiffré, hors ligne. Si vous y gardez des accès professionnels, ne le synchronisez pas sur un cloud que vous ne maîtrisez pas.
 
-      Mot de passe maître
-
-      •	Doit être une passphrase longue et unique (alphanumérique et caractères spéciaux), jamais réutilisée nulle part, jamais stockée en ligne.
-
-      Sauvegarde et pièges
-
-      •	Exporter régulièrement le coffre et stocker la sauvegarde sur support chiffré hors ligne.
-
-      •	Ne pas synchroniser son coffre sur un cloud non maîtrisé si l'on gère des données professionnelles sensibles.
-  - title: 04 — Double authentification (2FA / MFA)
+  - title: 04. La double authentification
     icon: smartphone
-    text: >2
-       Hiérarchie des méthodes (de la moins à la plus sécurisée)
-      •	❌ SMS — vulnérable au SIM swapping et à l'interception SS7 — à éviter
+    text: >
+      04. La double authentification
+       
+      Toutes les méthodes ne se valent pas :
+       
+      - SMS : à éviter. Un attaquant peut détourner votre numéro (SIM swapping) ou intercepter le message.
 
-      •	⚠️ E-mail — dépend entièrement de la sécurité de la boîte mail 
+      - E-mail : ne vaut que ce que vaut la sécurité de votre boîte.
 
-      •	✅ Application TOTP : Aegis (Android, open source), Ente Auth, 2FAS — recommandé
+      - Application d'authentification (Aegis, Ente Auth, 2FAS) : c'est le bon choix pour la plupart des gens.
 
-      •	✅✅ Clé physique FIDO2 (YubiKey) — résistante au phishing, niveau maximal
+      - Clé physique FIDO2, type YubiKey : le niveau le plus élevé, et elle résiste au phishing.
 
-      Bonnes pratiques
-
-      •	Sauvegarder ses codes de récupération lors de l'activation — les stocker hors ligne.
-
-      •	Ne jamais communiquer un code 2FA par téléphone, même à quelqu'un se présentant comme le support technique (vishing et spoofing).
-  - title: 05 — Protection antivirus et EDR
+      À l'activation, le service vous donne des codes de récupération. Gardez-les hors ligne. Et ne donnez jamais un code par téléphone, même à quelqu'un qui dit appeler du support technique.
+  - title: 05. Un antivirus
     icon: virus
-    text: >2
-       Solutions recommandées
-      •	Bitdefender, ESET, Malwarebytes Premium — régulièrement bien notés par https://www.av-test.org et https://av-comparatives.org 
+    text: >+
+      Bitdefender, ESET et Malwarebytes Premium obtiennent régulièrement de bons
+      résultats chez AV-Test (av-test.org) et AV-Comparatives
+      (av-comparatives.org). Windows Defender, intégré à Windows 10 et 11,
+      suffit pour un usage perso de base, mais pas seul en contexte
+      professionnel.
+       
+      Ne coupez jamais l'antivirus pour installer un logiciel, même « juste cinq minutes ». C'est une méthode d'infection classique.
+       
+      Sur Android, un antivirus a aussi sa place, même si on y pense rarement. iOS est plus fermé et donc moins exposé.
 
-      •	Windows Defender (intégré à Windows 10/11) constitue une base acceptable, mais insuffisant seul pour un usage professionnel.
-
-      Points de vigilance
-
-      •	Ne jamais désactiver l'antivirus, même temporairement pour installer un logiciel — vecteur d'infection classique.
-
-      •	Antivirus sur smartphone Android ( https://www.av-test.org) souvent négligé mais pertinent (iOS est plus fermé par architecture).
-  - title: 06 — Alias e-mail et adresses jetables
+  - title: 06. Alias et adresses jetables
     icon: mail
-    text: >2
-       Services d'alias (permanents)
-      •	https://simplelogin.io  (par Proton, open source) — « alias » permanents redirigés vers votre vraie boîte, réponse possible sans révéler l'adresse réelle.
+    text: >
+      Un alias est une adresse qui redirige vers votre vraie boîte. Vous pouvez
+      répondre depuis l'alias sans révéler votre adresse réelle.
+       
+      - SimpleLogin (simplelogin.io), open source, racheté par Proton.
 
-      •	https://addy.io  — open source, version gratuite généreuse.
+      - addy.io, open source, avec une offre gratuite confortable.
 
-      •	https://proton.me Proton Mail (abonnement) — gestion d'alias native.
+      - Proton Mail (proton.me), alias inclus dans l'abonnement.
 
-      •	Apple Hide My Email https://support.apple.com/en-gb/105078  — intégré à l'écosystème Apple (iCloud+).
+      - Apple Masquer mon adresse e-mail, avec iCloud+.
 
-      Adresses jetables (usage unique)
-
-      •	https://www.guerrillamail.com/fr/, https://temp-mail.org , https://10minutemail.com   — pour inscriptions ponctuelles sans suivi nécessaire.
-
-      •	⚠️ Ne pas utiliser pour des comptes à récupérer : l'adresse expire et l'accès est définitivement perdu.
-
-      Pratiques opérationnelles
-
-      •	Créer un alias par service : si du spam arrive sur amazon-XYZ@alias.io, on sait quelle base de données a fuité ou été revendue.
-
-      •	Ne jamais utiliser son adresse professionnelle institutionnelle pour des inscriptions à des services tiers.
-
-      •	Compartimenter : un alias achats, un alias newsletters, un alias forums.
-  - title: 07 — Segmentation des adresses e-mail
+      L'idée est de créer un alias par service. Si vous recevez du spam sur amazon-xyz@alias.io, vous savez qui a fuité ou revendu votre adresse.
+       
+      Les adresses jetables (guerrillamail.com, temp-mail.org, 10minutemail.com) servent pour une inscription unique. Ne les utilisez pas pour un compte que vous voudrez récupérer un jour : l'adresse disparaît, et l'accès avec.
+       
+      Enfin, n'utilisez pas votre adresse professionnelle pour vous inscrire sur des services tiers.
+  - title: 07. Plusieurs adresses e-mail
     icon: inbox
-    text: >2
-       Architecture recommandée
-      •	Adresse pro institutionnelle — communications professionnelles officielles uniquement.
+    text: >+
+      Quatre adresses, chacune avec son rôle :
+       
+      - Pro : uniquement pour le travail.
 
-      •	Adresse perso principale (chiffrée si possible) — famille, amis, banque, administrations.
+      - Perso : famille, amis, banque, administrations.
 
-      •	Adresse achats/commerce — e-commerce, abonnements, cartes de fidélité.
+      - Achats : sites marchands, abonnements, cartes de fidélité.
 
-      •	Adresse poubelle — forums, concours, téléchargements.
+      - Poubelle : forums, concours, téléchargements.
 
-      Fournisseurs recommandés pour la confidentialité
+      Pour les usages sensibles, préférez Proton Mail (proton.me, Suisse) ou Tuta (tuta.com/fr, Allemagne) à Gmail ou Yahoo. Évitez aussi le format prenom.nom : il facilite le doxing et le phishing ciblé.
 
-      •	Proton Mail https://proton.me (Suisse, chiffrement E2E), Tuta https://tuta.com/fr   (Allemagne) — à préférer à Gmail/Yahoo pour les usages sensibles.
-
-      •	Éviter prenom.nom comme identifiant dans le corps de son adresse émail: facilite le doxing et le spear phishing.
-  - title: 08 — Données sensibles et IA grand public
+  - title: 08. Ce qu'on ne donne pas à une IA grand public
     icon: brain
-    text: >2
-       Ce qui ne doit jamais être saisi dans une IA grand public
-      •	Noms de personnes, données personnelles, informations sensibles nominatives
+    text: >-
+      Ne collez jamais dans ChatGPT, Gemini ou Copilot :
+       
+      - des noms ou des données personnelles,
 
-      •	Données RH, informations médicales, secrets industriels
+      - des données RH ou médicales,
 
-      Pourquoi c'est risqué
+      - des secrets industriels.
 
-      •	Les données saisies peuvent servir à l'entraînement des modèles (selon les CGU), être accessibles aux équipes de l'éditeur, ou exposées en cas de fuite.
-
-      Mesures minimales sur ChatGPT / Gemini / Copilot
-
-      •	Activer le mode "sans historique" ou désactiver l'amélioration des modèles dans les paramètres.
-
-      Alternatives pour usage professionnel
-
-      •	IA déployée en local : Ollama + LLaMA / Mistral — risque contrôlé, aucune donnée transmise.
-
-      •	Offres cloud souveraines : Mistral AI entreprise, Azure avec résidence des données en France.
-
-      Distinguer impérativement : IA grand public (risque élevé) vs IA sur infrastructure maîtrisée (risque contrôlé).
-  - title: 09 — Mises à jour régulières
+      Selon les conditions d'utilisation, ce que vous saisissez peut servir à entraîner le modèle, être lu par les équipes de l'éditeur ou se retrouver dans une fuite. Au minimum, désactivez l'historique ou l'amélioration des modèles dans les paramètres.
+       
+      Pour un usage pro, il y a deux pistes : une IA installée en local (Ollama avec Llama ou Mistral, rien ne sort de la machine), ou une offre cloud souveraine (Mistral AI entreprise, Azure avec données hébergées en France).
+  - title: 09. Les mises à jour
     icon: laptop
-    text: >2
-       Urgence des correctifs
-      •	Une vulnérabilité critique est souvent exploitée dans les 72 heures suivant sa publication. Les mises à jour automatiques sont une nécessité, pas une option.
-
-      Périmètre souvent oublié
-
-      •	Navigateur web et ses extensions / plugins
-
-      •	Routeur / box internet (firmware)
-
-      •	Smartphones, caméras IP, NAS, téléviseurs connectés
-
-      Fin de support et logiciels orphelins
-
-      •	Windows 10 en fin de support (octobre 2025) — tout système hors support ne reçoit plus de correctifs de sécurité.
-
-      •	Désinstaller les logiciels non utilisés réduit la surface d'attaque.
-
-      Contexte professionnel
-
-      •	WSUS / SCCM pour les structures professionnelles : centraliser la gestion des mises à jour pour garantir un déploiement homogène.
-  - title: 10 — Vigilance phishing — toutes formes
+    text: >
+      Une faille critique est souvent exploitée dans les 72 heures après sa
+      publication. Activez les mises à jour automatiques.
+       
+      On oublie souvent le navigateur et ses extensions, la box internet, et tous les appareils connectés : smartphone, caméra IP, NAS, télé.
+       
+      Windows 10 n'est plus supporté depuis octobre 2025. Un système hors support ne reçoit plus de correctifs de sécurité. Désinstallez aussi les logiciels que vous n'utilisez plus : moins de logiciels, moins de failles possibles.
+       
+      En entreprise, WSUS ou SCCM permettent de centraliser les mises à jour pour que tous les postes soient au même niveau.
+  - title: 10. Le phishing, sous toutes ses formes
     icon: shield-alert
-    text: >2
-       Vérifications techniques de base
-      •	Display name spoofing : l'affichage du nom peut être falsifié. Toujours vérifier l'adresse réelle entre chevrons <email@domaine.com>.
+    text: >-
+      Le nom affiché d'un expéditeur se falsifie très facilement. Regardez
+      l'adresse réelle, celle entre chevrons : <email@domaine.com>.
+       
+      Lisez les liens lettre par lettre : paypa1.com n'est pas paypal.com, et « rn » ressemble beaucoup à « m ». Pour vérifier un lien sans cliquer dessus : VirusTotal (virustotal.com) ou urlscan.io.
+       
+      Les attaques les plus efficaces sont aussi les plus discrètes :
+       
+      - Le spear phishing utilise des infos réelles sur vous (prénom, employeur, actualité récente) pour paraître crédible.
 
-      •	Homoglyphes : paypa1.com vs paypal.com, "rn" qui ressemble à "m" — lire l'URL caractère par caractère.
+      - Le quishing passe par un QR code. Ne scannez pas un QR code reçu par mail ou collé dans un lieu public sans vérifier.
 
-      •	Analyser un lien sans le visiter : https://www.virustotal.com/gui/home/upload, https://urlscan.io .
+      - Le vishing se fait par téléphone, et les deepfakes audio peuvent imiter la voix d'un proche. Convenez d'un mot de code avec votre entourage, ou raccrochez et rappelez.
 
-      Formes avancées d'attaque
-
-      •	Spear phishing : attaques ciblées utilisant des informations personnelles (prénom, employeur, événement récent) pour paraître légitimes 
-
-      •	Quishing : phishing via QR code — ne jamais scanner un QR reçu par e-mail ou affiché en lieu public sans vérification préalable.
-
-      •	Vishing : phishing vocal — les deepfakes audio permettent d'imiter une voix connue. Instaurer un mot de code avec ses proches (ou raccrocher en cas de doute).
-
-      Réflexe en cas de doute
-
-      •	Contacter directement l'organisme supposé expéditeur via un numéro ou une adresse trouvée indépendamment — jamais via les coordonnées contenues dans le message suspect.
+      En cas de doute, contactez l'organisme vous-même, avec un numéro ou une adresse trouvés ailleurs que dans le message.
 ---
